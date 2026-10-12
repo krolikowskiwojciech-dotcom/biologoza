@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 447" width="360" height="447" role="img" aria-label="Czterech przedstawicieli">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="442" rx="18" fill="#F5A524" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="442" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" font-weight="700" fill="#1D7A5F" letter-spacing=".05em">CZTERECH PRZEDSTAWICIELI</text>
+  <rect x="24" y="56" width="307" height="78" rx="12" fill="#E3F0F7" stroke="#3D7EA6" stroke-width="1.5"/>
+  <text class="t" x="38" y="79" font-size="15" font-weight="700" fill="#1F1B17" text-anchor="start">stułbia płowa</text>
+  <text class="t" x="190" y="79" font-size="12" font-weight="700" fill="#B26A00" text-anchor="start">tylko polip</text>
+  <text class="t" x="38" y="102" font-size="12" font-weight="600" fill="#1F1B17" text-anchor="start">woda słodka: rzeki, jeziora, stawy</text>
+  <text class="t" x="38" y="122" font-size="11.5" font-weight="400" fill="#7A716A" text-anchor="start">siedzi na liściach i łodygach roślin</text>
+  <rect x="24" y="144" width="307" height="78" rx="12" fill="#E3F0F7" stroke="#3D7EA6" stroke-width="1.5"/>
+  <text class="t" x="38" y="167" font-size="15" font-weight="700" fill="#1F1B17" text-anchor="start">chełbia modra</text>
+  <text class="t" x="190" y="167" font-size="12" font-weight="700" fill="#B26A00" text-anchor="start">polip i meduza</text>
+  <text class="t" x="38" y="190" font-size="12" font-weight="600" fill="#1F1B17" text-anchor="start">woda słona, także Bałtyk</text>
+  <text class="t" x="38" y="210" font-size="11.5" font-weight="400" fill="#7A716A" text-anchor="start">większość życia jako meduza</text>
+  <rect x="24" y="232" width="280" height="78" rx="12" fill="#FBE4E4" stroke="#C4552E" stroke-width="1.5"/>
+  <text class="t" x="38" y="255" font-size="15" font-weight="700" fill="#1F1B17" text-anchor="start">koral szlachetny</text>
+  <text class="t" x="190" y="255" font-size="12" font-weight="700" fill="#B26A00" text-anchor="start">kolonia polipów</text>
+  <text class="t" x="38" y="278" font-size="12" font-weight="600" fill="#1F1B17" text-anchor="start">tylko morze</text>
+  <text class="t" x="38" y="298" font-size="11.5" font-weight="400" fill="#7A716A" text-anchor="start">wspólny czerwony szkielet ok. 30 cm</text>
+  <rect x="24" y="320" width="280" height="78" rx="12" fill="#FBE4E4" stroke="#C4552E" stroke-width="1.5"/>
+  <text class="t" x="38" y="343" font-size="15" font-weight="700" fill="#1F1B17" text-anchor="start">ukwiał</text>
+  <text class="t" x="190" y="343" font-size="12" font-weight="700" fill="#B26A00" text-anchor="start">pojedynczy polip</text>
+  <text class="t" x="38" y="366" font-size="12" font-weight="600" fill="#1F1B17" text-anchor="start">tylko morze</text>
+  <text class="t" x="38" y="386" font-size="11.5" font-weight="400" fill="#7A716A" text-anchor="start">bez szkieletu, tysiące czułków</text>
+  <path d="M312 238 h8 V392 h-8" fill="none" stroke="#C4552E" stroke-width="2"/>
+  <text class="t" x="340" y="320" font-size="12" font-weight="700" fill="#C4552E" text-anchor="middle" transform="rotate(-90 340 320)">koralowce</text>
+  <text class="t" x="24" y="424" font-size="11.5" font-weight="600" fill="#155C48" text-anchor="start">wszystkie cztery: wodne drapieżniki z parzydełkami</text>
+</svg>

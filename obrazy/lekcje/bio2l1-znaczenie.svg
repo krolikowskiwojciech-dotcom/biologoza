@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 341" width="360" height="341" role="img" aria-label="Po co są parzydełkowce">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="336" rx="18" fill="#F5A524" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="336" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" font-weight="700" fill="#1D7A5F" letter-spacing=".05em">PO CO SĄ PARZYDEŁKOWCE</text>
+  <circle cx="27" cy="66" r="3.2" fill="#F5A524"/>
+  <text class="t" x="36" y="70" font-size="11" font-weight="700" fill="#B26A00" letter-spacing=".07em">W PRZYRODZIE — GŁÓWNIE KORALOWCE</text>
+  <text class="t" x="24" y="97" font-size="15" font-weight="700" fill="#1F1B17">budują rafy koralowe</text>
+  <text class="t" x="24" y="122" font-size="15" font-weight="700" fill="#1F1B17">są pokarmem, np. dla ryb</text>
+  <text class="t" x="24" y="147" font-size="15" font-weight="700" fill="#1F1B17">błazenek + ukwiał = obaj zyskują</text>
+  <text class="t" x="24" y="169" font-size="11.5" fill="#7A716A">ryba: schronienie i resztki; ukwiał: zwabione ryby</text>
+  <line x1="24" y1="183" x2="331" y2="183" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="27" cy="205" r="3.2" fill="#F5A524"/>
+  <text class="t" x="36" y="209" font-size="11" font-weight="700" fill="#B26A00" letter-spacing=".07em">DLA CZŁOWIEKA</text>
+  <text class="t" x="24" y="236" font-size="15" font-weight="700" fill="#1F1B17">+ meduzy jako jedzenie (Chiny, Japonia)</text>
+  <text class="t" x="24" y="261" font-size="15" font-weight="700" fill="#1F1B17">+ biżuteria i ozdoby z koralowców</text>
+  <text class="t" x="24" y="291" font-size="19" font-weight="700" fill="#B26A00">− bardzo silny płyn: groźny</text>
+  <text class="t" x="24" y="314" font-size="11.5" fill="#7A716A">niektóre gatunki zagrażają zdrowiu i życiu</text>
+</svg>

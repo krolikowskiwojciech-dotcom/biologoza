@@ -1,0 +1,531 @@
+{
+  "id": "bio-dz1-l02-tkanki-nablonkowa-miesniowa-i-nerwowa",
+  "zrodlo": "lekcje-audio",
+  "dla": [
+    "julek"
+  ],
+  "tytul": "Trzy tkanki zwierzęce: nabłonek, mięśnie i nerwy",
+  "dzial": "I",
+  "dzialTytul": "Świat zwierząt: od komórki do organizmu",
+  "lekcja": 2,
+  "strony": "13–18",
+  "dodano": "2026-09-06",
+  "termin": null,
+  "ikona": "komorka",
+  "kolor": "mietowy",
+  "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz1-l02-tkanki-nablonkowa-miesniowa-i-nerwowa.mp3",
+      "minuty": 10
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz1-l02-tkanki-nablonkowa-miesniowa-i-nerwowa-krotkie.mp3",
+      "minuty": 8
+    }
+  ],
+  "sciaga": [
+    "Ciała zwierząt budują cztery tkanki: nabłonkowa, mięśniowa, nerwowa i łączna. Każda ma inną budowę, więc każda robi co innego, a razem wchodzą w skład narządów.",
+    "Gdzie która: nabłonkowa okrywa ciało i wyściela narządy, mięśniowa buduje mięśnie (także w ścianach żołądka i jelit), nerwowa tworzy układ nerwowy z mózgowiem, a łączna wchodzi w skład większości narządów i buduje na przykład kości.",
+    "Nabłonek to komórki przylegające do siebie ściśle, bez wolnych miejsc, ułożone od jednej do kilkunastu warstw — jak kostka brukowa na chodniku.",
+    "Nabłonek ma trzy zadania: chroni przed uszkodzeniami i drobnoustrojami, wchłania substancje (składniki pokarmowe, tlen, dwutlenek węgla) oraz wytwarza i wydziela na przykład enzymy trawienne, mleko i śluz.",
+    "Nabłonki dzielimy dwojako: według kształtu komórek na płaskie, sześcienne i walcowate, a według liczby warstw na jednowarstwowe i wielowarstwowe.",
+    "Jednowarstwowe mają wszystkie zwierzęta, wielowarstwowe tylko kręgowce.",
+    "Jednowarstwowy płaski buduje ściany pęcherzyków płucnych i przepuszcza tlen oraz dwutlenek węgla do krwi i z krwi. Jednowarstwowy sześcienny wyściela kanaliki nerek i wchłania z moczu do krwi na przykład glukozę.",
+    "Jednowarstwowy walcowaty wyściela jelito cienkie: przenosi substancje pokarmowe do krwi i wydziela enzymy trawienne. Wielowarstwowy płaski tworzy zewnętrzną warstwę skóry i chroni ciało.",
+    "Reguła, która porządkuje te przykłady: gdzie coś ma przechodzić, tam jedna cienka warstwa; gdzie trzeba chronić, tam wiele warstw.",
+    "W drogach oddechowych kręgowców nabłonek ma rzęski, które wymiatają zanieczyszczenia z wdychanego powietrza.",
+    "Tkanka mięśniowa kurczy się i rozkurcza. Dzięki temu zwierzę się porusza, pokarm przesuwa się w jelitach, a krew krąży w naczyniach.",
+    "Są trzy rodzaje tkanki mięśniowej: gładka, poprzecznie prążkowana serca i poprzecznie prążkowana szkieletowa. Dwie pierwsze budują komórki, trzecią — włókna powstałe z kilkudziesięciu połączonych komórek.",
+    "Gładka buduje ściany narządów wewnętrznych, na przykład żołądka, jelit i naczyń krwionośnych. Komórki wrzecionowate, ostro zakończone, z jednym jądrem pośrodku; bez prążków; kurczy się wolno i niezależnie od woli.",
+    "Serca buduje ściany serca. Komórki walcowate, rozgałęzione, tępo zakończone, z jednym lub dwoma jądrami pośrodku; kurczy się szybko i niezależnie od woli.",
+    "Szkieletowa buduje mięśnie szkieletowe, na przykład kończyn. Włókna walcowate, proste, tępo zakończone, z licznymi jądrami przy powierzchni; kurczy się szybko i zależnie od woli.",
+    "Trzy klucze do rozpoznania mięśni: kształt (wrzecionowate, rozgałęzione, proste), tempo (wolno kurczy się tylko gładka) i wola (zależnie od woli pracuje tylko szkieletowa).",
+    "Tkanka nerwowa jest głównym składnikiem układu nerwowego. Przypomina gęstą sieć: bez przerwy odbiera i analizuje informacje z wnętrza ciała i z otoczenia, dzięki czemu organizm reaguje.",
+    "Tworzą ją dwa rodzaje komórek. Neurony odbierają i przesyłają informacje w postaci impulsu nerwowego, czyli sygnału układu nerwowego.",
+    "Drugi rodzaj to komórki gleju. Wypełniają przestrzenie między neuronami, są ich podporą, chronią je i dostarczają im substancji odżywczych. Pominięcie gleju to typowy błąd przy pytaniu o skład tkanki nerwowej.",
+    "Neuron ma ciało komórki ze wszystkimi elementami komórki zwierzęcej, w tym jądrem, oraz wypustki: krótkie, silnie rozgałęzione dendryty i jeden długi akson, zwykle rozgałęziony na końcu i otoczony osłonką.",
+    "Impuls biegnie zawsze w tę samą stronę: dendryty, ciało komórki, akson, następna komórka. Osłonka chroni akson i przyspiesza przesyłanie impulsu."
+  ],
+  "definicje": {
+    "tkanka": "Grupa komórek o podobnej budowie, które razem robią jedno zadanie. Ciała zwierząt budują cztery tkanki: nabłonkowa, mięśniowa, nerwowa i łączna.",
+    "tkanka nabłonkowa": "Nabłonek: komórki leżące ciasno jedna przy drugiej, w jednej lub wielu warstwach. Pokrywa ciało i wyściela narządy; chroni, wchłania oraz wytwarza i wydziela substancje.",
+    "nabłonek jednowarstwowy": "Nabłonek z jednej cienkiej warstwy komórek, przez którą łatwo przechodzą substancje. Mają go wszystkie zwierzęta; przykład: ściany pęcherzyków płucnych, jelito cienkie.",
+    "nabłonek wielowarstwowy": "Nabłonek z wielu warstw komórek, gruba osłona przed uszkodzeniami i drobnoustrojami. Mają go tylko kręgowce; przykład: zewnętrzna warstwa skóry.",
+    "tkanka mięśniowa gładka": "Mięśnie w ścianach narządów wewnętrznych (żołądek, jelita, naczynia krwionośne). Komórki wrzecionowate z jednym jądrem, bez prążków; kurczą się wolno i niezależnie od woli.",
+    "tkanka mięśniowa poprzecznie prążkowana": "Mięśnie z prążkami, kurczące się szybko. Odmiana serca ma rozgałęzione komórki i pracuje niezależnie od woli; odmiana szkieletowa ma proste włókna z wieloma jądrami i pracuje zależnie od woli.",
+    "tkanka nerwowa": "Główny składnik układu nerwowego. Odbiera informacje z ciała i z otoczenia, analizuje je i steruje reakcją organizmu; tworzą ją neurony i komórki gleju.",
+    "neuron": "Komórka nerwowa. Ma ciało komórki z jądrem, krótkie dendryty i jeden długi akson; odbiera i przesyła impulsy nerwowe, czyli sygnały układu nerwowego.",
+    "dendryty i akson": "Wypustki neuronu. Dendryty są krótkie i liczne, prowadzą impuls do ciała komórki; akson jest jeden i długi, wyprowadza impuls do innej komórki i zwykle ma osłonkę.",
+    "komórki gleju": "Drugi rodzaj komórek tkanki nerwowej. Wypełniają miejsca między neuronami, podpierają je, chronią i dostarczają im substancji odżywczych.",
+    "rzęski": "Drobne, ruchome wypustki na powierzchni nabłonka w drogach oddechowych kręgowców. Wymiatają zanieczyszczenia z wdychanego powietrza.",
+    "włókno mięśniowe": "Element budujący tkankę mięśniową szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder.",
+    "osłonka aksonu": "Warstwa otaczająca akson większości neuronów. Chroni go i sprawia, że impuls biegnie szybciej.",
+    "impuls nerwowy": "Sygnał, którym układ nerwowy przekazuje informacje. Neuron odbiera go dendrytami, a wysyła dalej aksonem."
+  },
+  "obrazy": [
+    {
+      "plik": "obrazy/lekcje/sciaga-bio-dz1-l02-tkanki-nablonkowa-miesniowa-i-nerwowa.svg",
+      "po": 0,
+      "podpis": "Rysunek do zapamiętania: cztery tkanki i to, na co dzieli się każda z nich."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2-tkanki.jpg",
+      "po": 2,
+      "podpis": "Cztery tkanki pod mikroskopem, od góry: nabłonkowa (ciasno ułożone komórki), nerwowa (komórka z wypustkami), mięśniowa (włókna z prążkami), łączna (luźne komórki wśród włókien)."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2-nablonki.jpg",
+      "po": 8,
+      "podpis": "Nabłonki pod mikroskopem, od góry: jednowarstwowy płaski (pęcherzyki płucne), jednowarstwowy sześcienny (kanalik nerki), jednowarstwowy walcowaty (jelito cienkie), wielowarstwowy płaski (skóra)."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2-miesnie.jpg",
+      "po": 15,
+      "podpis": "Tkanka mięśniowa pod mikroskopem, od góry: gładka (wrzecionowate komórki, bez prążków), poprzecznie prążkowana serca (rozgałęzione komórki z prążkami), poprzecznie prążkowana szkieletowa (proste, grube włókna z wieloma jądrami przy brzegu)."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2-neuron-opis.svg",
+      "po": 20,
+      "podpis": "Komórka nerwowa (neuron): ciało komórki z jądrem, krótkie rozgałęzione dendryty, jeden długi akson w osłonce. Impuls biegnie od dendrytów przez ciało komórki do aksonu i dalej do innej komórki."
+    }
+  ],
+  "bloki": [
+    {
+      "id": "pojecia",
+      "tytul": "Pojęcia z lekcji",
+      "polecenie": "Które pojęcie pasuje do opisu?",
+      "ile": 8,
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Grupa komórek o podobnej budowie, które razem robią jedno zadanie. Ciała zwierząt budują cztery …: nabłonkowa, mięśniowa, nerwowa i łączna.",
+          "a": "tkanka",
+          "choices": [
+            "tkanka",
+            "neuron",
+            "włókno mięśniowe"
+          ],
+          "exp": [
+            "neuron to coś innego: Komórka nerwowa. Ma ciało komórki z jądrem, krótkie dendryty i jeden długi akson; odbiera i przesyła impulsy nerwowe, czyli sygnały układu nerwowego.",
+            "włókno mięśniowe to coś innego: Element budujący tkankę mięśniową szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Nabłonek: komórki leżące ciasno jedna przy drugiej, w jednej lub wielu warstwach. Pokrywa ciało i wyściela narządy; chroni, wchłania oraz wytwarza i wydziela substancje.",
+          "a": "tkanka nabłonkowa",
+          "choices": [
+            "tkanka nabłonkowa",
+            "tkanka mięśniowa gładka",
+            "tkanka mięśniowa poprzecznie prążkowana"
+          ],
+          "exp": [
+            "tkanka mięśniowa gładka to coś innego: Mięśnie w ścianach narządów wewnętrznych (żołądek, jelita, naczynia krwionośne). Komórki wrzecionowate z jednym jądrem, bez prążków; kurczą się wolno i niezależnie od woli.",
+            "tkanka mięśniowa poprzecznie prążkowana to coś innego: Mięśnie z prążkami, kurczące się szybko. Odmiana serca ma rozgałęzione komórki i pracuje niezależnie od woli; odmiana szkieletowa ma proste włókna z wieloma jądrami i pracuje zależnie od woli."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… z jednej cienkiej warstwy komórek, przez którą łatwo przechodzą substancje. Mają go wszystkie zwierzęta; przykład: ściany pęcherzyków płucnych, jelito cienkie.",
+          "a": "nabłonek jednowarstwowy",
+          "choices": [
+            "nabłonek jednowarstwowy",
+            "impuls nerwowy",
+            "nabłonek wielowarstwowy"
+          ],
+          "exp": [
+            "impuls nerwowy to coś innego: Sygnał, którym układ nerwowy przekazuje informacje. Neuron odbiera go dendrytami, a wysyła dalej aksonem.",
+            "nabłonek wielowarstwowy to coś innego: Nabłonek z wielu warstw komórek, gruba osłona przed uszkodzeniami i drobnoustrojami. Mają go tylko kręgowce; przykład: zewnętrzna warstwa skóry."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… z wielu warstw komórek, gruba osłona przed uszkodzeniami i drobnoustrojami. Mają go tylko kręgowce; przykład: zewnętrzna warstwa skóry.",
+          "a": "nabłonek wielowarstwowy",
+          "choices": [
+            "nabłonek wielowarstwowy",
+            "nabłonek jednowarstwowy",
+            "impuls nerwowy"
+          ],
+          "exp": [
+            "nabłonek jednowarstwowy to coś innego: Nabłonek z jednej cienkiej warstwy komórek, przez którą łatwo przechodzą substancje. Mają go wszystkie zwierzęta; przykład: ściany pęcherzyków płucnych, jelito cienkie.",
+            "impuls nerwowy to coś innego: Sygnał, którym układ nerwowy przekazuje informacje. Neuron odbiera go dendrytami, a wysyła dalej aksonem."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… w ścianach narządów wewnętrznych (żołądek, jelita, naczynia krwionośne). Komórki wrzecionowate z jednym jądrem, bez prążków; kurczą się wolno i niezależnie od woli.",
+          "a": "tkanka mięśniowa gładka",
+          "choices": [
+            "tkanka mięśniowa gładka",
+            "osłonka aksonu",
+            "neuron"
+          ],
+          "exp": [
+            "osłonka aksonu to coś innego: Warstwa otaczająca akson większości neuronów. Chroni go i sprawia, że impuls biegnie szybciej.",
+            "neuron to coś innego: Komórka nerwowa. Ma ciało komórki z jądrem, krótkie dendryty i jeden długi akson; odbiera i przesyła impulsy nerwowe, czyli sygnały układu nerwowego."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… z prążkami, kurczące się szybko. Odmiana serca ma rozgałęzione komórki i pracuje niezależnie od woli; odmiana szkieletowa ma proste włókna z wieloma jądrami i pracuje zależnie od woli.",
+          "a": "tkanka mięśniowa poprzecznie prążkowana",
+          "choices": [
+            "tkanka mięśniowa poprzecznie prążkowana",
+            "nabłonek wielowarstwowy",
+            "tkanka mięśniowa gładka"
+          ],
+          "exp": [
+            "nabłonek wielowarstwowy to coś innego: Nabłonek z wielu warstw komórek, gruba osłona przed uszkodzeniami i drobnoustrojami. Mają go tylko kręgowce; przykład: zewnętrzna warstwa skóry.",
+            "tkanka mięśniowa gładka to coś innego: Mięśnie w ścianach narządów wewnętrznych (żołądek, jelita, naczynia krwionośne). Komórki wrzecionowate z jednym jądrem, bez prążków; kurczą się wolno i niezależnie od woli."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Główny składnik układu …. Odbiera informacje z ciała i z otoczenia, analizuje je i steruje reakcją organizmu; tworzą ją neurony i komórki gleju.",
+          "a": "tkanka nerwowa",
+          "choices": [
+            "tkanka nerwowa",
+            "włókno mięśniowe",
+            "nabłonek wielowarstwowy"
+          ],
+          "exp": [
+            "włókno mięśniowe to coś innego: Element budujący tkankę mięśniową szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder.",
+            "nabłonek wielowarstwowy to coś innego: Nabłonek z wielu warstw komórek, gruba osłona przed uszkodzeniami i drobnoustrojami. Mają go tylko kręgowce; przykład: zewnętrzna warstwa skóry."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Komórka nerwowa. Ma ciało komórki z jądrem, krótkie dendryty i jeden długi akson; odbiera i przesyła impulsy nerwowe, czyli sygnały układu nerwowego.",
+          "a": "neuron",
+          "choices": [
+            "neuron",
+            "tkanka mięśniowa poprzecznie prążkowana",
+            "rzęski"
+          ],
+          "exp": [
+            "tkanka mięśniowa poprzecznie prążkowana to coś innego: Mięśnie z prążkami, kurczące się szybko. Odmiana serca ma rozgałęzione komórki i pracuje niezależnie od woli; odmiana szkieletowa ma proste włókna z wieloma jądrami i pracuje zależnie od woli.",
+            "rzęski to coś innego: Drobne, ruchome wypustki na powierzchni nabłonka w drogach oddechowych kręgowców. Wymiatają zanieczyszczenia z wdychanego powietrza."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Wypustki neuronu. … są krótkie i liczne, prowadzą impuls do ciała komórki; … jest jeden i długi, wyprowadza impuls do innej komórki i zwykle ma osłonkę.",
+          "a": "dendryty i akson",
+          "choices": [
+            "dendryty i akson",
+            "tkanka nerwowa",
+            "nabłonek jednowarstwowy"
+          ],
+          "exp": [
+            "tkanka nerwowa to coś innego: Główny składnik układu nerwowego. Odbiera informacje z ciała i z otoczenia, analizuje je i steruje reakcją organizmu; tworzą ją neurony i komórki gleju.",
+            "nabłonek jednowarstwowy to coś innego: Nabłonek z jednej cienkiej warstwy komórek, przez którą łatwo przechodzą substancje. Mają go wszystkie zwierzęta; przykład: ściany pęcherzyków płucnych, jelito cienkie."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Drugi rodzaj … tkanki nerwowej. Wypełniają miejsca między neuronami, podpierają je, chronią i dostarczają im substancji odżywczych.",
+          "a": "komórki gleju",
+          "choices": [
+            "komórki gleju",
+            "tkanka mięśniowa poprzecznie prążkowana",
+            "włókno mięśniowe"
+          ],
+          "exp": [
+            "tkanka mięśniowa poprzecznie prążkowana to coś innego: Mięśnie z prążkami, kurczące się szybko. Odmiana serca ma rozgałęzione komórki i pracuje niezależnie od woli; odmiana szkieletowa ma proste włókna z wieloma jądrami i pracuje zależnie od woli.",
+            "włókno mięśniowe to coś innego: Element budujący tkankę mięśniową szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Drobne, ruchome wypustki na powierzchni nabłonka w drogach oddechowych kręgowców. Wymiatają zanieczyszczenia z wdychanego powietrza.",
+          "a": "rzęski",
+          "choices": [
+            "rzęski",
+            "tkanka nerwowa",
+            "włókno mięśniowe"
+          ],
+          "exp": [
+            "tkanka nerwowa to coś innego: Główny składnik układu nerwowego. Odbiera informacje z ciała i z otoczenia, analizuje je i steruje reakcją organizmu; tworzą ją neurony i komórki gleju.",
+            "włókno mięśniowe to coś innego: Element budujący tkankę mięśniową szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Element budujący tkankę … szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder.",
+          "a": "włókno mięśniowe",
+          "choices": [
+            "włókno mięśniowe",
+            "nabłonek jednowarstwowy",
+            "nabłonek wielowarstwowy"
+          ],
+          "exp": [
+            "nabłonek jednowarstwowy to coś innego: Nabłonek z jednej cienkiej warstwy komórek, przez którą łatwo przechodzą substancje. Mają go wszystkie zwierzęta; przykład: ściany pęcherzyków płucnych, jelito cienkie.",
+            "nabłonek wielowarstwowy to coś innego: Nabłonek z wielu warstw komórek, gruba osłona przed uszkodzeniami i drobnoustrojami. Mają go tylko kręgowce; przykład: zewnętrzna warstwa skóry."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Warstwa otaczająca … większości neuronów. Chroni go i sprawia, że impuls biegnie szybciej.",
+          "a": "osłonka aksonu",
+          "choices": [
+            "osłonka aksonu",
+            "tkanka nabłonkowa",
+            "włókno mięśniowe"
+          ],
+          "exp": [
+            "tkanka nabłonkowa to coś innego: Nabłonek: komórki leżące ciasno jedna przy drugiej, w jednej lub wielu warstwach. Pokrywa ciało i wyściela narządy; chroni, wchłania oraz wytwarza i wydziela substancje.",
+            "włókno mięśniowe to coś innego: Element budujący tkankę mięśniową szkieletową. Powstaje z kilkudziesięciu komórek, które połączyły się w jedną długą całość, dlatego ma wiele jąder."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Sygnał, którym układ … przekazuje informacje. Neuron odbiera go dendrytami, a wysyła dalej aksonem.",
+          "a": "impuls nerwowy",
+          "choices": [
+            "impuls nerwowy",
+            "tkanka nabłonkowa",
+            "tkanka nerwowa"
+          ],
+          "exp": [
+            "tkanka nabłonkowa to coś innego: Nabłonek: komórki leżące ciasno jedna przy drugiej, w jednej lub wielu warstwach. Pokrywa ciało i wyściela narządy; chroni, wchłania oraz wytwarza i wydziela substancje.",
+            "tkanka nerwowa to coś innego: Główny składnik układu nerwowego. Odbiera informacje z ciała i z otoczenia, analizuje je i steruje reakcją organizmu; tworzą ją neurony i komórki gleju."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wybor",
+      "tytul": "Test wyboru",
+      "polecenie": "Wybierz poprawną odpowiedź.",
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Nabłonek wielowarstwowy występuje:",
+          "a": "tylko u kręgowców",
+          "choices": [
+            "u wszystkich zwierząt",
+            "tylko u kręgowców",
+            "tylko u bezkręgowców"
+          ],
+          "exp": [
+            "Jedną warstwę mają wszystkie zwierzęta, wiele warstw — wyłącznie kręgowce.",
+            "Częsty błąd: „u wszystkich”, bo skórę ma każde zwierzę"
+          ],
+          "zrodlo": "s. 14"
+        },
+        {
+          "kind": "wybor",
+          "e": "Komórki walcowate, rozgałęzione, z jednym lub dwoma jądrami, kurczące się szybko i niezależnie od woli ma tkanka mięśniowa:",
+          "a": "poprzecznie prążkowana serca",
+          "choices": [
+            "gładka",
+            "poprzecznie prążkowana serca",
+            "poprzecznie prążkowana szkieletowa"
+          ],
+          "exp": [
+            "Rozgałęzione komórki i praca bez udziału woli to znak rozpoznawczy mięśnia serca.",
+            "Częsty błąd: szkieletowa — ale jej włókna są proste i mają wiele jąder"
+          ],
+          "zrodlo": "s. 15, tabela"
+        },
+        {
+          "kind": "wybor",
+          "e": "Długa, pojedyncza wypustka neuronu, która wyprowadza impuls do innej komórki, to:",
+          "a": "akson",
+          "choices": [
+            "dendryt",
+            "akson",
+            "osłonka"
+          ],
+          "exp": [
+            "Akson jest jeden i długi; dendryty są krótkie i prowadzą impuls do ciała komórki.",
+            "Częsty błąd: dendryt — mylenie kierunku impulsu"
+          ],
+          "zrodlo": "s. 16; „Wiesz czy nie wiesz?” zad. 6"
+        }
+      ]
+    },
+    {
+      "id": "prawda-falsz",
+      "tytul": "Prawda czy fałsz",
+      "polecenie": "Czy to zdanie jest prawdziwe?",
+      "zadania": [
+        {
+          "kind": "pf",
+          "e": "Nabłonek wytwarza różne substancje, między innymi śluz i mleko.",
+          "a": true,
+          "exp": [
+            "Tak — wytwarzanie i wydzielanie substancji to jedno z trzech zadań nabłonka.",
+            "Częsty błąd: przypisanie wydzielania tylko tkance łącznej"
+          ],
+          "zrodlo": "s. 14; „Wiesz czy nie wiesz?” zad. 5"
+        },
+        {
+          "kind": "pf",
+          "e": "Tkankę nabłonkową tworzą luźno ułożone komórki.",
+          "a": false,
+          "exp": [
+            "Nie — komórki nabłonka ściśle do siebie przylegają; luźno ułożone są komórki tkanki łącznej.",
+            "Częsty błąd: mylenie nabłonka z tkanką łączną"
+          ],
+          "zrodlo": "s. 14; „Wiesz czy nie wiesz?” zad. 5"
+        },
+        {
+          "kind": "pf",
+          "e": "Tkanka mięśniowa poprzecznie prążkowana szkieletowa jest zbudowana z włókien, a nie z pojedynczych komórek.",
+          "a": true,
+          "exp": [
+            "Tak — jedno włókno powstaje z kilkudziesięciu połączonych komórek; gładką i sercową budują komórki.",
+            "Częsty błąd: uznanie, że wszystkie tkanki mięśniowe budują pojedyncze komórki"
+          ],
+          "zrodlo": "s. 15"
+        },
+        {
+          "kind": "pf",
+          "e": "Włókno tkanki mięśniowej szkieletowej powstaje z wielu połączonych komórek, dlatego ma liczne jądra.",
+          "a": true,
+          "exp": [
+            "Kilkadziesiąt komórek łączy się w jedno długie włókno i każda zostawia w nim swoje jądro; jądra leżą przy powierzchni.",
+            "Częsty błąd: przekonanie, że włókno to jedna wielka komórka z jednym jądrem"
+          ],
+          "zrodlo": "s. 15, sekcja „Tkanka mięśniowa”"
+        }
+      ]
+    },
+    {
+      "id": "uzupelnij",
+      "tytul": "Uzupełnij",
+      "polecenie": "Wpisz brakujące pojęcie.",
+      "zadania": [
+        {
+          "kind": "wpisz",
+          "e": "Nabłonek jednowarstwowy ___ buduje ściany pęcherzyków płucnych.",
+          "a": "płaski",
+          "inne": [
+            "plaski"
+          ],
+          "exp": [
+            "Cienki, płaski nabłonek przepuszcza tlen i dwutlenek węgla między pęcherzykiem a krwią.",
+            "Częsty błąd: „walcowaty” — ten wyściela jelito cienkie"
+          ],
+          "zrodlo": "s. 14, drzewko „Nabłonki”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Tkanka mięśniowa ___ kurczy się wolno i buduje ściany żołądka i jelit.",
+          "a": "gładka",
+          "inne": [
+            "gladka"
+          ],
+          "exp": [
+            "Tylko tkanka gładka pracuje wolno; obie prążkowane kurczą się szybko.",
+            "Częsty błąd: „szkieletowa” — ta jest w kończynach i pracuje szybko"
+          ],
+          "zrodlo": "s. 15, tabela"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Krótkie, silnie rozgałęzione wypustki neuronu, które przesyłają impuls do ciała komórki, to ___.",
+          "a": "dendryty",
+          "inne": [],
+          "exp": [
+            "Dendryty zbierają sygnał jak korzenie drzewa; akson wyprowadza go dalej.",
+            "Częsty błąd: „aksony” — akson jest jeden i długi"
+          ],
+          "zrodlo": "s. 16"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Akson jest zwykle otoczony ___, która go chroni i przyspiesza przesyłanie impulsu.",
+          "a": "osłonką",
+          "inne": [
+            "osłonka",
+            "oslonka",
+            "osłonką mielinową"
+          ],
+          "exp": [
+            "To warstwa okrywająca akson większości neuronów.",
+            "Częsty błąd: podanie dendrytu zamiast osłonki"
+          ],
+          "zrodlo": "s. 16, pole „Jak jest zbudowana i jak działa komórka nerwowa?”"
+        }
+      ]
+    },
+    {
+      "id": "pytania",
+      "tytul": "Pytania z podręcznika",
+      "polecenie": "Odpowiedz w myślach albo na głos, potem sprawdź.",
+      "zadania": [
+        {
+          "kind": "otwarte",
+          "e": "Wymień cztery rodzaje tkanek zwierzęcych.",
+          "a": "Nabłonkowa, mięśniowa, nerwowa i łączna.",
+          "blad": "dopisanie tkanki kostnej jako piątej — kostna to jeden z rodzajów tkanki łącznej",
+          "zrodlo": "s. 13, drzewko „Tkanki zwierzęce”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jak są ułożone komórki nabłonka i jakie ma on trzy zadania?",
+          "a": "Leżą ciasno, jedna przy drugiej, w jednej lub wielu warstwach. Nabłonek chroni, wchłania oraz wytwarza i wydziela substancje.",
+          "blad": "„luźno ułożone komórki” — tak jest w tkance łącznej, nie w nabłonku",
+          "zrodlo": "s. 14, sekcja „Tkanka nabłonkowa”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Dlaczego nabłonek jednowarstwowy zwykle wydziela i wchłania, a wielowarstwowy chroni?",
+          "a": "Jedna warstwa jest cienka, więc substancje łatwo przez nią przechodzą; wiele warstw to gruba osłona przed uszkodzeniami i drobnoustrojami.",
+          "blad": "odwrócenie zależności (gruby nabłonek „lepiej wchłania”)",
+          "zrodlo": "s. 14, drzewko „Nabłonki”; ćw. 1 s. 18"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Która tkanka mięśniowa nie ma prążków, a która pracuje zależnie od woli?",
+          "a": "Prążków nie ma tkanka gładka; zależnie od woli pracuje tkanka poprzecznie prążkowana szkieletowa.",
+          "blad": "uznanie, że tkanka serca zależy od woli, bo ma prążki",
+          "zrodlo": "s. 15, tabela „Tkanka mięśniowa”; ćw. 2 s. 18"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Która tkanka mięśniowa buduje ściany naczyń krwionośnych i jak pracują jej komórki?",
+          "a": "Tkanka gładka; jej komórki kurczą się wolno i pracują niezależnie od woli.",
+          "blad": "wybór tkanki prążkowanej, bo „krew płynie szybko”",
+          "zrodlo": "s. 15; „Wiesz czy nie wiesz?” zad. 4"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Z czego zbudowana jest komórka nerwowa i którędy biegnie impuls?",
+          "a": "Z ciała komórki z jądrem, krótkich dendrytów i jednego długiego aksonu z osłonką. Dendryty prowadzą impuls do ciała komórki, akson wyprowadza go do innej komórki.",
+          "blad": "„neuron ma wiele aksonów” — akson jest jeden, liczne są dendryty",
+          "zrodlo": "s. 16, pole „Jak jest zbudowana i jak działa komórka nerwowa?”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jakie dwa rodzaje komórek tworzą tkankę nerwową i co robi każdy z nich?",
+          "a": "Neurony odbierają i przesyłają impulsy nerwowe; komórki gleju podpierają neurony, chronią je i odżywiają.",
+          "blad": "pominięcie komórek gleju",
+          "zrodlo": "s. 16, sekcja „Tkanka nerwowa”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Co robią komórki gleju i dlaczego nie wolno o nich zapomnieć?",
+          "a": "Wypełniają przestrzenie między neuronami, podpierają je, chronią i dostarczają im substancji odżywczych. To drugi, obok neuronów, rodzaj komórek tkanki nerwowej.",
+          "blad": "wymienienie samych neuronów jako jedynego składnika tkanki nerwowej",
+          "zrodlo": "s. 16, sekcja „Tkanka nerwowa”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Do czego służą rzęski na nabłonku dróg oddechowych?",
+          "a": "Wymiatają zanieczyszczenia z wdychanego powietrza. Taki nabłonek mają kręgowce.",
+          "blad": "przypisanie rzęskom wchłaniania tlenu",
+          "zrodlo": "s. 14, ramka „Czy wiesz, że…”"
+        }
+      ]
+    }
+  ]
+}

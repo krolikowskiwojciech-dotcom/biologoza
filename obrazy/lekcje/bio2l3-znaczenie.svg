@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 489" width="360" height="489" role="img" aria-label="Nicienie: pożytek i szkoda">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="484" rx="18" fill="#1D7A5F" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="484" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" fill="#1D7A5F" font-weight="700" letter-spacing=".05em">NICIENIE: POŻYTEK I SZKODA</text>
+  <circle cx="27" cy="66" r="3.2" fill="#F5A524"/><text class="t" x="36" y="70" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">W PRZYRODZIE: POŻYTEK</text>
+  <text class="t" x="24" y="92" font-size="15" fill="#1D7A5F" font-weight="700">+</text>
+  <text class="t" x="42" y="92" font-size="12.5" fill="#1F1B17" font-weight="600">są pokarmem innych zwierząt</text>
+  <text class="t" x="24" y="112" font-size="15" fill="#1D7A5F" font-weight="700">+</text>
+  <text class="t" x="42" y="112" font-size="12.5" fill="#1F1B17" font-weight="600">zjadają bakterie, protisty, grzyby</text>
+  <text class="t" x="42" y="132" font-size="12.5" fill="#1F1B17" font-weight="600">i drobne bezkręgowce</text>
+  <text class="t" x="24" y="152" font-size="15" fill="#1D7A5F" font-weight="700">+</text>
+  <text class="t" x="42" y="152" font-size="12.5" fill="#1F1B17" font-weight="600">rozkładają szczątki: próchnica</text>
+  <line x1="24" y1="168" x2="331" y2="168" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="27" cy="188" r="3.2" fill="#F5A524"/><text class="t" x="36" y="192" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">DLA CZŁOWIEKA: GŁÓWNIE SZKODA</text>
+  <text class="t" x="24" y="214" font-size="15" fill="#C4552E" font-weight="700">−</text>
+  <text class="t" x="42" y="214" font-size="12.5" fill="#1F1B17" font-weight="600">choroby: glistnica, owsica, włośnica</text>
+  <text class="t" x="24" y="234" font-size="15" fill="#C4552E" font-weight="700">−</text>
+  <text class="t" x="42" y="234" font-size="12.5" fill="#1F1B17" font-weight="600">chore krowy dają mniej mleka</text>
+  <text class="t" x="24" y="254" font-size="15" fill="#C4552E" font-weight="700">−</text>
+  <text class="t" x="42" y="254" font-size="12.5" fill="#1F1B17" font-weight="600">mniejsze plony buraków i ziemniaków</text>
+  <path d="M44 294 Q70 286 96 294 Q92 334 70 372 Q48 334 44 294 Z" fill="#F4EEDD" stroke="#9C8A63" stroke-width="1.5"/>
+  <path d="M70 290 l-10 -14 M70 290 l0 -16 M70 290 l10 -14" stroke="#3E8E4A" stroke-width="3" stroke-linecap="round"/>
+  <text class="t" x="110" y="318" font-size="12.5" fill="#1F1B17" font-weight="700">zdrowy burak:</text>
+  <text class="t" x="110" y="335" font-size="11.5" fill="#7A716A">gruby korzeń</text>
+  <text class="t" x="110" y="350" font-size="11.5" fill="#7A716A">pełen cukru</text>
+  <path d="M56 398 Q70 392 84 398 Q82 418 74 436 L72 458 L68 458 L66 436 Q58 418 56 398 Z" fill="#E9DFC6" stroke="#9C8A63" stroke-width="1.5"/>
+  <path d="M70 422 Q54 432 42 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q58 432 49 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q62 432 56 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q66 432 63 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q70 432 70 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q74 432 77 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q78 432 84 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q82 432 91 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 422 Q86 432 98 448" fill="none" stroke="#7A5434" stroke-width="1.1"/>
+  <path d="M70 394 l-8 -12 M70 394 l8 -12" stroke="#7FA36A" stroke-width="2.6" stroke-linecap="round"/>
+  <text class="t" x="110" y="422" font-size="12.5" fill="#C4552E" font-weight="700">z mątwikiem:</text>
+  <text class="t" x="110" y="439" font-size="11.5" fill="#7A716A">zniekształcony korzeń</text>
+  <text class="t" x="110" y="454" font-size="11.5" fill="#7A716A">mniej cukru</text>
+</svg>

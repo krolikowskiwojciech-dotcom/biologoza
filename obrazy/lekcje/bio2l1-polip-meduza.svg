@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 497" width="360" height="497" role="img" aria-label="Polip czy meduza">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="492" rx="18" fill="#1D7A5F" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="492" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" font-weight="700" fill="#1D7A5F" letter-spacing=".05em">POLIP CZY MEDUZA</text>
+  <text class="t" x="80" y="68" font-size="14" font-weight="800" fill="#155C48" text-anchor="middle" letter-spacing=".06em">POLIP</text>
+  <text class="t" x="278" y="68" font-size="14" font-weight="800" fill="#155C48" text-anchor="middle" letter-spacing=".06em">MEDUZA</text>
+  <line x1="40" y1="200" x2="122" y2="200" stroke="#B9AD9A" stroke-width="3"/>
+  <path d="M65 98 C55 84 49 80 39 78" fill="none" stroke="#3D7EA6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M71 96 C69 84 67 78 63 70" fill="none" stroke="#3D7EA6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M89 96 C91 84 93 78 97 70" fill="none" stroke="#3D7EA6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M95 98 C105 84 111 80 121 78" fill="none" stroke="#3D7EA6" stroke-width="4" stroke-linecap="round"/>
+  <path d="M63 98 H97 V170 a17 17 0 0 1 -34 0 Z" fill="#FCE9B8" stroke="#3D7EA6" stroke-width="4" stroke-linejoin="round"/>
+  <ellipse cx="80" cy="192" rx="16" ry="6" fill="#C9B79A" stroke="#1F1B17" stroke-width="1.2"/>
+  <circle cx="80" cy="98" r="5" fill="#F5A524" stroke="#1F1B17" stroke-width="1.2"/>
+  <path d="M117 79 L132 79" stroke="#1F1B17" stroke-width="1.1"/><circle cx="117" cy="79" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="136" y="83" font-size="11.5" font-weight="700" fill="#7A716A" text-anchor="start">czułki</text>
+  <path d="M97 192 L132 192" stroke="#1F1B17" stroke-width="1.1"/><circle cx="97" cy="192" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="136" y="196" font-size="11.5" font-weight="700" fill="#7A716A" text-anchor="start">stopa</text>
+  <path d="M228 136 C228 96 328 96 328 136 Z" fill="#FCE9B8" stroke="#3D7EA6" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M254 136 C250 156 260 170 252 192" fill="none" stroke="#8E5BA8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M270 136 C268 160 276 176 270 198" fill="none" stroke="#8E5BA8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M286 136 C288 160 280 176 286 198" fill="none" stroke="#8E5BA8" stroke-width="4" stroke-linecap="round"/>
+  <path d="M302 136 C306 156 296 170 304 192" fill="none" stroke="#8E5BA8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="278" cy="136" r="5" fill="#F5A524" stroke="#1F1B17" stroke-width="1.2"/>
+  <path d="M251 182 L226 182" stroke="#1F1B17" stroke-width="1.1"/><circle cx="251" cy="182" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="222" y="186" font-size="11.5" font-weight="700" fill="#7A716A" text-anchor="end">ramiona</text>
+  <circle cx="118" cy="221" r="5" fill="#F5A524" stroke="#1F1B17" stroke-width="1.2"/>
+  <text class="t" x="128" y="225" font-size="11.5" font-weight="700" fill="#B26A00" text-anchor="start">otwór gębowy w obu postaciach</text>
+  <line x1="24" y1="244" x2="331" y2="244" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text class="t" x="178" y="260" font-size="11" font-weight="700" fill="#B26A00" text-anchor="middle" letter-spacing=".07em">KSZTAŁT</text>
+  <text class="t" x="88" y="281" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">worek</text>
+  <text class="t" x="266" y="281" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">dzwon lub parasol</text>
+  <line x1="24" y1="296" x2="331" y2="296" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text class="t" x="178" y="312" font-size="11" font-weight="700" fill="#B26A00" text-anchor="middle" letter-spacing=".07em">OTWÓR GĘBOWY</text>
+  <text class="t" x="88" y="333" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">na górze</text>
+  <text class="t" x="266" y="333" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">od spodu</text>
+  <line x1="24" y1="348" x2="331" y2="348" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text class="t" x="178" y="364" font-size="11" font-weight="700" fill="#B26A00" text-anchor="middle" letter-spacing=".07em">TRYB ŻYCIA</text>
+  <text class="t" x="88" y="385" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">przyczepiony stopą</text>
+  <text class="t" x="266" y="385" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">pływa skurczami ciała</text>
+  <line x1="24" y1="400" x2="331" y2="400" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text class="t" x="178" y="416" font-size="11" font-weight="700" fill="#B26A00" text-anchor="middle" letter-spacing=".07em">JAK ŻYJE</text>
+  <text class="t" x="88" y="437" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">sam lub w kolonii</text>
+  <text class="t" x="266" y="437" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="middle">zawsze pojedynczo</text>
+  <text class="t" x="178" y="472" font-size="12" font-weight="600" fill="#155C48" text-anchor="middle">to dwie postacie, a nie dwa gatunki</text>
+</svg>

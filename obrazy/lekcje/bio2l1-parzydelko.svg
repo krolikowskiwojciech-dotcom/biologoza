@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 505" width="360" height="505" role="img" aria-label="Jak parzy komórka parzydełkowa">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="500" rx="18" fill="#F5A524" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="500" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" font-weight="700" fill="#1D7A5F" letter-spacing=".05em">JAK PARZY KOMÓRKA PARZYDEŁKOWA</text>
+  <rect x="30" y="70" width="44" height="54" rx="12" fill="#E3F0F7" stroke="#3D7EA6" stroke-width="2"/>
+  <ellipse cx="52" cy="100" rx="13" ry="18" fill="#F7D774" stroke="#9A6A00" stroke-width="1.5"/>
+  <path d="M52 84 c-6 4 6 8 0 12 c-6 4 6 8 0 12" fill="none" stroke="#8E5BA8" stroke-width="2"/>
+  <circle cx="111" cy="74" r="3.2" fill="#F5A524"/><text class="t" x="120" y="78" font-size="11" font-weight="700" fill="#B26A00" text-anchor="start" letter-spacing=".07em">1 · PŁYN CZEKA W KOMÓRCE</text>
+  <text class="t" x="108" y="102" font-size="13" font-weight="700" fill="#1F1B17" text-anchor="start">w środku paraliżujący płyn</text>
+  <text class="t" x="108" y="120" font-size="12" font-weight="400" fill="#7A716A" text-anchor="start">i zwinięta długa nić</text>
+  <path d="M52 136 L52 146" stroke="#F5A524" stroke-width="2.2" stroke-linecap="round"/><path d="M47.5 141.5 L52 147 L56.5 141.5" fill="none" stroke="#F5A524" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="162" width="44" height="54" rx="12" fill="#E3F0F7" stroke="#3D7EA6" stroke-width="2"/>
+  <ellipse cx="52" cy="192" rx="13" ry="18" fill="#F7D774" stroke="#9A6A00" stroke-width="1.5"/>
+  <path d="M52 174 V162 C52 154 68 158 82 154" fill="none" stroke="#8E5BA8" stroke-width="2.4"/>
+  <circle cx="111" cy="166" r="3.2" fill="#F5A524"/><text class="t" x="120" y="170" font-size="11" font-weight="700" fill="#B26A00" text-anchor="start" letter-spacing=".07em">2 · DŁUGA NIĆ Z KANALIKIEM</text>
+  <text class="t" x="108" y="194" font-size="13" font-weight="700" fill="#1F1B17" text-anchor="start">nić sięga do ciała ofiary,</text>
+  <text class="t" x="108" y="212" font-size="12" font-weight="400" fill="#7A716A" text-anchor="start">w środku ma cienką rurkę</text>
+  <path d="M52 228 L52 238" stroke="#F5A524" stroke-width="2.2" stroke-linecap="round"/><path d="M47.5 233.5 L52 239 L56.5 233.5" fill="none" stroke="#F5A524" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="254" width="44" height="54" rx="12" fill="#E3F0F7" stroke="#3D7EA6" stroke-width="2"/>
+  <ellipse cx="52" cy="284" rx="13" ry="18" fill="#F7D774" stroke="#9A6A00" stroke-width="1.5"/>
+  <path d="M52 266 V254 C52 246 68 250 82 246" fill="none" stroke="#8E5BA8" stroke-width="2.4"/>
+  <circle cx="58" cy="248" r="2.6" fill="#F5A524"/>
+  <circle cx="66" cy="249" r="2.6" fill="#F5A524"/>
+  <circle cx="74" cy="248" r="2.6" fill="#F5A524"/>
+  <circle cx="111" cy="258" r="3.2" fill="#F5A524"/><text class="t" x="120" y="262" font-size="11" font-weight="700" fill="#B26A00" text-anchor="start" letter-spacing=".07em">3 · PŁYN PŁYNIE KANALIKIEM</text>
+  <text class="t" x="108" y="286" font-size="13" font-weight="700" fill="#1F1B17" text-anchor="start">jak lek przez igłę strzykawki</text>
+  <text class="t" x="108" y="304" font-size="12" font-weight="400" fill="#7A716A" text-anchor="start">trafia prosto do ofiary</text>
+  <path d="M52 320 L52 330" stroke="#F5A524" stroke-width="2.2" stroke-linecap="round"/><path d="M47.5 325.5 L52 331 L56.5 325.5" fill="none" stroke="#F5A524" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="30" y="346" width="44" height="54" rx="12" fill="#E3F0F7" stroke="#3D7EA6" stroke-width="2"/>
+  <ellipse cx="52" cy="376" rx="13" ry="18" fill="#F7D774" stroke="#9A6A00" stroke-width="1.5"/>
+  <path d="M52 358 V346 C52 338 68 342 82 338" fill="none" stroke="#8E5BA8" stroke-width="2.4"/>
+  <circle cx="58" cy="340" r="2.6" fill="#F5A524"/>
+  <circle cx="66" cy="341" r="2.6" fill="#F5A524"/>
+  <circle cx="74" cy="340" r="2.6" fill="#F5A524"/>
+  <circle cx="111" cy="350" r="3.2" fill="#F5A524"/><text class="t" x="120" y="354" font-size="11" font-weight="700" fill="#B26A00" text-anchor="start" letter-spacing=".07em">4 · OFIARA OBEZWŁADNIONA</text>
+  <text class="t" x="108" y="378" font-size="13" font-weight="700" fill="#1F1B17" text-anchor="start">płyn ją paraliżuje,</text>
+  <text class="t" x="108" y="396" font-size="12" font-weight="400" fill="#7A716A" text-anchor="start">a parzydełkowiec ją zdobywa</text>
+  <line x1="24" y1="434" x2="331" y2="434" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text class="t" x="24" y="460" font-size="15" font-weight="700" fill="#B26A00" text-anchor="start">gęsto na czułkach i ramionach</text>
+  <text class="t" x="24" y="482" font-size="11.5" font-weight="600" fill="#155C48" text-anchor="start">służą do polowania i do obrony</text>
+</svg>

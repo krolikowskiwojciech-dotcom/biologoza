@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 455" width="360" height="455" role="img" aria-label="Trzy choroby z nicieni">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="450" rx="18" fill="#F5A524" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="450" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" fill="#1D7A5F" font-weight="700" letter-spacing=".05em">TRZY CHOROBY Z NICIENI</text>
+  <rect x="24" y="58" width="5" height="96" rx="2.5" fill="#1D7A5F"/>
+  <text class="t" x="38" y="73" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">GLISTNICA</text>
+  <text class="t" x="38" y="92" font-size="14" fill="#1F1B17" font-weight="700">glista ludzka</text>
+  <text class="t" x="38" y="109" font-size="11.5" fill="#7A716A">jelito cienkie · do 35 cm</text>
+  <text class="t" x="38" y="128" font-size="12" fill="#1F1B17">trafia: jaja z wodą, warzywami, owocami</text>
+  <text class="t" x="38" y="146" font-size="12" fill="#155C48" font-weight="600">chroni: myj ręce, warzywa i owoce</text>
+  <rect x="24" y="168" width="5" height="96" rx="2.5" fill="#1D7A5F"/>
+  <text class="t" x="38" y="183" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">OWSICA</text>
+  <text class="t" x="38" y="202" font-size="14" fill="#1F1B17" font-weight="700">owsik ludzki</text>
+  <text class="t" x="38" y="219" font-size="11.5" fill="#7A716A">jelito grube · ok. 1 cm</text>
+  <text class="t" x="38" y="238" font-size="12" fill="#1F1B17">trafia: jaja z rąk i przedmiotów</text>
+  <text class="t" x="38" y="256" font-size="12" fill="#155C48" font-weight="600">chroni: myj ręce, tnij paznokcie, myj zabawki</text>
+  <rect x="24" y="308" width="5" height="96" rx="2.5" fill="#C4552E"/>
+  <text class="t" x="38" y="323" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">WŁOŚNICA</text>
+  <text class="t" x="38" y="342" font-size="14" fill="#1F1B17" font-weight="700">włosień spiralny</text>
+  <text class="t" x="38" y="359" font-size="11.5" fill="#7A716A">jelito cienkie · ok. 4 mm</text>
+  <text class="t" x="38" y="378" font-size="12" fill="#1F1B17">trafia: larwy w surowym mięsie świni, dzika</text>
+  <text class="t" x="38" y="396" font-size="12" fill="#155C48" font-weight="600">chroni: mięso od weterynarza, nic surowego</text>
+  <path d="M318 58 L326 58 L326 264 L318 264" fill="none" stroke="#1D7A5F" stroke-width="2"/>
+  <text class="t" x="24" y="288" font-size="12" fill="#155C48" font-weight="700">↑ choroby brudnych rąk</text>
+  <text class="t" x="316" y="288" font-size="12" fill="#C4552E" font-weight="700" text-anchor="end">z surowego mięsa ↓</text>
+  <path d="M318 308 L326 308 L326 404 L318 404" fill="none" stroke="#C4552E" stroke-width="2"/>
+  <text class="t" x="24" y="432" font-size="11.5" fill="#C4552E" font-weight="600">przy włośnicy samo mycie rąk nie pomoże</text>
+</svg>

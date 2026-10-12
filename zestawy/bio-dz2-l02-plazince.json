@@ -1,0 +1,698 @@
+{
+  "id": "bio-dz2-l02-plazince",
+  "zrodlo": "lekcje-audio",
+  "dla": [
+    "julek"
+  ],
+  "tytul": "Płazińce — robaki płaskie: wypławek i tasiemiec",
+  "dzial": "II",
+  "dzialTytul": "Bezkręgowce: od parzydełkowców po pierścienice",
+  "lekcja": 2,
+  "strony": "33–36",
+  "dodano": "2026-10-11",
+  "termin": null,
+  "ikona": "dna",
+  "kolor": "niebieski",
+  "ocena": true,
+  "sciaga": [
+    "Płazińce mają ciało zwykle długie i spłaszczone. Od tego kształtu wzięła się ich druga nazwa: robaki płaskie.",
+    "Przeważająca część płazińców to pasożyty, które siedzą w narządach wewnętrznych kręgowców, na przykład w jelicie cienkim. Najbardziej znane z nich to tasiemce.",
+    "Płazińce, które nie pasożytują, mieszkają przede wszystkim w wodzie. Należą do nich wypławki.",
+    "Ciało każdego płazińca okrywa cienki nabłonek. U wielu gatunków wolno żyjących są na nim rzęski, dzięki którym zwierzę łatwiej przesuwa się w wodzie.",
+    "Część komórek nabłonka wydziela śluz. Śluz osłania ciało przed zranieniem i zmniejsza opór wody, gdy płaziniec się porusza.",
+    "Pasożyty mają nabłonek gładki, bez rzęsek. Jedno z jego ważnych zadań: nie pozwala, żeby tasiemiec został strawiony w jelicie żywiciela.",
+    "Wypławek to drapieżnik — ofiarę łapie mocno umięśnioną gardzielą, którą wysuwa na zewnątrz ciała. Niektóre wypławki przetrwają bez jedzenia nawet rok.",
+    "Tasiemiec nie poluje. Mieszka w jelicie cienkim i pobiera składniki odżywcze całą powierzchnią ciała. Dlatego oczy przydają się wypławkowi, a tasiemcowi nie.",
+    "W Polsce najczęściej spotyka się dwa tasiemce: uzbrojonego i nieuzbrojonego. Oba mieszkają w jelicie cienkim człowieka, a budowa i sposób rozmnażania świetnie przygotowują je do takiego życia.",
+    "Tasiemiec uzbrojony mierzy około 2 m. Jego ciało tworzą trzy części: główka, szyjka i mnóstwo członów.",
+    "Na główce są narządy czepne: u uzbrojonego 4 przyssawki i wieniec haczyków. Szyjka przez cały czas dobudowuje nowe człony, więc tasiemiec ciągle rośnie.",
+    "Długie, płaskie ciało pasuje kształtem do jelita cienkiego, a nabłonek chroni tasiemca przed enzymami trawiennymi żywiciela.",
+    "Dojrzały człon ma naraz męskie i żeńskie narządy rozrodcze, więc nawet samotny tasiemiec rozmnaża się płciowo. W najstarszych członach jest po kilkadziesiąt tysięcy jaj — im więcej jaj, tym większa szansa, że potomstwo przeżyje.",
+    "Tasiemiec nieuzbrojony jest prawie 4 razy dłuższy od uzbrojonego. Na główce ma 4 przyssawki, ale haczyków brak — stąd nazwa.",
+    "Rozwój tasiemca obejmuje postać larwalną i wymaga dwóch żywicieli. W żywicielu pośrednim mieszkają larwy, a w żywicielu ostatecznym dorosły pasożyt.",
+    "Żywiciel pośredni to świnia (tasiemiec uzbrojony) albo krowa (tasiemiec nieuzbrojony). Żywicielem ostatecznym obu gatunków jest człowiek.",
+    "Wągier to larwa tasiemca: pęcherzyk wypełniony płynem, a w środku główka tasiemca.",
+    "Obieg tasiemca uzbrojonego: człowiek zjada wieprzowinę z wągrami → w jego jelicie cienkim wyrasta dorosły tasiemiec → najstarsze człony z jajami odrywają się i wychodzą z kałem → świnia zjada człony → w jej mięśniach powstają wągry.",
+    "Tasiemczyca to choroba wywołana przez tasiemca w jelicie cienkim człowieka. Zarażamy się, jedząc surowe lub niedogotowane mięso krowy albo świni, w którym są wągry.",
+    "Objawy tasiemczycy to najczęściej ból brzucha, mdłości, chudnięcie i ogólne osłabienie, a do tego biegunka albo zaparcie. Ochrona: jemy mięso sprawdzone, bez wągrów, i nie jemy surowych ani niedogotowanych potraw mięsnych.",
+    "W przyrodzie płazińce pasożytnicze psują zdrowie żywicieli i mogą przyczynić się do ich śmierci. Wypławki polują na drobne bezkręgowce i jedzą ikrę, czyli rybie jaja, a same są zjadane przez większych drapieżników. Wypławek tygrysi niszczy w akwariach ikrę i narybek.",
+    "Dla człowieka pasożytnicze płazińce oznaczają choroby świń i bydła, a przez to duże straty hodowców. Niektóre z nich, w tym tasiemce, groźnie pasożytują na samym człowieku."
+  ],
+  "definicje": {
+    "płazińce": "Grupa zwierząt o długim, mocno spłaszczonym ciele, dlatego mówi się na nie też robaki płaskie. Najbardziej znane są wypławki i tasiemce.",
+    "pasożyt": "Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+    "żywiciel": "Organizm, w którym mieszka pasożyt i z którego bierze pokarm. Tasiemiec ma w życiu dwóch żywicieli: pośredniego i ostatecznego.",
+    "wypławek": "Płaziniec, który nie jest pasożytem. Mieszka głównie w wodzie i poluje, łapiąc ofiary wysuwaną gardzielą; jego nabłonek ma rzęski.",
+    "tasiemiec": "Płaziniec pasożytniczy z jelita cienkiego kręgowców, także człowieka. Pokarm wchłania całym ciałem, a w rozwoju zmienia żywiciela.",
+    "rzęski": "Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma.",
+    "śluz": "Śliska substancja wytwarzana przez część komórek nabłonka płazińców. Osłania ciało przed zranieniem i sprawia, że woda mniej hamuje ruch.",
+    "gardziel": "Mocno umięśniona część ciała wypławka, którą ten drapieżnik wysuwa na zewnątrz, gdy chwyta ofiarę.",
+    "narządy czepne": "Przyssawki i haczyki na główce tasiemca, którymi trzyma się w jelicie żywiciela. Uzbrojony ma cztery przyssawki i wieniec haczyków, nieuzbrojony same przyssawki.",
+    "szyjka": "Cienki odcinek ciała tasiemca tuż za główką. Bez przerwy wytwarza nowe człony, więc dzięki niej tasiemiec rośnie.",
+    "człony": "Odcinki ciała tasiemca ułożone jeden za drugim. Dojrzałe mają męskie i żeńskie narządy rozrodcze, a w najstarszych jest po kilkadziesiąt tysięcy jaj.",
+    "tasiemiec uzbrojony": "Tasiemiec o długości około 2 m, żyjący w jelicie cienkim człowieka. Na główce ma przyssawki i wieniec haczyków, a jego żywicielem pośrednim jest świnia.",
+    "tasiemiec nieuzbrojony": "Tasiemiec z jelita cienkiego człowieka, prawie cztery razy dłuższy od uzbrojonego. Ma cztery przyssawki bez haczyków, a żywicielem pośrednim jest krowa.",
+    "żywiciel pośredni": "Organizm, w którym mieszkają larwy pasożyta. Dla tasiemca uzbrojonego jest to świnia, a dla nieuzbrojonego krowa.",
+    "żywiciel ostateczny": "Organizm, w którym żyje dorosły pasożyt. Dla obu tasiemców, uzbrojonego i nieuzbrojonego, jest nim człowiek.",
+    "wągier": "Larwa tasiemca: mały pęcherzyk z płynem, w którym ukryta jest główka. Wągry siedzą w mięśniach żywiciela pośredniego, na przykład świni.",
+    "tasiemczyca": "Choroba człowieka wywołana przez tasiemca w jelicie cienkim. Łapie się ją, jedząc surowe lub niedogotowane mięso z wągrami.",
+    "ikra": "Jaja ryb. Zjadają ją między innymi wypławki, a wypławek tygrysi niszczy ikrę i narybek w akwariach."
+  },
+  "obrazy": [
+    {
+      "plik": "obrazy/lekcje/bio2l2-wyplawek-tasiemiec.svg",
+      "po": 8,
+      "podpis": "Dwa płazińce obok siebie: wypławek żyje w wodzie i poluje, tasiemiec siedzi w jelicie i wchłania pokarm całym ciałem."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l2-budowa-tasiemca.svg",
+      "po": 14,
+      "podpis": "Główka, szyjka i człony tasiemca — przy każdej części jej rola w życiu pasożyta, a na dole różnica między uzbrojonym i nieuzbrojonym."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l2-cykl-tasiemca.svg",
+      "po": 18,
+      "podpis": "Obieg tasiemca uzbrojonego w czterech krokach: świnia (żywiciel pośredni, larwy) i człowiek (żywiciel ostateczny, dorosły tasiemiec)."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l2-tasiemczyca.svg",
+      "po": 20,
+      "podpis": "Tasiemczyca w trzech pytaniach: skąd się bierze, jak się objawia i jak jej uniknąć."
+    }
+  ],
+  "bloki": [
+    {
+      "id": "pojecia",
+      "tytul": "Pojęcia z lekcji",
+      "polecenie": "Które pojęcie pasuje do opisu?",
+      "ile": 8,
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Grupa zwierząt o długim, mocno spłaszczonym ciele, dlatego mówi się na nie też robaki płaskie. Najbardziej znane są wypławki i tasiemce.",
+          "a": "płazińce",
+          "choices": [
+            "płazińce",
+            "ikra",
+            "rzęski"
+          ],
+          "exp": [
+            "ikra to coś innego: Jaja ryb. Zjadają ją między innymi wypławki, a wypławek tygrysi niszczy ikrę i narybek w akwariach.",
+            "rzęski to coś innego: Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców … jest najwięcej, na przykład tasiemce.",
+          "a": "pasożyt",
+          "choices": [
+            "pasożyt",
+            "tasiemiec uzbrojony",
+            "tasiemiec"
+          ],
+          "exp": [
+            "tasiemiec uzbrojony to coś innego: Tasiemiec o długości około 2 m, żyjący w jelicie cienkim człowieka. Na główce ma przyssawki i wieniec haczyków, a jego żywicielem pośrednim jest świnia.",
+            "tasiemiec to coś innego: Płaziniec pasożytniczy z jelita cienkiego kręgowców, także człowieka. Pokarm wchłania całym ciałem, a w rozwoju zmienia żywiciela."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Organizm, w którym mieszka pasożyt i z którego bierze pokarm. Tasiemiec ma w życiu dwóch …: pośredniego i ostatecznego.",
+          "a": "żywiciel",
+          "choices": [
+            "żywiciel",
+            "pasożyt",
+            "tasiemiec"
+          ],
+          "exp": [
+            "pasożyt to coś innego: Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+            "tasiemiec to coś innego: Płaziniec pasożytniczy z jelita cienkiego kręgowców, także człowieka. Pokarm wchłania całym ciałem, a w rozwoju zmienia żywiciela."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Płaziniec, który nie jest pasożytem. Mieszka głównie w wodzie i poluje, łapiąc ofiary wysuwaną gardzielą; jego nabłonek ma rzęski.",
+          "a": "wypławek",
+          "choices": [
+            "wypławek",
+            "szyjka",
+            "tasiemiec"
+          ],
+          "exp": [
+            "szyjka to coś innego: Cienki odcinek ciała tasiemca tuż za główką. Bez przerwy wytwarza nowe człony, więc dzięki niej tasiemiec rośnie.",
+            "tasiemiec to coś innego: Płaziniec pasożytniczy z jelita cienkiego kręgowców, także człowieka. Pokarm wchłania całym ciałem, a w rozwoju zmienia żywiciela."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Płaziniec pasożytniczy z jelita cienkiego kręgowców, także człowieka. Pokarm wchłania całym ciałem, a w rozwoju zmienia żywiciela.",
+          "a": "tasiemiec",
+          "choices": [
+            "tasiemiec",
+            "pasożyt",
+            "żywiciel ostateczny"
+          ],
+          "exp": [
+            "pasożyt to coś innego: Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+            "żywiciel ostateczny to coś innego: Organizm, w którym żyje dorosły pasożyt. Dla obu tasiemców, uzbrojonego i nieuzbrojonego, jest nim człowiek."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma.",
+          "a": "rzęski",
+          "choices": [
+            "rzęski",
+            "szyjka",
+            "gardziel"
+          ],
+          "exp": [
+            "szyjka to coś innego: Cienki odcinek ciała tasiemca tuż za główką. Bez przerwy wytwarza nowe człony, więc dzięki niej tasiemiec rośnie.",
+            "gardziel to coś innego: Mocno umięśniona część ciała wypławka, którą ten drapieżnik wysuwa na zewnątrz, gdy chwyta ofiarę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Śliska substancja wytwarzana przez część komórek nabłonka płazińców. Osłania ciało przed zranieniem i sprawia, że woda mniej hamuje ruch.",
+          "a": "śluz",
+          "choices": [
+            "śluz",
+            "pasożyt",
+            "wypławek"
+          ],
+          "exp": [
+            "pasożyt to coś innego: Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+            "wypławek to coś innego: Płaziniec, który nie jest pasożytem. Mieszka głównie w wodzie i poluje, łapiąc ofiary wysuwaną gardzielą; jego nabłonek ma rzęski."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Mocno umięśniona część ciała wypławka, którą ten drapieżnik wysuwa na zewnątrz, gdy chwyta ofiarę.",
+          "a": "gardziel",
+          "choices": [
+            "gardziel",
+            "żywiciel pośredni",
+            "wągier"
+          ],
+          "exp": [
+            "żywiciel pośredni to coś innego: Organizm, w którym mieszkają larwy pasożyta. Dla tasiemca uzbrojonego jest to świnia, a dla nieuzbrojonego krowa.",
+            "wągier to coś innego: Larwa tasiemca: mały pęcherzyk z płynem, w którym ukryta jest główka. Wągry siedzą w mięśniach żywiciela pośredniego, na przykład świni."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Przyssawki i haczyki na główce tasiemca, którymi trzyma się w jelicie żywiciela. Uzbrojony ma cztery przyssawki i wieniec haczyków, nieuzbrojony same przyssawki.",
+          "a": "narządy czepne",
+          "choices": [
+            "narządy czepne",
+            "tasiemiec uzbrojony",
+            "rzęski"
+          ],
+          "exp": [
+            "tasiemiec uzbrojony to coś innego: Tasiemiec o długości około 2 m, żyjący w jelicie cienkim człowieka. Na główce ma przyssawki i wieniec haczyków, a jego żywicielem pośrednim jest świnia.",
+            "rzęski to coś innego: Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Cienki odcinek ciała tasiemca tuż za główką. Bez przerwy wytwarza nowe człony, więc dzięki niej tasiemiec rośnie.",
+          "a": "szyjka",
+          "choices": [
+            "szyjka",
+            "rzęski",
+            "wypławek"
+          ],
+          "exp": [
+            "rzęski to coś innego: Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma.",
+            "wypławek to coś innego: Płaziniec, który nie jest pasożytem. Mieszka głównie w wodzie i poluje, łapiąc ofiary wysuwaną gardzielą; jego nabłonek ma rzęski."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Odcinki ciała tasiemca ułożone jeden za drugim. Dojrzałe mają męskie i żeńskie narządy rozrodcze, a w najstarszych jest po kilkadziesiąt tysięcy jaj.",
+          "a": "człony",
+          "choices": [
+            "człony",
+            "tasiemiec uzbrojony",
+            "wypławek"
+          ],
+          "exp": [
+            "tasiemiec uzbrojony to coś innego: Tasiemiec o długości około 2 m, żyjący w jelicie cienkim człowieka. Na główce ma przyssawki i wieniec haczyków, a jego żywicielem pośrednim jest świnia.",
+            "wypławek to coś innego: Płaziniec, który nie jest pasożytem. Mieszka głównie w wodzie i poluje, łapiąc ofiary wysuwaną gardzielą; jego nabłonek ma rzęski."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… o długości około 2 m, żyjący w jelicie cienkim człowieka. Na główce ma przyssawki i wieniec haczyków, a jego żywicielem pośrednim jest świnia.",
+          "a": "tasiemiec uzbrojony",
+          "choices": [
+            "tasiemiec uzbrojony",
+            "szyjka",
+            "wągier"
+          ],
+          "exp": [
+            "szyjka to coś innego: Cienki odcinek ciała tasiemca tuż za główką. Bez przerwy wytwarza nowe człony, więc dzięki niej tasiemiec rośnie.",
+            "wągier to coś innego: Larwa tasiemca: mały pęcherzyk z płynem, w którym ukryta jest główka. Wągry siedzą w mięśniach żywiciela pośredniego, na przykład świni."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… z jelita cienkiego człowieka, prawie cztery razy dłuższy od uzbrojonego. Ma cztery przyssawki bez haczyków, a żywicielem pośrednim jest krowa.",
+          "a": "tasiemiec nieuzbrojony",
+          "choices": [
+            "tasiemiec nieuzbrojony",
+            "żywiciel pośredni",
+            "człony"
+          ],
+          "exp": [
+            "żywiciel pośredni to coś innego: Organizm, w którym mieszkają larwy pasożyta. Dla tasiemca uzbrojonego jest to świnia, a dla nieuzbrojonego krowa.",
+            "człony to coś innego: Odcinki ciała tasiemca ułożone jeden za drugim. Dojrzałe mają męskie i żeńskie narządy rozrodcze, a w najstarszych jest po kilkadziesiąt tysięcy jaj."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Organizm, w którym mieszkają larwy pasożyta. Dla tasiemca uzbrojonego jest to świnia, a dla nieuzbrojonego krowa.",
+          "a": "żywiciel pośredni",
+          "choices": [
+            "żywiciel pośredni",
+            "pasożyt",
+            "tasiemiec uzbrojony"
+          ],
+          "exp": [
+            "pasożyt to coś innego: Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+            "tasiemiec uzbrojony to coś innego: Tasiemiec o długości około 2 m, żyjący w jelicie cienkim człowieka. Na główce ma przyssawki i wieniec haczyków, a jego żywicielem pośrednim jest świnia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Organizm, w którym żyje dorosły pasożyt. Dla obu tasiemców, uzbrojonego i nieuzbrojonego, jest nim człowiek.",
+          "a": "żywiciel ostateczny",
+          "choices": [
+            "żywiciel ostateczny",
+            "pasożyt",
+            "gardziel"
+          ],
+          "exp": [
+            "pasożyt to coś innego: Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+            "gardziel to coś innego: Mocno umięśniona część ciała wypławka, którą ten drapieżnik wysuwa na zewnątrz, gdy chwyta ofiarę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Larwa tasiemca: mały pęcherzyk z płynem, w którym ukryta jest główka. Wągry siedzą w mięśniach żywiciela pośredniego, na przykład świni.",
+          "a": "wągier",
+          "choices": [
+            "wągier",
+            "pasożyt",
+            "rzęski"
+          ],
+          "exp": [
+            "pasożyt to coś innego: Zwierzę, które mieszka w innym organizmie i z niego korzysta, szkodząc mu. Wśród płazińców pasożytów jest najwięcej, na przykład tasiemce.",
+            "rzęski to coś innego: Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Choroba człowieka wywołana przez tasiemca w jelicie cienkim. Łapie się ją, jedząc surowe lub niedogotowane mięso z wągrami.",
+          "a": "tasiemczyca",
+          "choices": [
+            "tasiemczyca",
+            "szyjka",
+            "tasiemiec"
+          ],
+          "exp": [
+            "szyjka to coś innego: Cienki odcinek ciała tasiemca tuż za główką. Bez przerwy wytwarza nowe człony, więc dzięki niej tasiemiec rośnie.",
+            "tasiemiec to coś innego: Płaziniec pasożytniczy z jelita cienkiego kręgowców, także człowieka. Pokarm wchłania całym ciałem, a w rozwoju zmienia żywiciela."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Jaja ryb. Zjadają ją między innymi wypławki, a wypławek tygrysi niszczy ikrę i narybek w akwariach.",
+          "a": "ikra",
+          "choices": [
+            "ikra",
+            "rzęski",
+            "żywiciel"
+          ],
+          "exp": [
+            "rzęski to coś innego: Drobne wypustki na nabłonku wielu wolno żyjących płazińców, na przykład wypławków. Pomagają przesuwać się w wodzie; tasiemiec ich nie ma.",
+            "żywiciel to coś innego: Organizm, w którym mieszka pasożyt i z którego bierze pokarm. Tasiemiec ma w życiu dwóch żywicieli: pośredniego i ostatecznego."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wybor",
+      "tytul": "Test wyboru",
+      "polecenie": "Wybierz poprawną odpowiedź.",
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Wypławki mieszkają głównie:",
+          "a": "w wodzie",
+          "choices": [
+            "w jelicie cienkim kręgowców",
+            "w wodzie",
+            "w mięśniach świni"
+          ],
+          "exp": [
+            "Wypławek nie pasożytuje — żyje w środowisku wodnym i poluje.",
+            "Częsty błąd: jelito — tam żyją tasiemce, nie wypławki"
+          ],
+          "zrodlo": "s. 33"
+        },
+        {
+          "kind": "wybor",
+          "e": "Żywicielem pośrednim tasiemca nieuzbrojonego jest:",
+          "a": "krowa",
+          "choices": [
+            "świnia",
+            "człowiek",
+            "krowa"
+          ],
+          "exp": [
+            "Larwy nieuzbrojonego rozwijają się w krowie; świnia to żywiciel pośredni uzbrojonego.",
+            "Częsty błąd: świnia — to żywiciel uzbrojonego"
+          ],
+          "zrodlo": "s. 35"
+        },
+        {
+          "kind": "wybor",
+          "e": "Główka tasiemca nieuzbrojonego ma:",
+          "a": "same przyssawki, bez haczyków",
+          "choices": [
+            "4 przyssawki i wieniec haczyków",
+            "same przyssawki, bez haczyków",
+            "same haczyki, bez przyssawek"
+          ],
+          "exp": [
+            "Brak haczyków to właśnie powód nazwy „nieuzbrojony”.",
+            "Częsty błąd: przyssawki z haczykami — to główka uzbrojonego"
+          ],
+          "zrodlo": "s. 34"
+        },
+        {
+          "kind": "wybor",
+          "e": "Nowe człony tasiemca powstają dzięki:",
+          "a": "szyjce",
+          "choices": [
+            "szyjce",
+            "główce",
+            "najstarszym członom"
+          ],
+          "exp": [
+            "Szyjka ciągle wytwarza człony, dlatego tasiemiec rośnie.",
+            "Częsty błąd: główka — ona służy do przyczepiania się"
+          ],
+          "zrodlo": "s. 34"
+        },
+        {
+          "kind": "wybor",
+          "e": "Wągier to:",
+          "a": "larwa tasiemca, czyli pęcherzyk z płynem i główką w środku",
+          "choices": [
+            "dorosły tasiemiec w jelicie",
+            "larwa tasiemca, czyli pęcherzyk z płynem i główką w środku",
+            "człon tasiemca pełen jaj"
+          ],
+          "exp": [
+            "Wągier jest postacią larwalną; siedzi w mięśniach żywiciela pośredniego.",
+            "Częsty błąd: człon z jajami — to inny etap obiegu"
+          ],
+          "zrodlo": "s. 35, słowniczek"
+        },
+        {
+          "kind": "wybor",
+          "e": "Tasiemiec pobiera pokarm:",
+          "a": "całą powierzchnią ciała",
+          "choices": [
+            "wysuwaną gardzielą",
+            "całą powierzchnią ciała",
+            "przyssawkami na główce"
+          ],
+          "exp": [
+            "Tasiemiec wchłania składniki odżywcze z jelita przez całe ciało.",
+            "Częsty błąd: gardziel — tak je wypławek"
+          ],
+          "zrodlo": "s. 33, podpis zdjęcia"
+        },
+        {
+          "kind": "wybor",
+          "e": "Człowiek zaraża się tasiemcem uzbrojonym, gdy:",
+          "a": "zje surowe lub niedogotowane mięso świni z wągrami",
+          "choices": [
+            "zje surowe lub niedogotowane mięso świni z wągrami",
+            "zje dobrze wysmażoną wieprzowinę",
+            "pogłaszcze świnię"
+          ],
+          "exp": [
+            "Wągry w surowym lub niedogotowanym mięsie świni dają w jelicie dorosłego tasiemca.",
+            "Częsty błąd: dobrze wysmażone mięso — właśnie ono chroni"
+          ],
+          "zrodlo": "s. 35"
+        }
+      ]
+    },
+    {
+      "id": "prawda-falsz",
+      "tytul": "Prawda czy fałsz",
+      "polecenie": "Czy to zdanie jest prawdziwe?",
+      "zadania": [
+        {
+          "kind": "pf",
+          "e": "Wszystkie płazińce są pasożytami.",
+          "a": false,
+          "exp": [
+            "Większość tak, ale wypławki żyją samodzielnie w wodzie.",
+            "Częsty błąd: uogólnienie z tasiemców na całą grupę"
+          ],
+          "zrodlo": "s. 33"
+        },
+        {
+          "kind": "pf",
+          "e": "Nabłonek tasiemca ma rzęski, które pomagają mu pływać w jelicie.",
+          "a": false,
+          "exp": [
+            "Pasożyty mają nabłonek bez rzęsek; rzęski ma wypławek.",
+            "Częsty błąd: przeniesienie cechy wypławka na tasiemca"
+          ],
+          "zrodlo": "s. 33"
+        },
+        {
+          "kind": "pf",
+          "e": "Tasiemiec nieuzbrojony jest dłuższy od uzbrojonego.",
+          "a": true,
+          "exp": [
+            "Tak — jest prawie 4 razy dłuższy.",
+            "Częsty błąd: przekonanie, że „uzbrojony” znaczy większy"
+          ],
+          "zrodlo": "s. 34"
+        },
+        {
+          "kind": "pf",
+          "e": "W żywicielu ostatecznym żyją larwy tasiemca.",
+          "a": false,
+          "exp": [
+            "Larwy żyją w żywicielu pośrednim, a w ostatecznym dorosły tasiemiec.",
+            "Częsty błąd: zamiana żywiciela pośredniego z ostatecznym"
+          ],
+          "zrodlo": "s. 35; „To najważniejsze!”"
+        },
+        {
+          "kind": "pf",
+          "e": "Pojedynczy tasiemiec może rozmnażać się płciowo.",
+          "a": true,
+          "exp": [
+            "Tak — dojrzałe człony mają męskie i żeńskie narządy rozrodcze.",
+            "Częsty błąd: myślenie, że zawsze potrzebny jest drugi osobnik"
+          ],
+          "zrodlo": "s. 34"
+        },
+        {
+          "kind": "pf",
+          "e": "Wypławki same bywają pokarmem większych drapieżników.",
+          "a": true,
+          "exp": [
+            "Tak — polują na drobne bezkręgowce, ale same są zjadane przez większe zwierzęta.",
+            "Częsty błąd: uznanie, że drapieżnik nie ma wrogów"
+          ],
+          "zrodlo": "s. 36"
+        }
+      ]
+    },
+    {
+      "id": "uzupelnij",
+      "tytul": "Uzupełnij",
+      "polecenie": "Wpisz brakujące pojęcie.",
+      "zadania": [
+        {
+          "kind": "wpisz",
+          "e": "Ze względu na kształt ciała płazińce nazywa się też robakami ___.",
+          "a": "płaskimi",
+          "inne": [
+            "płaskie"
+          ],
+          "exp": [
+            "Ich ciało jest długie i spłaszczone.",
+            "Częsty błąd: „długimi” — ciało jest długie, ale nazwa mówi o spłaszczeniu"
+          ],
+          "zrodlo": "s. 33"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Wypławek łapie ofiarę umięśnioną ___, którą wysuwa z ciała.",
+          "a": "gardzielą",
+          "inne": [
+            "gardziel"
+          ],
+          "exp": [
+            "Gardziel to narzędzie polowania wypławka.",
+            "Częsty błąd: „przyssawką” — przyssawki ma tasiemiec"
+          ],
+          "zrodlo": "s. 33, podpis zdjęcia"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Ciało tasiemca dzieli się na główkę, szyjkę i liczne ___.",
+          "a": "człony",
+          "inne": [
+            "członów",
+            "człon"
+          ],
+          "exp": [
+            "Człony to kolejne odcinki ciała tasiemca.",
+            "Częsty błąd: „przyssawki” — przyssawki siedzą na główce, nie są osobną częścią ciała"
+          ],
+          "zrodlo": "s. 34"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Tasiemiec uzbrojony ma na główce 4 przyssawki i wieniec ___.",
+          "a": "haczyków",
+          "inne": [
+            "haczyki"
+          ],
+          "exp": [
+            "Haczyki to jego „uzbrojenie”; nieuzbrojony ich nie ma.",
+            "Częsty błąd: „rzęsek” — rzęski ma wypławek"
+          ],
+          "zrodlo": "s. 34"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Żywicielem ostatecznym tasiemca uzbrojonego i nieuzbrojonego jest ___.",
+          "a": "człowiek",
+          "inne": [],
+          "exp": [
+            "To w jelicie człowieka żyją dorosłe tasiemce.",
+            "Częsty błąd: „świnia” — to żywiciel pośredni"
+          ],
+          "zrodlo": "s. 35"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Larwa tasiemca, która tkwi w mięśniach świni, to ___.",
+          "a": "wągier",
+          "inne": [
+            "wągry"
+          ],
+          "exp": [
+            "Wągier to pęcherzyk z płynem i główką tasiemca w środku.",
+            "Częsty błąd: „człon” — człon zawiera jaja, a nie larwę"
+          ],
+          "zrodlo": "s. 35"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Chorobę wywołaną przez tasiemca w jelicie człowieka nazywamy ___.",
+          "a": "tasiemczyca",
+          "inne": [
+            "tasiemczycą"
+          ],
+          "exp": [
+            "Nazwa choroby pochodzi od nazwy pasożyta.",
+            "Częsty błąd: „wągier” — tak nazywa się larwa, a nie choroba"
+          ],
+          "zrodlo": "s. 35, pole „Tasiemczyca”"
+        }
+      ]
+    },
+    {
+      "id": "pytania",
+      "tytul": "Pytania z podręcznika",
+      "polecenie": "Odpowiedz w myślach albo na głos, potem sprawdź.",
+      "zadania": [
+        {
+          "kind": "otwarte",
+          "e": "Podaj po jednym przykładzie płazińca pasożytniczego i wolno żyjącego. Porównaj, gdzie mieszkają i jak wygląda ich nabłonek.",
+          "a": "Tasiemiec jest pasożytem jelita cienkiego człowieka, a wypławek żyje w wodzie. Oba mają długie, płaskie ciało, ale nabłonek wypławka ma rzęski, a tasiemca jest ich pozbawiony.",
+          "blad": "przypisanie rzęsek tasiemcowi albo nazwanie wypławka pasożytem",
+          "zrodlo": "s. 33; ćw. 1 s. 36"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Wymień cechy, dzięki którym tasiemiec radzi sobie jako pasożyt.",
+          "a": "Narządy czepne (przyssawki, a u uzbrojonego też haczyki), nabłonek odporny na enzymy trawienne, ciało dopasowane kształtem do jelita, szyjka dobudowująca człony, oba rodzaje narządów rozrodczych w jednym członie i ogromna liczba jaj.",
+          "blad": "wymienienie tylko długiego ciała, bez narządów czepnych i jaj",
+          "zrodlo": "s. 34, rysunek tasiemca uzbrojonego; ćw. 2 s. 36"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Porównaj tasiemca uzbrojonego z nieuzbrojonym.",
+          "a": "Uzbrojony ma około 2 m, a na główce 4 przyssawki i wieniec haczyków; jego żywicielem pośrednim jest świnia. Nieuzbrojony jest prawie 4 razy dłuższy, ma same przyssawki, a żywicielem pośrednim jest krowa.",
+          "blad": "zamiana zwierząt: świnia przypisana nieuzbrojonemu, krowa uzbrojonemu",
+          "zrodlo": "s. 34–35"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Czym różni się żywiciel pośredni od ostatecznego? Podaj przykład dla tasiemca uzbrojonego.",
+          "a": "W pośrednim mieszkają larwy pasożyta, w ostatecznym dorosły pasożyt. Dla tasiemca uzbrojonego pośrednim jest świnia, ostatecznym człowiek.",
+          "blad": "zamiana nazw — „świnia jest ostateczna, bo tam larwa kończy drogę”",
+          "zrodlo": "s. 35; „To najważniejsze!” s. 36"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Opisz krok po kroku obieg tasiemca uzbrojonego.",
+          "a": "Człowiek je wieprzowinę z wągrami; w jego jelicie z wągra wyrasta dorosły tasiemiec; najstarsze człony z jajami odpadają i wychodzą z kałem; świnia zjada człony, a w jej mięśniach powstają wągry.",
+          "blad": "twierdzenie, że świnia zaraża się, jedząc mięso — świnia zjada człony z jajami",
+          "zrodlo": "s. 35, schemat „Rozwój tasiemca uzbrojonego.”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jak człowiek może zarazić się tasiemcem nieuzbrojonym i jak się przed tym chronić?",
+          "a": "Jedząc surowe lub niedogotowane mięso krowy z wągrami. Chronimy się, jedząc mięso sprawdzone, bez wągrów, i unikając surowych lub niedogotowanych dań z mięsa.",
+          "blad": "podanie brudnych rąk jako przyczyny — w tej lekcji źródłem jest mięso z wągrami",
+          "zrodlo": "s. 35, pole „Tasiemczyca”; ćw. 3 s. 36"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jakie znaczenie mają płazińce w przyrodzie i dla człowieka?",
+          "a": "W przyrodzie pasożyty psują zdrowie żywicieli i przyczyniają się do ich śmierci, a wypławki polują na drobne bezkręgowce i ikrę, same będąc pokarmem większych drapieżników. Ludziom pasożytnicze płazińce szkodzą chorobami świń i bydła oraz jako pasożyty człowieka.",
+          "blad": "pominięcie wypławków i mówienie tylko o pasożytach",
+          "zrodlo": "s. 36, sekcje „Znaczenie płazińców…”; ćw. 4 s. 36"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Dlaczego wypławek ma oczy, a tasiemiec ich nie potrzebuje?",
+          "a": "Wypławek jest drapieżnikiem, który sam porusza się w wodzie i łapie ofiary. Tasiemiec trzyma się w jelicie i wchłania pokarm całym ciałem, więc niczego nie musi szukać.",
+          "blad": "odpowiedź „bo tasiemiec jest mniejszy” — chodzi o tryb życia, nie o rozmiar",
+          "zrodlo": "s. 33, pytajnik na marginesie"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jakie zadania ma nabłonek u wypławka, a jakie u tasiemca?",
+          "a": "U wypławka nabłonek ma rzęski ułatwiające ruch w wodzie, a jego komórki wydzielają śluz chroniący przed zranieniem i zmniejszający opór wody. U tasiemca nabłonek jest bez rzęsek i chroni go przed strawieniem w jelicie żywiciela.",
+          "blad": "przypisanie śluzu i rzęsek pasożytom",
+          "zrodlo": "s. 33, sekcja „Budowa płazińców”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Po co tasiemcowi tak dużo jaj i oba rodzaje narządów rozrodczych w jednym członie?",
+          "a": "Oba rodzaje narządów pozwalają rozmnażać się płciowo nawet pojedynczemu tasiemcowi. Kilkadziesiąt tysięcy jaj w członie zwiększa szansę, że część potomstwa przeżyje.",
+          "blad": "stwierdzenie, że tasiemiec potrzebuje partnera do rozmnażania",
+          "zrodlo": "s. 34, odnośniki przy członach"
+        }
+      ]
+    }
+  ]
+}

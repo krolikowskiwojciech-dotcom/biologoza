@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 471" width="360" height="471" role="img" aria-label="Jak zbudowany jest parzydełkowiec">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="466" rx="18" fill="#1D7A5F" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="466" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" font-weight="700" fill="#1D7A5F" letter-spacing=".05em">JAK ZBUDOWANY JEST PARZYDEŁKOWIEC</text>
+  <path d="M52 112 C40 92 30 80 18 70" fill="none" stroke="#3D7EA6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M60 110 C56 86 54 70 48 56" fill="none" stroke="#3D7EA6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M120 110 C124 86 126 70 132 56" fill="none" stroke="#3D7EA6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M128 112 C140 92 150 80 162 70" fill="none" stroke="#3D7EA6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M45 112 V290 a45 45 0 0 0 90 0 V112 Z" fill="#FCE9B8" stroke="#3D7EA6" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M61 112 V287 a29 29 0 0 0 58 0 V112 Z" fill="#F4ECF8" stroke="#8E5BA8" stroke-width="5" stroke-linejoin="round"/>
+  <rect x="64" y="104" width="52" height="12" fill="#FFFDF8"/>
+  <path d="M64 116 H116" stroke="#F5A524" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <path d="M150 76 L178 74" stroke="#1F1B17" stroke-width="1.1"/><circle cx="150" cy="76" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="182" y="78" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="start">czułki</text>
+  <path d="M90 112 L178 108" stroke="#1F1B17" stroke-width="1.1"/><circle cx="90" cy="112" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="182" y="104" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="start">otwór gębowy</text>
+  <text class="t" x="182" y="119" font-size="11.5" font-weight="400" fill="#7A716A" text-anchor="start">wejście do jamy</text>
+  <path d="M135 165 L178 158" stroke="#1F1B17" stroke-width="1.1"/><circle cx="135" cy="165" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="182" y="154" font-size="12.5" font-weight="700" fill="#3D7EA6" text-anchor="start">warstwa zewnętrzna</text>
+  <text class="t" x="182" y="169" font-size="12.5" font-weight="700" fill="#3D7EA6" text-anchor="start">nabłonka</text>
+  <path d="M127 205 L178 205" stroke="#1F1B17" stroke-width="1.1"/><circle cx="127" cy="205" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="182" y="201" font-size="12.5" font-weight="700" fill="#9A6A00" text-anchor="start">galaretowata</text>
+  <text class="t" x="182" y="216" font-size="12.5" font-weight="700" fill="#9A6A00" text-anchor="start">substancja</text>
+  <path d="M119 245 L178 250" stroke="#1F1B17" stroke-width="1.1"/><circle cx="119" cy="245" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="182" y="246" font-size="12.5" font-weight="700" fill="#8E5BA8" text-anchor="start">warstwa wewnętrzna</text>
+  <text class="t" x="182" y="261" font-size="12.5" font-weight="700" fill="#8E5BA8" text-anchor="start">nabłonka</text>
+  <path d="M92 270 L178 298" stroke="#1F1B17" stroke-width="1.1"/><circle cx="92" cy="270" r="2.6" fill="#FFFDF8" stroke="#1F1B17" stroke-width="1.1"/>
+  <text class="t" x="182" y="294" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="start">jama chłonąco-</text>
+  <text class="t" x="182" y="309" font-size="12.5" font-weight="700" fill="#1F1B17" text-anchor="start">-trawiąca</text>
+  <text class="t" x="182" y="324" font-size="11.5" font-weight="400" fill="#7A716A" text-anchor="start">prawie całe wnętrze</text>
+  <line x1="24" y1="352" x2="331" y2="352" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="27" cy="374" r="3.2" fill="#F5A524"/><text class="t" x="36" y="378" font-size="11" font-weight="700" fill="#B26A00" text-anchor="start" letter-spacing=".07em">JEDEN OTWÓR, DWA ZADANIA</text>
+  <text class="t" x="24" y="402" font-size="13" font-weight="700" fill="#1F1B17" text-anchor="start">pokarm wpada otworem gębowym do jamy</text>
+  <text class="t" x="24" y="424" font-size="12" font-weight="700" fill="#B26A00" text-anchor="start">resztki wychodzą tym samym otworem</text>
+  <text class="t" x="24" y="446" font-size="11.5" font-weight="600" fill="#155C48" text-anchor="start">ściana ciała: 2 warstwy nabłonka + galaretka</text>
+</svg>

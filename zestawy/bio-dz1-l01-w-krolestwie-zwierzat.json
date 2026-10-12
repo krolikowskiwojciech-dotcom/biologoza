@@ -1,0 +1,528 @@
+{
+  "id": "bio-dz1-l01-w-krolestwie-zwierzat",
+  "zrodlo": "lekcje-audio",
+  "dla": [
+    "julek"
+  ],
+  "tytul": "Królestwo zwierząt — kto do niego należy",
+  "dzial": "I",
+  "dzialTytul": "Świat zwierząt: od komórki do organizmu",
+  "lekcja": 1,
+  "strony": "7–12",
+  "dodano": "2026-09-06",
+  "termin": null,
+  "ikona": "mikroskop",
+  "kolor": "lila",
+  "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz1-l01-w-krolestwie-zwierzat.mp3",
+      "minuty": 10
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz1-l01-w-krolestwie-zwierzat-krotkie.mp3",
+      "minuty": 9
+    }
+  ],
+  "sciaga": [
+    "Zwierzęta to najliczniejsze królestwo organizmów: opisanych gatunków jest już ponad milion, a badacze sądzą, że nieopisanych zostało dużo więcej. Nowe wciąż się trafiają — titi rudobrodego, niewielką małpę z lasów Ameryki Południowej, opisano dopiero w 2010 roku. Zwierzęta zajęły niemal wszystkie środowiska wodne i lądowe, dlatego tak mocno różnią się budową oraz trybem życia.",
+    "Mimo tych różnic łączą je trzy cechy: ciało z wielu komórek, jądro w każdej komórce oraz konieczność zjadania pokarmu, czyli cudzożywność.",
+    "Komórki zwierząt nie mają chloroplastów ani ściany komórkowej. To właśnie brak chloroplastów sprawia, że zwierzę nie zrobi sobie jedzenia samo, tak jak roślina stojąca w słońcu.",
+    "Wnętrze komórki zwierzęcej wypełnia cytoplazma, a w niej leży jądro — duże i najczęściej w kształcie kuli. Od zewnątrz całość zamyka błona komórkowa.",
+    "Na cytoplazmę składa się galaretowaty cytozol, a w nim znajdują się m.in. mitochondria, rybosomy i wakuole.",
+    "Różnicę wobec rośliny najłatwiej zapamiętać po tym, czego brak: ściany komórkowej i chloroplastów. Jądro natomiast jest, i to okazałe — zdanie „komórka zwierzęca nie ma jądra” to częsty błąd.",
+    "Ciało zwierzęcia układa się w pięć poziomów, jak schody: komórka, tkanka, narząd, układ narządów, organizm.",
+    "Poziom pierwszy to komórka, podstawowa cegiełka ciała. Komórki bywają bardzo różne: ta z mięśnia sercowego jest wydłużona i rozgałęziona, potrafi się kurczyć oraz rozkurczać.",
+    "Poziom drugi to tkanka: komórki podobnie zbudowane, wykonujące razem jedno zadanie. Z komórek mięśniowych serca powstaje tkanka mięśniowa tworząca jego ściany.",
+    "Poziom trzeci to narząd — kilka rodzajów tkanek w jednym miejscu. W sercu mięśniowa buduje ściany, nabłonkowa wyściela wnętrze, a nerwowa steruje jego pracą.",
+    "Poziom czwarty to układ narządów: narządy, które wspólnie wykonują jedną czynność życiową. Serce z naczyniami krwionośnymi daje układ krwionośny.",
+    "Poziom piąty to organizm, czyli wszystkie układy pracujące razem — krwionośny, a obok niego oddechowy, pokarmowy, nerwowy i szkieletowy.",
+    "Całe królestwo dzielimy na dwie grupy według jednego pytania: czy zwierzę ma w środku sztywny szkielet.",
+    "Kręgowce taki szkielet mają. Najważniejsze jego części to czaszka i kręgosłup złożony z kręgów, od których poszła nazwa grupy. Trafiają tu ryby, płazy, gady, ptaki oraz ssaki.",
+    "Bezkręgowce sztywnego szkieletu w środku nie mają. Jedne mają ciało zupełnie nieosłonięte, jak dżdżownica czy pijawka, inne noszą sztywny pancerz (rak) albo muszlę (większość ślimaków). Zalicza się tu parzydełkowce, płazińce, nicienie, pierścienice, stawonogi oraz mięczaki.",
+    "Sztywny szkielet wewnętrzny robi trzy rzeczy: osłania narządy, trzyma ciało niczym rusztowanie i nadaje mu kształt. Z mięśniami tworzy aparat ruchu.",
+    "U bezkręgowców osłoną bywa pancerz, czyli szkielet zewnętrzny: chroni delikatne ciało, a mięśnie są przyczepione do niego od wewnątrz. Ponieważ brakuje im rusztowania w środku, bywają zwykle mniejsze od kręgowców.",
+    "Bezkręgowców jest znacznie więcej: to niemal 95% gatunków zwierząt żyjących dzisiaj. Reszta przypada kręgowcom, a wśród nich najwięcej jest ryb.",
+    "Kręgowce po jednej cesze: ryby mają opływowe ciało, płetwy i łuski; płazy cienką, wilgotną, nagą skórę; gady grubą i suchą skórę z łuskami oraz tarczkami; ptaki skrzydła powstałe z przednich kończyn i pióra; ssaki włosy oraz mleko dla młodych.",
+    "Bezkręgowce po jednej cesze: parzydełkowce mają komórki z parzącym płynem do polowania i obrony; płazińce, przeważnie pasożytnicze, ciało wydłużone i mocno spłaszczone; nicienie ciało nitkowate, zwężone na końcach; pierścienice ciało podzielone na segmenty; stawonogi odnóża złożone z odcinków połączonych stawami; mięczaki ciało miękkie, czasem schowane w muszli.",
+    "Ciekawy wyjątek to gąbki — jedyne zwierzęta, u których nie powstają tkanki, narządy ani układy. Każdy z kilkunastu rodzajów ich komórek może zmienić się w inny, dlatego gąbka odbuduje całe ciało nawet z maleńkiego fragmentu.",
+    "Trzy pułapki: twarda osłona nie czyni kręgowca (rak i ślimak to bezkręgowce), poruszanie się nie jest wymieniane wśród wspólnych cech zwierząt, a kolejności pięciu poziomów nie wolno mieszać — tkanka jest mniejsza od narządu."
+  ],
+  "definicje": {
+    "organizm wielokomórkowy": "Organizm, którego ciało tworzy mnóstwo komórek, a nie jedna. Tak zbudowane jest każde zwierzę.",
+    "cudzożywność": "Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+    "komórka zwierzęca": "Komórka z jądrem, cytoplazmą i błoną komórkową, ale bez ściany komórkowej i bez chloroplastów.",
+    "jądro komórkowe": "Duży, przeważnie kulisty element leżący w cytoplazmie. Ma go każda komórka zwierzęcia.",
+    "cytoplazma": "Zawartość komórki poza jądrem: galaretowaty cytozol i drobne składniki, m.in. mitochondria, rybosomy oraz wakuole.",
+    "chloroplasty": "Elementy komórek roślinnych, w których powstaje pokarm. Zwierzęta ich nie mają, więc muszą jeść.",
+    "tkanka": "Komórki o zbliżonej budowie, które razem wykonują to samo zadanie, np. tkanka mięśniowa w ścianach serca.",
+    "narząd": "Część ciała złożona z kilku rodzajów tkanek, które współpracują ze sobą, np. serce.",
+    "układ narządów": "Zestaw narządów odpowiadających wspólnie za jedną czynność życiową, np. serce razem z naczyniami krwionośnymi.",
+    "organizm": "Wszystkie układy narządów działające razem, czyli całe zwierzę.",
+    "kręgowce": "Zwierzęta ze sztywnym szkieletem wewnętrznym, w którym najważniejsze są czaszka i kręgosłup: ryby, płazy, gady, ptaki, ssaki.",
+    "bezkręgowce": "Zwierzęta bez sztywnego szkieletu wewnętrznego; ciało mają nagie albo schowane w muszli lub pancerzu. To prawie 95% gatunków.",
+    "szkielet wewnętrzny": "Kości ukryte wewnątrz ciała: osłaniają narządy, podtrzymują ciało i nadają mu kształt, a wraz z mięśniami pozwalają się ruszać.",
+    "szkielet zewnętrzny": "Twarda osłona na zewnątrz ciała, np. pancerz raka. Chroni miękkie wnętrze i daje mięśniom miejsce przyczepu."
+  },
+  "obrazy": [
+    {
+      "plik": "obrazy/lekcje/sciaga-bio-dz1-l01-w-krolestwie-zwierzat.svg",
+      "po": 0,
+      "podpis": "Rysunek do zapamiętania: jedno pytanie o szkielet dzieli wszystkie zwierzęta na dwie grupy."
+    },
+    {
+      "plik": "obrazy/lekcje/bio1-poziomy.jpg",
+      "po": 12,
+      "podpis": "Pięć poziomów na przykładzie serca, od góry: komórka mięśniowa → tkanka mięśniowa → serce (narząd) → serce z naczyniami (układ krwionośny) → cały organizm."
+    },
+    {
+      "plik": "obrazy/lekcje/bio1-szkielety.jpg",
+      "po": 17,
+      "podpis": "U góry kręgowiec: kości w środku, mięśnie ciągną za kości. Na dole homar: pancerz na zewnątrz, mięśnie przyczepione do niego od środka."
+    },
+    {
+      "plik": "obrazy/lekcje/bio1-kregowce.jpg",
+      "po": 19,
+      "podpis": "Kręgowce, pięć grup od góry: ryba (pstrąg), płaz (rzekotka), gad (kameleon), ptak (zimorodek), ssak (jeleń). Każde z nich ma w środku czaszkę i kręgosłup."
+    },
+    {
+      "plik": "obrazy/lekcje/bio1-bezkregowce.jpg",
+      "po": 20,
+      "podpis": "Bezkręgowce, sześć grup: parzydełkowiec (meduza), płaziniec (tasiemiec), nicień, pierścienica (dżdżownica), stawonóg (motyl), mięczak (ślimak)."
+    }
+  ],
+  "bloki": [
+    {
+      "id": "pojecia",
+      "tytul": "Pojęcia z lekcji",
+      "polecenie": "Które pojęcie pasuje do opisu?",
+      "ile": 8,
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "…, którego ciało tworzy mnóstwo komórek, a nie jedna. Tak zbudowane jest każde zwierzę.",
+          "a": "organizm wielokomórkowy",
+          "choices": [
+            "organizm wielokomórkowy",
+            "komórka zwierzęca",
+            "narząd"
+          ],
+          "exp": [
+            "komórka zwierzęca to coś innego: Komórka z jądrem, cytoplazmą i błoną komórkową, ale bez ściany komórkowej i bez chloroplastów.",
+            "narząd to coś innego: Część ciała złożona z kilku rodzajów tkanek, które współpracują ze sobą, np. serce."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+          "a": "cudzożywność",
+          "choices": [
+            "cudzożywność",
+            "tkanka",
+            "cytoplazma"
+          ],
+          "exp": [
+            "tkanka to coś innego: Komórki o zbliżonej budowie, które razem wykonują to samo zadanie, np. tkanka mięśniowa w ścianach serca.",
+            "cytoplazma to coś innego: Zawartość komórki poza jądrem: galaretowaty cytozol i drobne składniki, m.in. mitochondria, rybosomy oraz wakuole."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… z jądrem, cytoplazmą i błoną …, ale bez ściany … i bez chloroplastów.",
+          "a": "komórka zwierzęca",
+          "choices": [
+            "komórka zwierzęca",
+            "bezkręgowce",
+            "jądro komórkowe"
+          ],
+          "exp": [
+            "bezkręgowce to coś innego: Zwierzęta bez sztywnego szkieletu wewnętrznego; ciało mają nagie albo schowane w muszli lub pancerzu. To prawie 95% gatunków.",
+            "jądro komórkowe to coś innego: Duży, przeważnie kulisty element leżący w cytoplazmie. Ma go każda komórka zwierzęcia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Duży, przeważnie kulisty element leżący w cytoplazmie. Ma go każda … zwierzęcia.",
+          "a": "jądro komórkowe",
+          "choices": [
+            "jądro komórkowe",
+            "komórka zwierzęca",
+            "cytoplazma"
+          ],
+          "exp": [
+            "komórka zwierzęca to coś innego: Komórka z jądrem, cytoplazmą i błoną komórkową, ale bez ściany komórkowej i bez chloroplastów.",
+            "cytoplazma to coś innego: Zawartość komórki poza jądrem: galaretowaty cytozol i drobne składniki, m.in. mitochondria, rybosomy oraz wakuole."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Zawartość komórki poza jądrem: galaretowaty cytozol i drobne składniki, m.in. mitochondria, rybosomy oraz wakuole.",
+          "a": "cytoplazma",
+          "choices": [
+            "cytoplazma",
+            "komórka zwierzęca",
+            "jądro komórkowe"
+          ],
+          "exp": [
+            "komórka zwierzęca to coś innego: Komórka z jądrem, cytoplazmą i błoną komórkową, ale bez ściany komórkowej i bez chloroplastów.",
+            "jądro komórkowe to coś innego: Duży, przeważnie kulisty element leżący w cytoplazmie. Ma go każda komórka zwierzęcia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Elementy komórek roślinnych, w których powstaje pokarm. Zwierzęta ich nie mają, więc muszą jeść.",
+          "a": "chloroplasty",
+          "choices": [
+            "chloroplasty",
+            "cytoplazma",
+            "jądro komórkowe"
+          ],
+          "exp": [
+            "cytoplazma to coś innego: Zawartość komórki poza jądrem: galaretowaty cytozol i drobne składniki, m.in. mitochondria, rybosomy oraz wakuole.",
+            "jądro komórkowe to coś innego: Duży, przeważnie kulisty element leżący w cytoplazmie. Ma go każda komórka zwierzęcia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Komórki o zbliżonej budowie, które razem wykonują to samo zadanie, np. … mięśniowa w ścianach serca.",
+          "a": "tkanka",
+          "choices": [
+            "tkanka",
+            "bezkręgowce",
+            "kręgowce"
+          ],
+          "exp": [
+            "bezkręgowce to coś innego: Zwierzęta bez sztywnego szkieletu wewnętrznego; ciało mają nagie albo schowane w muszli lub pancerzu. To prawie 95% gatunków.",
+            "kręgowce to coś innego: Zwierzęta ze sztywnym szkieletem wewnętrznym, w którym najważniejsze są czaszka i kręgosłup: ryby, płazy, gady, ptaki, ssaki."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Część ciała złożona z kilku rodzajów tkanek, które współpracują ze sobą, np. serce.",
+          "a": "narząd",
+          "choices": [
+            "narząd",
+            "cudzożywność",
+            "chloroplasty"
+          ],
+          "exp": [
+            "cudzożywność to coś innego: Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+            "chloroplasty to coś innego: Elementy komórek roślinnych, w których powstaje pokarm. Zwierzęta ich nie mają, więc muszą jeść."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Zestaw … odpowiadających wspólnie za jedną czynność życiową, np. serce razem z naczyniami krwionośnymi.",
+          "a": "układ narządów",
+          "choices": [
+            "układ narządów",
+            "cudzożywność",
+            "cytoplazma"
+          ],
+          "exp": [
+            "cudzożywność to coś innego: Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+            "cytoplazma to coś innego: Zawartość komórki poza jądrem: galaretowaty cytozol i drobne składniki, m.in. mitochondria, rybosomy oraz wakuole."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Wszystkie układy narządów działające razem, czyli całe zwierzę.",
+          "a": "organizm",
+          "choices": [
+            "organizm",
+            "narząd",
+            "bezkręgowce"
+          ],
+          "exp": [
+            "narząd to coś innego: Część ciała złożona z kilku rodzajów tkanek, które współpracują ze sobą, np. serce.",
+            "bezkręgowce to coś innego: Zwierzęta bez sztywnego szkieletu wewnętrznego; ciało mają nagie albo schowane w muszli lub pancerzu. To prawie 95% gatunków."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Zwierzęta ze sztywnym szkieletem wewnętrznym, w którym najważniejsze są czaszka i …: ryby, płazy, gady, ptaki, ssaki.",
+          "a": "kręgowce",
+          "choices": [
+            "kręgowce",
+            "szkielet zewnętrzny",
+            "organizm"
+          ],
+          "exp": [
+            "szkielet zewnętrzny to coś innego: Twarda osłona na zewnątrz ciała, np. pancerz raka. Chroni miękkie wnętrze i daje mięśniom miejsce przyczepu.",
+            "organizm to coś innego: Wszystkie układy narządów działające razem, czyli całe zwierzę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Zwierzęta bez sztywnego szkieletu wewnętrznego; ciało mają nagie albo schowane w muszli lub pancerzu. To prawie 95% gatunków.",
+          "a": "bezkręgowce",
+          "choices": [
+            "bezkręgowce",
+            "cudzożywność",
+            "jądro komórkowe"
+          ],
+          "exp": [
+            "cudzożywność to coś innego: Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+            "jądro komórkowe to coś innego: Duży, przeważnie kulisty element leżący w cytoplazmie. Ma go każda komórka zwierzęcia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Kości ukryte wewnątrz ciała: osłaniają narządy, podtrzymują ciało i nadają mu kształt, a wraz z mięśniami pozwalają się ruszać.",
+          "a": "szkielet wewnętrzny",
+          "choices": [
+            "szkielet wewnętrzny",
+            "cudzożywność",
+            "chloroplasty"
+          ],
+          "exp": [
+            "cudzożywność to coś innego: Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+            "chloroplasty to coś innego: Elementy komórek roślinnych, w których powstaje pokarm. Zwierzęta ich nie mają, więc muszą jeść."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Twarda osłona na zewnątrz ciała, np. pancerz raka. Chroni miękkie wnętrze i daje mięśniom miejsce przyczepu.",
+          "a": "szkielet zewnętrzny",
+          "choices": [
+            "szkielet zewnętrzny",
+            "cudzożywność",
+            "tkanka"
+          ],
+          "exp": [
+            "cudzożywność to coś innego: Odżywianie się gotowym pokarmem, bo organizm sam go sobie nie zrobi. U zwierząt bierze się z braku chloroplastów.",
+            "tkanka to coś innego: Komórki o zbliżonej budowie, które razem wykonują to samo zadanie, np. tkanka mięśniowa w ścianach serca."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wybor",
+      "tytul": "Test wyboru",
+      "polecenie": "Wybierz poprawną odpowiedź.",
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Która cecha NIE należy do zwierząt?",
+          "a": "chloroplasty w komórkach",
+          "choices": [
+            "jądro w komórkach",
+            "chloroplasty w komórkach",
+            "cudzożywność"
+          ],
+          "exp": [
+            "Chloroplasty mają rośliny — właśnie ich brak sprawia, że zwierzęta muszą jeść.",
+            "Częsty błąd: uznanie cudzożywności za cechę, której zwierzęta nie mają"
+          ],
+          "zrodlo": "s. 7; „Wiesz czy nie wiesz?” zad. 1"
+        },
+        {
+          "kind": "wybor",
+          "e": "Serce razem z naczyniami krwionośnymi to przykład:",
+          "a": "układu narządów",
+          "choices": [
+            "tkanki",
+            "narządu",
+            "układu narządów"
+          ],
+          "exp": [
+            "Kilka narządów wykonujących razem jedną czynność życiową tworzy układ narządów.",
+            "Częsty błąd: serce z naczyniami brane za jeden narząd"
+          ],
+          "zrodlo": "s. 8, poziom 4"
+        },
+        {
+          "kind": "wybor",
+          "e": "Do kręgowców należą:",
+          "a": "ryby, płazy, gady, ptaki, ssaki",
+          "choices": [
+            "ryby, płazy, gady, ptaki, ssaki",
+            "ryby, stawonogi, mięczaki",
+            "płazy, pierścienice, ptaki"
+          ],
+          "exp": [
+            "Tylko te pięć grup ma czaszkę i kręgosłup.",
+            "Częsty błąd: stawonogi wśród kręgowców przez ich twardy pancerz"
+          ],
+          "zrodlo": "s. 9; „Wiesz czy nie wiesz?” zad. 2"
+        },
+        {
+          "kind": "wybor",
+          "e": "Które zwierzęta jako jedyne nie wytwarzają tkanek, narządów ani układów?",
+          "a": "gąbki",
+          "choices": [
+            "gąbki",
+            "parzydełkowce",
+            "nicienie"
+          ],
+          "exp": [
+            "Gąbki. Ich ciało tworzy kilkanaście rodzajów komórek, a każda może przekształcić się w inny rodzaj, więc gąbka odbuduje się z drobnego kawałka.",
+            "Częsty błąd: założenie, że każde zwierzę bez wyjątku ma tkanki i narządy"
+          ],
+          "zrodlo": "s. 12, „Dowiedz się więcej” o gąbkach"
+        }
+      ]
+    },
+    {
+      "id": "prawda-falsz",
+      "tytul": "Prawda czy fałsz",
+      "polecenie": "Czy to zdanie jest prawdziwe?",
+      "zadania": [
+        {
+          "kind": "pf",
+          "e": "Prawie 95% gatunków zwierząt to bezkręgowce.",
+          "a": true,
+          "exp": [
+            "Tak — kręgowce to mała reszta, w której najwięcej jest ryb.",
+            "Częsty błąd: przekonanie, że kręgowców jest więcej, bo są większe i lepiej widoczne"
+          ],
+          "zrodlo": "s. 10"
+        },
+        {
+          "kind": "pf",
+          "e": "Ślimak z muszlą jest kręgowcem, bo ma twardą osłonę.",
+          "a": false,
+          "exp": [
+            "Nie — muszla to osłona zewnętrzna. O kręgowcu decyduje kręgosłup w środku, a ślimak (mięczak) go nie ma.",
+            "Częsty błąd: mylenie osłony zewnętrznej ze szkieletem wewnętrznym"
+          ],
+          "zrodlo": "s. 9, 11"
+        }
+      ]
+    },
+    {
+      "id": "uzupelnij",
+      "tytul": "Uzupełnij",
+      "polecenie": "Wpisz brakujące pojęcie.",
+      "zadania": [
+        {
+          "kind": "wpisz",
+          "e": "Zwierzęta nie potrafią same wytwarzać pokarmu, dlatego są organizmami ___.",
+          "a": "cudzożywnymi",
+          "inne": [
+            "cudzożywne",
+            "cudzozywnymi",
+            "cudzozywne"
+          ],
+          "exp": [
+            "Bo ich komórki nie mają chloroplastów.",
+            "Częsty błąd: „samożywnymi” — to rośliny"
+          ],
+          "zrodlo": "s. 7"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Grupa komórek o podobnej budowie, które wykonują wspólne zadanie, to ___.",
+          "a": "tkanka",
+          "inne": [],
+          "exp": [
+            "To drugi poziom organizacji, tuż nad komórką.",
+            "Częsty błąd: „narząd” — narząd to już kilka różnych tkanek"
+          ],
+          "zrodlo": "s. 8"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Głównymi częściami szkieletu wewnętrznego kręgowców są czaszka i ___.",
+          "a": "kręgosłup",
+          "inne": [
+            "kregoslup"
+          ],
+          "exp": [
+            "Kręgosłup zbudowany z kręgów dał kręgowcom nazwę.",
+            "Częsty błąd: „pancerz” — to szkielet zewnętrzny bezkręgowców"
+          ],
+          "zrodlo": "s. 9"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Odnóża złożone z odcinków połączonych stawami to cecha grupy ___.",
+          "a": "stawonogi",
+          "inne": [
+            "stawonogów",
+            "stawonogow"
+          ],
+          "exp": [
+            "Nazwa grupy wzięła się właśnie od stawów w odnóżach; należy tu np. motyl.",
+            "Częsty błąd: „pierścienice” — te rozpoznaje się po ciele podzielonym na segmenty"
+          ],
+          "zrodlo": "s. 11, karta „Stawonogi”"
+        }
+      ]
+    },
+    {
+      "id": "pytania",
+      "tytul": "Pytania z podręcznika",
+      "polecenie": "Odpowiedz w myślach albo na głos, potem sprawdź.",
+      "zadania": [
+        {
+          "kind": "otwarte",
+          "e": "Jakie trzy cechy pozwalają zaliczyć organizm do zwierząt?",
+          "a": "Jest wielokomórkowy, cudzożywny, a jego komórki mają jądro, lecz nie mają chloroplastów ani ściany komórkowej.",
+          "blad": "dopisanie chloroplastów albo ściany komórkowej — to cechy roślin",
+          "zrodlo": "s. 7, sekcja „Wspólne cechy zwierząt”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Czym komórka zwierzęca różni się od roślinnej?",
+          "a": "Nie ma ściany komórkowej ani chloroplastów; ma za to jądro, cytoplazmę i błonę komórkową.",
+          "blad": "twierdzenie, że komórka zwierzęca nie ma jądra — ma, i to duże",
+          "zrodlo": "s. 7, pole „Jak wygląda komórka zwierzęca?”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Wymień po kolei poziomy organizacji ciała zwierząt.",
+          "a": "Komórka, tkanka, narząd, układ narządów, organizm.",
+          "blad": "pominięcie układu narządów i przejście od narządu wprost do organizmu",
+          "zrodlo": "s. 8"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Czym różni się tkanka od narządu? Podaj przykład.",
+          "a": "Tkanka to grupa podobnych komórek z jednym zadaniem, a narząd to kilka różnych tkanek współpracujących ze sobą. Mięsień serca to tkanka, całe serce to narząd.",
+          "blad": "nazwanie serca tkanką",
+          "zrodlo": "s. 8, poziomy 2–3"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Co decyduje o tym, czy zwierzę zaliczymy do kręgowców, czy do bezkręgowców?",
+          "a": "Według tego, czy zwierzę ma sztywny szkielet wewnętrzny z czaszką i kręgosłupem.",
+          "blad": "podział według wielkości ciała albo twardości powłoki",
+          "zrodlo": "s. 9, sekcja „Dwie grupy zwierząt”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Rak ma twardy pancerz. Czy jest kręgowcem? Uzasadnij.",
+          "a": "Nie. Pancerz to szkielet zewnętrzny; rak nie ma kręgosłupa w środku, więc jest bezkręgowcem (stawonogiem).",
+          "blad": "„twardy, więc kręgowiec”",
+          "zrodlo": "s. 9, pola „Kręgowce” i „Bezkręgowce”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jaką rolę pełni szkielet wewnętrzny u kręgowców?",
+          "a": "Chroni narządy, jest rusztowaniem ciała, nadaje mu kształt, a razem z mięśniami tworzy aparat ruchu.",
+          "blad": "ograniczenie roli szkieletu tylko do ochrony",
+          "zrodlo": "s. 9, pole „Kręgowce”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Ile gatunków zwierząt jak dotąd opisano i czy to już wszystkie?",
+          "a": "Opisano ponad milion gatunków, ale badacze sądzą, że jest ich znacznie więcej. Nowe wciąż się pojawiają — titi rudobrodego opisano w 2010 roku.",
+          "blad": "przekonanie, że wszystkie gatunki zwierząt są już poznane",
+          "zrodlo": "s. 7, wstęp oraz ramka „Czy wiesz, że...”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Co znajduje się w cytoplazmie komórki zwierzęcej?",
+          "a": "Galaretowaty cytozol oraz drobne składniki: mitochondria, rybosomy i wakuole.",
+          "blad": "wymienianie chloroplastów jako składnika cytoplazmy zwierzęcia",
+          "zrodlo": "s. 7, pole „Jak wygląda komórka zwierzęca?”"
+        }
+      ]
+    }
+  ]
+}

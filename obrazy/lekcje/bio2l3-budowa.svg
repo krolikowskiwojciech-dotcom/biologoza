@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 433" width="360" height="433" role="img" aria-label="Jak zbudowany jest nicień">
+  <style>.t{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}</style>
+  <rect x="5" y="5" width="355" height="428" rx="18" fill="#1D7A5F" stroke="#1F1B17" stroke-width="2"/>
+  <rect x="0" y="0" width="355" height="428" rx="18" fill="#FFFDF8" stroke="#1F1B17" stroke-width="2"/>
+  <text class="t" x="24" y="38" font-size="13" fill="#1D7A5F" font-weight="700" letter-spacing=".05em">JAK ZBUDOWANY JEST NICIEŃ</text>
+  <circle cx="27" cy="66" r="3.2" fill="#F5A524"/><text class="t" x="36" y="70" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">CIAŁO DŁUGIE JAK NITKA</text>
+  <path d="M40 112 C 80 82, 120 142, 165 112 S 250 82, 300 112" fill="none" stroke="#B88A4A" stroke-width="13" stroke-linecap="round"/>
+  <path d="M40 112 C 80 82, 120 142, 165 112 S 250 82, 300 112" fill="none" stroke="#E9C98F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M40 112 C 34 116, 28 118, 22 117" fill="none" stroke="#B88A4A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M300 112 C 307 117, 313 119, 320 118" fill="none" stroke="#B88A4A" stroke-width="5" stroke-linecap="round"/>
+  <text class="t" x="22" y="148" font-size="11.5" fill="#7A716A">zwężony koniec</text>
+  <text class="t" x="326" y="148" font-size="11.5" fill="#7A716A" text-anchor="end">zwężony koniec</text>
+  <line x1="24" y1="152" x2="331" y2="152" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="27" cy="176" r="3.2" fill="#F5A524"/><text class="t" x="36" y="180" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">PRZEKRÓJ: GRUBY OSKÓREK</text>
+  <circle cx="92" cy="238" r="40" fill="#B88A4A" stroke="#1F1B17" stroke-width="1.5"/>
+  <circle cx="92" cy="238" r="27" fill="#F6E3BC"/>
+  <text class="t" x="92" y="242" font-size="11.5" fill="#1F1B17" text-anchor="middle">wnętrze</text>
+  <circle cx="158" cy="212" r="4.5" fill="#C4552E"/>
+  <path d="M150 212 L139 226.3" stroke="#C4552E" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <circle cx="166" cy="240" r="4.5" fill="#C4552E"/>
+  <path d="M158 240 L139 238.9" stroke="#C4552E" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <circle cx="158" cy="268" r="4.5" fill="#C4552E"/>
+  <path d="M150 268 L139 251.5" stroke="#C4552E" stroke-width="1.8" stroke-dasharray="3 3"/>
+  <text class="t" x="176" y="210" font-size="14" fill="#1F1B17" font-weight="700">gruby oskórek</text>
+  <text class="t" x="176" y="230" font-size="11.5" fill="#7A716A">nie ruszą go</text>
+  <text class="t" x="176" y="246" font-size="11.5" fill="#7A716A">szkodliwe substancje</text>
+  <text class="t" x="176" y="270" font-size="12.5" fill="#C4552E" font-weight="700">enzymy żywiciela</text>
+  <text class="t" x="176" y="286" font-size="12.5" fill="#C4552E" font-weight="700">nie strawią pasożyta</text>
+  <line x1="24" y1="300" x2="331" y2="300" stroke="#E6DDCE" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <circle cx="27" cy="324" r="3.2" fill="#F5A524"/><text class="t" x="36" y="328" font-size="11" fill="#B26A00" font-weight="700" letter-spacing=".07em">NIE MYL Z PŁAZIŃCEM</text>
+  <circle cx="62" cy="366" r="15" fill="#E9C98F" stroke="#B88A4A" stroke-width="4"/>
+  <text class="t" x="90" y="362" font-size="14" fill="#1F1B17" font-weight="700">nicień</text>
+  <text class="t" x="90" y="379" font-size="11.5" fill="#7A716A">okrągły, nitkowaty</text>
+  <ellipse cx="232" cy="366" rx="30" ry="7" fill="#F2D3CB" stroke="#C4552E" stroke-width="2"/>
+  <text class="t" x="272" y="362" font-size="14" fill="#1F1B17" font-weight="700">płaziniec</text>
+  <text class="t" x="272" y="379" font-size="11.5" fill="#7A716A">płaski</text>
+  <text class="t" x="24" y="410" font-size="12.5" fill="#155C48" font-weight="600">nicień = nitka w grubej osłonce</text>
+</svg>

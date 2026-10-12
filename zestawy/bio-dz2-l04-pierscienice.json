@@ -1,0 +1,669 @@
+{
+  "id": "bio-dz2-l04-pierscienice",
+  "zrodlo": "lekcje-audio",
+  "dla": [
+    "julek"
+  ],
+  "tytul": "Pierścienice — ciało z segmentów, od dżdżownicy po pijawkę",
+  "dzial": "II",
+  "dzialTytul": "Bezkręgowce: od parzydełkowców po pierścienice",
+  "lekcja": 4,
+  "strony": "41–44",
+  "dodano": "2026-10-11",
+  "termin": null,
+  "ikona": "slimak",
+  "kolor": "krem",
+  "ocena": true,
+  "sciaga": [
+    "Nazwa pochodzi od budowy: ciało pierścienicy to rząd krótkich odcinków — pierścieni, czyli segmentów. Najlepiej znanym przykładem jest dżdżownica.",
+    "Gdzie mieszkają: przeważnie w morzach i oceanach; część gatunków w wodach słodkich, a część na wilgotnym lądzie, najczęściej w glebie i ściółce.",
+    "Kształt: długie ciało, walcowate albo nieco spłaszczone, w całości podzielone na segmenty.",
+    "Okrycie ciała: od spodu cienki, ochronny oskórek, a na nim warstwa śluzu (śluz jest na samym wierzchu).",
+    "Głowa: u części pierścienic powstaje z pierwszego albo kilku pierwszych segmentów. Nie każda pierścienica ma wyodrębnioną głowę.",
+    "Szczecinki: wiele gatunków ma po bokach ciała pęczki sztywnych szczecinek. Bywają do różnych rzeczy, ale zwykle pomagają się poruszać.",
+    "Dżdżownica to pierścienica lądowa z gleby, która zjada szczątki organizmów. Dorasta do 35 cm, ma około 100 segmentów; rekordzistka, dżdżownica australijska, mierzy około metra.",
+    "Dżdżownica, budowa do życia pod ziemią (1): zwężony przód ciała ułatwia drążenie korytarzy, a siodełko — grubszy pierścień z przodu — ma znaczenie przy rozmnażaniu płciowym.",
+    "Dżdżownica (2): drobne pęczki szczecinek zaczepiają się o podłoże, więc łatwiej się przesuwa; śluz chroni ciało przed drobnymi urazami i ułatwia sunięcie w glebie. Nie myl: siodełko to rozmnażanie, szczecinki to ruch.",
+    "Pierścienice morskie są zwykle ruchliwe. Boczne wyrostki pełne szczecinek pozwalają im pełzać po dnie, kopać w nim tunele albo pływać.",
+    "Wiele morskich pierścienic to drapieżniki łowiące drobne bezkręgowce. Tylko one mają wyodrębnioną głowę z licznymi narządami zmysłów.",
+    "Nereida różnokolorowa: drapieżnik z dna mórz, także Bałtyku, ok. 20 cm. Na głowie ma dwie pary oczu oraz czułki i wąsy, które wyczuwają dotyk i zapachy.",
+    "Pijawki to najbardziej znane pierścienice wód słodkich. Większość z nich jest pasożytami zewnętrznymi, które piją krew kręgowców.",
+    "Pijawka nie ma wyodrębnionej głowy, bocznych wyrostków ani szczecinek. Ma za to dwie przyssawki, z przodu i z tyłu ciała.",
+    "W środku przedniej przyssawki leży otwór gębowy ze szczękami — nimi pijawka nacina skórę żywiciela.",
+    "Pijawka lekarska: ok. 15 cm, płytkie wody stojące. W przewodzie pokarmowym ma uchyłki, w których trzyma zapas krwi, dlatego wytrzyma nawet dwa lata bez jedzenia.",
+    "Przystosowania pijawki do życia pasożyta: przyssawki (trzymają), ostre szczęki (tną skórę), uchyłki (magazynują krew). Szczecinek nie ma.",
+    "Trzy pierścienice żyjące w Polsce: dżdżownica ziemna (gleba), nereida różnokolorowa (morze) i pijawka lekarska (wody słodkie).",
+    "W przyrodzie są pokarmem: lądowymi żywią się krety, ryjówki, szpaki i kosy (dla kreta to podstawowe jedzenie), a wodnymi — ryby.",
+    "Pierścienice z gleby to destruenci: dzięki nim powstaje próchnica, a wykopane korytarze spulchniają ziemię. Te z dna zbiorników, jedząc szczątki, pomagają oczyszczać wodę.",
+    "Dla człowieka plusy: rureczniki (tkwią przodem w mule, którym się żywią) hoduje się na pokarm dla ryb akwariowych; ze śliny pijawek otrzymuje się substancje hamujące krzepnięcie krwi, używane w leczeniu chorób układu krążenia.",
+    "Dla człowieka minus: pijawki pijące krew ryb przynoszą duże straty hodowlom; pijawka rybia przyczepia się do skóry, skrzeli albo płetw żywiciela."
+  ],
+  "definicje": {
+    "pierścienice": "Grupa zwierząt, których ciało tworzy szereg krótkich odcinków ułożonych jeden za drugim. Mieszkają głównie w morzach, ale też w wodach słodkich i w wilgotnej glebie.",
+    "segmenty": "Krótkie odcinki, z których złożone jest ciało pierścienicy; inna nazwa to pierścienie. Dżdżownica ma ich około stu.",
+    "oskórek": "Cienka osłona na wierzchu ciała pierścienicy, która je chroni. Na nim leży jeszcze warstwa śluzu.",
+    "śluz": "Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę.",
+    "szczecinki": "Sztywne włoski zebrane w pęczki po bokach ciała wielu pierścienic. Najczęściej pomagają w ruchu, bo zaczepiają się o podłoże.",
+    "siodełko": "Grubszy, ciemniejszy pierścień w przedniej części ciała dżdżownicy. Jest ważny przy rozmnażaniu płciowym.",
+    "dżdżownica": "Najbardziej znana pierścienica lądowa: żyje w glebie, zjada szczątki organizmów, dorasta do 35 cm i ma około 100 segmentów. Nie ma wyodrębnionej głowy.",
+    "nereida różnokolorowa": "Morska pierścienica i drapieżnik z dna, spotykana także w Bałtyku, długa na około 20 cm. Ma głowę z dwiema parami oczu, czułkami i wąsami oraz boczne wyrostki ze szczecinkami.",
+    "pijawka lekarska": "Pierścienica z płytkich, stojących wód słodkich, długa na około 15 cm. Pije krew kręgowców, a jej ślina daje substancje przeciw krzepnięciu krwi.",
+    "pasożyt zewnętrzny": "Organizm, który żyje na powierzchni ciała innego zwierzęcia i się nim żywi, zamiast wchodzić do jego wnętrza. Tak żyje większość pijawek.",
+    "żywiciel": "Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije.",
+    "przyssawki": "Dwa narządy do przyczepiania się na obu końcach ciała pijawki, którymi trzyma się żywiciela. W przedniej leży otwór gębowy ze szczękami do nacinania skóry.",
+    "uchyłki": "Boczne kieszonki w przewodzie pokarmowym pijawki lekarskiej. Przechowuje w nich krew żywiciela, więc może nie jeść nawet przez dwa lata.",
+    "destruenci": "Organizmy, które rozkładają szczątki innych organizmów. Glebowe pierścienice są destruentami, więc dzięki nim powstaje próchnica.",
+    "próchnica": "Składnik gleby, który powstaje z rozłożonych szczątków organizmów. Pierścienice glebowe jako destruenci pomagają w jej tworzeniu.",
+    "rureczniki": "Małe pierścienice, które przodem ciała tkwią w mule i nim się żywią. Ludzie hodują je jako pokarm dla ryb akwariowych."
+  },
+  "obrazy": [
+    {
+      "plik": "obrazy/lekcje/sciaga-bio-dz2-l04-pierscienice.svg",
+      "po": 0,
+      "podpis": "Rysunek do zapamiętania: budowa pierścienic, trzy środowiska z przedstawicielami i ich znaczenie."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l4-dzdzownica.svg",
+      "po": 9,
+      "podpis": "Dżdżownica i jej cztery przystosowania do życia w glebie: zwężony przód do kopania, siodełko do rozmnażania, szczecinki do ruchu, śluz na oskórku do ochrony i poślizgu."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l4-pijawka.svg",
+      "po": 17,
+      "podpis": "Pijawka lekarska jako pasożyt zewnętrzny: przednia przyssawka z otworem gębowym i szczękami, tylna przyssawka do trzymania się, uchyłki z zapasem krwi."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l4-trzy-pierscienice.svg",
+      "po": 18,
+      "podpis": "Trzy pierścienice żyjące w Polsce obok siebie: gdzie mieszkają, czym się żywią i czym różni się ich budowa."
+    },
+    {
+      "plik": "obrazy/lekcje/bio2l4-znaczenie.svg",
+      "po": 22,
+      "podpis": "Do czego potrzebne są pierścienice: trzy role w przyrodzie oraz dwa plusy i jeden minus dla człowieka."
+    }
+  ],
+  "bloki": [
+    {
+      "id": "pojecia",
+      "tytul": "Pojęcia z lekcji",
+      "polecenie": "Które pojęcie pasuje do opisu?",
+      "ile": 8,
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Grupa zwierząt, których ciało tworzy szereg krótkich odcinków ułożonych jeden za drugim. Mieszkają głównie w morzach, ale też w wodach słodkich i w wilgotnej glebie.",
+          "a": "pierścienice",
+          "choices": [
+            "pierścienice",
+            "siodełko",
+            "pasożyt zewnętrzny"
+          ],
+          "exp": [
+            "siodełko to coś innego: Grubszy, ciemniejszy pierścień w przedniej części ciała dżdżownicy. Jest ważny przy rozmnażaniu płciowym.",
+            "pasożyt zewnętrzny to coś innego: Organizm, który żyje na powierzchni ciała innego zwierzęcia i się nim żywi, zamiast wchodzić do jego wnętrza. Tak żyje większość pijawek."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Krótkie odcinki, z których złożone jest ciało pierścienicy; inna nazwa to pierścienie. Dżdżownica ma ich około stu.",
+          "a": "segmenty",
+          "choices": [
+            "segmenty",
+            "oskórek",
+            "śluz"
+          ],
+          "exp": [
+            "oskórek to coś innego: Cienka osłona na wierzchu ciała pierścienicy, która je chroni. Na nim leży jeszcze warstwa śluzu.",
+            "śluz to coś innego: Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Cienka osłona na wierzchu ciała pierścienicy, która je chroni. Na nim leży jeszcze warstwa śluzu.",
+          "a": "oskórek",
+          "choices": [
+            "oskórek",
+            "destruenci",
+            "śluz"
+          ],
+          "exp": [
+            "destruenci to coś innego: Organizmy, które rozkładają szczątki innych organizmów. Glebowe pierścienice są destruentami, więc dzięki nim powstaje próchnica.",
+            "śluz to coś innego: Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę.",
+          "a": "śluz",
+          "choices": [
+            "śluz",
+            "nereida różnokolorowa",
+            "uchyłki"
+          ],
+          "exp": [
+            "nereida różnokolorowa to coś innego: Morska pierścienica i drapieżnik z dna, spotykana także w Bałtyku, długa na około 20 cm. Ma głowę z dwiema parami oczu, czułkami i wąsami oraz boczne wyrostki ze szczecinkami.",
+            "uchyłki to coś innego: Boczne kieszonki w przewodzie pokarmowym pijawki lekarskiej. Przechowuje w nich krew żywiciela, więc może nie jeść nawet przez dwa lata."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Sztywne włoski zebrane w pęczki po bokach ciała wielu pierścienic. Najczęściej pomagają w ruchu, bo zaczepiają się o podłoże.",
+          "a": "szczecinki",
+          "choices": [
+            "szczecinki",
+            "segmenty",
+            "dżdżownica"
+          ],
+          "exp": [
+            "segmenty to coś innego: Krótkie odcinki, z których złożone jest ciało pierścienicy; inna nazwa to pierścienie. Dżdżownica ma ich około stu.",
+            "dżdżownica to coś innego: Najbardziej znana pierścienica lądowa: żyje w glebie, zjada szczątki organizmów, dorasta do 35 cm i ma około 100 segmentów. Nie ma wyodrębnionej głowy."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Grubszy, ciemniejszy pierścień w przedniej części ciała dżdżownicy. Jest ważny przy rozmnażaniu płciowym.",
+          "a": "siodełko",
+          "choices": [
+            "siodełko",
+            "uchyłki",
+            "żywiciel"
+          ],
+          "exp": [
+            "uchyłki to coś innego: Boczne kieszonki w przewodzie pokarmowym pijawki lekarskiej. Przechowuje w nich krew żywiciela, więc może nie jeść nawet przez dwa lata.",
+            "żywiciel to coś innego: Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Najbardziej znana pierścienica lądowa: żyje w glebie, zjada szczątki organizmów, dorasta do 35 cm i ma około 100 segmentów. Nie ma wyodrębnionej głowy.",
+          "a": "dżdżownica",
+          "choices": [
+            "dżdżownica",
+            "rureczniki",
+            "próchnica"
+          ],
+          "exp": [
+            "rureczniki to coś innego: Małe pierścienice, które przodem ciała tkwią w mule i nim się żywią. Ludzie hodują je jako pokarm dla ryb akwariowych.",
+            "próchnica to coś innego: Składnik gleby, który powstaje z rozłożonych szczątków organizmów. Pierścienice glebowe jako destruenci pomagają w jej tworzeniu."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Morska pierścienica i drapieżnik z dna, spotykana także w Bałtyku, długa na około 20 cm. Ma głowę z dwiema parami oczu, czułkami i wąsami oraz boczne wyrostki ze szczecinkami.",
+          "a": "nereida różnokolorowa",
+          "choices": [
+            "nereida różnokolorowa",
+            "próchnica",
+            "żywiciel"
+          ],
+          "exp": [
+            "próchnica to coś innego: Składnik gleby, który powstaje z rozłożonych szczątków organizmów. Pierścienice glebowe jako destruenci pomagają w jej tworzeniu.",
+            "żywiciel to coś innego: Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Pierścienica z płytkich, stojących wód słodkich, długa na około 15 cm. Pije krew kręgowców, a jej ślina daje substancje przeciw krzepnięciu krwi.",
+          "a": "pijawka lekarska",
+          "choices": [
+            "pijawka lekarska",
+            "segmenty",
+            "żywiciel"
+          ],
+          "exp": [
+            "segmenty to coś innego: Krótkie odcinki, z których złożone jest ciało pierścienicy; inna nazwa to pierścienie. Dżdżownica ma ich około stu.",
+            "żywiciel to coś innego: Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Organizm, który żyje na powierzchni ciała innego zwierzęcia i się nim żywi, zamiast wchodzić do jego wnętrza. Tak żyje większość pijawek.",
+          "a": "pasożyt zewnętrzny",
+          "choices": [
+            "pasożyt zewnętrzny",
+            "oskórek",
+            "żywiciel"
+          ],
+          "exp": [
+            "oskórek to coś innego: Cienka osłona na wierzchu ciała pierścienicy, która je chroni. Na nim leży jeszcze warstwa śluzu.",
+            "żywiciel to coś innego: Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije.",
+          "a": "żywiciel",
+          "choices": [
+            "żywiciel",
+            "segmenty",
+            "śluz"
+          ],
+          "exp": [
+            "segmenty to coś innego: Krótkie odcinki, z których złożone jest ciało pierścienicy; inna nazwa to pierścienie. Dżdżownica ma ich około stu.",
+            "śluz to coś innego: Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Dwa narządy do przyczepiania się na obu końcach ciała pijawki, którymi trzyma się żywiciela. W przedniej leży otwór gębowy ze szczękami do nacinania skóry.",
+          "a": "przyssawki",
+          "choices": [
+            "przyssawki",
+            "oskórek",
+            "rureczniki"
+          ],
+          "exp": [
+            "oskórek to coś innego: Cienka osłona na wierzchu ciała pierścienicy, która je chroni. Na nim leży jeszcze warstwa śluzu.",
+            "rureczniki to coś innego: Małe pierścienice, które przodem ciała tkwią w mule i nim się żywią. Ludzie hodują je jako pokarm dla ryb akwariowych."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Boczne kieszonki w przewodzie pokarmowym pijawki lekarskiej. Przechowuje w nich krew żywiciela, więc może nie jeść nawet przez dwa lata.",
+          "a": "uchyłki",
+          "choices": [
+            "uchyłki",
+            "próchnica",
+            "śluz"
+          ],
+          "exp": [
+            "próchnica to coś innego: Składnik gleby, który powstaje z rozłożonych szczątków organizmów. Pierścienice glebowe jako destruenci pomagają w jej tworzeniu.",
+            "śluz to coś innego: Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Organizmy, które rozkładają szczątki innych organizmów. Glebowe pierścienice są …, więc dzięki nim powstaje próchnica.",
+          "a": "destruenci",
+          "choices": [
+            "destruenci",
+            "segmenty",
+            "oskórek"
+          ],
+          "exp": [
+            "segmenty to coś innego: Krótkie odcinki, z których złożone jest ciało pierścienicy; inna nazwa to pierścienie. Dżdżownica ma ich około stu.",
+            "oskórek to coś innego: Cienka osłona na wierzchu ciała pierścienicy, która je chroni. Na nim leży jeszcze warstwa śluzu."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Składnik gleby, który powstaje z rozłożonych szczątków organizmów. Pierścienice glebowe jako destruenci pomagają w jej tworzeniu.",
+          "a": "próchnica",
+          "choices": [
+            "próchnica",
+            "żywiciel",
+            "śluz"
+          ],
+          "exp": [
+            "żywiciel to coś innego: Zwierzę, na którym lub w którym żyje pasożyt i z którego czerpie pokarm. Dla pijawki to kręgowiec, którego krew pije.",
+            "śluz to coś innego: Śliska warstwa na samym wierzchu ciała, położona na oskórku. U dżdżownicy chroni przed drobnymi skaleczeniami i pomaga sunąć przez glebę."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Małe pierścienice, które przodem ciała tkwią w mule i nim się żywią. Ludzie hodują je jako pokarm dla ryb akwariowych.",
+          "a": "rureczniki",
+          "choices": [
+            "rureczniki",
+            "siodełko",
+            "próchnica"
+          ],
+          "exp": [
+            "siodełko to coś innego: Grubszy, ciemniejszy pierścień w przedniej części ciała dżdżownicy. Jest ważny przy rozmnażaniu płciowym.",
+            "próchnica to coś innego: Składnik gleby, który powstaje z rozłożonych szczątków organizmów. Pierścienice glebowe jako destruenci pomagają w jej tworzeniu."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wybor",
+      "tytul": "Test wyboru",
+      "polecenie": "Wybierz poprawną odpowiedź.",
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Co łączy wszystkie pierścienice?",
+          "a": "ciało podzielone na segmenty",
+          "choices": [
+            "ciało podzielone na segmenty",
+            "wyodrębniona głowa z oczami",
+            "dwie przyssawki na końcach ciała"
+          ],
+          "exp": [
+            "Segmenty mają wszystkie; głowę mają tylko niektóre, a przyssawki — pijawki.",
+            "Częsty błąd: głowa z oczami — ma ją nereida, ale już nie dżdżownica ani pijawka"
+          ],
+          "zrodlo": "s. 41; s. 44, ramka „To najważniejsze!”"
+        },
+        {
+          "kind": "wybor",
+          "e": "Siodełko dżdżownicy ma znaczenie przy:",
+          "a": "rozmnażaniu płciowym",
+          "choices": [
+            "kopaniu korytarzy",
+            "rozmnażaniu płciowym",
+            "zdobywaniu pokarmu"
+          ],
+          "exp": [
+            "Siodełko to grubszy pierścień z przodu ciała, ważny w rozmnażaniu płciowym.",
+            "Częsty błąd: kopanie korytarzy — w tym pomaga zwężony przód ciała"
+          ],
+          "zrodlo": "s. 41, kremowe pole „Pierścienice środowisk lądowych”, rysunek dżdżownicy"
+        },
+        {
+          "kind": "wybor",
+          "e": "Najwięcej gatunków pierścienic mieszka:",
+          "a": "w morzach i oceanach",
+          "choices": [
+            "w glebie i ściółce",
+            "w jeziorach i stawach",
+            "w morzach i oceanach"
+          ],
+          "exp": [
+            "Przeważająca część pierścienic to zwierzęta morskie; lądowe i słodkowodne są w mniejszości.",
+            "Częsty błąd: gleba i ściółka — bo dżdżownica jest najbardziej znana"
+          ],
+          "zrodlo": "s. 41, sekcja „Gdzie żyją i jak wyglądają pierścienice?”"
+        },
+        {
+          "kind": "wybor",
+          "e": "Która pierścienica ma wyodrębnioną głowę z narządami zmysłów?",
+          "a": "nereida różnokolorowa",
+          "choices": [
+            "dżdżownica ziemna",
+            "nereida różnokolorowa",
+            "pijawka lekarska"
+          ],
+          "exp": [
+            "Nereida, jak inne pierścienice morskie, ma głowę z dwiema parami oczu, czułkami i wąsami.",
+            "Częsty błąd: pijawka lekarska — ona głowy nie ma, ma przyssawki"
+          ],
+          "zrodlo": "s. 42, sekcja „Pierścienice morskie” i podpis zdjęcia nereidy"
+        },
+        {
+          "kind": "wybor",
+          "e": "Skórę żywiciela pijawka nacina za pomocą:",
+          "a": "szczęk w otworze gębowym",
+          "choices": [
+            "szczęk w otworze gębowym",
+            "pęczków szczecinek",
+            "tylnej przyssawki"
+          ],
+          "exp": [
+            "Otwór gębowy w przedniej przyssawce ma szczęki, którymi pijawka tnie skórę.",
+            "Częsty błąd: tylna przyssawka — ona tylko przytrzymuje"
+          ],
+          "zrodlo": "s. 42, sekcja „Pierścienice wód słodkich”"
+        },
+        {
+          "kind": "wybor",
+          "e": "Dżdżownice żywią się:",
+          "a": "szczątkami organizmów",
+          "choices": [
+            "krwią kręgowców",
+            "drobnymi bezkręgowcami",
+            "szczątkami organizmów"
+          ],
+          "exp": [
+            "Dżdżownica zjada szczątki organizmów w glebie; krew piją pijawki, a bezkręgowce łowi nereida.",
+            "Częsty błąd: drobne bezkręgowce — to pokarm drapieżnych pierścienic morskich"
+          ],
+          "zrodlo": "s. 41, kremowe pole „Pierścienice środowisk lądowych”"
+        },
+        {
+          "kind": "wybor",
+          "e": "Po co człowiek hoduje rureczniki?",
+          "a": "jako pokarm dla ryb akwariowych",
+          "choices": [
+            "jako pokarm dla ryb akwariowych",
+            "żeby otrzymać leki na układ krążenia",
+            "żeby spulchniały glebę w ogrodzie"
+          ],
+          "exp": [
+            "Rureczniki są karmą dla ryb w akwariach; substancje do leczenia daje ślina pijawek.",
+            "Częsty błąd: leki na układ krążenia — te otrzymuje się z pijawek"
+          ],
+          "zrodlo": "s. 43, sekcja „Znaczenie pierścienic dla człowieka”"
+        }
+      ]
+    },
+    {
+      "id": "prawda-falsz",
+      "tytul": "Prawda czy fałsz",
+      "polecenie": "Czy to zdanie jest prawdziwe?",
+      "zadania": [
+        {
+          "kind": "pf",
+          "e": "Pijawki mają po bokach ciała pęczki szczecinek.",
+          "a": false,
+          "exp": [
+            "Nie — pijawki nie mają ani szczecinek, ani bocznych wyrostków; mają dwie przyssawki.",
+            "Częsty błąd: przeniesienie cech dżdżownicy na pijawkę"
+          ],
+          "zrodlo": "s. 42, sekcja „Pierścienice wód słodkich”"
+        },
+        {
+          "kind": "pf",
+          "e": "Nereida różnokolorowa żyje także w Morzu Bałtyckim.",
+          "a": true,
+          "exp": [
+            "Tak — ten drapieżnik mieszka na dnie mórz, również Bałtyku.",
+            "Częsty błąd: uznanie nereidy za zwierzę tylko z dalekich oceanów"
+          ],
+          "zrodlo": "s. 42, podpis zdjęcia nereidy"
+        },
+        {
+          "kind": "pf",
+          "e": "Śluz u pierścienic leży pod oskórkiem.",
+          "a": false,
+          "exp": [
+            "Nie — najpierw jest oskórek, a śluz pokrywa go z wierzchu.",
+            "Częsty błąd: odwrócenie kolejności warstw"
+          ],
+          "zrodlo": "s. 44, ramka „To najważniejsze!”"
+        },
+        {
+          "kind": "pf",
+          "e": "Pierścienice glebowe jako destruenci przyczyniają się do powstawania próchnicy.",
+          "a": true,
+          "exp": [
+            "Tak — rozkładają szczątki organizmów, a z nich tworzy się próchnica.",
+            "Częsty błąd: myślenie, że pierścienice tylko zjadają glebę i nic nie dają"
+          ],
+          "zrodlo": "s. 43, sekcja „Znaczenie pierścienic w przyrodzie”"
+        },
+        {
+          "kind": "pf",
+          "e": "Pijawka jest pasożytem wewnętrznym, który mieszka w jelicie żywiciela.",
+          "a": false,
+          "exp": [
+            "Nie — pijawka to pasożyt zewnętrzny: przyczepia się do ciała kręgowca od zewnątrz i pije krew.",
+            "Częsty błąd: pomylenie pasożyta zewnętrznego z wewnętrznym"
+          ],
+          "zrodlo": "s. 42, sekcja „Pierścienice wód słodkich”; s. 44, ramka „To najważniejsze!”"
+        },
+        {
+          "kind": "pf",
+          "e": "Ciało dżdżownicy składa się z około stu segmentów.",
+          "a": true,
+          "exp": [
+            "Tak — około 100 segmentów przy długości do 35 cm.",
+            "Częsty błąd: pomylenie liczby segmentów z długością ciała w centymetrach"
+          ],
+          "zrodlo": "s. 41, kremowe pole „Pierścienice środowisk lądowych”"
+        }
+      ]
+    },
+    {
+      "id": "uzupelnij",
+      "tytul": "Uzupełnij",
+      "polecenie": "Wpisz brakujące pojęcie.",
+      "zadania": [
+        {
+          "kind": "wpisz",
+          "e": "Krótkie odcinki ciała pierścienic to pierścienie, inaczej ___.",
+          "a": "segmenty",
+          "inne": [],
+          "exp": [
+            "Pierścień i segment to dwie nazwy tego samego odcinka ciała.",
+            "Częsty błąd: szczecinki — to sztywne włoski na bokach ciała, a nie same odcinki"
+          ],
+          "zrodlo": "s. 41, wstęp; s. 44, ramka „To najważniejsze!”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Cienką ochronną warstwę na wierzchu ciała pierścienicy, przykrytą śluzem, nazywamy ___.",
+          "a": "oskórek",
+          "inne": [
+            "oskórkiem"
+          ],
+          "exp": [
+            "Oskórek chroni ciało, a na nim leży jeszcze śluz.",
+            "Częsty błąd: śluz — on leży dopiero na oskórku"
+          ],
+          "zrodlo": "s. 41, sekcja „Gdzie żyją i jak wyglądają pierścienice?”; s. 44, ramka „To najważniejsze!”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Grubszy pierścień z przodu ciała dżdżownicy, ważny przy rozmnażaniu, to ___.",
+          "a": "siodełko",
+          "inne": [],
+          "exp": [
+            "Siodełko odgrywa ważną rolę w rozmnażaniu płciowym.",
+            "Częsty błąd: szczecinki — one pomagają w ruchu"
+          ],
+          "zrodlo": "s. 41, kremowe pole „Pierścienice środowisk lądowych”, rysunek dżdżownicy"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Do żywiciela pijawka przyczepia się dwiema ___.",
+          "a": "przyssawkami",
+          "inne": [
+            "przyssawki"
+          ],
+          "exp": [
+            "Przyssawki są na obu końcach ciała; w przedniej leży otwór gębowy.",
+            "Częsty błąd: szczecinkami — pijawka ich nie ma"
+          ],
+          "zrodlo": "s. 42, sekcja „Pierścienice wód słodkich”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Zapas krwi żywiciela pijawka lekarska trzyma w ___ przewodu pokarmowego.",
+          "a": "uchyłkach",
+          "inne": [
+            "uchyłki"
+          ],
+          "exp": [
+            "Dzięki uchyłkom może przeżyć nawet dwa lata bez pokarmu.",
+            "Częsty błąd: w przyssawkach — one służą do przyczepiania się"
+          ],
+          "zrodlo": "s. 42, „Czy wiesz, że...”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Podstawowym jedzeniem ___ są dżdżownice.",
+          "a": "kreta",
+          "inne": [
+            "kretów",
+            "kret"
+          ],
+          "exp": [
+            "Dżdżownice jedzą też ryjówki, szpaki i kosy, ale dla kreta są pokarmem podstawowym.",
+            "Częsty błąd: ryby — one zjadają pierścienice wodne"
+          ],
+          "zrodlo": "s. 43, podpis zdjęcia kreta; s. 43, sekcja „Znaczenie pierścienic w przyrodzie”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Substancje ze śliny pijawek nie pozwalają krwi ___ i pomagają leczyć choroby układu krążenia.",
+          "a": "krzepnąć",
+          "inne": [],
+          "exp": [
+            "Ślina pijawek zawiera substancje hamujące krzepnięcie krwi.",
+            "Częsty błąd: „płynąć” — działają odwrotnie, krew ma się nie zatykać"
+          ],
+          "zrodlo": "s. 43, sekcja „Znaczenie pierścienic dla człowieka”"
+        }
+      ]
+    },
+    {
+      "id": "pytania",
+      "tytul": "Pytania z podręcznika",
+      "polecenie": "Odpowiedz w myślach albo na głos, potem sprawdź.",
+      "zadania": [
+        {
+          "kind": "otwarte",
+          "e": "Jak zbudowane jest ciało pierścienicy? Opisz jego najważniejsze cechy.",
+          "a": "Ciało jest długie, walcowate lub trochę spłaszczone i podzielone na segmenty; okrywa je oskórek, a na nim śluz; wiele gatunków ma po bokach pęczki szczecinek.",
+          "blad": "pominięcie podziału na segmenty, choć to najważniejsza cecha tej grupy",
+          "zrodlo": "s. 41; ćw. 1 s. 44"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Do czego dżdżownicy przydają się długie, zwężone z przodu ciało, siodełko i szczecinki?",
+          "a": "Długie ciało ze zwężonym przodem ułatwia kopanie korytarzy, siodełko jest ważne przy rozmnażaniu płciowym, a szczecinki zaczepiają się o podłoże i pomagają w ruchu.",
+          "blad": "przypisanie siodełku roli w poruszaniu się — w ruchu pomagają szczecinki",
+          "zrodlo": "s. 41, kremowe pole „Pierścienice środowisk lądowych”, rysunek dżdżownicy; ćw. 2 s. 44"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Do czego dżdżownicy służą oskórek i warstwa śluzu?",
+          "a": "Oskórek osłania powierzchnię ciała, a śluz chroni je przed drobnymi urazami i sprawia, że łatwiej przesuwać się w glebie.",
+          "blad": "przekonanie, że śluz służy do zdobywania pokarmu",
+          "zrodlo": "s. 41, kremowe pole „Pierścienice środowisk lądowych”, rysunek dżdżownicy; s. 44, ramka „To najważniejsze!”; ćw. 2 s. 44"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Porównaj nereidę różnokolorową i dżdżownicę — czym się różnią?",
+          "a": "Nereida żyje w morzu i poluje, ma wyodrębnioną głowę z oczami, czułkami i wąsami oraz boczne wyrostki; dżdżownica żyje w glebie, je szczątki i wyodrębnionej głowy nie ma.",
+          "blad": "stwierdzenie, że obie mają głowę z narządami zmysłów",
+          "zrodlo": "s. 42, sekcja „Pierścienice morskie” i podpis zdjęcia nereidy; s. 41, sekcja „Gdzie żyją i jak wyglądają pierścienice?”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Co pozwala pijawce lekarskiej żyć jak pasożyt? Wymień jej przystosowania.",
+          "a": "Dwie przyssawki do trzymania się żywiciela, szczęki w otworze gębowym do nacinania skóry i uchyłki przewodu pokarmowego, w których przechowuje krew.",
+          "blad": "wymienienie szczecinek — pijawka ich nie ma",
+          "zrodlo": "s. 42, sekcja „Pierścienice wód słodkich” i „Czy wiesz, że...”; ćw. 3 s. 44"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Dlaczego pierścienice żyjące w glebie są ważne dla przyrody?",
+          "a": "Jako destruenci rozkładają szczątki, więc powstaje próchnica; kopiąc korytarze, spulchniają glebę; są też jedzeniem kretów, ryjówek, szpaków i kosów.",
+          "blad": "odpowiedź, że niszczą glebę — w rzeczywistości ją poprawiają",
+          "zrodlo": "s. 43, sekcja „Znaczenie pierścienic w przyrodzie”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Jak pierścienice pomagają ludziom, a jak im szkodzą? Podaj po jednym przykładzie.",
+          "a": "Korzystne: rureczniki hoduje się na pokarm dla ryb akwariowych albo ze śliny pijawek otrzymuje się substancje przeciw krzepnięciu krwi; szkodliwe: pijawki pijące krew ryb robią straty w hodowlach.",
+          "blad": "podanie samych korzyści, gdy trzeba też wskazać szkodę",
+          "zrodlo": "s. 43, sekcja „Znaczenie pierścienic dla człowieka”; ćw. 4 s. 44"
+        },
+        {
+          "kind": "otwarte",
+          "e": "W jakich środowiskach żyją pierścienice i gdzie jest ich najwięcej?",
+          "a": "Najwięcej gatunków mieszka w morzach i oceanach; część żyje w wodach słodkich, a część w wilgotnych miejscach na lądzie, głównie w glebie i ściółce.",
+          "blad": "odpowiedź, że pierścienice żyją tylko w ziemi",
+          "zrodlo": "s. 41, sekcja „Gdzie żyją i jak wyglądają pierścienice?”; s. 44, ramka „To najważniejsze!”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Wymień trzy pierścienice żyjące w Polsce i powiedz, gdzie mieszka każda z nich.",
+          "a": "Dżdżownica ziemna w glebie, nereida różnokolorowa w morzu (w Bałtyku), pijawka lekarska w wodach słodkich, w płytkich wodach stojących.",
+          "blad": "pominięcie nereidy, bo wydaje się zwierzęciem z dalekich oceanów",
+          "zrodlo": "s. 44, ramka „To najważniejsze!”; s. 42, podpisy zdjęć"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Dlaczego pijawka lekarska może bardzo długo żyć bez pobierania pokarmu?",
+          "a": "Bo w uchyłkach przewodu pokarmowego trzyma zapas krwi żywiciela; dzięki temu przetrwa nawet dwa lata bez jedzenia.",
+          "blad": "przekonanie, że pijawka w ogóle nie potrzebuje pokarmu",
+          "zrodlo": "s. 42, „Czy wiesz, że...”"
+        }
+      ]
+    }
+  ]
+}

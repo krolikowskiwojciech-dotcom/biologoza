@@ -1,0 +1,152 @@
+{
+  "profile": [
+    {
+      "id": "julek",
+      "imie": "Julek",
+      "klasa": 6,
+      "znak": "J"
+    }
+  ],
+  "zestawy": [
+    {
+      "id": "bio-dz2-l01-parzydelkowce",
+      "tytul": "Parzydełkowce — polip, meduza i parzące komórki",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-10-11",
+      "dzial": "II",
+      "dzialTytul": "Bezkręgowce: od parzydełkowców po pierścienice",
+      "lekcja": 1,
+      "strony": "29–32",
+      "ikona": "lisc",
+      "kolor": "brzoskwinia",
+      "bloki": 5,
+      "zadan": 38,
+      "nagrania": 0,
+      "sciaga": true
+    },
+    {
+      "id": "bio-dz2-l02-plazince",
+      "tytul": "Płazińce — robaki płaskie: wypławek i tasiemiec",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-10-11",
+      "dzial": "II",
+      "dzialTytul": "Bezkręgowce: od parzydełkowców po pierścienice",
+      "lekcja": 2,
+      "strony": "33–36",
+      "ikona": "dna",
+      "kolor": "niebieski",
+      "bloki": 5,
+      "zadan": 38,
+      "nagrania": 0,
+      "sciaga": true
+    },
+    {
+      "id": "bio-dz2-l03-nicienie",
+      "tytul": "Nicienie: nitkowate ciało i choroby, które wywołują",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-10-11",
+      "dzial": "II",
+      "dzialTytul": "Bezkręgowce: od parzydełkowców po pierścienice",
+      "lekcja": 3,
+      "strony": "37–40",
+      "ikona": "dna",
+      "kolor": "rozowy",
+      "bloki": 5,
+      "zadan": 38,
+      "nagrania": 0,
+      "sciaga": true
+    },
+    {
+      "id": "bio-dz2-l04-pierscienice",
+      "tytul": "Pierścienice — ciało z segmentów, od dżdżownicy po pijawkę",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-10-11",
+      "dzial": "II",
+      "dzialTytul": "Bezkręgowce: od parzydełkowców po pierścienice",
+      "lekcja": 4,
+      "strony": "41–44",
+      "ikona": "slimak",
+      "kolor": "krem",
+      "bloki": 5,
+      "zadan": 38,
+      "nagrania": 0,
+      "sciaga": true
+    },
+    {
+      "id": "bio-dz1-l01-w-krolestwie-zwierzat",
+      "tytul": "Królestwo zwierząt — kto do niego należy",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-09-06",
+      "dzial": "I",
+      "dzialTytul": "Świat zwierząt: od komórki do organizmu",
+      "lekcja": 1,
+      "strony": "7–12",
+      "ikona": "mikroskop",
+      "kolor": "lila",
+      "bloki": 5,
+      "zadan": 27,
+      "nagrania": 2,
+      "sciaga": true
+    },
+    {
+      "id": "bio-dz1-l02-tkanki-nablonkowa-miesniowa-i-nerwowa",
+      "tytul": "Trzy tkanki zwierzęce: nabłonek, mięśnie i nerwy",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-09-06",
+      "dzial": "I",
+      "dzialTytul": "Świat zwierząt: od komórki do organizmu",
+      "lekcja": 2,
+      "strony": "13–18",
+      "ikona": "komorka",
+      "kolor": "mietowy",
+      "bloki": 5,
+      "zadan": 28,
+      "nagrania": 2,
+      "sciaga": true
+    },
+    {
+      "id": "bio-dz1-l03-tkanka-laczna",
+      "tytul": "Tkanka łączna — od krwi po kości",
+      "opis": "",
+      "dla": [
+        "julek"
+      ],
+      "termin": null,
+      "dodano": "2026-09-06",
+      "dzial": "I",
+      "dzialTytul": "Świat zwierząt: od komórki do organizmu",
+      "lekcja": 3,
+      "strony": "19–22",
+      "ikona": "komorka",
+      "kolor": "zolty",
+      "bloki": 5,
+      "zadan": 28,
+      "nagrania": 2,
+      "sciaga": true
+    }
+  ]
+}

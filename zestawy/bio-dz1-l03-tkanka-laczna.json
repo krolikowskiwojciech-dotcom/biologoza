@@ -1,0 +1,530 @@
+{
+  "id": "bio-dz1-l03-tkanka-laczna",
+  "zrodlo": "lekcje-audio",
+  "dla": [
+    "julek"
+  ],
+  "tytul": "Tkanka łączna — od krwi po kości",
+  "dzial": "I",
+  "dzialTytul": "Świat zwierząt: od komórki do organizmu",
+  "lekcja": 3,
+  "strony": "19–22",
+  "dodano": "2026-09-06",
+  "termin": null,
+  "ikona": "komorka",
+  "kolor": "zolty",
+  "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz1-l03-tkanka-laczna.mp3",
+      "minuty": 10
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz1-l03-tkanka-laczna-krotkie.mp3",
+      "minuty": 9
+    }
+  ],
+  "sciaga": [
+    "Tkanka łączna jest prawie wszędzie: w każdym narządzie i w przestrzeni pomiędzy nimi. Jej główna rola to spajanie pozostałych tkanek — stąd nazwa.",
+    "Budowa: luźno porozrzucane komórki plus wypełniacz, czyli substancja międzykomórkowa, której zwykle jest bardzo dużo.",
+    "Porównaj z nabłonkiem: tam komórki przylegają ciasno jak kostka brukowa, tutaj leżą daleko od siebie jak rodzynki w cieście.",
+    "W wypełniaczu części tkanek łącznych tkwią mikroskopijne włókna z białka. Im gęściej ich tam jest, tym trudniej taką tkankę uszkodzić.",
+    "Najwięcej jest włókien kolagenowych. Rozciągnąć je równie trudno jak stal.",
+    "Cztery rodzaje do zapamiętania: chrzęstna, kostna, tłuszczowa i krew. Kość z chrząstką tworzą układ szkieletowy, a krew wypełnia serce i naczynia krwionośne.",
+    "Każdy rodzaj ma te same dwa składniki, tylko w innych proporcjach i o innej budowie. Właśnie stąd biorą się odmienne właściwości i zadania.",
+    "Chrząstka — budowa: przewaga substancji międzykomórkowej naszpikowanej włóknami, a komórki chrzęstne siedzą w jamkach. Tyle włókien daje sprężystość i elastyczność: zegnij małżowinę ucha, a wraca do kształtu.",
+    "Chrząstka — zadania: spina niektóre kości (żebra z mostkiem), w stawach pokrywa końce kości i zabezpiecza je przed ścieraniem, buduje też małżowiny uszne ssaków.",
+    "Żebra trzyma przy mostku chrząstka, a nie kość, bo przy oddychaniu klatka piersiowa musi się rozszerzać. Sztywna kość by to zablokowała.",
+    "Kość — budowa: mnóstwo substancji międzykomórkowej i komórki kostne w jamkach; między nimi biegną nerwy i naczynia krwionośne.",
+    "Kość — dwie cechy z dwóch składników: za twardość odpowiadają sole mineralne, za elastyczność włókna białkowe. Sama twardość to niepełna odpowiedź.",
+    "Kość — zadania: tworzy szkielet większości kręgowców i jest w nim głównym budulcem kości; służy również jako magazyn soli mineralnych, przede wszystkim wapnia.",
+    "Tłuszcz — budowa odwrotna niż w chrząstce i kości: wypełniacza jest tu bardzo mało, a kuliste komórki zajmuje niemal w całości jedna wielka kropla tłuszczu.",
+    "Tłuszcz — gdzie i po co: warstwa pod skórą oraz otulina narządów wewnętrznych; amortyzuje urazy, nie pozwala uciekać ciepłu i jest zapasem, z którego organizm dopiero wytwarza energię.",
+    "Krew — to tkanka w postaci płynu, ale ma komplet: rolę substancji międzykomórkowej pełni osocze, a komórkami są krwinki. Dlatego zaliczamy ją do tkanek łącznych.",
+    "Osocze — słomkowy płyn, ponad połowa objętości krwi. Woda to jego 90 procent, resztę stanowią sole mineralne, białka, cukry i tłuszcze.",
+    "Krwinki czerwone, czyli erytrocyty, są napełnione hemoglobiną — czerwonym barwnikiem, który przenosi tlen i dwutlenek węgla.",
+    "Krwinki białe, czyli leukocyty, rozprawiają się z wirusami i bakteriami, które wtargnęły do środka. Płytki krwi to okruchy cytoplazmy zamknięte w błonie i zajmują się krzepnięciem. Skrót do zapamiętania: czerwone wożą, białe walczą, płytki łatają.",
+    "Krew jako całość robi trzy rzeczy: rozwozi substancje (w tym tlen i dwutlenek węgla), broni organizm przed chorobotwórczymi drobnoustrojami, a ptakom i ssakom pozwala trzymać stałą temperaturę ciała.",
+    "Najczęstsze potknięcia: twierdzenie, że komórki tkanki łącznej ściśle do siebie przylegają (to cecha nabłonka), pomijanie krwi wśród rodzajów, nazywanie chrząstki twardą oraz uznawanie tłuszczu za coś zbędnego."
+  ],
+  "definicje": {
+    "tkanka łączna": "Tkanka, która trzyma razem inne tkanki i jest niemal w każdym narządzie. Składa się z luźno rozrzuconych komórek i dużej ilości substancji międzykomórkowej.",
+    "substancja międzykomórkowa": "To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+    "włókna białkowe": "Mikroskopijne nitki z białka w substancji międzykomórkowej. Im więcej włókien, tym tkanka jest bardziej odporna na uszkodzenia i bardziej elastyczna.",
+    "kolagen": "Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe.",
+    "jamki": "Wolne przestrzenie wewnątrz twardej lub sprężystej substancji międzykomórkowej. Siedzą w nich komórki chrzęstne i komórki kostne.",
+    "tkanka chrzęstna": "Elastyczna i sprężysta tkanka łączna; komórki chrzęstne leżą w jamkach substancji pełnej włókien. Łączy niektóre kości (żebra z mostkiem), chroni kości w stawach przed ścieraniem, buduje małżowiny uszne ssaków.",
+    "tkanka kostna": "Twarda (sole mineralne) i elastyczna (włókna białkowe) tkanka łączna; komórki kostne leżą w jamkach. Buduje szkielet większości kręgowców i magazynuje sole mineralne, głównie wapń.",
+    "sole mineralne": "Nieorganiczne składniki wysycające substancję międzykomórkową kości — to one dają jej twardość. Kość trzyma ich zapas dla całego organizmu, przede wszystkim wapń.",
+    "tkanka tłuszczowa": "Tkanka łączna z bardzo małą ilością substancji międzykomórkowej; jej komórki są wypełnione kroplą tłuszczu. Leży pod skórą i wokół narządów: chroni przed urazami i utratą ciepła, jest zapasem energii.",
+    "krew": "Płynna tkanka łączna: osocze (substancja międzykomórkowa) i zanurzone w nim krwinki oraz płytki. Transportuje tlen i dwutlenek węgla, broni przed drobnoustrojami, ptakom i ssakom daje stałą temperaturę ciała.",
+    "osocze": "Słomkowy płyn, główny składnik krwi (ponad połowa objętości). W 90% woda, poza tym sole mineralne, białka, cukry i tłuszcze.",
+    "krwinki czerwone i białe": "Krwinki czerwone (erytrocyty) mają hemoglobinę i przenoszą tlen oraz dwutlenek węgla. Krwinki białe (leukocyty) unieszkodliwiają wirusy i bakterie, które dostały się do organizmu.",
+    "hemoglobina": "Czerwony barwnik wypełniający krwinki czerwone. Wiąże tlen i dwutlenek węgla, dzięki czemu krew może je rozwozić.",
+    "płytki krwi": "Najmniejsze elementy krwi: kawałki cytoplazmy w błonie, bez jądra. Ich zadanie to krzepnięcie krwi, czyli zatykanie uszkodzonego naczynia."
+  },
+  "obrazy": [
+    {
+      "plik": "obrazy/lekcje/sciaga-bio-dz1-l03-tkanka-laczna.svg",
+      "po": 0,
+      "podpis": "Rysunek do zapamiętania: cztery rodzaje tkanki łącznej i ich zadania."
+    },
+    {
+      "plik": "obrazy/lekcje/bio3-chrzastka-kosc.jpg",
+      "po": 13,
+      "podpis": "U góry tkanka chrzęstna: pary komórek chrzęstnych w jamkach jednolitej, sprężystej substancji międzykomórkowej. Na dole tkanka kostna: komórki kostne w jamkach między koncentrycznymi warstwami twardej substancji."
+    },
+    {
+      "plik": "obrazy/lekcje/bio3-tluszcz.jpg",
+      "po": 15,
+      "podpis": "Tkanka tłuszczowa pod mikroskopem: komórki jak plaster miodu, każda niemal cała wypełniona kroplą tłuszczu (przy barwieniu tłuszcz się wypłukał, dlatego wyglądają na puste), spłaszczone jądro przy brzegu."
+    },
+    {
+      "plik": "obrazy/lekcje/bio3-krew.jpg",
+      "po": 19,
+      "podpis": "U góry krew po odstaniu w probówce: jasne osocze (ponad połowa) nad warstwą krwinek. Niżej rozmaz krwi pod mikroskopem: mnóstwo różowych krwinek czerwonych, pojedyncza duża krwinka biała z fioletowym jądrem i drobne fioletowe płytki krwi."
+    }
+  ],
+  "bloki": [
+    {
+      "id": "pojecia",
+      "tytul": "Pojęcia z lekcji",
+      "polecenie": "Które pojęcie pasuje do opisu?",
+      "ile": 8,
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "…, która trzyma razem inne … i jest niemal w każdym narządzie. Składa się z luźno rozrzuconych komórek i dużej ilości substancji międzykomórkowej.",
+          "a": "tkanka łączna",
+          "choices": [
+            "tkanka łączna",
+            "kolagen",
+            "jamki"
+          ],
+          "exp": [
+            "kolagen to coś innego: Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe.",
+            "jamki to coś innego: Wolne przestrzenie wewnątrz twardej lub sprężystej substancji międzykomórkowej. Siedzą w nich komórki chrzęstne i komórki kostne."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+          "a": "substancja międzykomórkowa",
+          "choices": [
+            "substancja międzykomórkowa",
+            "krwinki czerwone i białe",
+            "kolagen"
+          ],
+          "exp": [
+            "krwinki czerwone i białe to coś innego: Krwinki czerwone (erytrocyty) mają hemoglobinę i przenoszą tlen oraz dwutlenek węgla. Krwinki białe (leukocyty) unieszkodliwiają wirusy i bakterie, które dostały się do organizmu.",
+            "kolagen to coś innego: Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Mikroskopijne nitki z … w substancji międzykomórkowej. Im więcej …, tym tkanka jest bardziej odporna na uszkodzenia i bardziej elastyczna.",
+          "a": "włókna białkowe",
+          "choices": [
+            "włókna białkowe",
+            "krwinki czerwone i białe",
+            "płytki krwi"
+          ],
+          "exp": [
+            "krwinki czerwone i białe to coś innego: Krwinki czerwone (erytrocyty) mają hemoglobinę i przenoszą tlen oraz dwutlenek węgla. Krwinki białe (leukocyty) unieszkodliwiają wirusy i bakterie, które dostały się do organizmu.",
+            "płytki krwi to coś innego: Najmniejsze elementy krwi: kawałki cytoplazmy w błonie, bez jądra. Ich zadanie to krzepnięcie krwi, czyli zatykanie uszkodzonego naczynia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w … są bardzo wytrzymałe.",
+          "a": "kolagen",
+          "choices": [
+            "kolagen",
+            "substancja międzykomórkowa",
+            "jamki"
+          ],
+          "exp": [
+            "substancja międzykomórkowa to coś innego: To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+            "jamki to coś innego: Wolne przestrzenie wewnątrz twardej lub sprężystej substancji międzykomórkowej. Siedzą w nich komórki chrzęstne i komórki kostne."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Wolne przestrzenie wewnątrz twardej lub sprężystej substancji międzykomórkowej. Siedzą w nich komórki chrzęstne i komórki kostne.",
+          "a": "jamki",
+          "choices": [
+            "jamki",
+            "płytki krwi",
+            "kolagen"
+          ],
+          "exp": [
+            "płytki krwi to coś innego: Najmniejsze elementy krwi: kawałki cytoplazmy w błonie, bez jądra. Ich zadanie to krzepnięcie krwi, czyli zatykanie uszkodzonego naczynia.",
+            "kolagen to coś innego: Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Elastyczna i sprężysta … łączna; komórki … leżą w jamkach substancji pełnej włókien. Łączy niektóre kości (żebra z mostkiem), chroni kości w stawach przed ścieraniem, buduje małżowiny uszne ssaków.",
+          "a": "tkanka chrzęstna",
+          "choices": [
+            "tkanka chrzęstna",
+            "krew",
+            "sole mineralne"
+          ],
+          "exp": [
+            "krew to coś innego: Płynna tkanka łączna: osocze (substancja międzykomórkowa) i zanurzone w nim krwinki oraz płytki. Transportuje tlen i dwutlenek węgla, broni przed drobnoustrojami, ptakom i ssakom daje stałą temperaturę ciała.",
+            "sole mineralne to coś innego: Nieorganiczne składniki wysycające substancję międzykomórkową kości — to one dają jej twardość. Kość trzyma ich zapas dla całego organizmu, przede wszystkim wapń."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Twarda (sole mineralne) i elastyczna (włókna białkowe) … łączna; komórki … leżą w jamkach. Buduje szkielet większości kręgowców i magazynuje sole mineralne, głównie wapń.",
+          "a": "tkanka kostna",
+          "choices": [
+            "tkanka kostna",
+            "hemoglobina",
+            "kolagen"
+          ],
+          "exp": [
+            "hemoglobina to coś innego: Czerwony barwnik wypełniający krwinki czerwone. Wiąże tlen i dwutlenek węgla, dzięki czemu krew może je rozwozić.",
+            "kolagen to coś innego: Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Nieorganiczne składniki wysycające substancję międzykomórkową kości — to one dają jej twardość. Kość trzyma ich zapas dla całego organizmu, przede wszystkim wapń.",
+          "a": "sole mineralne",
+          "choices": [
+            "sole mineralne",
+            "substancja międzykomórkowa",
+            "tkanka chrzęstna"
+          ],
+          "exp": [
+            "substancja międzykomórkowa to coś innego: To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+            "tkanka chrzęstna to coś innego: Elastyczna i sprężysta tkanka łączna; komórki chrzęstne leżą w jamkach substancji pełnej włókien. Łączy niektóre kości (żebra z mostkiem), chroni kości w stawach przed ścieraniem, buduje małżowiny uszne ssaków."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… łączna z bardzo małą ilością substancji międzykomórkowej; jej komórki są wypełnione kroplą …. Leży pod skórą i wokół narządów: chroni przed urazami i utratą ciepła, jest zapasem energii.",
+          "a": "tkanka tłuszczowa",
+          "choices": [
+            "tkanka tłuszczowa",
+            "tkanka chrzęstna",
+            "kolagen"
+          ],
+          "exp": [
+            "tkanka chrzęstna to coś innego: Elastyczna i sprężysta tkanka łączna; komórki chrzęstne leżą w jamkach substancji pełnej włókien. Łączy niektóre kości (żebra z mostkiem), chroni kości w stawach przed ścieraniem, buduje małżowiny uszne ssaków.",
+            "kolagen to coś innego: Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Płynna tkanka łączna: osocze (substancja międzykomórkowa) i zanurzone w nim krwinki oraz płytki. Transportuje tlen i dwutlenek węgla, broni przed drobnoustrojami, ptakom i ssakom daje stałą temperaturę ciała.",
+          "a": "krew",
+          "choices": [
+            "krew",
+            "substancja międzykomórkowa",
+            "krwinki czerwone i białe"
+          ],
+          "exp": [
+            "substancja międzykomórkowa to coś innego: To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+            "krwinki czerwone i białe to coś innego: Krwinki czerwone (erytrocyty) mają hemoglobinę i przenoszą tlen oraz dwutlenek węgla. Krwinki białe (leukocyty) unieszkodliwiają wirusy i bakterie, które dostały się do organizmu."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Słomkowy płyn, główny składnik krwi (ponad połowa objętości). W 90% woda, poza tym sole mineralne, białka, cukry i tłuszcze.",
+          "a": "osocze",
+          "choices": [
+            "osocze",
+            "włókna białkowe",
+            "krew"
+          ],
+          "exp": [
+            "włókna białkowe to coś innego: Mikroskopijne nitki z białka w substancji międzykomórkowej. Im więcej włókien, tym tkanka jest bardziej odporna na uszkodzenia i bardziej elastyczna.",
+            "krew to coś innego: Płynna tkanka łączna: osocze (substancja międzykomórkowa) i zanurzone w nim krwinki oraz płytki. Transportuje tlen i dwutlenek węgla, broni przed drobnoustrojami, ptakom i ssakom daje stałą temperaturę ciała."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "… … (erytrocyty) mają hemoglobinę i przenoszą tlen oraz dwutlenek węgla. … … (leukocyty) unieszkodliwiają wirusy i bakterie, które dostały się do organizmu.",
+          "a": "krwinki czerwone i białe",
+          "choices": [
+            "krwinki czerwone i białe",
+            "tkanka chrzęstna",
+            "płytki krwi"
+          ],
+          "exp": [
+            "tkanka chrzęstna to coś innego: Elastyczna i sprężysta tkanka łączna; komórki chrzęstne leżą w jamkach substancji pełnej włókien. Łączy niektóre kości (żebra z mostkiem), chroni kości w stawach przed ścieraniem, buduje małżowiny uszne ssaków.",
+            "płytki krwi to coś innego: Najmniejsze elementy krwi: kawałki cytoplazmy w błonie, bez jądra. Ich zadanie to krzepnięcie krwi, czyli zatykanie uszkodzonego naczynia."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Czerwony barwnik wypełniający krwinki czerwone. Wiąże tlen i dwutlenek węgla, dzięki czemu krew może je rozwozić.",
+          "a": "hemoglobina",
+          "choices": [
+            "hemoglobina",
+            "substancja międzykomórkowa",
+            "krwinki czerwone i białe"
+          ],
+          "exp": [
+            "substancja międzykomórkowa to coś innego: To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+            "krwinki czerwone i białe to coś innego: Krwinki czerwone (erytrocyty) mają hemoglobinę i przenoszą tlen oraz dwutlenek węgla. Krwinki białe (leukocyty) unieszkodliwiają wirusy i bakterie, które dostały się do organizmu."
+          ]
+        },
+        {
+          "kind": "wybor",
+          "e": "Najmniejsze elementy …: kawałki cytoplazmy w błonie, bez jądra. Ich zadanie to krzepnięcie …, czyli zatykanie uszkodzonego naczynia.",
+          "a": "płytki krwi",
+          "choices": [
+            "płytki krwi",
+            "substancja międzykomórkowa",
+            "kolagen"
+          ],
+          "exp": [
+            "substancja międzykomórkowa to coś innego: To, co wypełnia przestrzeń między komórkami tkanki łącznej. Może być twarda (kość), sprężysta (chrząstka) albo płynna (osocze krwi).",
+            "kolagen to coś innego: Białko, z którego powstają najliczniejsze włókna substancji międzykomórkowej. Rozerwać je przy rozciąganiu jest równie trudno jak stal, więc tkanki bogate w kolagen są bardzo wytrzymałe."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wybor",
+      "tytul": "Test wyboru",
+      "polecenie": "Wybierz poprawną odpowiedź.",
+      "zadania": [
+        {
+          "kind": "wybor",
+          "e": "Tkanka kostna jest twarda dzięki:",
+          "a": "solom mineralnym",
+          "choices": [
+            "włóknom białkowym",
+            "solom mineralnym",
+            "komórkom kostnym"
+          ],
+          "exp": [
+            "Sole mineralne w substancji międzykomórkowej dają twardość; włókna białkowe dają elastyczność.",
+            "Częsty błąd: włókna białkowe — one odpowiadają za elastyczność"
+          ],
+          "zrodlo": "s. 20, sekcja „Tkanka kostna”"
+        },
+        {
+          "kind": "wybor",
+          "e": "Powierzchnie kości w stawach przed ścieraniem chroni tkanka:",
+          "a": "chrzęstna",
+          "choices": [
+            "chrzęstna",
+            "kostna",
+            "tłuszczowa"
+          ],
+          "exp": [
+            "Sprężysta chrząstka pokrywa końce kości w stawie jak poduszka.",
+            "Częsty błąd: tłuszczowa — ta chroni przed urazami, ale leży pod skórą i wokół narządów"
+          ],
+          "zrodlo": "s. 20; „Wiesz czy nie wiesz?” zad. 7"
+        },
+        {
+          "kind": "wybor",
+          "e": "Za krzepnięcie krwi odpowiadają:",
+          "a": "płytki krwi",
+          "choices": [
+            "krwinki czerwone",
+            "krwinki białe",
+            "płytki krwi"
+          ],
+          "exp": [
+            "Płytki to fragmenty cytoplazmy, które „łatają” uszkodzone naczynie.",
+            "Częsty błąd: krwinki białe — one walczą z wirusami i bakteriami"
+          ],
+          "zrodlo": "s. 21, pole „Składniki krwi i ich znaczenie”"
+        },
+        {
+          "kind": "wybor",
+          "e": "Krew wypełnia narządy układu:",
+          "a": "krwionośnego",
+          "choices": [
+            "pokarmowego",
+            "krwionośnego",
+            "szkieletowego"
+          ],
+          "exp": [
+            "Krew krąży w naczyniach krwionośnych i w sercu.",
+            "Częsty błąd: szkieletowego — tam pracują tkanka kostna i chrzęstna"
+          ],
+          "zrodlo": "s. 19, drzewko „Tkanka łączna”"
+        }
+      ]
+    },
+    {
+      "id": "prawda-falsz",
+      "tytul": "Prawda czy fałsz",
+      "polecenie": "Czy to zdanie jest prawdziwe?",
+      "zadania": [
+        {
+          "kind": "pf",
+          "e": "Krew jest tkanką łączną, choć jest płynna.",
+          "a": true,
+          "exp": [
+            "Tak — ma komórki (krwinki) zanurzone w substancji międzykomórkowej (osoczu).",
+            "Częsty błąd: „tkanka musi być stała”"
+          ],
+          "zrodlo": "s. 21, sekcja „Krew”"
+        },
+        {
+          "kind": "pf",
+          "e": "Tkanka tłuszczowa ma bardzo dużo substancji międzykomórkowej.",
+          "a": false,
+          "exp": [
+            "Nie — ma jej bardzo mało; składa się głównie z komórek wypełnionych kroplą tłuszczu.",
+            "Częsty błąd: przeniesienie cechy chrząstki i kości na tłuszcz"
+          ],
+          "zrodlo": "s. 21, sekcja „Tkanka tłuszczowa”"
+        },
+        {
+          "kind": "pf",
+          "e": "Osocze stanowi mniej niż połowę objętości krwi.",
+          "a": false,
+          "exp": [
+            "Nie — osocze to ponad połowa objętości krwi.",
+            "Częsty błąd: wrażenie, że krwinek jest więcej, bo krew jest czerwona"
+          ],
+          "zrodlo": "s. 21, podpis przy probówce"
+        }
+      ]
+    },
+    {
+      "id": "uzupelnij",
+      "tytul": "Uzupełnij",
+      "polecenie": "Wpisz brakujące pojęcie.",
+      "zadania": [
+        {
+          "kind": "wpisz",
+          "e": "Komórki chrzęstne i kostne leżą w ___ substancji międzykomórkowej.",
+          "a": "jamkach",
+          "inne": [],
+          "exp": [
+            "Jamki to małe przestrzenie w substancji międzykomórkowej, w których siedzą komórki.",
+            "Częsty błąd: „włóknach” — włókna są w substancji, ale komórki leżą w jamkach"
+          ],
+          "zrodlo": "s. 20"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Czerwony barwnik krwinek czerwonych, który przenosi tlen, to ___.",
+          "a": "hemoglobina",
+          "inne": [],
+          "exp": [
+            "Hemoglobina wiąże tlen i dwutlenek węgla.",
+            "Częsty błąd: „osocze” — osocze to płyn, nie barwnik"
+          ],
+          "zrodlo": "s. 21"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Tkanka kostna magazynuje sole mineralne, głównie ___.",
+          "a": "wapń",
+          "inne": [
+            "wapn",
+            "wapnia"
+          ],
+          "exp": [
+            "Wapń to najważniejszy z magazynowanych w kościach składników mineralnych.",
+            "Częsty błąd: „żelazo” — o żelazie w kościach nie ma mowy"
+          ],
+          "zrodlo": "s. 20, sekcja „Tkanka kostna”"
+        },
+        {
+          "kind": "wpisz",
+          "e": "Krew pomaga trzymać stałą temperaturę ciała tylko dwóm grupom kręgowców: ptakom i ___.",
+          "a": "ssakom",
+          "inne": [
+            "ssaki",
+            "ssaków",
+            "ssakow"
+          ],
+          "exp": [
+            "Ptaki i ssaki — u nich krew bierze udział w utrzymaniu jednakowej temperatury ciała.",
+            "Częsty błąd: wpisanie innej grupy — wymienione są wyłącznie ptaki i ssaki"
+          ],
+          "zrodlo": "s. 21, sekcja „Krew”"
+        }
+      ]
+    },
+    {
+      "id": "pytania",
+      "tytul": "Pytania z podręcznika",
+      "polecenie": "Odpowiedz w myślach albo na głos, potem sprawdź.",
+      "zadania": [
+        {
+          "kind": "otwarte",
+          "e": "Z czego zbudowana jest tkanka łączna i czym różni się od nabłonka?",
+          "a": "Z luźno ułożonych komórek i dużej ilości substancji międzykomórkowej; w nabłonku komórki leżą ciasno, w tkance łącznej są rozrzucone.",
+          "blad": "przypisanie tkance łącznej ciasno ułożonych komórek",
+          "zrodlo": "s. 19, sekcja „Jak jest zbudowana tkanka łączna?”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Wymień cztery główne rodzaje tkanki łącznej.",
+          "a": "Chrzęstna, kostna, tłuszczowa i krew.",
+          "blad": "pominięcie krwi, bo jest płynna",
+          "zrodlo": "s. 19, drzewko „Tkanka łączna”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Czym różni się tkanka chrzęstna od kostnej, skoro obie budują szkielet?",
+          "a": "Chrząstka ma w substancji międzykomórkowej włókna białkowe, więc jest elastyczna i sprężysta; kość ma jeszcze sole mineralne, więc jest twarda, a dzięki włóknom także elastyczna.",
+          "blad": "uznanie chrząstki za twardą jak kość",
+          "zrodlo": "s. 20; ćw. 1 s. 22"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Dlaczego żebra łączą się z mostkiem tkanką chrzęstną, a nie kostną?",
+          "a": "Bo chrząstka jest elastyczna i sprężysta, więc klatka piersiowa może się rozszerzać przy oddychaniu; twarda kość nie dałaby takiej ruchomości.",
+          "blad": "„bo chrząstka jest mocniejsza” — chodzi o elastyczność, nie o siłę",
+          "zrodlo": "s. 20, pytajnik na marginesie"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Gdzie leży tkanka tłuszczowa i jakie ma trzy zadania?",
+          "a": "Pod skórą i wokół narządów wewnętrznych; chroni przed urazami, chroni przed utratą ciepła i magazynuje zapas energii.",
+          "blad": "pominięcie ochrony przed utratą ciepła",
+          "zrodlo": "s. 21, sekcja „Tkanka tłuszczowa”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Co to znaczy, że tkanka tłuszczowa jest rezerwą energetyczną organizmu?",
+          "a": "Tłuszcz zgromadzony w jej komórkach to materiał zapasowy, który organizm może zużyć do wytworzenia energii, gdy jej brakuje.",
+          "blad": "„tłuszcz sam wytwarza energię” — jest tylko zapasem",
+          "zrodlo": "s. 21; ćw. 2 s. 22"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Wymień składniki krwi i zadanie każdego z nich.",
+          "a": "Osocze to płyn (głównie woda z solami, białkami, cukrami i tłuszczami); krwinki czerwone przenoszą tlen i dwutlenek węgla dzięki hemoglobinie; krwinki białe niszczą wirusy i bakterie; płytki krwi odpowiadają za krzepnięcie.",
+          "blad": "zamiana ról krwinek białych i płytek krwi",
+          "zrodlo": "s. 21, pole „Składniki krwi i ich znaczenie”; ćw. 3 s. 22"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Z jakiego białka zbudowane są najliczniejsze włókna substancji międzykomórkowej i co je wyróżnia?",
+          "a": "Z kolagenu. Przy rozciąganiu są tak wytrzymałe jak stal, dlatego tkanka z dużą liczbą takich włókien trudno się uszkadza.",
+          "blad": "mylenie włókien białkowych z solami mineralnymi — sole dają twardość kości, a nie wytrzymałość włókien",
+          "zrodlo": "s. 19, ramka „Czy wiesz, że...”"
+        },
+        {
+          "kind": "otwarte",
+          "e": "Wszystkie tkanki łączne mają te same dwa składniki. Dlaczego więc tak bardzo się od siebie różnią?",
+          "a": "Bo w każdej z nich składniki te wyglądają inaczej i jest ich inna ilość. Stąd biorą się odmienne właściwości i inne zadania w organizmie.",
+          "blad": "„bo każda ma zupełnie inne składniki” — składniki są te same, różnią się proporcje i budowa",
+          "zrodlo": "s. 20, wstęp do kremowego pola"
+        }
+      ]
+    }
+  ]
+}
