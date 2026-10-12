@@ -261,6 +261,7 @@ async function ekranSciagi(id) {
         h('a', { class: 'wstecz', href: '#/z/' + encodeURIComponent(z.id), 'aria-label': 'Wróć' }, ik('wstecz')),
         h('span', { class: 'kat-etykieta' }, 'Ściąga'),
         h('h1', { class: 'serif' }, z.tytul)),
+      (obrazyPo[0] || []).map(obraz), // rysunek ściągi („po”: 0) — przed pierwszym punktem
       h('ol', { class: 'sciaga' }, z.sciaga.map((t, i) => [h('li', {}, t), (obrazyPo[i + 1] || []).map(obraz)])),
       (obrazyPo[z.sciaga.length + 1] || []).map(obraz),
       z.definicje ? [h('div', { class: 'sekcja' }, 'Pojęcia'),
