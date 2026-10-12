@@ -41,7 +41,14 @@ Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie tr
 3. `node narzedzia/biologoza.mjs katalog` — musi przejść bez błędów.
 4. Obejrzyj lokalnie (`python3 -m http.server 8743 --bind 127.0.0.1`, telefon 390 px), potem commit + `git push`.
 
-## Zasady wyglądu (jak w Lingozie)
+## Zasady wyglądu
+
+**Styl ołówkowo-kredkowy (Wojtek 2026-10-12)** — tym Biologoza różni się od Lingozy: kafle bez zaokrągleń, ramki jak rysowane
+ołówkiem (`--kreska`, `--kreska-ok`, `--kreska-zle`, `--kreska-przerywana` w `styles.css` — border-image z SVG), kolorowe powierzchnie
+jak pokolorowane kredką (`--kredka` + `--ziarno`), cienie 3D przesunięte w bok. Nowe elementy rób w tym samym stylu.
+Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako żółta pigułka), odpowiedzi 3D z literami A/B/C pod kartą.
+
+Reszta jak w Lingozie:
 
 - Kroje: nagłówki Libre Baskerville (`.serif`), tekst Jost. **Zero kursywy.**
 - **Bez emoji w interfejsie** — ikony SVG z `js/dom.js` (`ik('nazwa')`), kreska 2.1, zaokrąglone końce; nowe dopisuj do `IKONY`.
