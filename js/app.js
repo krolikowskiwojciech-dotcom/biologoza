@@ -10,7 +10,7 @@ const app = document.getElementById('app');
 let indeks = null;
 const zestawyCache = {};
 let biezacaGra = null;
-let odtwarzacz = null; // { audio, url } — jedno nagranie naraz
+let odtwarzacz = null; // odtwarzacz, do którego należy teraz wspólny glosnik (jedno nagranie naraz)
 
 async function wczytajIndeks() {
   const r = await fetch('zestawy/indeks.json', { cache: 'no-cache' });
@@ -147,13 +147,37 @@ function kolejnoscKart() {
 }
 
 // ---------- odtwarzacz ----------
+// Jeden wspólny element dla wszystkich nagrań lekcji. iPhone pozwala zacząć odtwarzanie tylko w reakcji
+// na dotknięcie, a pełne nagranie najpierw się pobiera (kilka sekund) — więc przy dotknięciu ten sam element
+// od razu gra ułamek sekundy ciszy (odblokowanie, jak w Lingozie), a po pobraniu dostaje właściwy plik.
+const glosnik = new Audio();
+glosnik.preload = 'metadata';
+glosnik.setAttribute('playsinline', '');
+try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch { /* starsze iOS */ } // gra też przy wyciszonym iPhonie
+function wavCiszy() {
+  const n = 800; const b = new Uint8Array(44 + n); const v = new DataView(b.buffer);
+  const t = (o, x) => [...x].forEach((c, i) => { b[o + i] = c.charCodeAt(0); });
+  t(0, 'RIFF'); v.setUint32(4, 36 + n, true); t(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+  v.setUint32(24, 8000, true); v.setUint32(28, 8000, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true); t(36, 'data'); v.setUint32(40, n, true);
+  b.fill(128, 44);
+  return URL.createObjectURL(new Blob([b], { type: 'audio/wav' }));
+}
+const CISZA = wavCiszy();
+function odblokujGlosnik() {
+  glosnik.src = CISZA;
+  glosnik.play().then(() => { if (glosnik.src === CISZA) glosnik.pause(); }).catch(() => {});
+}
+
 const czasTxt = (s) => (Number.isFinite(s) ? `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}` : '–:––');
 const kluczMiejsca = (z, n) => `bz.miejsce.${z.id}.${n.plik || n.prywatne}`;
 
 function zatrzymajOdtwarzacz() {
   if (!odtwarzacz) return;
-  odtwarzacz.audio.pause();
+  odtwarzacz.zapisz?.(); // zanim odepniemy słuchacze — wyjście z ekranu też pamięta miejsce
+  glosnik.pause();
+  odtwarzacz.sluchacze?.abort();
   if (odtwarzacz.url) URL.revokeObjectURL(odtwarzacz.url);
+  odtwarzacz.przestan?.();
   odtwarzacz = null;
 }
 
@@ -164,44 +188,56 @@ function odtwarzaczNagrania(z, n) {
   const czas = h('small', { class: 'nagr-czas' }, n.minuty ? `ok. ${n.minuty} min` : '');
   const stan = h('small', { class: 'nagr-stan', role: 'status' });
   const klucz = kluczMiejsca(z, n);
-  let a = null;
+  const ja = {}; // ten odtwarzacz; glosnik należy do niego, gdy odtwarzacz === ja
+  const moj = () => odtwarzacz === ja;
 
-  const ustawIkone = () => btn.replaceChildren(ik(a && !a.paused ? 'pauza' : 'graj'));
+  const ustawIkone = () => btn.replaceChildren(ik(moj() && !glosnik.paused ? 'pauza' : 'graj'));
   const odswiez = () => {
-    if (!a) return;
-    suwak.value = a.duration ? Math.round((a.currentTime / a.duration) * 1000) : 0;
-    czas.textContent = `${czasTxt(a.currentTime)} / ${czasTxt(a.duration)}`;
+    if (!moj()) return;
+    suwak.value = glosnik.duration ? Math.round((glosnik.currentTime / glosnik.duration) * 1000) : 0;
+    czas.textContent = `${czasTxt(glosnik.currentTime)} / ${czasTxt(glosnik.duration)}`;
   };
-  async function przygotuj() {
-    if (a) return a;
+  ja.przestan = () => { suwak.disabled = true; cofnij.disabled = true; btn.replaceChildren(ik('graj')); };
+
+  function przejmij() {
     zatrzymajOdtwarzacz();
-    let url = null;
-    if (n.prywatne) {
-      stan.textContent = 'Pobieram nagranie…';
-      btn.disabled = true;
-      try { url = URL.createObjectURL(await S.nagraniePrywatne(n.prywatne)); } finally { btn.disabled = false; }
-      stan.textContent = '';
-    }
-    a = new Audio(url || n.plik);
-    a.preload = 'metadata';
-    odtwarzacz = { audio: a, url };
-    const zapisane = Number(S.LS.get(klucz, 0));
-    a.addEventListener('loadedmetadata', () => { if (zapisane > 5 && zapisane < a.duration - 5) a.currentTime = zapisane; odswiez(); });
-    a.addEventListener('timeupdate', () => { odswiez(); if (Math.round(a.currentTime) % 5 === 0) S.LS.set(klucz, a.currentTime); });
-    a.addEventListener('play', ustawIkone);
-    a.addEventListener('pause', () => { ustawIkone(); S.LS.set(klucz, a.currentTime); });
-    a.addEventListener('ended', () => { S.LS.set(klucz, 0); ustawIkone(); });
-    suwak.disabled = false; cofnij.disabled = false;
-    return a;
+    odtwarzacz = ja;
+    ja.sluchacze = new AbortController();
+    ja.url = null;
   }
-  btn.onclick = async () => {
-    try {
-      const x = await przygotuj();
-      if (x.paused) await x.play(); else x.pause();
-    } catch (e) { stan.textContent = e.message || 'Nie udało się odtworzyć nagrania.'; a = null; }
+  function podepnij(src) {
+    const opcje = { signal: ja.sluchacze.signal };
+    const zapisane = Number(S.LS.get(klucz, 0));
+    glosnik.addEventListener('loadedmetadata', () => { if (zapisane > 5 && zapisane < glosnik.duration - 5) glosnik.currentTime = zapisane; odswiez(); }, opcje);
+    glosnik.addEventListener('timeupdate', () => { odswiez(); if (Math.round(glosnik.currentTime) % 5 === 0) S.LS.set(klucz, glosnik.currentTime); }, opcje);
+    glosnik.addEventListener('play', ustawIkone, opcje);
+    glosnik.addEventListener('pause', () => { ustawIkone(); ja.zapisz(); }, opcje);
+    glosnik.addEventListener('ended', () => { S.LS.set(klucz, 0); ustawIkone(); }, opcje);
+    glosnik.src = src;
+    suwak.disabled = false; cofnij.disabled = false;
+  }
+  ja.zapisz = () => { if (moj() && glosnik.src !== CISZA && glosnik.currentTime > 1) S.LS.set(klucz, glosnik.currentTime); };
+  const blad = (e) => {
+    stan.textContent = e?.name === 'NotAllowedError' ? 'Telefon zablokował dźwięk. Stuknij jeszcze raz.' : (e?.message || 'Nie udało się odtworzyć nagrania.');
+    ustawIkone();
   };
-  cofnij.onclick = () => { if (a) a.currentTime = Math.max(0, a.currentTime - 15); };
-  suwak.oninput = () => { if (a?.duration) a.currentTime = (suwak.value / 1000) * a.duration; };
+  btn.onclick = () => {
+    if (moj() && glosnik.src !== CISZA) { if (glosnik.paused) glosnik.play().catch(blad); else glosnik.pause(); return; }
+    przejmij();
+    if (!n.prywatne) { podepnij(n.plik); glosnik.play().catch(blad); return; } // bez czekania — wciąż w dotknięciu
+    odblokujGlosnik(); // jeszcze w dotknięciu, zanim zacznie się kilkusekundowe pobieranie
+    stan.textContent = 'Pobieram nagranie…';
+    btn.disabled = true;
+    S.nagraniePrywatne(n.prywatne).then((blob) => {
+      if (!moj()) return; // w międzyczasie włączono inne nagranie
+      ja.url = URL.createObjectURL(blob);
+      stan.textContent = '';
+      podepnij(ja.url);
+      return glosnik.play();
+    }).catch(blad).finally(() => { btn.disabled = false; });
+  };
+  cofnij.onclick = () => { if (moj()) glosnik.currentTime = Math.max(0, glosnik.currentTime - 15); };
+  suwak.oninput = () => { if (moj() && glosnik.duration) glosnik.currentTime = (suwak.value / 1000) * glosnik.duration; };
   if (n.prywatne) S.maNagranie(n.prywatne).then((jest) => { if (jest) stan.textContent = 'zapisane na telefonie'; });
 
   return h('div', { class: 'nagranie' },

@@ -1,7 +1,7 @@
 // Offline: pliki aplikacji i lekcje najpierw z sieci (nowe pytania od razu), bez sieci z pamięci podręcznej.
 // Krótkie nagrania (nagrania/*.mp3) idą prosto z sieci, bo odtwarzacz prosi o kawałki pliku; pełne nagrania
 // z prywatnego repo trzyma osobna pamięć „biologoza-nagrania” (js/store.js), której ten plik nie czyści.
-const CACHE = 'biologoza-v3';
+const CACHE = 'biologoza-v4';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/gra.js', 'js/sprawdz.js',
   'js/store.js', 'js/dzwieki.js', 'zestawy/indeks.json', 'ikony/ikona-192.png', 'fonts/Jost.ttf', 'fonts/LibreBaskerville.ttf',
   'audio/przycisk.mp3', 'audio/wybor.mp3', 'audio/cofnij.mp3',
