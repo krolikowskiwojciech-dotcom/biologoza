@@ -222,7 +222,7 @@ function importuj({ bezNagran }) {
       const cel = `nagrania/${id}.mp3`;
       const wynik = bezNagran ? 'pominięte (--bez-nagran)' : wyslijPrywatne(pelne, cel, `pełne nagranie ${id}`);
       console.log(`   pełne nagranie → biologoza-dane/${cel}: ${wynik}`);
-      nagrania.unshift({ tytul: 'Lekcja z podręcznikiem', opis: 'Słuchaj i patrz do książki', prywatne: cel, minuty: czasNagrania(pelne) });
+      nagrania.unshift({ tytul: 'Lekcja z podręcznikiem', opis: 'Słuchaj i patrz do książki', prywatne: cel, wersja: shaBloba(fs.readFileSync(pelne)).slice(0, 10), minuty: czasNagrania(pelne) });
     }
 
     const nr = Number(L.lekcja_nr) || null;

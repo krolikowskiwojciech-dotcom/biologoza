@@ -85,12 +85,15 @@ export async function synchronizuj(id) {
 // pełne nagrania (blisko tekstu podręcznika) leżą tylko w prywatnym repo — pobieramy je tokenem
 // i trzymamy w pamięci podręcznej telefonu, żeby drugi raz grały bez sieci
 const CACHE_NAGRAN = 'biologoza-nagrania';
-export async function nagraniePrywatne(sciezka) {
-  const klucz = `https://prywatne.biologoza/${sciezka}`;
+// klucz zawiera wersję pliku: po ponownym nagraniu (np. w nowszym modelu) telefon pobiera nowy plik, a stary usuwa
+const kluczNagrania = (sciezka, wersja) => `https://prywatne.biologoza/${sciezka}${wersja ? '?v=' + wersja : ''}`;
+export async function nagraniePrywatne(sciezka, wersja) {
+  const klucz = kluczNagrania(sciezka, wersja);
   try {
     const c = await caches.open(CACHE_NAGRAN);
     const jest = await c.match(klucz);
     if (jest) return jest.blob();
+    for (const r of await c.keys()) if (r.url.split('?')[0] === klucz.split('?')[0]) await c.delete(r); // starsze wersje
   } catch { /* brak Cache Storage */ }
   if (!token()) throw new Error('Pełne nagranie jest prywatne. Wklej token w Ustawieniach, żeby je odtworzyć.');
   const r = await gh(`/repos/${REPO_DANYCH}/contents/${sciezka.split('/').map(encodeURIComponent).join('/')}`, { headers: { Accept: 'application/vnd.github.raw' } });
@@ -100,6 +103,6 @@ export async function nagraniePrywatne(sciezka) {
   try { (await caches.open(CACHE_NAGRAN)).put(klucz, new Response(blob, { headers: { 'Content-Type': 'audio/mpeg' } })); } catch { /* pełna pamięć */ }
   return blob;
 }
-export async function maNagranie(sciezka) {
-  try { return !!(await (await caches.open(CACHE_NAGRAN)).match(`https://prywatne.biologoza/${sciezka}`)); } catch { return false; }
+export async function maNagranie(sciezka, wersja) {
+  try { return !!(await (await caches.open(CACHE_NAGRAN)).match(kluczNagrania(sciezka, wersja))); } catch { return false; }
 }
