@@ -53,4 +53,4 @@ Razem: 15 „musi” + 7 „może”.
 
 Nowy plik obrabia `narzedzia/dzwiek.sh "<plik z Epidemic>" <nazwa>` (przycina ciszę, mono, szczyt −1 dB, MP3) — zapisuje
 od razu `audio/<nazwa>.mp3`, kod niczego więcej nie potrzebuje. Dopóki pliku nie ma, `js/dzwieki.js` gra zapas z Matmozy
-albo milczy. Gotowe: przycisk, wybor, cofnij, para, przelacznik, start-bloku, odslon, podpowiedz, okno, nowe-pytanie, dobrze, seria-5, powrot-pytania, wyslano, bez-bledow, lekcja-gotowa (ściszona o 5 dB, żeby nie przebijała bez-bledow). Odtwarzacz nagrań lekcji nie ma dźwięków (nie przeszkadzają w słuchaniu).
+albo milczy. Gotowe: przycisk, wybor, cofnij, para, przelacznik, start-bloku, odslon, podpowiedz, okno, nowe-pytanie, dobrze, seria-5, powrot-pytania, wyslano, bez-bledow, lekcja-gotowa (ściszona o 5 dB, żeby nie przebijała bez-bledow), blok-idealny (ściszony o 3 dB). Odtwarzacz nagrań lekcji nie ma dźwięków (nie przeszkadzają w słuchaniu).
