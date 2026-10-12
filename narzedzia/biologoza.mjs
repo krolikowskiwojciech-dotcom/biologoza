@@ -27,6 +27,7 @@ const PROFILE = [{ id: 'julek', imie: 'Julek', klasa: 6, znak: 'J' }];
 const KOLORY = ['lila', 'mietowy', 'zolty', 'brzoskwinia', 'niebieski', 'rozowy', 'krem'];
 const IKONY = ['lisc', 'komorka', 'mikroskop', 'dna', 'ryba', 'ptak', 'owad', 'slimak', 'zaba', 'serce', 'kosc', 'grzyb'];
 const RODZAJE = ['wybor', 'pf', 'wpisz', 'kolejnosc', 'pary', 'otwarte'];
+const SPIS = JSON.parse(fs.readFileSync(path.join(ZESTAWY, 'spis.json'), 'utf8'));
 
 // ---------- kontrola zestawu ----------
 function sprawdzCzesc(cz, gdzie, bledy) {
@@ -81,6 +82,12 @@ export function sprawdzZestaw(z) {
     if (!n.plik && !n.prywatne) bledy.push(`${z.id}: nagranie bez pliku`);
   }
   for (const o of z.obrazy || []) if (!fs.existsSync(path.join(KORZEN, o.plik))) bledy.push(`${z.id}: brak obrazka ${o.plik}`);
+  // zestaw z działem musi trafić w lekcję ze spisu podręcznika — inaczej nie pojawi się w swoim dziale na liście
+  if (z.dzial) {
+    const d = SPIS.dzialy.find((x) => x.nr === z.dzial);
+    if (!d) bledy.push(`${z.id}: działu „${z.dzial}” nie ma w zestawy/spis.json`);
+    else if (!d.lekcje.some((l) => (z.typ ? l.typ === z.typ : !l.typ && l.nr === z.lekcja))) bledy.push(`${z.id}: w dziale ${z.dzial} nie ma ${z.typ ? `pozycji „${z.typ}”` : `lekcji nr ${z.lekcja}`} (zestawy/spis.json)`);
+  }
   const idBlokow = new Set();
   for (const b of z.bloki || []) {
     if (idBlokow.has(b.id)) bledy.push(`${z.id}: powtórzone id bloku „${b.id}”`);
@@ -103,7 +110,7 @@ export function sprawdzZestaw(z) {
 }
 
 function wczytajZestawy() {
-  return fs.readdirSync(ZESTAWY).filter((f) => f.endsWith('.json') && f !== 'indeks.json').sort()
+  return fs.readdirSync(ZESTAWY).filter((f) => f.endsWith('.json') && f !== 'indeks.json' && f !== 'spis.json').sort()
     .map((f) => {
       const z = JSON.parse(fs.readFileSync(path.join(ZESTAWY, f), 'utf8'));
       if (z.id + '.json' !== f) throw new Error(`${f}: id „${z.id}” musi być takie jak nazwa pliku`);
@@ -248,7 +255,7 @@ function zbudujIndeks(zestawy) {
     profile: PROFILE,
     zestawy: zestawy.map((z) => ({
       id: z.id, tytul: z.tytul, opis: z.opis || '', dla: [].concat(z.dla), termin: z.termin || null, dodano: z.dodano || null,
-      dzial: z.dzial || null, dzialTytul: z.dzialTytul || null, lekcja: z.lekcja || null, strony: z.strony || null,
+      dzial: z.dzial || null, dzialTytul: z.dzialTytul || null, lekcja: z.lekcja || null, typ: z.typ || null, strony: z.strony || null,
       ikona: z.ikona || null, kolor: z.kolor || null, bloki: z.bloki.length,
       zadan: z.bloki.reduce((n, b) => n + (b.ile || b.zadania?.length || 0), 0),
       nagrania: z.nagrania?.length || 0, sciaga: !!z.sciaga?.length,

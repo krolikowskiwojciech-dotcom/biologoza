@@ -8,6 +8,7 @@ import { graj, przygotujDzwieki } from './dzwieki.js';
 
 const app = document.getElementById('app');
 let indeks = null;
+let spis = null; // układ podręcznika: działy i lekcje (zestawy/spis.json)
 const zestawyCache = {};
 let biezacaGra = null;
 let odtwarzacz = null; // odtwarzacz, do którego należy teraz wspólny glosnik (jedno nagranie naraz)
@@ -55,23 +56,24 @@ function ekranWyboru() {
       }, h('span', { class: 'profil-avatar serif' }, p.znak), h('b', {}, p.imie), h('small', {}, `klasa ${p.klasa}`))))));
 }
 
-// ---------- lista lekcji ----------
+// ---------- lista lekcji: działy z podręcznika (zestawy/spis.json), w nich lekcje po kolei ----------
+const KOLORY_DZIALOW = ['kolor-lila', 'kolor-mietowy', 'kolor-zolty', 'kolor-brzoskwinia', 'kolor-niebieski', 'kolor-rozowy'];
+const rozwiniete = new Map(); // nr działu → rozwinięty? (na czas otwartej aplikacji)
+
 function ekranListy() {
   const p = profilInfo();
   const moje = indeks.zestawy.filter((z) => z.dla.includes(p.id));
   const pilne = moje.filter((z) => z.termin && dniDo(z.termin) >= 0).sort((a, b) => a.termin.localeCompare(b.termin));
-  const reszta = moje.filter((z) => !pilne.includes(z));
-  // działy w kolejności podręcznika; zestawy bez działu (np. kartkówki ze zdjęć) na końcu
-  const dzialy = [];
-  for (const z of reszta) {
-    const k = z.dzial || '';
-    let d = dzialy.find((x) => x.k === k);
-    if (!d) dzialy.push(d = { k, tytul: z.dzial ? `Dział ${z.dzial}${z.dzialTytul ? ' · ' + z.dzialTytul : ''}` : 'Inne zestawy', lista: [] });
-    d.lista.push(z);
-  }
-  const RZYM = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
-  dzialy.sort((a, b) => (RZYM.indexOf(a.k) + 1 || 99) - (RZYM.indexOf(b.k) + 1 || 99));
-  for (const d of dzialy) d.lista.sort((a, b) => (a.lekcja || 99) - (b.lekcja || 99) || String(b.dodano).localeCompare(String(a.dodano)));
+  const wSpisie = new Set();
+  const dzialy = (spis?.dzialy || []).map((d, i) => {
+    const pozycje = d.lekcje.map((l) => {
+      const z = moje.find((x) => x.dzial === d.nr && (l.typ ? x.typ === l.typ : !x.typ && x.lekcja === l.nr));
+      if (z) wSpisie.add(z.id);
+      return { ...l, z };
+    });
+    return { ...d, pozycje, kolor: KOLORY_DZIALOW[i % KOLORY_DZIALOW.length], gotowe: pozycje.filter((x) => x.z).length };
+  });
+  const inne = moje.filter((z) => !wSpisie.has(z.id) && !pilne.includes(z));
 
   let nr = 0;
   const karta = (z) => {
@@ -81,25 +83,56 @@ function ekranListy() {
     return h('a', { class: `karta-pakietu ${kolorZestawu(z, i)}`, href: '#/z/' + encodeURIComponent(z.id) },
       h('div', { class: 'kp-gora' }, babel(ikonaZestawu(z, i)),
         h('div', { class: 'kp-txt' },
-          z.termin && dni >= 0 ? h('span', { class: 'termin' + (dni <= 1 ? ' pilne' : '') }, etykietaTerminu(dni, z.termin))
-            : z.lekcja ? h('span', { class: 'termin' }, `lekcja ${z.lekcja}${z.strony ? ' · s. ' + z.strony : ''}`) : null,
+          z.termin && dni >= 0 ? h('span', { class: 'termin' + (dni <= 1 ? ' pilne' : '') }, etykietaTerminu(dni, z.termin)) : null,
           h('div', { class: 'kp-tytul serif' }, z.tytul))),
       h('div', { class: 'kp-dol' },
-        h('span', { class: 'kp-ikony' },
-          z.nagrania ? h('span', { class: 'kp-ikona' }, ik('sluchawki'), z.nagrania) : null,
-          h('span', { class: 'kp-ikona' }, ik('ptaszek'), `${z.zadan} ${odm(z.zadan, 'pytanie', 'pytania', 'pytań')}`),
-          z.sciaga ? h('span', { class: 'kp-ikona' }, ik('sciaga'), 'ściąga') : null),
+        h('span', { class: 'kp-ikony' }, h('span', { class: 'kp-ikona' }, ik('ptaszek'), `${z.zadan} ${odm(z.zadan, 'pytanie', 'pytania', 'pytań')}`)),
         ostatnia ? h('span', { class: 'poz-status zna' }, `ostatnio ${ostatnia.dobrze}/${ostatnia.ile}` + (ile > 1 ? ` · ${ile}×` : '')) : null));
   };
+
+  const wiersz = (l) => {
+    const z = l.z;
+    const nrEl = l.typ ? h('span', { class: 'lek-nr ikona', 'aria-hidden': 'true' }, ik(l.typ === 'test' ? 'ptaszek' : 'sciaga'))
+      : h('span', { class: 'lek-nr serif' }, l.nr);
+    if (!z) {
+      return h('div', { class: 'lek-wiersz wkrotce' }, nrEl,
+        h('span', { class: 'lek-txt' }, h('b', {}, l.temat), h('small', {}, `s. ${l.strony}`)),
+        h('span', { class: 'lek-wkrotce' }, 'wkrótce'));
+    }
+    const { ostatnia } = S.wynikiZestawu(p.id, z.id);
+    return h('a', { class: 'lek-wiersz', href: '#/z/' + encodeURIComponent(z.id) }, nrEl,
+      h('span', { class: 'lek-txt' }, h('b', {}, z.tytul),
+        h('small', { class: 'lek-meta' }, h('span', {}, `s. ${z.strony || l.strony}`),
+          z.nagrania ? h('span', { class: 'kp-ikona' }, ik('sluchawki'), z.nagrania) : null,
+          h('span', { class: 'kp-ikona' }, ik('ptaszek'), z.zadan),
+          z.sciaga ? h('span', { class: 'kp-ikona' }, ik('sciaga')) : null)),
+      ostatnia ? h('span', { class: 'poz-status zna' }, `${ostatnia.dobrze}/${ostatnia.ile}`) : h('span', { class: 'lek-strzalka' }, ik('dalej')));
+  };
+
+  const blokDzialu = (d) => {
+    if (!rozwiniete.has(d.nr)) rozwiniete.set(d.nr, d.gotowe > 0);
+    const sek = h('section', { class: `dzial ${d.kolor}` + (rozwiniete.get(d.nr) ? ' otwarty' : '') });
+    const gora = h('button', { class: 'dzial-gora', type: 'button', 'aria-expanded': String(rozwiniete.get(d.nr)),
+      onclick: () => { const o = !rozwiniete.get(d.nr); rozwiniete.set(d.nr, o); sek.classList.toggle('otwarty', o); gora.setAttribute('aria-expanded', String(o)); } },
+      h('span', { class: 'dzial-nr serif' }, d.nr),
+      h('span', { class: 'dzial-txt' },
+        h('small', {}, `Dział ${d.nr}`),
+        h('b', { class: 'serif' }, d.tytul),
+        h('span', { class: 'dzial-meta' }, d.gotowe ? `gotowe ${d.gotowe} z ${d.pozycje.length}` : 'lekcje wkrótce')),
+      h('span', { class: 'dzial-strzalka', 'aria-hidden': 'true' }, ik('dalej')));
+    sek.append(gora, h('div', { class: 'dzial-lekcje' }, d.pozycje.map(wiersz)));
+    return sek;
+  };
+
   app.replaceChildren(
     h('main', { class: 'ekran' },
       naglowek(),
       h('div', { class: 'tytul-wiersz' },
         h('h1', { class: 'tytul serif' }, 'Czego dziś się ', h('em', {}, 'uczymy'), '?'),
         maskotka('czesc', 'maskotka-glowna')),
-      moje.length ? null : h('p', { class: 'podtytul' }, 'Tata jeszcze nie wrzucił żadnej lekcji.'),
       pilne.length ? [h('div', { class: 'sekcja' }, 'Przed kartkówką'), h('div', { class: 'lista-pakietow' }, pilne.map(karta))] : null,
-      dzialy.map((d) => [h('div', { class: 'sekcja' }, d.tytul), h('div', { class: 'lista-pakietow' }, d.lista.map(karta))])));
+      h('div', { class: 'dzialy' }, dzialy.map(blokDzialu)),
+      inne.length ? [h('div', { class: 'sekcja' }, 'Inne zestawy'), h('div', { class: 'lista-pakietow' }, inne.map(karta))] : null));
 }
 
 // ---------- lekcja ----------
@@ -329,6 +362,7 @@ async function synchro() {
 async function render() {
   try {
     if (!indeks) await wczytajIndeks();
+    if (!spis) spis = await fetch('zestawy/spis.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : { dzialy: [] })).catch(() => ({ dzialy: [] }));
     if (!profilInfo() && indeks.profile.length === 1) S.ustawProfil(indeks.profile[0].id);
     if (!profilInfo()) return ekranWyboru();
     const hash = location.hash || '#/';

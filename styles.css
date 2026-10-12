@@ -490,3 +490,40 @@ input.wpis.zle { border-color: var(--zle); box-shadow: 0 4px 0 var(--zle); }
 .poprawka { border: 2px solid var(--atrament); box-shadow: 0 5px 0 var(--atrament); }
 .opcje.obok .opcja:first-child:not(.zle):not(.ok):not(.dobra) .litera { background: var(--mietowy); }
 .opcje.obok .opcja:last-child:not(.zle):not(.ok):not(.dobra) .litera { background: var(--rozowy); }
+
+/* ================= działy na stronie głównej (jak spis treści podręcznika) =================
+   każdy dział: kolorowy blok 3D z dużym numerem; w środku lekcje po kolei — gotowe białe, przyszłe przerywane „wkrótce” */
+.dzialy { display: flex; flex-direction: column; gap: 18px; margin-top: 6px; }
+.dzial { border-radius: 28px; border: 2px solid var(--atrament); box-shadow: 0 6px 0 var(--atrament), 0 22px 28px -20px rgba(29,28,34,.45);
+  background-image: var(--znaki), linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,0) 40%);
+  background-repeat: no-repeat; background-position: right -18px top -10px, 0 0; background-size: 46% auto, auto; overflow: hidden; }
+.dzial-gora { all: unset; box-sizing: border-box; width: 100%; display: flex; align-items: center; gap: 14px; padding: 16px 16px 16px 14px; cursor: pointer; }
+.dzial-gora:focus-visible { outline: 3px solid var(--atrament); outline-offset: -6px; border-radius: 24px; }
+.dzial-nr { width: 54px; height: 54px; flex: none; border-radius: 16px; display: grid; place-items: center; font-size: 22px;
+  background: #fff; border: 2px solid var(--atrament); box-shadow: 0 3px 0 var(--atrament); }
+.dzial-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.dzial-txt small { font-size: 11.5px; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; color: rgba(29,28,34,.6); }
+.dzial-txt b { font-size: 21px; line-height: 1.18; font-weight: 400; color: var(--tusz); text-wrap: balance; }
+.dzial-meta { font-size: 13px; color: rgba(29,28,34,.7); margin-top: 2px; }
+.dzial-strzalka { flex: none; width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.7);
+  border: 1.5px solid rgba(42,40,49,.3); transition: transform .2s; }
+.dzial.otwarty .dzial-strzalka { transform: rotate(90deg); }
+.dzial-lekcje { display: none; flex-direction: column; gap: 10px; padding: 0 12px 14px; }
+.dzial.otwarty .dzial-lekcje { display: flex; }
+
+.lek-wiersz { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 18px; background: #fff; color: var(--tusz);
+  border: 2px solid var(--atrament); box-shadow: 0 4px 0 var(--atrament); transition: transform .06s, box-shadow .06s; }
+a.lek-wiersz:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--atrament); }
+.lek-nr { width: 36px; height: 36px; flex: none; border-radius: 11px; display: grid; place-items: center; font-size: 17px;
+  background: var(--tlo-karty); border: 2px solid var(--atrament); }
+.lek-nr.ikona .ik svg { width: 18px; height: 18px; }
+.lek-txt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.lek-txt b { font-weight: 500; font-size: 16px; line-height: 1.25; }
+.lek-txt small { font-size: 12.5px; color: var(--szary); }
+.lek-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; }
+.lek-meta .kp-ikona .ik svg { width: 13px; height: 13px; }
+.lek-strzalka { flex: none; color: var(--szary); }
+.lek-wiersz.wkrotce { background: rgba(255,255,255,.45); border-style: dashed; border-color: rgba(42,40,49,.4); box-shadow: none; }
+.lek-wiersz.wkrotce .lek-nr { background: transparent; border-color: rgba(42,40,49,.35); color: rgba(29,28,34,.55); }
+.lek-wiersz.wkrotce .lek-txt b { color: rgba(29,28,34,.6); font-weight: 400; }
+.lek-wkrotce { flex: none; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; color: rgba(29,28,34,.5); }

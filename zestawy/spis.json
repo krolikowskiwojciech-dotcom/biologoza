@@ -1,0 +1,47 @@
+{
+  "_opis": "Układ podręcznika „Puls życia 6” (Nowa Era): działy i lekcje ze stronami. Lekcja jest gotowa, gdy jest zestaw z tym samym „dzial” i „lekcja” (albo „typ”: podsumowanie | test). Tematy skrócone, bez podtytułów z książki.",
+  "dzialy": [
+    { "nr": "I", "tytul": "Świat zwierząt", "lekcje": [
+      { "nr": 1, "temat": "W królestwie zwierząt", "strony": "7–12" },
+      { "nr": 2, "temat": "Tkanki: nabłonkowa, mięśniowa i nerwowa", "strony": "13–18" },
+      { "nr": 3, "temat": "Tkanka łączna", "strony": "19–22" },
+      { "typ": "podsumowanie", "temat": "Podsumowanie działu", "strony": "23–25" },
+      { "typ": "test", "temat": "Test na koniec działu", "strony": "26" }
+    ] },
+    { "nr": "II", "tytul": "Od parzydełkowców do pierścienic", "lekcje": [
+      { "nr": 1, "temat": "Parzydełkowce", "strony": "29–32" },
+      { "nr": 2, "temat": "Płazińce", "strony": "33–36" },
+      { "nr": 3, "temat": "Nicienie", "strony": "37–40" },
+      { "nr": 4, "temat": "Pierścienice", "strony": "41–44" },
+      { "typ": "podsumowanie", "temat": "Podsumowanie działu", "strony": "45–47" },
+      { "typ": "test", "temat": "Test na koniec działu", "strony": "48" }
+    ] },
+    { "nr": "III", "tytul": "Stawonogi i mięczaki", "lekcje": [
+      { "nr": 1, "temat": "Cechy stawonogów", "strony": "51–54" },
+      { "nr": 2, "temat": "Skorupiaki", "strony": "55–59" },
+      { "nr": 3, "temat": "Owady", "strony": "60–66" },
+      { "nr": 4, "temat": "Pajęczaki", "strony": "67–70" },
+      { "nr": 5, "temat": "Mięczaki", "strony": "71–76" },
+      { "typ": "podsumowanie", "temat": "Podsumowanie działu", "strony": "77–78" },
+      { "typ": "test", "temat": "Test na koniec działu", "strony": "79" }
+    ] },
+    { "nr": "IV", "tytul": "Kręgowce zmiennocieplne", "lekcje": [
+      { "nr": 1, "temat": "Ryby", "strony": "83–86" },
+      { "nr": 2, "temat": "Przegląd i znaczenie ryb", "strony": "87–92" },
+      { "nr": 3, "temat": "Płazy", "strony": "93–96" },
+      { "nr": 4, "temat": "Przegląd i znaczenie płazów", "strony": "97–102" },
+      { "nr": 5, "temat": "Gady", "strony": "103–106" },
+      { "nr": 6, "temat": "Przegląd i znaczenie gadów", "strony": "107–111" },
+      { "typ": "podsumowanie", "temat": "Podsumowanie działu", "strony": "112–114" },
+      { "typ": "test", "temat": "Test na koniec działu", "strony": "115" }
+    ] },
+    { "nr": "V", "tytul": "Kręgowce stałocieplne", "lekcje": [
+      { "nr": 1, "temat": "Ptaki", "strony": "119–124" },
+      { "nr": 2, "temat": "Przegląd i znaczenie ptaków", "strony": "125–130" },
+      { "nr": 3, "temat": "Ssaki", "strony": "131–135" },
+      { "nr": 4, "temat": "Przegląd i znaczenie ssaków", "strony": "136–142" },
+      { "typ": "podsumowanie", "temat": "Podsumowanie działu", "strony": "143–144" },
+      { "typ": "test", "temat": "Test na koniec działu", "strony": "145" }
+    ] }
+  ]
+}

@@ -56,6 +56,7 @@ Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie tr
 ## Kod
 
 - `index.html`, `styles.css`, `sw.js` (offline; pełne nagrania w osobnej pamięci `biologoza-nagrania`, której SW nie czyści).
+- `zestawy/spis.json` — układ podręcznika (działy, lekcje, strony); strona główna pokazuje działy z niego, lekcje bez zestawu jako „wkrótce”.
 - `js/app.js` (ekrany: lista działami, lekcja z nagraniami i ćwiczeniami, ściąga, ustawienia; odtwarzacz pamięta miejsce),
   `js/gra.js` (przebieg: wybor, pf, wpisz, kolejnosc, pary, otwarte; poprawka po błędzie, podsumowanie, „Wyślij wynik”),
   `js/sprawdz.js` (ocena odpowiedzi — wspólna z narzędziem), `js/store.js` (zapis, synchronizacja, pobieranie prywatnych nagrań),
