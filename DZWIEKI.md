@@ -1,5 +1,8 @@
 # Dźwięki Biologozy — spis
 
+**Wyciszone (Wojtek 2026-10-12: „za dużo dźwięków”):** przycisk, nowe-pytanie, start-bloku, okno, powrot-pytania —
+pliki zostają, lista `WYCISZONE` w `js/dzwieki.js`.
+
 Wszystkie pliki: `audio/<nazwa>.mp3`, jedna rodzina brzmień (miękkie: drewno, marimba, dzwoneczki), bez pisków i brzęczyków.
 Głośność wyrównana do siebie, cisza na początku przycięta. „Musi” = bez tego aplikacja brzmi niekompletnie, „może” = dodatek.
 

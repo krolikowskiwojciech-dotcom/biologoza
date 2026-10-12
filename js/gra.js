@@ -276,9 +276,10 @@ export function uruchom(el, opcje) {
     el.querySelector('.zadanie-karta').classList.add('ok');
     const stopka = el.querySelector('.stopka');
     stopka.className = 'stopka ok';
-    stopka.replaceChildren(h('div', { class: 'stopka-tytul' }, ik('ptaszek'), ' ', los.wybierz(POCHWALY),
+    // replaceChildren zamienia null na tekst „null” — puste elementy odfiltrowujemy
+    stopka.replaceChildren(...[h('div', { class: 'stopka-tytul' }, ik('ptaszek'), ' ', los.wybierz(POCHWALY),
       seria >= 3 ? h('span', { class: 'seria' }, `seria ${seria}`) : null),
-    uwaga ? h('p', { class: 'uwaga-ok' }, uwaga) : null);
+    uwaga ? h('p', { class: 'uwaga-ok' }, uwaga) : null].filter(Boolean));
     timer = setTimeout(nastepne, uwaga ? 2200 : 800);
   }
 

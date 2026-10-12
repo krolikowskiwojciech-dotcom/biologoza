@@ -32,6 +32,9 @@ const DZWIEKI = {
   'bez-bledow': [WYNIKI, 'bez-bledow.mp3', 'piec-dobrych-odpowiedzi.mp3'],
   wyslano: [WYNIKI, 'wyslano.mp3'],
 };
+// Wojtek 2026-10-12: „za dużo dźwięków” — te zostają w spisie i w audio/, ale nie grają.
+// Żeby któryś przywrócić, wystarczy usunąć go z tej listy.
+const WYCISZONE = new Set(['przycisk', 'nowe-pytanie', 'start-bloku', 'okno', 'powrot-pytania']);
 const gotowe = {}; // nazwa → Audio z pierwszym działającym plikiem (null = cisza)
 
 function zaladuj(nazwa) {
@@ -53,7 +56,7 @@ function zaladuj(nazwa) {
 }
 
 export function graj(nazwa) {
-  if (!dzwiek()) return;
+  if (!dzwiek() || WYCISZONE.has(nazwa)) return;
   const a = zaladuj(nazwa);
   if (!a) return;
   a.chce = Date.now();
@@ -62,5 +65,5 @@ export function graj(nazwa) {
 
 // przy pierwszym dotknięciu wczytujemy wszystkie, żeby nic nie czekało i zapasy były już ustalone
 export function przygotujDzwieki() {
-  for (const n of Object.keys(DZWIEKI)) zaladuj(n);
+  for (const n of Object.keys(DZWIEKI)) if (!WYCISZONE.has(n)) zaladuj(n);
 }
