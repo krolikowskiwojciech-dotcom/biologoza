@@ -16,7 +16,7 @@ const DZWIEKI = {
   odslon: [PYTANIA, 'odslon.mp3', 'przycisk.mp3'],
   podpowiedz: [PYTANIA, 'podpowiedz.mp3'],
   okno: [PYTANIA, 'okno.mp3'],
-  'nowe-pytanie': [PYTANIA, 'nowe-pytanie.mp3'],
+  'nowe-pytanie': [PRZYCISKI, 'nowe-pytanie.mp3'], // gra przy każdym pytaniu — cicho
   // 3. dobre odpowiedzi
   dobrze: [ODPOWIEDZI, 'dobrze.mp3', 'dobra-odpowiedz-podstawowa.mp3'],
   'seria-5': [ODPOWIEDZI, 'seria-5.mp3', 'trzy-dobre-odpowiedzi.mp3'],
