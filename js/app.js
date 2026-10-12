@@ -1,7 +1,7 @@
 // Ekrany Biologozy: lista lekcji (działami), lekcja (nagrania, ćwiczenia, ściąga), ćwiczenie, ustawienia.
 // Adresy: #/ (start), #/z/<id> (lekcja), #/z/<id>/sciaga, #/ustawienia.
 
-import { h, okno, odm, ik, maskotka, kolor, IKONY_BIO } from './dom.js';
+import { h, okno, odm, ik, maskotka, kolor, IKONY_BIO, obrazDzialu, obrazLekcji, ilustracja } from './dom.js';
 import { uruchom } from './gra.js';
 import * as S from './store.js';
 import { graj, przygotujDzwieki } from './dzwieki.js';
@@ -92,8 +92,9 @@ function ekranListy() {
 
   const wiersz = (l) => {
     const z = l.z;
-    const nrEl = l.typ ? h('span', { class: 'lek-nr ikona', 'aria-hidden': 'true' }, ik(l.typ === 'test' ? 'ptaszek' : 'sciaga'))
-      : h('span', { class: 'lek-nr serif' }, l.nr);
+    const obraz = ilustracja(obrazLekcji(dzialTeraz, l.nr, l.typ), 'lek-obraz');
+    const nrEl = h('span', { class: 'lek-miniatura' }, obraz,
+      l.typ ? null : h('span', { class: 'lek-nr serif' }, l.nr));
     if (!z) {
       return h('div', { class: 'lek-wiersz wkrotce' }, nrEl,
         h('span', { class: 'lek-txt' }, h('b', {}, l.temat), h('small', {}, `s. ${l.strony}`)),
@@ -109,12 +110,14 @@ function ekranListy() {
       ostatnia ? h('span', { class: 'poz-status zna' }, `${ostatnia.dobrze}/${ostatnia.ile}`) : h('span', { class: 'lek-strzalka' }, ik('dalej')));
   };
 
+  let dzialTeraz = null; // wiersz lekcji potrzebuje numeru działu do ścieżki ilustracji
   const blokDzialu = (d) => {
+    dzialTeraz = d.nr;
     if (!rozwiniete.has(d.nr)) rozwiniete.set(d.nr, d.gotowe > 0);
     const sek = h('section', { class: `dzial ${d.kolor}` + (rozwiniete.get(d.nr) ? ' otwarty' : '') });
     const gora = h('button', { class: 'dzial-gora', type: 'button', 'aria-expanded': String(rozwiniete.get(d.nr)),
       onclick: () => { const o = !rozwiniete.get(d.nr); rozwiniete.set(d.nr, o); sek.classList.toggle('otwarty', o); gora.setAttribute('aria-expanded', String(o)); } },
-      h('span', { class: 'dzial-nr serif' }, d.nr),
+      h('span', { class: 'dzial-obraz' }, ilustracja(obrazDzialu(d.nr)), h('span', { class: 'dzial-nr serif' }, d.nr)),
       h('span', { class: 'dzial-txt' },
         h('small', {}, `Dział ${d.nr}`),
         h('b', { class: 'serif' }, d.tytul),
@@ -148,7 +151,7 @@ async function ekranZestawu(id) {
     h('main', { class: 'ekran' },
       h('section', { class: `naglowek-dzialu ${kolorZestawu(z, nr)}` },
         h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, ik('wstecz')),
-        babel(ikonaZestawu(z, nr), 'kp-emoji nagl-znak'),
+        obrazLekcji(z.dzial, z.lekcja, z.typ) ? ilustracja(obrazLekcji(z.dzial, z.lekcja, z.typ), 'nagl-obraz') : babel(ikonaZestawu(z, nr), 'kp-emoji nagl-znak'),
         h('span', { class: 'kat-etykieta' }, z.termin && dni >= 0 ? etykietaTerminu(dni, z.termin)
           : [z.dzial ? `Dział ${z.dzial}` : 'Zestaw', z.lekcja ? ` · lekcja ${z.lekcja}` : '', z.strony ? ` · s. ${z.strony}` : ''].join('')),
         h('h1', { class: 'serif' }, z.tytul),

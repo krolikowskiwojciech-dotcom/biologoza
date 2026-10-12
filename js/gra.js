@@ -5,7 +5,7 @@
 // Rodzaje zadań: wybor, pf (prawda/fałsz), wpisz (luka „___” albo samo pytanie), kolejnosc, pary,
 // otwarte (pytanie z podręcznika: najpierw odpowiedz w myślach, potem odsłoń i oceń się sam).
 
-import { h, okno, odm, ik, maskotka, kolor, los } from './dom.js';
+import { h, okno, odm, ik, maskotka, kolor, los, obrazLekcji, ilustracja } from './dom.js';
 import { ocen, wCzesci, opcjeWyboru, pokaz, poprawna, dobraOdpowiedz } from './sprawdz.js';
 import { graj } from './dzwieki.js';
 
@@ -130,7 +130,8 @@ export function uruchom(el, opcje) {
     const dlugie = (cz.e || '').length + (z.q || '').length > 140;
     const karta = h('section', { class: 'zadanie-karta' },
       h('div', { class: 'karta-gora' },
-        h('span', { class: 'karta-ikona', 'aria-hidden': 'true' }, ik(zestaw.ikona || 'lisc')),
+        obrazLekcji(zestaw.dzial, zestaw.lekcja, zestaw.typ) ? h('span', { class: 'karta-ilustr', 'aria-hidden': 'true' }, ilustracja(obrazLekcji(zestaw.dzial, zestaw.lekcja, zestaw.typ)))
+          : h('span', { class: 'karta-ikona', 'aria-hidden': 'true' }, ik(zestaw.ikona || 'lisc')),
         h('span', { class: 'karta-naglowek' }, h('b', { class: 'serif' }, b.tytul), h('small', {}, polecenie)),
         h('span', { class: 'karta-nr' }, `${Math.min(poz + 1, ile)}/${ile}`)),
       h('div', { class: 'pytanie-panel' + (dlugie ? ' dlugie' : '') },

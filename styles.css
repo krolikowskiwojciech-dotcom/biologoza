@@ -544,3 +544,18 @@ a.lek-wiersz:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--atra
 .opcje.obok .opcja .litera { border-radius: 10px; }
 .kp-emoji { border-radius: 14px; }
 .luka { border-radius: 8px; }
+
+/* ================= ilustracje: atlas przyrodniczy (tusz + akwarela) ================= */
+.ilustr { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 4px 5px rgba(29,28,34,.14)); }
+.dzial-obraz { position: relative; width: 78px; height: 78px; flex: none; margin: -6px 0 -6px -4px; }
+.dzial-obraz .dzial-nr { position: absolute; left: -2px; bottom: -2px; width: 30px; height: 30px; font-size: 14px; border-radius: 8px; box-shadow: 0 2px 0 var(--atrament); }
+.dzial-obraz:not(:has(img)) .dzial-nr { position: static; width: 54px; height: 54px; font-size: 22px; }
+.lek-miniatura { position: relative; width: 54px; height: 54px; flex: none; margin: -4px 0; }
+.lek-miniatura .lek-nr { position: absolute; left: -4px; bottom: -4px; width: 24px; height: 24px; font-size: 12.5px; border-radius: 7px; border-width: 1.5px; }
+.lek-miniatura:not(:has(img)) .lek-nr { position: static; width: 36px; height: 36px; font-size: 17px; margin: 9px; }
+.lek-wiersz.wkrotce .lek-obraz { opacity: .5; filter: grayscale(.55); }
+.lek-wiersz.wkrotce .lek-miniatura .lek-nr { background: rgba(255,255,255,.8); }
+.nagl-obraz { position: absolute; top: 10px; right: 12px; width: 112px; height: 112px; }
+.naglowek-dzialu:has(.nagl-obraz) { padding-top: 112px; }
+.naglowek-dzialu:has(.nagl-obraz) h1 { padding-right: 0; }
+.karta-ilustr { width: 40px; height: 40px; flex: none; }

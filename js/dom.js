@@ -53,6 +53,13 @@ const IKONY = {
 export const ik = (nazwa, klasa = '') => h('span', { class: `ik ik-${nazwa} ${klasa}`, html: IKONY[nazwa] || IKONY.lisc });
 export const IKONY_BIO = ['lisc', 'komorka', 'mikroskop', 'dna', 'ryba', 'ptak', 'owad', 'slimak', 'zaba', 'serce', 'kosc', 'grzyb'];
 
+// ilustracje w stylu atlasu przyrodniczego (obrazy/ilustracje/, cięte z arkuszy ChatGPT — narzedzia/prompty.json)
+const ARABSKIE = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6 };
+export const obrazDzialu = (nr) => (ARABSKIE[nr] ? `obrazy/ilustracje/dzial-${ARABSKIE[nr]}.webp` : null);
+export const obrazLekcji = (dzial, lekcja, typ) => (typ ? `obrazy/ilustracje/${typ}.webp`
+  : ARABSKIE[dzial] && lekcja ? `obrazy/ilustracje/dz${ARABSKIE[dzial]}-l${lekcja}.webp` : null);
+export const ilustracja = (src, klasa = '') => (src ? h('img', { class: 'ilustr ' + klasa, src, alt: '', loading: 'lazy', decoding: 'async', onerror: (e) => e.target.remove() }) : null);
+
 // maskotka 3D (obrazy/maskotka-<poza>.png); dopóki pliku nie ma, element po prostu znika
 export const maskotka = (poza, klasa = '') => h('img', { class: 'maskotka ' + klasa, src: `obrazy/maskotka-${poza}.png`, alt: '', onerror: (e) => e.target.remove() });
 

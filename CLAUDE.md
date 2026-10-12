@@ -49,7 +49,8 @@ Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako
 
 **Obrazy dla 11–13 lat (Wojtek 2026-10-12, stanowczo; zasada całego projektu nauki — `~/CLAUDE.md`):** żadnych słodkich, „bajkowych” ilustracji dla przedszkolaków —
 bez maskotek, dużych oczu, rumieńców, konfetti, plasteliny w stylu dla maluchów. Ilustracje mają wyglądać dojrzale i naukowo.
-Maskotki w Biologozie nie ma (pliki `maskotka-*` nie powstaną; element sam znika).
+Maskotki w Biologozie nie ma (pliki `maskotka-*` nie powstaną; element sam znika). Ilustracje: styl atlasu przyrodniczego,
+`obrazy/ilustracje/` (działy, lekcje wg spisu, podsumowanie, test) — prompty i cięcie w `ILUSTRACJE.md`.
 
 Reszta jak w Lingozie:
 

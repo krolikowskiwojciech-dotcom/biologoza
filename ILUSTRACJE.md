@@ -55,7 +55,15 @@ Create one square image (1:1) with a grid of 4 columns × 3 rows = 12 separate a
 Style: natural history atlas plates — precise fine ink linework with delicate watercolor washes, scientifically accurate anatomy and proportions, calm natural colors (muted greens, ochres, slate blues, soft reds), subtle hand-drawn hatching for volume, like illustrations in a good zoology atlas or field guide for teenagers. Serious and mature: no cartoon faces, no big cute eyes, no smiles, no mascots, no toys, no confetti, no plasticine or 3D clay look. Correct counts and structures (insects have 6 legs, spiders 8, an earthworm shows ring segments and a saddle band). No text, no letters, no numbers, no labels or callout lines, no frames, no background scene. Each subject drawn in isolation on a fully transparent background (PNG), with no paper texture outside the subject.
 ```
 
-## Po wygenerowaniu
+## Po wygenerowaniu — cięcie i wstawienie
+
+1. Arkusz (PNG z przezroczystym tłem, z Pobranych) → `cwebp -q 90 -alpha_q 100 <plik>.png -o obrazy/zrodla/<plik z prompty.json>.webp`.
+2. Cięcie: `narzedzia/tnij_arkusz.py` (Pillow, numpy, scipy w venv w scratchpadzie) — obiekt trafia do komórki po swoim środku,
+   zlepki sąsiadów rozdziela po konturach, okruchy odrzuca. Działy 320 px, lekcje 256 px → `cwebp -q 86 -alpha_q 100` →
+   `obrazy/ilustracje/<nazwa>.webp`. Zawsze obejrzyj podgląd wszystkich kadrów przed commitem.
+3. Aplikacja sama bierze `dzial-<n>.webp` i `dz<n>-l<nr>.webp` (oraz `podsumowanie.webp`, `test.webp`) wg `js/dom.js`.
+
+## Poprawki
 
 - Białe tło zamiast przezroczystego: „Make the background fully transparent, keep everything else the same.”
 - Jeden obiekt źle (np. pająk z 6 nogami): „Fix only the spider in row 3, column 3 — exactly 8 legs; keep everything else identical.”
