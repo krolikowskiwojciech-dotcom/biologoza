@@ -47,7 +47,7 @@ Rogi mniejsze niż w Lingozie (Wojtek 2026-10-12): `--r: 14px`, kafle 12–18 px
 `styles.css`. Styl ołówkowo-kredkowy (ramki rysowane, bez zaokrągleń) był próbowany i odrzucony — nie wracaj do niego bez prośby.
 Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako żółta pigułka), odpowiedzi 3D z literami A/B/C pod kartą.
 
-**Obrazy dla 11–13 lat (Wojtek 2026-10-12, stanowczo):** żadnych słodkich, „bajkowych” ilustracji dla przedszkolaków —
+**Obrazy dla 11–13 lat (Wojtek 2026-10-12, stanowczo; zasada całego projektu nauki — `~/CLAUDE.md`):** żadnych słodkich, „bajkowych” ilustracji dla przedszkolaków —
 bez maskotek, dużych oczu, rumieńców, konfetti, plasteliny w stylu dla maluchów. Ilustracje mają wyglądać dojrzale i naukowo.
 Maskotki w Biologozie nie ma (pliki `maskotka-*` nie powstaną; element sam znika).
 
