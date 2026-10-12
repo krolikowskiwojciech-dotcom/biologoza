@@ -528,78 +528,19 @@ a.lek-wiersz:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--atra
 .lek-wiersz.wkrotce .lek-txt b { color: rgba(29,28,34,.6); font-weight: 400; }
 .lek-wkrotce { flex: none; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; color: rgba(29,28,34,.5); }
 
-/* ================= styl ołówkowo-kredkowy (Wojtek 2026-10-12: „nie zaokrąglaj kafli, trochę ołówkowy, kredkowy styl”) =================
-   kafle bez zaokrągleń, z ręcznie rysowaną kreską (border-image z SVG: dwa przeciągnięcia, linie wychodzą poza róg),
-   kolorowe powierzchnie jak pokolorowane kredką (ziarno papieru + ukośne kreskowanie). Stany: kreska zielona / czerwona / przerywana. */
-:root {
-  --kreska: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none' stroke='%232A2831' stroke-linecap='round'%3E%3Cpath d='M1.6 4.1 C25 2.6 60 4.4 98.2 3.2 M96.4 1.8 C97.6 28 95.8 66 96.9 98.3 M98.4 96.2 C70 97.4 32 95.6 1.9 96.8 M3.6 98.4 C2.4 70 4.3 33 3.1 1.7' stroke-width='2.2'/%3E%3Cpath d='M3.2 3.3 C35 4.6 68 2.9 96.8 4.4 M95.7 3.1 C96.5 35 97.2 70 95.9 96.6 M96.9 95.6 C62 96.2 30 97.6 3.4 95.7 M4.4 96.9 C3.6 64 2.7 30 4.6 3.4' stroke-width='1.2100000000000002' stroke-opacity='.55'/%3E%3C/svg%3E");
-  --kreska-ok: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none' stroke='%232F9B5A' stroke-linecap='round'%3E%3Cpath d='M1.6 4.1 C25 2.6 60 4.4 98.2 3.2 M96.4 1.8 C97.6 28 95.8 66 96.9 98.3 M98.4 96.2 C70 97.4 32 95.6 1.9 96.8 M3.6 98.4 C2.4 70 4.3 33 3.1 1.7' stroke-width='2.2'/%3E%3Cpath d='M3.2 3.3 C35 4.6 68 2.9 96.8 4.4 M95.7 3.1 C96.5 35 97.2 70 95.9 96.6 M96.9 95.6 C62 96.2 30 97.6 3.4 95.7 M4.4 96.9 C3.6 64 2.7 30 4.6 3.4' stroke-width='1.2100000000000002' stroke-opacity='.55'/%3E%3C/svg%3E");
-  --kreska-zle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none' stroke='%23D6455D' stroke-linecap='round'%3E%3Cpath d='M1.6 4.1 C25 2.6 60 4.4 98.2 3.2 M96.4 1.8 C97.6 28 95.8 66 96.9 98.3 M98.4 96.2 C70 97.4 32 95.6 1.9 96.8 M3.6 98.4 C2.4 70 4.3 33 3.1 1.7' stroke-width='2.2'/%3E%3Cpath d='M3.2 3.3 C35 4.6 68 2.9 96.8 4.4 M95.7 3.1 C96.5 35 97.2 70 95.9 96.6 M96.9 95.6 C62 96.2 30 97.6 3.4 95.7 M4.4 96.9 C3.6 64 2.7 30 4.6 3.4' stroke-width='1.2100000000000002' stroke-opacity='.55'/%3E%3C/svg%3E");
-  --kreska-przerywana: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' fill='none' stroke='%232A2831' stroke-linecap='round' stroke-dasharray='5 4'%3E%3Cpath d='M1.6 4.1 C25 2.6 60 4.4 98.2 3.2 M96.4 1.8 C97.6 28 95.8 66 96.9 98.3 M98.4 96.2 C70 97.4 32 95.6 1.9 96.8 M3.6 98.4 C2.4 70 4.3 33 3.1 1.7' stroke-width='1.8'/%3E%3Cpath d='M3.2 3.3 C35 4.6 68 2.9 96.8 4.4 M95.7 3.1 C96.5 35 97.2 70 95.9 96.6 M96.9 95.6 C62 96.2 30 97.6 3.4 95.7 M4.4 96.9 C3.6 64 2.7 30 4.6 3.4' stroke-width='0.9900000000000001' stroke-opacity='.55'/%3E%3C/svg%3E");
-  --ziarno: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16  0 0 0 0 .15  0 0 0 0 .18  0 0 0 .22 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-  --kredka: repeating-linear-gradient(118deg, rgba(255,255,255,.22) 0 1.4px, transparent 1.4px 5px);
-}
-body { background-image: var(--ziarno); }
-
-/* kafle: bez zaokrągleń, kreska ołówka zamiast gładkiej ramki */
-.dzial, .lek-wiersz, .zadanie-karta, .pytanie-panel, .opcja, .stopka .btn, .karta-pakietu, .naglowek-dzialu, .nagranie, .cta,
-.poprawka, .karta-sciagi, .gram-krok, .okno, input.wpis, .kafel-odp, .para-el, .slot, .lista-pozycji, .ust, .wzor, .ramka-poprawna,
-.lek-nr, .dzial-nr, .litera, .karta-ikona, .karta-nr, .dzial-strzalka, .ikona-btn, .wstecz, .graj-btn, .cofnij-btn, .kafel, .ocena-szkolna,
-.chip, .poz-status, .termin, .luka, .sciaga-obraz, .pojecia, .profil-kafel, .blok-nr, .avatar, .profil-duzy-avatar, .zamknij {
-  border-radius: 2px !important;
-}
-.dzial, .lek-wiersz, .zadanie-karta, .pytanie-panel, .opcja, .stopka .btn:not(.kreska), .karta-pakietu, .naglowek-dzialu, .nagranie, .cta,
-.poprawka, .karta-sciagi, .gram-krok, .okno, input.wpis, .kafel-odp, .para-el, .slot.pelny, .ust, .karta-talia::before, .karta-talia::after {
-  border: 3px solid transparent !important;
-  border-image: var(--kreska) 12 / 12px / 2px stretch !important;
-}
-.lek-nr, .dzial-nr, .litera, .karta-ikona, .karta-nr, .dzial-strzalka, .graj-btn, .cofnij-btn, .ikona-btn, .wstecz, .blok-nr, .luka {
-  border: 2px solid transparent !important;
-  border-image: var(--kreska) 14 / 9px / 1px stretch !important;
-}
-.lista-pozycji { border: 3px solid transparent !important; border-image: var(--kreska) 12 / 12px / 2px stretch !important; }
-.lista-pozycji .pozycja { border-bottom: 1.5px dashed rgba(42,40,49,.25); }
-.stopka .btn.kreska, .lek-wiersz.wkrotce, .slot:not(.pelny) {
-  border: 3px solid transparent !important; border-image: var(--kreska-przerywana) 12 / 12px / 2px stretch !important;
-}
-/* stany odpowiedzi: ta sama kreska, tylko kolorowa */
-.zadanie-karta.ok, .opcja.ok, .opcja.dobra, input.wpis.ok, .para-el.ok, .slot.ok { border-image-source: var(--kreska-ok) !important; }
-.zadanie-karta.zle, .opcja.zle, input.wpis.zle, .para-el.zle, .slot.zle { border-image-source: var(--kreska-zle) !important; }
-.opcja.ok .litera, .opcja.dobra .litera { border-image-source: var(--kreska-ok) !important; }
-.opcja.zle .litera { border-image-source: var(--kreska-zle) !important; }
-.stopka .btn.zielony { border-image-source: var(--kreska-ok) !important; }
-.stopka .btn.czerwony { border-image-source: var(--kreska-zle) !important; }
-
-/* cienie 3D zostają, ale ostrzejsze i lekko przesunięte w bok — jak cień dorysowany ołówkiem */
-.dzial { box-shadow: 4px 6px 0 rgba(42,40,49,.85) !important; }
-.zadanie-karta { box-shadow: 4px 6px 0 rgba(42,40,49,.85) !important; }
-.zadanie-karta.ok { box-shadow: 4px 6px 0 var(--ok) !important; }
-.zadanie-karta.zle { box-shadow: 4px 6px 0 var(--zle) !important; }
-.lek-wiersz, .opcja, .kafel-odp, .para-el, .stopka .btn:not(.kreska) { box-shadow: 3px 4px 0 rgba(42,40,49,.85) !important; }
-.opcja.ok, .opcja.dobra { box-shadow: 3px 4px 0 var(--ok) !important; }
-.opcja.zle { box-shadow: 3px 4px 0 var(--zle) !important; }
-.lek-wiersz.wkrotce, .stopka .btn.kreska { box-shadow: none !important; }
-a.lek-wiersz:active, .opcja:active:not(:disabled), .opcja.wcisniety, .stopka .btn:active:not(:disabled), .kafel-odp:active:not(:disabled) {
-  transform: translate(2px, 3px); box-shadow: 1px 1px 0 rgba(42,40,49,.85) !important; }
-.lek-nr, .dzial-nr, .litera, .karta-ikona { box-shadow: 2px 2px 0 rgba(42,40,49,.8) !important; }
-.pytanie-panel { box-shadow: none !important; }
-.karta-talia::before { transform: translateX(-50%) rotate(-1.2deg); }
-.karta-talia::after { transform: translateX(-50%) rotate(1.4deg); box-shadow: none !important; }
-
-/* kredka: kolorowe powierzchnie z ziarnem i kreskowaniem */
-.dzial, .pytanie-panel, .karta-pakietu, .naglowek-dzialu, .lek-nr, .litera, .karta-ikona, .blok-nr, .lekcja {
-  background-blend-mode: normal;
-}
-.dzial { background-image: var(--znaki), var(--kredka), var(--ziarno) !important; background-repeat: no-repeat, repeat, repeat !important;
-  background-position: right -18px top -10px, 0 0, 0 0 !important; background-size: 46% auto, auto, 160px !important; }
-.pytanie-panel { background-image: var(--fale), var(--kredka), var(--ziarno) !important; background-repeat: no-repeat, repeat, repeat !important;
-  background-size: 120% auto, auto, 160px !important; background-position: center bottom -6px, 0 0, 0 0 !important; }
-.karta-pakietu, .naglowek-dzialu { background-image: var(--znaki), var(--kredka), var(--ziarno) !important; background-repeat: no-repeat, repeat, repeat !important;
-  background-size: 52% auto, auto, 160px !important; background-position: right -10px top 0, 0 0, 0 0 !important; }
-.lek-nr, .litera, .karta-ikona, .blok-nr { background-image: var(--kredka), var(--ziarno); }
-.lekcja { background-image: linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,0) 45%), var(--ziarno), var(--kropki) !important;
-  background-size: auto, 160px, 22px 22px !important; }
-.luka { background-image: var(--kredka), var(--ziarno); }
-.kp-emoji, .cta-strzalka, .profil-avatar { border-radius: 2px !important; border: 2px solid transparent; border-image: var(--kreska) 14 / 9px / 1px stretch; }
-.cta { border-radius: 2px !important; }
-.kp-emoji, .profil-avatar { background-image: var(--kredka), var(--ziarno) !important; background-color: #fff; }
+/* ================= zaokrąglenia (Wojtek 2026-10-12: „lepiej było okrągłe, ale nie aż tak bardzo”) =================
+   ten sam styl 3D z gładką ramką, tylko rogi mniej więcej o połowę mniejsze */
+:root { --r: 14px; }
+.dzial { border-radius: 18px; }
+.lek-wiersz, .opcja, .kafel-odp, .para-el, .slot, .lista-pozycji, input.wpis, .karta-sciagi { border-radius: 12px; }
+.lek-nr, .litera, .karta-ikona, .blok-nr { border-radius: 8px; }
+.dzial-nr { border-radius: 10px; }
+.zadanie-karta, .karta-talia::before, .karta-talia::after { border-radius: 18px; }
+.pytanie-panel { border-radius: 13px; }
+.btn, .stopka .btn, .chip { border-radius: 11px; }
+.cta, .karta-pakietu, .naglowek-dzialu, .ust { border-radius: 16px; }
+.nagranie, .poprawka, .gram-krok, .wzor, .ramka-poprawna, .sciaga-obraz, .pojecia { border-radius: 14px; }
+.okno { border-radius: 18px; }
+.opcje.obok .opcja .litera { border-radius: 10px; }
+.kp-emoji { border-radius: 14px; }
+.luka { border-radius: 8px; }

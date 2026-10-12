@@ -43,9 +43,8 @@ Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie tr
 
 ## Zasady wyglądu
 
-**Styl ołówkowo-kredkowy (Wojtek 2026-10-12)** — tym Biologoza różni się od Lingozy: kafle bez zaokrągleń, ramki jak rysowane
-ołówkiem (`--kreska`, `--kreska-ok`, `--kreska-zle`, `--kreska-przerywana` w `styles.css` — border-image z SVG), kolorowe powierzchnie
-jak pokolorowane kredką (`--kredka` + `--ziarno`), cienie 3D przesunięte w bok. Nowe elementy rób w tym samym stylu.
+Rogi mniejsze niż w Lingozie (Wojtek 2026-10-12): `--r: 14px`, kafle 12–18 px, kwadraciki 8–10 px — sekcja „zaokrąglenia” na końcu
+`styles.css`. Styl ołówkowo-kredkowy (ramki rysowane, bez zaokrągleń) był próbowany i odrzucony — nie wracaj do niego bez prośby.
 Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako żółta pigułka), odpowiedzi 3D z literami A/B/C pod kartą.
 
 Reszta jak w Lingozie:
