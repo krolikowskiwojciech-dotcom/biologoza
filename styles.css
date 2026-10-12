@@ -390,3 +390,103 @@ input.wpis.zle { border-color: var(--zle); color: var(--zle); text-decoration: l
   .tytul { font-size: 52px; }
 }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ================= karta pytania jak wierzchnia karta z talii (inspiracja Wojtka, 2026-10-12) =================
+   biała karta z grubą krawędzią 3D i dwiema kartami pod spodem, kolorowy panel z pytaniem i białymi falami,
+   luka jako żółta pigułka, odpowiedzi tuż pod kartą: przyciski 3D z literą w kwadraciku i znakiem po odpowiedzi */
+:root { --atrament: #2A2831; --fale: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 120' fill='none' stroke='white' stroke-opacity='.55' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M-10 70c40-30 80 30 120 0s80-30 120 0 60 20 80 5'/%3E%3Cpath d='M-10 88c40-30 80 30 120 0s80-30 120 0 60 20 80 5' stroke-opacity='.35'/%3E%3Cpath d='M150 10c25 0 30 20 55 20s30-20 55-20 25 10 45 10' stroke-opacity='.3'/%3E%3C/svg%3E"); }
+
+.karta-talia { position: relative; padding-bottom: 22px; margin-top: 4px; }
+.karta-talia::before, .karta-talia::after { content: ''; position: absolute; left: 50%; bottom: 0; border-radius: 30px; background: rgba(255,255,255,.72);
+  border: 2px solid var(--atrament); transform: translateX(-50%); }
+.karta-talia::before { width: 92%; height: 60px; bottom: 11px; z-index: 0; }
+.karta-talia::after { width: 84%; height: 50px; bottom: 0; z-index: -1; background: rgba(255,255,255,.5); border-color: rgba(42,40,49,.6); box-shadow: 0 3px 0 rgba(42,40,49,.35); }
+.lekcja .cw-pole { isolation: isolate; }
+
+.zadanie-karta { position: relative; z-index: 1; min-height: 0; display: flex; flex-direction: column; justify-content: flex-start; gap: 12px;
+  background: #fff; border: 2px solid var(--atrament); border-radius: 30px; padding: 12px 12px 14px;
+  box-shadow: 0 6px 0 var(--atrament), 0 24px 30px -18px rgba(29,28,34,.5); transition: border-color .2s, box-shadow .2s; }
+.zadanie-karta.ok { background: #fff; border-color: var(--ok); box-shadow: 0 6px 0 var(--ok), 0 24px 30px -18px rgba(29,28,34,.4); }
+.zadanie-karta.zle { background: #fff; border-color: var(--zle); box-shadow: 0 6px 0 var(--zle), 0 24px 30px -18px rgba(29,28,34,.4); }
+
+.karta-gora { display: flex; align-items: center; gap: 10px; padding: 2px 4px 0; }
+.karta-ikona { width: 34px; height: 34px; flex: none; border-radius: 11px; display: grid; place-items: center; background: var(--tlo-karty);
+  border: 2px solid var(--atrament); box-shadow: 0 2px 0 var(--atrament); }
+.karta-ikona .ik svg { width: 19px; height: 19px; }
+.karta-naglowek { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.15; }
+.karta-naglowek b { font-size: 17px; font-weight: 400; }
+.karta-naglowek small { font-size: 12.5px; color: var(--szary); margin-top: 2px; }
+.karta-nr { flex: none; font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; padding: 4px 10px; border-radius: 999px;
+  background: var(--tlo); border: 1.5px solid rgba(42,40,49,.25); }
+
+.pytanie-panel { position: relative; border-radius: 22px; padding: 30px 18px 34px; min-height: min(200px, 26dvh); display: flex; flex-direction: column; justify-content: center; gap: 8px;
+  background-color: var(--tlo-karty); background-image: var(--fale), linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 60%);
+  background-repeat: no-repeat; background-size: 120% auto, auto; background-position: center bottom -6px, 0 0;
+  border: 2px solid var(--atrament); box-shadow: inset 0 -5px 0 var(--brzeg); }
+.pytanie-panel .pytanie { margin: 0; font-size: 23px; line-height: 1.38; text-align: center; color: var(--tusz); }
+.pytanie-panel.dlugie { min-height: 0; padding: 18px 16px 22px; }
+.pytanie-panel.dlugie .pytanie { font-size: 18.5px; text-align: left; }
+.pytanie-panel .tresc { margin: 0; font-size: 17px; }
+.zadanie-karta.zle .pytanie-panel .pytanie, .zadanie-karta.zle .pytanie-panel.dlugie .pytanie { font-size: 17px; }
+.odp-miejsce:empty, .zadanie-karta .info:empty { display: none; }
+.zadanie-karta .info { margin: 0; }
+
+/* luka: żółta pigułka 3D; pusta pokazuje kropki */
+.luka { display: inline-flex; align-items: center; justify-content: center; min-width: 4.4em; height: 1.45em; padding: 0 .5em; margin: 0 .15em; vertical-align: -.12em;
+  border-radius: 999px; background: var(--zolty); border: 2px solid var(--atrament); box-shadow: 0 3px 0 var(--atrament); opacity: 1; line-height: 1;
+  font-family: Jost, system-ui, sans-serif; font-size: .82em; font-weight: 600; }
+.luka:not(.pelna)::before { content: '• • • • •'; letter-spacing: -.05em; font-size: .7em; opacity: .7; }
+.luka.pelna { background: #fff; min-width: 0; border-radius: 999px; }
+.zadanie-karta.ok .luka.pelna { background: var(--ok-tlo); color: var(--ok); border-color: var(--ok); box-shadow: 0 3px 0 var(--ok); }
+.zadanie-karta.zle .luka.pelna { background: var(--zle-tlo); color: var(--zle); border-color: var(--zle); box-shadow: 0 3px 0 var(--zle); text-decoration: line-through; }
+.ramka-poprawna .luka.pelna { background: var(--ok-tlo); color: var(--ok); border-color: var(--ok); box-shadow: 0 3px 0 var(--ok); text-decoration: none; }
+
+/* odpowiedzi: przyciski 3D z literą */
+.cw-pole > .opcje { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.opcje.obok { flex-direction: row; }
+.opcja { position: relative; display: flex; align-items: center; justify-content: flex-start; gap: 12px; width: 100%; min-height: 64px; margin: 0;
+  padding: 10px 14px 10px 10px; text-align: left; font-size: 17.5px; line-height: 1.28; color: var(--tusz); cursor: pointer;
+  background: #fff; border: 2px solid var(--atrament); border-radius: 18px; box-shadow: 0 5px 0 var(--atrament);
+  transition: transform .06s, box-shadow .06s, opacity .2s, background-color .15s; }
+.opcja:active:not(:disabled), .opcja.wcisniety { transform: translateY(4px); box-shadow: 0 1px 0 var(--atrament); }
+.litera { width: 38px; height: 38px; flex: none; border-radius: 11px; display: grid; place-items: center; font-size: 18px;
+  background: var(--tlo-karty); border: 2px solid var(--atrament); box-shadow: 0 2px 0 var(--atrament); }
+.litera.ikona .ik svg { width: 20px; height: 20px; stroke-width: 2.4; }
+.opcja-txt { flex: 1; min-width: 0; }
+.opcja-znak { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; }
+.opcja-znak:empty { display: none; }
+.opcja-znak .ik svg { width: 18px; height: 18px; stroke-width: 2.6; }
+.opcja.ok, .opcja.dobra { background: var(--ok-tlo); border-color: var(--ok); box-shadow: 0 5px 0 var(--ok); }
+.opcja.ok .litera, .opcja.dobra .litera { background: var(--ok); color: #fff; border-color: var(--ok); box-shadow: none; }
+.opcja.ok .opcja-znak, .opcja.dobra .opcja-znak { background: var(--ok); color: #fff; }
+.opcja.zle { background: var(--zle-tlo); border-color: var(--zle); box-shadow: 0 5px 0 var(--zle); }
+.opcja.zle .litera { background: var(--zle); color: #fff; border-color: var(--zle); box-shadow: none; }
+.opcja.zle .opcja-znak { background: var(--zle); color: #fff; }
+.opcja.wygaszona { opacity: .45; }
+.opcje.obok .opcja { flex-direction: column; justify-content: center; gap: 8px; min-height: 108px; text-align: center; font-size: 19px; padding: 14px 10px; }
+.opcje.obok .opcja .litera { width: 46px; height: 46px; border-radius: 14px; }
+.opcje.obok .opcja-txt { flex: none; }
+.opcje.obok .opcja-znak { position: absolute; top: 8px; right: 8px; }
+
+/* przyciski w stopce: 3D z grubą krawędzią; „Przerwij” z przerywaną ramką */
+.stopka .btn { border: 2px solid var(--atrament); box-shadow: 0 5px 0 var(--atrament); transition: transform .06s, box-shadow .06s; margin-bottom: 5px; }
+.stopka .btn:active:not(:disabled), .stopka .btn.wcisniety { transform: translateY(4px); box-shadow: 0 1px 0 var(--atrament); }
+.stopka .btn.zielony { border-color: #1E6B3E; box-shadow: 0 5px 0 #1E6B3E; }
+.stopka .btn.czerwony { border-color: #A3283D; box-shadow: 0 5px 0 #A3283D; }
+.stopka .btn.kreska { background: transparent; border: 2px dashed var(--atrament); box-shadow: none; }
+.stopka .btn.sprawdz { background: var(--tusz); color: #fff; }
+.stopka .btn:disabled { box-shadow: 0 5px 0 rgba(42,40,49,.4); }
+input.wpis { border: 2px solid var(--atrament); border-bottom-width: 2px; box-shadow: 0 4px 0 var(--atrament); background: #fff; margin-bottom: 4px; }
+input.wpis:focus { border-color: var(--atrament); background: #fff; box-shadow: 0 4px 0 var(--atrament), 0 0 0 4px var(--tlo-karty); }
+input.wpis.ok { border-color: var(--ok); box-shadow: 0 4px 0 var(--ok); }
+input.wpis.zle { border-color: var(--zle); box-shadow: 0 4px 0 var(--zle); }
+
+/* kolejność i pary w tym samym duchu */
+.kafel-odp, .para-el { border: 2px solid var(--atrament); box-shadow: 0 4px 0 var(--atrament); background: #fff; }
+.kafel-odp:active:not(:disabled), .kafel-odp.wcisniety { transform: translateY(3px); box-shadow: 0 1px 0 var(--atrament); }
+.para-el.wybrany { outline: 3px solid var(--tlo-karty); outline-offset: 2px; }
+.slot { border-color: rgba(42,40,49,.35); }
+.slot.pelny { border: 2px solid var(--atrament); }
+.poprawka { border: 2px solid var(--atrament); box-shadow: 0 5px 0 var(--atrament); }
+.opcje.obok .opcja:first-child:not(.zle):not(.ok):not(.dobra) .litera { background: var(--mietowy); }
+.opcje.obok .opcja:last-child:not(.zle):not(.ok):not(.dobra) .litera { background: var(--rozowy); }

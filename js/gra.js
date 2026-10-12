@@ -6,7 +6,7 @@
 // otwarte (pytanie z podręcznika: najpierw odpowiedz w myślach, potem odsłoń i oceń się sam).
 
 import { h, okno, odm, ik, maskotka, kolor, los } from './dom.js';
-import { ocen, wCzesci, opcjeWyboru, pokaz, poprawna } from './sprawdz.js';
+import { ocen, wCzesci, opcjeWyboru, pokaz, poprawna, dobraOdpowiedz } from './sprawdz.js';
 import { graj } from './dzwieki.js';
 
 const BLOKADA_MS = 1200; // po błędzie przyciski chwilę śpią, żeby rozpędzony palec nie przeskoczył wyjaśnienia
@@ -82,6 +82,7 @@ export function uruchom(el, opcje) {
       stopka ? h('div', { class: 'stopka ' + klasaStopki }, stopka) : null].filter(Boolean));
     el.querySelector('.cw-pole').scrollTop = 0;
   }
+  const stopkaEl = () => el.querySelector('.stopka') || el.appendChild(h('div', { class: 'stopka' }));
 
   async function przerwij() {
     const w = await okno({ tytul: 'Przerwać ćwiczenie?', tresc: 'Wynik zapisze się jako przerwany. Możesz go i tak wysłać.',
@@ -125,16 +126,23 @@ export function uruchom(el, opcje) {
     const ile = B().kolejka.length;
     stan = {};
     const polecenie = powtorka ? 'Jeszcze raz to zadanie' : (cz.polecenie || b.polecenie || POLECENIA[cz.kind] || '');
+    // karta jak wierzchnia z talii: nagłówek (blok, polecenie, licznik), kolorowy panel z pytaniem, miejsce na odpowiedź
+    const dlugie = (cz.e || '').length + (z.q || '').length > 140;
     const karta = h('section', { class: 'zadanie-karta' },
-      z.obraz ? h('img', { class: 'zadanie-obraz', src: z.obraz, alt: '' }) : null,
-      z.q ? h('p', { class: 'tresc' }, zLuka(z.q)) : null,
-      z.czesci.length > 1 ? h('p', { class: 'etykieta' }, h('b', {}, `${String.fromCharCode(97 + czesc)}) `), cz.e ? zLuka(cz.e) : null) : cz.e ? h('p', { class: 'pytanie serif' + (cz.e.length > 140 ? ' dlugie' : '') }, zLuka(cz.e)) : null,
+      h('div', { class: 'karta-gora' },
+        h('span', { class: 'karta-ikona', 'aria-hidden': 'true' }, ik(zestaw.ikona || 'lisc')),
+        h('span', { class: 'karta-naglowek' }, h('b', { class: 'serif' }, b.tytul), h('small', {}, polecenie)),
+        h('span', { class: 'karta-nr' }, `${Math.min(poz + 1, ile)}/${ile}`)),
+      h('div', { class: 'pytanie-panel' + (dlugie ? ' dlugie' : '') },
+        z.obraz ? h('img', { class: 'zadanie-obraz', src: z.obraz, alt: '' }) : null,
+        z.q ? h('p', { class: 'tresc' }, zLuka(z.q)) : null,
+        z.czesci.length > 1 ? h('p', { class: 'pytanie serif' }, h('b', {}, `${String.fromCharCode(97 + czesc)}) `), cz.e ? zLuka(cz.e) : null)
+          : cz.e ? h('p', { class: 'pytanie serif' }, zLuka(cz.e)) : null),
       h('div', { class: 'odp-miejsce' }),
       h('p', { class: 'info', 'aria-live': 'polite' }));
     const widok = WIDOKI[cz.kind](cz, karta);
     ekran({
-      tytul: b.tytul,
-      tresc: [h('div', { class: 'cw-polecenie' }, polecenie, h('span', { class: 'cw-nr' }, `${Math.min(poz + 1, ile)} / ${ile}`)), karta, widok.tresc],
+      tresc: [h('div', { class: 'karta-talia' }, karta), widok.tresc],
       stopka: widok.stopka,
     });
     widok.potem?.();
@@ -146,10 +154,17 @@ export function uruchom(el, opcje) {
     // wybór jednej odpowiedzi; pf = dwa przyciski obok siebie
     wybor(cz) {
       const opcje = cz.kind === 'pf' ? opcjeWyboru(cz) : los.tasuj(opcjeWyboru(cz));
-      const dlugie = opcje.some((o) => o.length > 40);
-      ustawKlawisze((e) => { const n = Number(e.key); if (n >= 1 && n <= opcje.length) sprawdz(opcje[n - 1]); });
-      return { stopka: h('div', { class: 'opcje' + (cz.kind === 'pf' ? ' obok' : '') + (dlugie ? ' dlugie' : '') },
-        opcje.map((c) => h('button', { class: 'opcja', type: 'button', onpointerdown: wcisnij, onclick: () => sprawdz(c) }, h('span', { class: 'opcja-txt' }, c)))) };
+      const pf = cz.kind === 'pf';
+      ustawKlawisze((e) => {
+        const n = Number(e.key) || 'abcd'.indexOf(e.key.toLowerCase()) + 1;
+        if (n >= 1 && n <= opcje.length) sprawdz(opcje[n - 1]);
+      });
+      // odpowiedzi tuż pod kartą: przyciski 3D z literą (A, B, C) albo z ikoną przy prawdzie i fałszu
+      return { tresc: h('div', { class: 'opcje' + (pf ? ' obok' : '') },
+        opcje.map((c, i) => h('button', { class: 'opcja', type: 'button', 'data-wartosc': c, onpointerdown: wcisnij, onclick: () => sprawdz(c) },
+          h('span', { class: 'litera' + (pf ? ' ikona' : ' serif') }, pf ? ik(c === 'Prawda' ? 'ptaszek' : 'zamknij') : 'ABCD'[i]),
+          h('span', { class: 'opcja-txt' }, c),
+          h('span', { class: 'opcja-znak', 'aria-hidden': 'true' })))) };
     },
     pf(cz, karta) { return WIDOKI.wybor(cz, karta); },
 
@@ -264,7 +279,14 @@ export function uruchom(el, opcje) {
 
   // kolory po sprawdzeniu: zaznaczona opcja, wpis, pary
   function oznacz(cz, odp, ok) {
-    if (cz.kind === 'wybor' || cz.kind === 'pf') el.querySelectorAll('.opcja').forEach((b) => { if (b.textContent === odp) b.classList.add(ok ? 'ok' : 'zle'); });
+    if (cz.kind === 'wybor' || cz.kind === 'pf') {
+      el.querySelectorAll('.opcja').forEach((b) => {
+        const ta = b.dataset.wartosc === odp, dobra = !ok && b.dataset.wartosc === dobraOdpowiedz(cz);
+        if (ta) { b.classList.add(ok ? 'ok' : 'zle'); b.querySelector('.opcja-znak').replaceChildren(ik(ok ? 'ptaszek' : 'zamknij')); }
+        if (dobra) { b.classList.add('dobra'); b.querySelector('.opcja-znak').replaceChildren(ik('ptaszek')); }
+        if (!ta && !dobra) b.classList.add('wygaszona');
+      });
+    }
     if (cz.kind === 'wpisz') { stan.pole.disabled = true; stan.pole.classList.add(ok ? 'ok' : 'zle'); const l = el.querySelector('.zadanie-karta .luka'); if (l) { l.textContent = odp.trim(); l.classList.add('pelna'); } }
     if (cz.kind === 'pary') el.querySelectorAll('.para-el.lewy').forEach((b) => b.classList.add(odp[b.textContent] === cz.pary.find(([l]) => l === b.textContent)[1] ? 'ok' : 'zle'));
     if (cz.kind === 'kolejnosc') el.querySelectorAll('.slot').forEach((s, i) => s.classList.add(odp[i] === cz.elementy[i] ? 'ok' : 'zle'));
@@ -274,7 +296,7 @@ export function uruchom(el, opcje) {
     seria++;
     graj(seria % 10 === 0 ? 'seria-10' : seria % 5 === 0 ? 'seria-5' : 'dobrze');
     el.querySelector('.zadanie-karta').classList.add('ok');
-    const stopka = el.querySelector('.stopka');
+    const stopka = stopkaEl();
     stopka.className = 'stopka ok';
     // replaceChildren zamienia null na tekst „null” — puste elementy odfiltrowujemy
     stopka.replaceChildren(...[h('div', { class: 'stopka-tytul' }, ik('ptaszek'), ' ', los.wybierz(POCHWALY),
@@ -296,9 +318,10 @@ export function uruchom(el, opcje) {
     const pole = el.querySelector('.cw-pole');
     const otwarte = cz.kind === 'otwarte';
     if (!otwarte) {
+      const naPrzyciskach = cz.kind === 'wybor' || cz.kind === 'pf'; // zła i dobra odpowiedź są już zaznaczone na przyciskach
       pole.append(h('section', { class: 'poprawka' },
-        cz.kind === 'pary' || cz.kind === 'kolejnosc' ? null : h('p', { class: 'twoja' }, 'Twoja odpowiedź: ', h('s', {}, pokaz(cz, odp))),
-        h('div', { class: 'ramka-poprawna' },
+        naPrzyciskach || cz.kind === 'pary' || cz.kind === 'kolejnosc' ? null : h('p', { class: 'twoja' }, 'Twoja odpowiedź: ', h('s', {}, pokaz(cz, odp))),
+        naPrzyciskach ? null : h('div', { class: 'ramka-poprawna' },
           h('div', { class: 'kat-etykieta' }, 'Poprawna odpowiedź'),
           cz.kind === 'pary' ? h('ul', { class: 'lista-par' }, cz.pary.map(([l, p]) => h('li', {}, h('b', {}, l), ' — ', p)))
             : cz.kind === 'kolejnosc' ? h('ol', { class: 'lista-par' }, cz.elementy.map((x) => h('li', {}, x)))
@@ -309,8 +332,8 @@ export function uruchom(el, opcje) {
     }
     let zablokowaneDalej = true;
     const dalejBtn = h('button', { class: 'btn czerwony', type: 'button', disabled: true, onclick: () => { if (!zablokowaneDalej) nastepne(); } }, 'Przeczytaj…');
-    const przerwijBtn = h('button', { class: 'btn jasny', type: 'button', disabled: true, onclick: przerwij }, 'Przerwij');
-    const stopka = el.querySelector('.stopka');
+    const przerwijBtn = h('button', { class: 'btn kreska', type: 'button', disabled: true, onclick: przerwij }, 'Przerwij');
+    const stopka = stopkaEl();
     stopka.className = 'stopka zle';
     stopka.replaceChildren(
       h('div', { class: 'stopka-info z-maskotka' }, maskotka('mysli', 'maskotka-stopka'),
