@@ -59,7 +59,8 @@ Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie tr
 - `js/app.js` (ekrany: lista działami, lekcja z nagraniami i ćwiczeniami, ściąga, ustawienia; odtwarzacz pamięta miejsce),
   `js/gra.js` (przebieg: wybor, pf, wpisz, kolejnosc, pary, otwarte; poprawka po błędzie, podsumowanie, „Wyślij wynik”),
   `js/sprawdz.js` (ocena odpowiedzi — wspólna z narzędziem), `js/store.js` (zapis, synchronizacja, pobieranie prywatnych nagrań),
-  `js/dom.js` (pomocniki, ikony, okienka), `js/dzwieki.js` (dźwięki z „Ucz się sprytniej”).
+  `js/dom.js` (pomocniki, ikony, okienka), `js/dzwieki.js` (dźwięki według `DZWIEKI.md`, z zapasem z „Ucz się sprytniej”).
+- `narzedzia/dzwiek.sh "<plik>" <nazwa>` — dźwięk z Epidemic Sound → `audio/<nazwa>.mp3` (przycięty, mono, wyrównany).
 - `narzedzia/biologoza.mjs` — `importuj | sprawdz [id] | katalog | wyniki`.
 - Podgląd lokalny na 127.0.0.1 nie ma tokenu, więc nie zapisuje wyników do prawdziwych danych. Nie testuj z tokenem.
 - Po każdej zmianie kodu podbij `CACHE` w `sw.js`, potem commit + push. Nowe lekcje i nagrania tego nie wymagają.

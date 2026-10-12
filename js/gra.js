@@ -92,6 +92,7 @@ export function uruchom(el, opcje) {
   // ---------- wstęp do bloku ----------
   function wstepBloku() {
     sprzataj();
+    graj('start-bloku');
     const b = B().blok;
     const ile = B().kolejka.length;
     ekran({
@@ -112,7 +113,7 @@ export function uruchom(el, opcje) {
   // ---------- zadanie ----------
   const wcisnij = (e) => { const b = e.currentTarget; b.classList.add('wcisniety'); setTimeout(() => b.classList.remove('wcisniety'), 120); };
   const info = () => el.querySelector('.info');
-  const podpowiedz = (t) => { const i = info(); i.textContent = t; i.className = 'info podpowiedz'; };
+  const podpowiedz = (t) => { const i = info(); i.textContent = t; i.className = 'info podpowiedz'; graj('podpowiedz'); };
 
   function pokazZadanie() {
     sprzataj();
@@ -120,6 +121,7 @@ export function uruchom(el, opcje) {
     const { z, powtorka } = pozycja();
     const cz = czescTeraz();
     const b = B().blok;
+    if (powtorka) graj('powrot-pytania'); else if (poz || czesc) graj('nowe-pytanie');
     const ile = B().kolejka.length;
     stan = {};
     const polecenie = powtorka ? 'Jeszcze raz to zadanie' : (cz.polecenie || b.polecenie || POLECENIA[cz.kind] || '');
@@ -176,7 +178,7 @@ export function uruchom(el, opcje) {
           return h('li', { class: 'slot' + (x ? ' pelny' : ''), onclick: () => { if (x && !zablokowane) { stan.ulozone.splice(i, 1); graj('cofnij'); odswiez(); } } }, x || '');
         })));
         kafle.replaceChildren(...pula.map((x) => h('button', { class: 'kafel-odp', type: 'button', disabled: stan.ulozone.includes(x),
-          onpointerdown: wcisnij, onclick: () => { if (!zablokowane && !stan.ulozone.includes(x)) { stan.ulozone.push(x); graj('klik'); odswiez(); } } }, x)));
+          onpointerdown: wcisnij, onclick: () => { if (!zablokowane && !stan.ulozone.includes(x)) { stan.ulozone.push(x); graj('wybor'); odswiez(); } } }, x)));
       };
       odswiez();
       stan.odswiez = odswiez;
@@ -194,15 +196,15 @@ export function uruchom(el, opcje) {
         kol.replaceChildren(
           h('div', { class: 'pary-kol' }, lewe.map((l) => h('button', { class: 'para-el lewy' + (stan.wybrany === l ? ' wybrany' : ''), type: 'button',
             style: stan.pary[l] ? `background:${kolorPary(l)}` : '',
-            onclick: () => { if (zablokowane) return; if (stan.pary[l]) delete stan.pary[l]; stan.wybrany = l; graj('klik'); odswiez(); } }, l))),
+            onclick: () => { if (zablokowane) return; graj(stan.pary[l] ? 'cofnij' : 'wybor'); if (stan.pary[l]) delete stan.pary[l]; stan.wybrany = l; odswiez(); } }, l))),
           h('div', { class: 'pary-kol' }, prawe.map((p) => { const l = lewyDla(p); return h('button', { class: 'para-el prawy', type: 'button',
             style: l ? `background:${kolorPary(l)}` : '',
             onclick: () => {
               if (zablokowane) return;
-              if (l) delete stan.pary[l];
-              else if (stan.wybrany) { stan.pary[stan.wybrany] = p; stan.wybrany = lewe.find((x) => !stan.pary[x]) || null; }
+              if (l) { delete stan.pary[l]; graj('cofnij'); }
+              else if (stan.wybrany) { stan.pary[stan.wybrany] = p; stan.wybrany = lewe.find((x) => !stan.pary[x]) || null; graj('para'); }
               else { podpowiedz('Najpierw dotknij pojęcie po lewej.'); return; }
-              graj('klik'); odswiez();
+              odswiez();
             } }, p); })));
       };
       stan.wybrany = lewe[0];
@@ -216,7 +218,7 @@ export function uruchom(el, opcje) {
       const odslon = () => {
         if (stan.odsloniete) return;
         stan.odsloniete = true;
-        graj('klik');
+        graj('odslon');
         karta.querySelector('.odp-miejsce').replaceChildren(h('div', { class: 'wzor' },
           h('div', { class: 'kat-etykieta' }, 'Wzorcowa odpowiedź'),
           h('p', {}, cz.a),
@@ -225,13 +227,13 @@ export function uruchom(el, opcje) {
         const stopka = el.querySelector('.stopka');
         stopka.replaceChildren(h('div', { class: 'stopka-tytul neutral' }, 'Umiałeś tak odpowiedzieć?'),
           h('div', { class: 'przyciski' },
-            h('button', { class: 'btn jasny', type: 'button', onclick: () => sprawdz(false) }, 'Jeszcze nie'),
-            h('button', { class: 'btn zielony', type: 'button', onclick: () => sprawdz(true) }, ik('ptaszek'), 'Umiałem')));
+            h('button', { class: 'btn jasny', type: 'button', 'data-cichy': true, onclick: () => sprawdz(false) }, 'Jeszcze nie'),
+            h('button', { class: 'btn zielony', type: 'button', 'data-cichy': true, onclick: () => sprawdz(true) }, ik('ptaszek'), 'Umiałem')));
         ustawKlawisze(null);
         requestAnimationFrame(() => karta.querySelector('.wzor')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
       };
       ustawKlawisze((e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); odslon(); } });
-      return { stopka: h('button', { class: 'btn glowny szeroki', type: 'button', onclick: odslon }, 'Pokaż odpowiedź') };
+      return { stopka: h('button', { class: 'btn glowny szeroki', type: 'button', 'data-cichy': true, onclick: odslon }, 'Pokaż odpowiedź') };
     },
   };
 
@@ -270,7 +272,7 @@ export function uruchom(el, opcje) {
 
   function dobrze(uwaga) {
     seria++;
-    graj(seria % 10 === 0 ? 'piec' : seria % 5 === 0 ? 'trzy' : 'dobrze');
+    graj(seria % 10 === 0 ? 'seria-10' : seria % 5 === 0 ? 'seria-5' : 'dobrze');
     el.querySelector('.zadanie-karta').classList.add('ok');
     const stopka = el.querySelector('.stopka');
     stopka.className = 'stopka ok';
@@ -282,7 +284,7 @@ export function uruchom(el, opcje) {
 
   function zle(cz, odp) {
     seria = 0;
-    graj('zle');
+    graj(cz.kind === 'otwarte' ? 'jeszcze-nie' : 'zle');
     const { z } = pozycja();
     // zadanie wraca w tym bloku za 2–4 pozycje (albo na końcu)
     const kolejka = B().kolejka;
@@ -339,7 +341,7 @@ export function uruchom(el, opcje) {
     const w = B().wyniki, dob = w.filter((x) => x.dobrze).length;
     if (nrBloku + 1 >= bloki.length) return podsumowanie(false);
     const g = gwiazdki(dob, w.length);
-    graj(g === 3 ? 'trzy' : 'dobrze');
+    graj(g === 3 ? 'blok-idealny' : 'blok-gotowy');
     const nast = bloki[nrBloku + 1].blok;
     const dalejF = () => { nrBloku++; poz = 0; czesc = 0; wstepBloku(); };
     ekran({
@@ -371,7 +373,7 @@ export function uruchom(el, opcje) {
     };
     if (proba.ile) opcje.naKoniec(proba);
     const g = gwiazdki(dob, proba.ile);
-    if (!przerwane && g === 3) graj('piec');
+    if (!przerwane) graj(g === 3 ? 'bez-bledow' : 'lekcja-gotowa');
     const minuty = Math.max(1, Math.round(proba.czas / 60));
     const ocena = zestaw.ocena && proba.ile ? ocenaSzkolna(dob, proba.ile) : null;
     if (ocena) proba.ocena = ocena.o;
@@ -412,7 +414,7 @@ export function uruchom(el, opcje) {
           Object.keys(doPowtorki).length ? h('button', { class: 'btn glowny', type: 'button', onclick: () => opcje.powtorz(doPowtorki) }, ik('powtorz'), 'Powtórz pomyłki') : null,
           h('button', { class: 'btn jasny', type: 'button', onclick: () => opcje.jeszczeRaz() }, 'Jeszcze raz (inne pytania)'),
           h('button', { class: 'btn jasny', type: 'button', onclick: () => opcje.wyjdz() }, 'Wróć do lekcji'))),
-      stopka: h('button', { class: 'btn zielony szeroki', type: 'button', onclick: (e) => wyslij(tekstSMS, e.currentTarget, status) }, ik('wyslij'), 'Wyślij wynik'),
+      stopka: h('button', { class: 'btn zielony szeroki', type: 'button', 'data-cichy': true, onclick: (e) => wyslij(tekstSMS, e.currentTarget, status) }, ik('wyslij'), 'Wyślij wynik'),
     });
   }
 
@@ -440,11 +442,11 @@ async function wyslij(tekst, btn, status) {
   status.replaceChildren();
   try {
     if (navigator.share) {
-      try { await navigator.share({ title: 'Biologoza — wynik', text: tekst }); status.textContent = 'Wysłane? Super!'; return; }
+      try { await navigator.share({ title: 'Biologoza — wynik', text: tekst }); graj('wyslano'); status.textContent = 'Wysłane? Super!'; return; }
       catch (e) { if (e.name === 'AbortError') return; }
     }
     if (navigator.clipboard?.writeText) {
-      try { await navigator.clipboard.writeText(tekst); status.textContent = 'Skopiowano — wklej w wiadomości do taty.'; return; } catch { /* dalej */ }
+      try { await navigator.clipboard.writeText(tekst); graj('wyslano'); status.textContent = 'Skopiowano — wklej w wiadomości do taty.'; return; } catch { /* dalej */ }
     }
     const pole = h('textarea', { class: 'kopiuj', readonly: true }, tekst);
     status.replaceChildren('Zaznacz i skopiuj:', pole);

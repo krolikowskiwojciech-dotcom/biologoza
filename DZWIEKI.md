@@ -49,4 +49,8 @@ Głośność wyrównana do siebie, cisza na początku przycięta. „Musi” = b
 | `bez-bledow` | cała lekcja bez błędu | win fanfare, celebration short | 3–4 s | musi |
 | `wyslano` | wynik wysłany tacie | message sent swoosh | ≤ 0,6 s | może |
 
-Razem: 15 „musi” + 7 „może”. Odtwarzacz nagrań lekcji nie ma dźwięków (nie przeszkadzają w słuchaniu).
+Razem: 15 „musi” + 7 „może”.
+
+Nowy plik obrabia `narzedzia/dzwiek.sh "<plik z Epidemic>" <nazwa>` (przycina ciszę, mono, szczyt −1 dB, MP3) — zapisuje
+od razu `audio/<nazwa>.mp3`, kod niczego więcej nie potrzebuje. Dopóki pliku nie ma, `js/dzwieki.js` gra zapas z Matmozy
+albo milczy. Gotowe: przycisk, wybor, cofnij, para. Odtwarzacz nagrań lekcji nie ma dźwięków (nie przeszkadzają w słuchaniu).

@@ -4,7 +4,7 @@
 import { h, okno, odm, ik, maskotka, kolor, IKONY_BIO } from './dom.js';
 import { uruchom } from './gra.js';
 import * as S from './store.js';
-import { graj } from './dzwieki.js';
+import { graj, przygotujDzwieki } from './dzwieki.js';
 
 const app = document.getElementById('app');
 let indeks = null;
@@ -51,7 +51,7 @@ function ekranWyboru() {
       h('h1', { class: 'serif' }, 'Kto dziś się ', h('em', {}, 'uczy'), '?'),
       h('div', { class: 'profile-siatka' }, indeks.profile.map((p, i) => h('button', {
         class: `profil-kafel ${kolor(i)}`, type: 'button',
-        onclick: () => { S.ustawProfil(p.id); graj('klik'); location.hash = '#/'; render(); },
+        onclick: () => { S.ustawProfil(p.id); location.hash = '#/'; render(); },
       }, h('span', { class: 'profil-avatar serif' }, p.znak), h('b', {}, p.imie), h('small', {}, `klasa ${p.klasa}`))))));
 }
 
@@ -263,7 +263,7 @@ function ekranUstawien() {
         h('div', { class: 'wiersz' }, h('span', {}, `Uczy się: ${p.imie}, klasa ${p.klasa}`),
           indeks.profile.length > 1 ? h('button', { class: 'chip', type: 'button', onclick: () => { S.ustawProfil(null); location.hash = '#/'; render(); } }, 'Zmień') : null),
         h('div', { class: 'wiersz' }, h('span', {}, 'Dźwięki'),
-          h('button', { class: 'chip' + (S.dzwiek() ? ' akt' : ''), type: 'button', 'aria-pressed': String(S.dzwiek()), onclick: () => { S.ustawDzwiek(!S.dzwiek()); graj('dobrze'); render(); } },
+          h('button', { class: 'chip' + (S.dzwiek() ? ' akt' : ''), type: 'button', 'aria-pressed': String(S.dzwiek()), onclick: () => { S.ustawDzwiek(!S.dzwiek()); graj('przelacznik'); render(); } },
             S.dzwiek() ? 'włączone' : 'wyłączone'))),
       h('section', { class: 'ust' },
         h('div', { class: 'sekcja' }, 'Wyniki i pełne nagrania'),
@@ -308,6 +308,15 @@ async function render() {
     app.replaceChildren(h('main', { class: 'ekran' }, h('h1', { class: 'serif' }, 'Ups'), h('p', {}, e.message), h('a', { class: 'btn', href: '#/' }, 'Na start')));
   }
 }
+
+// ogólny dźwięk przycisku: nawigacja, karty, zwykłe przyciski; odpowiedzi i „Sprawdź” mają własne dźwięki,
+// a przyciski z data-cichy grają swój dźwięk same
+const GLOSNE = 'a[href], .cta, .pozycja.klik, .btn:not(.sprawdz), .chip, .profil-kafel';
+document.addEventListener('click', (e) => {
+  const el = e.target.closest(GLOSNE);
+  if (el && !el.disabled && !el.closest('[data-cichy]') && !el.matches('.chip[aria-pressed]')) graj('przycisk');
+}, true);
+document.addEventListener('pointerdown', przygotujDzwieki, { once: true });
 
 window.addEventListener('hashchange', render);
 render().then(synchro);

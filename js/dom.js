@@ -1,3 +1,5 @@
+import { graj } from './dzwieki.js';
+
 // Drobne pomocniki DOM, ikony (interfejs i biologiczne do bąbli na kartach) i własne okienka zamiast alert/confirm.
 
 export function h(tag, attrs = {}, ...dzieci) {
@@ -71,6 +73,7 @@ export function okno({ tytul, tresc, poza = 'mysli', przyciski = [{ tekst: 'Jasn
       ok(w);
     }
     document.body.append(tlo, pudlo);
+    graj('okno');
     document.addEventListener('keydown', klaw);
     requestAnimationFrame(() => { tlo.classList.add('wid'); pudlo.classList.add('wid'); });
     pudlo.querySelector('.okno-przyciski button:last-child')?.focus({ preventScroll: true });
