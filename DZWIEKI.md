@@ -49,8 +49,8 @@ Głośność wyrównana do siebie, cisza na początku przycięta. „Musi” = b
 | `bez-bledow` | cała lekcja bez błędu | win fanfare, celebration short | 3–4 s | musi |
 | `wyslano` | wynik wysłany tacie | message sent swoosh | ≤ 0,6 s | może |
 
-Razem: 15 „musi” + 7 „może”.
+Razem: 15 „musi” + 6 „może” = 21.
 
 Nowy plik obrabia `narzedzia/dzwiek.sh "<plik z Epidemic>" <nazwa>` (przycina ciszę, mono, szczyt −1 dB, MP3) — zapisuje
 od razu `audio/<nazwa>.mp3`, kod niczego więcej nie potrzebuje. Dopóki pliku nie ma, `js/dzwieki.js` gra zapas z Matmozy
-albo milczy. Gotowe: przycisk, wybor, cofnij, para, przelacznik, start-bloku, odslon, podpowiedz, okno, nowe-pytanie, dobrze, seria-5, powrot-pytania, wyslano, bez-bledow, lekcja-gotowa (ściszona o 5 dB, żeby nie przebijała bez-bledow), blok-idealny (ściszony o 3 dB), blok-gotowy, seria-10 (podgłośniona, żeby była najgłośniejsza z dobrych), zle (−18,1 LUFS, ciszej niż dobrze −16,5), jeszcze-nie (o ok. 5 dB ciszej niż zle). KOMPLET — wszystkie 22 dźwięki z Epidemic Sound. Głośność wyników rośnie: blok-gotowy −18,9 < blok-idealny −18,0 < lekcja-gotowa −16,4 < bez-bledow −15,0 LUFS. Odtwarzacz nagrań lekcji nie ma dźwięków (nie przeszkadzają w słuchaniu).
+albo milczy. Gotowe: przycisk, wybor, cofnij, para, przelacznik, start-bloku, odslon, podpowiedz, okno, nowe-pytanie, dobrze, seria-5, powrot-pytania, wyslano, bez-bledow, lekcja-gotowa (ściszona o 5 dB, żeby nie przebijała bez-bledow), blok-idealny (ściszony o 3 dB), blok-gotowy, seria-10 (podgłośniona, żeby była najgłośniejsza z dobrych), zle (−18,1 LUFS, ciszej niż dobrze −16,5), jeszcze-nie (o ok. 5 dB ciszej niż zle). KOMPLET — wszystkie 21 dźwięków z Epidemic Sound. Głośność wyników rośnie: blok-gotowy −18,9 < blok-idealny −18,0 < lekcja-gotowa −16,4 < bez-bledow −15,0 LUFS. Odtwarzacz nagrań lekcji nie ma dźwięków (nie przeszkadzają w słuchaniu).
