@@ -14,6 +14,21 @@
   "ikona": "dna",
   "kolor": "rozowy",
   "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz2-l03-nicienie.mp3",
+      "wersja": "15d924c451",
+      "minuty": 16
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz2-l03-nicienie-krotkie.mp3",
+      "minuty": 9
+    }
+  ],
   "sciaga": [
     "Nicienie to bezkręgowce o długim, cienkim ciele podobnym do nitki — właśnie od nici pochodzi nazwa tej grupy. Zdecydowana większość z nich prowadzi życie pasożytów.",
     "Mieszkają w każdym środowisku wodnym i lądowym, potrafią przetrwać nawet w gorących źródłach. Najwięcej gatunków żyje jednak wewnątrz roślin i zwierząt, również człowieka.",

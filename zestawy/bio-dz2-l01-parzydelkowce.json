@@ -14,6 +14,21 @@
   "ikona": "lisc",
   "kolor": "brzoskwinia",
   "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz2-l01-parzydelkowce.mp3",
+      "wersja": "700d1c9fcb",
+      "minuty": 16
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz2-l01-parzydelkowce-krotkie.mp3",
+      "minuty": 9
+    }
+  ],
   "sciaga": [
     "Nazwa grupy pochodzi od komórek parzydełkowych — to nimi parzydełkowce polują i odstraszają wrogów. Najlepiej znanym w Polsce gatunkiem jest chełbia modra.",
     "Domem parzydełkowców jest tylko woda, przede wszystkim słona: morza i oceany. Na lądzie nie spotkasz żadnego z nich.",

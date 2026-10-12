@@ -14,6 +14,21 @@
   "ikona": "dna",
   "kolor": "niebieski",
   "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz2-l02-plazince.mp3",
+      "wersja": "5cede8a758",
+      "minuty": 17
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz2-l02-plazince-krotkie.mp3",
+      "minuty": 9
+    }
+  ],
   "sciaga": [
     "Płazińce mają ciało zwykle długie i spłaszczone. Od tego kształtu wzięła się ich druga nazwa: robaki płaskie.",
     "Przeważająca część płazińców to pasożyty, które siedzą w narządach wewnętrznych kręgowców, na przykład w jelicie cienkim. Najbardziej znane z nich to tasiemce.",

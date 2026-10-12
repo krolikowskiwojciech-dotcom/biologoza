@@ -14,6 +14,21 @@
   "ikona": "slimak",
   "kolor": "krem",
   "ocena": true,
+  "nagrania": [
+    {
+      "tytul": "Lekcja z podręcznikiem",
+      "opis": "Słuchaj i patrz do książki",
+      "prywatne": "nagrania/bio-dz2-l04-pierscienice.mp3",
+      "wersja": "8bb942eabd",
+      "minuty": 16
+    },
+    {
+      "tytul": "Krótka powtórka",
+      "opis": "Najważniejsze z lekcji, bez książki",
+      "plik": "nagrania/bio-dz2-l04-pierscienice-krotkie.mp3",
+      "minuty": 9
+    }
+  ],
   "sciaga": [
     "Nazwa pochodzi od budowy: ciało pierścienicy to rząd krótkich odcinków — pierścieni, czyli segmentów. Najlepiej znanym przykładem jest dżdżownica.",
     "Gdzie mieszkają: przeważnie w morzach i oceanach; część gatunków w wodach słodkich, a część na wilgotnym lądzie, najczęściej w glebie i ściółce.",
