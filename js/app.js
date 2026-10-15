@@ -261,7 +261,7 @@ function odtwarzaczNagrania(z, n) {
     if (moj() && glosnik.src !== CISZA) { if (glosnik.paused) glosnik.play().catch(blad); else glosnik.pause(); return; }
     przejmij();
     if (!n.prywatne) { podepnij(n.plik); glosnik.play().catch(blad); return; } // bez czekania — wciąż w dotknięciu
-    odblokujGlosnik(); // jeszcze w dotknięciu, zanim zacznie się kilkusekundowe pobieranie
+    odblokujGlosnik(); // jeszcze w dotknięciu, zanim zacznie się pobieranie
     stan.textContent = 'Pobieram nagranie…';
     btn.disabled = true;
     S.nagraniePrywatne(n.prywatne, n.wersja).then((blob) => {
@@ -269,12 +269,32 @@ function odtwarzaczNagrania(z, n) {
       ja.url = URL.createObjectURL(blob);
       stan.textContent = '';
       podepnij(ja.url);
-      return glosnik.play();
+      // po długim pobieraniu iPhone potrafi już nie uznać tego za reakcję na dotknięcie — wtedy nagranie czeka gotowe
+      return glosnik.play().catch((e) => {
+        if (e?.name !== 'NotAllowedError') throw e;
+        stan.textContent = 'Nagranie gotowe — stuknij ▶, żeby słuchać.';
+        ustawIkone();
+      });
     }).catch(blad).finally(() => { btn.disabled = false; });
   };
+  // pełne nagranie: pobieranie rusza w tle od razu po wejściu w lekcję, z procentami
+  if (n.prywatne && S.token()) {
+    const kl = S.kluczPostepu(n.prywatne, n.wersja);
+    const naPostep = (e) => {
+      if (e.detail.klucz !== kl || !stan.isConnected) return;
+      if (!(moj() && glosnik.src !== CISZA)) stan.textContent = e.detail.ile < 1 ? `Pobieram nagranie… ${Math.round(e.detail.ile * 100)}%` : 'Nagranie gotowe.';
+    };
+    window.addEventListener('bz-postep', naPostep);
+    S.maNagranie(n.prywatne, n.wersja).then((jest) => {
+      if (jest) { window.removeEventListener('bz-postep', naPostep); return; }
+      S.nagraniePrywatne(n.prywatne, n.wersja).then(() => { if (stan.isConnected && !moj()) stan.textContent = 'Nagranie gotowe — zapisane na tym urządzeniu.'; })
+        .catch((e) => { if (stan.isConnected && !moj()) stan.textContent = e.message; })
+        .finally(() => setTimeout(() => window.removeEventListener('bz-postep', naPostep), 60000));
+    });
+  }
   cofnij.onclick = () => { if (moj()) glosnik.currentTime = Math.max(0, glosnik.currentTime - 15); };
   suwak.oninput = () => { if (moj() && glosnik.duration) glosnik.currentTime = (suwak.value / 1000) * glosnik.duration; };
-  if (n.prywatne) S.maNagranie(n.prywatne, n.wersja).then((jest) => { if (jest) stan.textContent = 'zapisane na telefonie'; });
+  if (n.prywatne) S.maNagranie(n.prywatne, n.wersja).then((jest) => { if (jest) stan.textContent = 'zapisane na tym urządzeniu'; });
 
   return h('div', { class: 'nagranie' },
     h('div', { class: 'nagr-gora' }, btn,

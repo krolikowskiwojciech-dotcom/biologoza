@@ -87,8 +87,19 @@ export async function synchronizuj(id) {
 const CACHE_NAGRAN = 'biologoza-nagrania';
 // klucz zawiera wersję pliku: po ponownym nagraniu (np. w nowszym modelu) telefon pobiera nowy plik, a stary usuwa
 const kluczNagrania = (sciezka, wersja) => `https://prywatne.biologoza/${sciezka}${wersja ? '?v=' + wersja : ''}`;
-export async function nagraniePrywatne(sciezka, wersja) {
+// jedno pobieranie na plik naraz (w tle po wejściu w lekcję i po dotknięciu „odtwórz” to ta sama obietnica);
+// postęp idzie zdarzeniem „bz-postep” { klucz, ile: 0–1 }, żeby odtwarzacz pokazał procenty
+const wTrakcie = new Map();
+export const kluczPostepu = kluczNagrania;
+export function nagraniePrywatne(sciezka, wersja) {
   const klucz = kluczNagrania(sciezka, wersja);
+  if (!wTrakcie.has(klucz)) {
+    const p = pobierzNagranie(sciezka, wersja, klucz).finally(() => wTrakcie.delete(klucz));
+    wTrakcie.set(klucz, p);
+  }
+  return wTrakcie.get(klucz);
+}
+async function pobierzNagranie(sciezka, wersja, klucz) {
   try {
     const c = await caches.open(CACHE_NAGRAN);
     const jest = await c.match(klucz);
@@ -99,8 +110,20 @@ export async function nagraniePrywatne(sciezka, wersja) {
   const r = await gh(`/repos/${REPO_DANYCH}/contents/${sciezka.split('/').map(encodeURIComponent).join('/')}`, { headers: { Accept: 'application/vnd.github.raw' } });
   if (r.status === 404 || r.status === 403) throw new Error('Nie widzę tego nagrania w prywatnym repozytorium. Sprawdź token w Ustawieniach.');
   if (!r.ok) throw new Error(`GitHub: błąd ${r.status} przy pobieraniu nagrania`);
-  const blob = new Blob([await r.arrayBuffer()], { type: 'audio/mpeg' });
-  try { (await caches.open(CACHE_NAGRAN)).put(klucz, new Response(blob, { headers: { 'Content-Type': 'audio/mpeg' } })); } catch { /* pełna pamięć */ }
+  const razem = Number(r.headers.get('content-length')) || 0;
+  const kawalki = [];
+  let mam = 0;
+  const czytnik = r.body?.getReader?.();
+  if (czytnik) {
+    for (;;) {
+      const { done, value } = await czytnik.read();
+      if (done) break;
+      kawalki.push(value); mam += value.length;
+      if (razem) window.dispatchEvent(new CustomEvent('bz-postep', { detail: { klucz, ile: Math.min(1, mam / razem) } }));
+    }
+  } else kawalki.push(new Uint8Array(await r.arrayBuffer()));
+  const blob = new Blob(kawalki, { type: 'audio/mpeg' });
+  try { await (await caches.open(CACHE_NAGRAN)).put(klucz, new Response(blob, { headers: { 'Content-Type': 'audio/mpeg' } })); } catch { /* pełna pamięć */ }
   return blob;
 }
 export async function maNagranie(sciezka, wersja) {

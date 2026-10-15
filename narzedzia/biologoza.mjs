@@ -154,6 +154,19 @@ const IKONA_TEMATU = [[/tkank|krew|kost/i, 'komorka'], [/królestw|zwierz/i, 'mi
 const czasNagrania = (plik) => { try { const m = execFileSync('afinfo', [plik], { encoding: 'utf8' }).match(/estimated duration: ([\d.]+)/); return m ? Math.round(Number(m[1]) / 60) : null; } catch { return null; } };
 const shaBloba = (buf) => crypto.createHash('sha1').update(`blob ${buf.length}\0`).update(buf).digest('hex');
 
+// mowa nie potrzebuje 128 kb/s stereo: 64 kb/s mono to połowa rozmiaru (pełne nagranie ~7 MB zamiast ~14,5 MB), więc
+// telefon pobiera je dwa razy szybciej. -bitexact = ten sam plik przy każdym imporcie (bez ponownego wysyłania).
+function lekkie(zrodlo) {
+  const kat = path.join(os.tmpdir(), 'biologoza-mp3');
+  fs.mkdirSync(kat, { recursive: true });
+  const cel = path.join(kat, shaBloba(fs.readFileSync(zrodlo)).slice(0, 16) + '.mp3');
+  if (!fs.existsSync(cel)) {
+    execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', zrodlo, '-ac', '1', '-ar', '44100', '-b:a', '64k',
+      '-map_metadata', '-1', '-fflags', '+bitexact', '-flags:a', '+bitexact', cel]);
+  }
+  return cel;
+}
+
 function wyslijPrywatne(lokalny, sciezka, opis) {
   const buf = fs.readFileSync(lokalny);
   let sha = null;
@@ -221,15 +234,16 @@ function importuj({ bezNagran }) {
     const www = path.join(dzialDir, 'audio/na-strone', `${L.id}_www.mp3`);
     if (fs.existsSync(www)) {
       const cel = `nagrania/${id}-krotkie.mp3`;
-      fs.copyFileSync(www, path.join(KORZEN, cel));
+      fs.copyFileSync(lekkie(www), path.join(KORZEN, cel));
       nagrania.push({ tytul: 'Krótka powtórka', opis: 'Najważniejsze z lekcji, bez książki', plik: cel, minuty: czasNagrania(www) });
     }
     const pelne = path.join(dzialDir, 'audio/do-nauki-z-podrecznikiem', `${L.id}.mp3`);
     if (fs.existsSync(pelne)) {
       const cel = `nagrania/${id}.mp3`;
-      const wynik = bezNagran ? 'pominięte (--bez-nagran)' : wyslijPrywatne(pelne, cel, `pełne nagranie ${id}`);
+      const lekkiePelne = lekkie(pelne);
+      const wynik = bezNagran ? 'pominięte (--bez-nagran)' : wyslijPrywatne(lekkiePelne, cel, `pełne nagranie ${id}`);
       console.log(`   pełne nagranie → biologoza-dane/${cel}: ${wynik}`);
-      nagrania.unshift({ tytul: 'Lekcja z podręcznikiem', opis: 'Słuchaj i patrz do książki', prywatne: cel, wersja: shaBloba(fs.readFileSync(pelne)).slice(0, 10), minuty: czasNagrania(pelne) });
+      nagrania.unshift({ tytul: 'Lekcja z podręcznikiem', opis: 'Słuchaj i patrz do książki', prywatne: cel, wersja: shaBloba(fs.readFileSync(lekkiePelne)).slice(0, 10), minuty: czasNagrania(pelne) });
     }
 
     const nr = Number(L.lekcja_nr) || null;
