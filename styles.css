@@ -559,3 +559,11 @@ a.lek-wiersz:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--atra
 .naglowek-dzialu:has(.nagl-obraz) { padding-top: 112px; }
 .naglowek-dzialu:has(.nagl-obraz) h1 { padding-right: 0; }
 .karta-ilustr { width: 40px; height: 40px; flex: none; }
+
+/* diagnostyka nagrań w Ustawieniach */
+.diag { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 8px; }
+.diag li { display: flex; gap: 8px; align-items: flex-start; font-size: 14.5px; line-height: 1.35; }
+.diag li .ik { flex: none; width: 22px; height: 22px; border-radius: 50%; color: #fff; margin-top: 1px; }
+.diag li .ik svg { width: 14px; height: 14px; stroke-width: 2.8; }
+.diag-ok .ik { background: var(--ok); } .diag-zle .ik { background: var(--zle); } .diag-uwaga .ik { background: #C99A1E; }
+.diag-zle span { color: var(--zle); font-weight: 500; }

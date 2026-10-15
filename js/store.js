@@ -129,3 +129,36 @@ async function pobierzNagranie(sciezka, wersja, klucz) {
 export async function maNagranie(sciezka, wersja) {
   try { return !!(await (await caches.open(CACHE_NAGRAN)).match(kluczNagrania(sciezka, wersja))); } catch { return false; }
 }
+
+// diagnostyka „Sprawdź nagrania” (Ustawienia): każdy krok osobno, z czytelnym wynikiem — żeby na cudzym urządzeniu
+// było widać, czy problem jest w tokenie, dostępie, pliku, szybkości łącza czy w odtwarzaniu
+export async function sprawdzNagrania(sciezka, wypisz) {
+  const t = token();
+  wypisz(t ? 'ok' : 'zle', t ? `Token na tym urządzeniu: jest (${t.slice(0, 11)}…)` : 'Token na tym urządzeniu: BRAK — wklej go wyżej i stuknij „Włącz”.');
+  if (!t) return;
+  try {
+    const repo = await gh(`/repos/${REPO_DANYCH}`);
+    wypisz(repo.ok ? 'ok' : 'zle', repo.ok ? 'Dostęp do repozytorium biologoza-dane: jest' : `Dostęp do repozytorium: BRAK (błąd ${repo.status}). ${BRAK_REPO}`);
+    if (!repo.ok) return;
+    const sc = `/repos/${REPO_DANYCH}/contents/${sciezka.split('/').map(encodeURIComponent).join('/')}`;
+    const meta = await gh(sc);
+    if (!meta.ok) { wypisz('zle', `Plik nagrania: nie widać go (błąd ${meta.status}).`); return; }
+    const rozmiar = (await meta.json()).size;
+    wypisz('ok', `Plik nagrania: jest (${(rozmiar / 1048576).toFixed(1)} MB)`);
+    const t0 = performance.now();
+    const pr = await gh(sc, { headers: { Accept: 'application/vnd.github.raw' } });
+    if (!pr.ok) { wypisz('zle', `Pobieranie: błąd ${pr.status}.`); return; }
+    const bajty = (await pr.arrayBuffer()).byteLength;
+    const s = (performance.now() - t0) / 1000;
+    wypisz(bajty < rozmiar * 0.98 ? 'zle' : s > 90 ? 'uwaga' : 'ok', bajty < rozmiar * 0.98
+      ? `Pobieranie: przerwane (${(bajty / 1048576).toFixed(1)} z ${(rozmiar / 1048576).toFixed(1)} MB).`
+      : `Pobieranie: działa — całe nagranie w ${Math.round(s)} s`);
+  } catch (e) {
+    wypisz('zle', `Połączenie z GitHubem nie wyszło: ${e.message}`);
+    return;
+  }
+  try {
+    const c = await caches.open(CACHE_NAGRAN);
+    wypisz('ok', `Pamięć na nagrania: działa (zapisanych: ${(await c.keys()).length})`);
+  } catch (e) { wypisz('uwaga', `Pamięć na nagrania niedostępna (${e.message}) — nagranie zagra, ale za każdym razem pobierze się od nowa.`); }
+}

@@ -373,7 +373,23 @@ function ekranUstawien() {
           t ? h('button', { class: 'btn jasny', type: 'button', onclick: async () => {
             if (await okno({ tytul: 'Wyłączyć synchronizację?', tresc: 'Wyniki zostaną na telefonie, ale przestaną trafiać do taty. Pełne nagrania przestaną się pobierać.', przyciski: [{ tekst: 'Zostaw', wartosc: false }, { tekst: 'Wyłącz', wartosc: true, klasa: 'czerwony' }] })) { S.ustawToken(null); render(); }
           } }, 'Wyłącz') : null),
-        stan)));
+        stan),
+      h('section', { class: 'ust' },
+        h('div', { class: 'sekcja' }, 'Pełne nagrania nie grają?'),
+        h('p', { class: 'maly' }, 'Sprawdzenie krok po kroku: token, dostęp do repozytorium, plik, szybkość łącza i odtwarzanie dźwięku.'),
+        h('button', { class: 'btn glowny', type: 'button', onclick: async (e) => {
+          const przycisk = e.currentTarget, lista = przycisk.nextElementSibling;
+          przycisk.disabled = true; przycisk.textContent = 'Sprawdzam… (pobieranie może potrwać do minuty)';
+          lista.replaceChildren();
+          const wypisz = (rodzaj, tekst) => lista.append(h('li', { class: 'diag-' + rodzaj }, ik(rodzaj === 'ok' ? 'ptaszek' : 'zamknij'), h('span', {}, tekst)));
+          try {
+            await S.sprawdzNagrania('nagrania/bio-dz1-l01-w-krolestwie-zwierzat.mp3', wypisz);
+            // odtwarzanie: krótka cisza na wspólnym odtwarzaczu (w tym samym dotknięciu)
+            try { glosnik.src = CISZA; await glosnik.play(); glosnik.pause(); wypisz('ok', 'Odtwarzanie dźwięku: działa'); }
+            catch (err) { wypisz('zle', `Odtwarzanie dźwięku: zablokowane (${err.name}). Sprawdź, czy strona nie jest wyciszona.`); }
+          } finally { przycisk.disabled = false; przycisk.textContent = 'Sprawdź nagrania'; }
+        } }, 'Sprawdź nagrania'),
+        h('ul', { class: 'diag', 'aria-live': 'polite' }))));
 }
 
 async function synchro() {
