@@ -23,6 +23,7 @@ export const kolor = (i) => KOLORY[((i % KOLORY.length) + KOLORY.length) % KOLOR
 const S = (w) => `<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">${w}</svg>`;
 const IKONY = {
   wstecz: S('<path d="M15 5l-7 7 7 7"/>'),
+  strzalkaLewo: S('<path d="M19 12H5M11 6l-6 6 6 6"/>'),
   zamknij: S('<path d="M6 6l12 12M18 6 6 18"/>'),
   zebatka: S('<circle cx="12" cy="12" r="3"/><path d="M12 2.8v2.4M12 18.8v2.4M2.8 12h2.4M18.8 12h2.4M5.5 5.5l1.7 1.7M16.8 16.8l1.7 1.7M5.5 18.5l1.7-1.7M16.8 7.2l1.7-1.7"/>'),
   ptaszek: S('<path d="M5 12.5l4.5 4.5L19 7.5"/>'),
@@ -60,15 +61,22 @@ export const obrazLekcji = (dzial, lekcja, typ) => (typ ? `obrazy/ilustracje/${t
   : ARABSKIE[dzial] && lekcja ? `obrazy/ilustracje/dz${ARABSKIE[dzial]}-l${lekcja}.webp` : null);
 export const ilustracja = (src, klasa = '') => (src ? h('img', { class: 'ilustr ' + klasa, src, alt: '', loading: 'lazy', decoding: 'async', onerror: (e) => e.target.remove() }) : null);
 
-// maskotka 3D (obrazy/maskotka-<poza>.png); dopóki pliku nie ma, element po prostu znika
-export const maskotka = (poza, klasa = '') => h('img', { class: 'maskotka ' + klasa, src: `obrazy/maskotka-${poza}.png`, alt: '', onerror: (e) => e.target.remove() });
+// górny pasek każdego ekranu: po lewej zawsze wyraźna pigułka powrotu (strzałka + słowo), po prawej opcjonalne przyciski.
+// wstecz: { tekst, href } albo { tekst, onclick }
+export function pasekGory(wstecz, ...prawo) {
+  const pig = wstecz.href
+    ? h('a', { class: 'pigulka-wstecz', href: wstecz.href }, ik('strzalkaLewo'), h('span', {}, wstecz.tekst))
+    : h('button', { class: 'pigulka-wstecz', type: 'button', onclick: wstecz.onclick }, ik('strzalkaLewo'), h('span', {}, wstecz.tekst));
+  return h('nav', { class: 'pasek-gora' }, pig, prawo.length ? h('span', { class: 'pasek-prawo' }, prawo) : null);
+}
+// okrągły znaczek z inicjałem osoby (ogarnijmaterial.pl) → wybór osoby
+export const znaczekOsoby = (imie, href) => h('a', { class: 'znaczek-osoby serif', href, 'aria-label': 'Zmień osobę' }, (imie || '?').slice(0, 1).toUpperCase());
 
 // własne okienko (wysuwane od dołu): okno({ tytul, tresc, przyciski: [{ tekst, wartosc, klasa }] }) → Promise<wartosc>
-export function okno({ tytul, tresc, poza = 'mysli', przyciski = [{ tekst: 'Jasne', wartosc: true, klasa: 'glowny' }] }) {
+export function okno({ tytul, tresc, przyciski = [{ tekst: 'Jasne', wartosc: true, klasa: 'glowny' }] }) {
   return new Promise((ok) => {
     const tlo = h('div', { class: 'okno-tlo', onclick: () => zamknij(null) });
     const pudlo = h('div', { class: 'okno', role: 'dialog', 'aria-modal': 'true', 'aria-label': tytul },
-      maskotka(poza, 'okno-maskotka'),
       h('div', { class: 'okno-tytul serif' }, tytul),
       typeof tresc === 'string' ? h('p', { class: 'okno-tekst' }, tresc) : tresc,
       h('div', { class: 'okno-przyciski' }, przyciski.map((p) => h('button', { class: 'btn ' + (p.klasa || 'jasny'), type: 'button', onclick: () => zamknij(p.wartosc) }, p.tekst))));

@@ -1,8 +1,21 @@
 # Biologoza — rodzinna aplikacja do nauki biologii (PWA)
 
 Zawsze po polsku. Aplikacja webowa na iPhone'a (dodana do ekranu początkowego), siostra Lingozy i Matmozy.
+**W interfejsie nazywa się „Biologia”** (tytuł, manifest, teksty; Wojtek 2026-10-24). „biologoza” zostaje tylko w nazwach repo,
+plików, kluczy `bz.*` i ścieżek danych — tych nie zmieniaj.
 
-- **Adres:** https://krolikowskiwojciech-dotcom.github.io/biologoza/ (GitHub Pages z gałęzi `main`, repo publiczne).
+- **Adres:** https://krolikowskiwojciech-dotcom.github.io/biologoza/ (GitHub Pages z gałęzi `main`, repo publiczne)
+  oraz https://biologia.ogarnijmaterial.pl (Cloudflare Pages, ten sam push).
+- **Tryb ogarnijmaterial.pl** (`S.OGARNIJ` w `js/store.js`, gdy `location.hostname.endsWith('ogarnijmaterial.pl')`): przy starcie
+  `GET https://ogarnijmaterial.pl/api/ja` (credentials) — `julian` → aplikacja jako Julek bez wyboru profilu; inna osoba → komunikat
+  „To przedmiot Julka”; 401 → przekierowanie na https://ogarnijmaterial.pl/. Wyniki i pełne nagrania idą przez pośrednika
+  `https://ogarnijmaterial.pl/api/gh/…` (bez tokenu w telefonie; w Ustawieniach brak pola tokenu). Pełne nagranie, którego nie ma
+  jeszcze na telefonie, gra strumieniem z krótkotrwałego `download_url` (raw.githubusercontent.com?token=…, obsługuje Range) —
+  sam adres pośrednika do `<audio>` się nie nadaje (nie przekazuje Range ani Accept). W tle i tak pobiera się do pamięci.
+  Render trybu na 127.0.0.1: `?test-ogarnij=julian|aniela|401` (działa tylko na 127.0.0.1/localhost, bez sieci).
+- **Nawigacja:** lewy górny róg zawsze pigułka powrotu (`pasekGory()` w `js/dom.js`): „Wróć” w aplikacji, „Przedmioty” na starcie
+  pod ogarnijmaterial.pl; tam po prawej ustawienia i znaczek z inicjałem → https://ogarnijmaterial.pl/#konta. Wyjście z ćwiczenia
+  z odpowiedziami pyta (`okno()`) i zapisuje próbę jako przerwaną.
 - **Dane (prywatne repo `krolikowskiwojciech-dotcom/biologoza-dane`):** `profile/<id>.json` = `{ id, proby: [...] }` (wyniki)
   oraz `nagrania/<id>.mp3` — pełne nagrania „do nauki z podręcznikiem”. Telefon pobiera je tokenem wklejonym raz w Ustawieniach.
 - **Profil:** tylko `julek` (Julek, klasa 6, „Puls życia 6”, Nowa Era). Lista w `narzedzia/biologoza.mjs` (PROFILE).
@@ -49,7 +62,7 @@ Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako
 
 **Obrazy dla 11–13 lat (Wojtek 2026-10-12, stanowczo; zasada całego projektu nauki — `~/CLAUDE.md`):** żadnych słodkich, „bajkowych” ilustracji dla przedszkolaków —
 bez maskotek, dużych oczu, rumieńców, konfetti, plasteliny w stylu dla maluchów. Ilustracje mają wyglądać dojrzale i naukowo.
-Maskotki w Biologozie nie ma (pliki `maskotka-*` nie powstaną; element sam znika). Ilustracje: styl atlasu przyrodniczego,
+Maskotki w aplikacji nie ma i nie będzie (kod maskotki usunięty 2026-10-24). Ilustracje: styl atlasu przyrodniczego,
 `obrazy/ilustracje/` (działy, lekcje wg spisu, podsumowanie, test) — prompty i cięcie w `ILUSTRACJE.md`.
 
 Reszta jak w Lingozie:
@@ -60,13 +73,13 @@ Reszta jak w Lingozie:
 - Karty 3D z `--brzeg`, akcent biologii: białe liść, komórka i helisa na kartach, kropki „preparatu” w tle ćwiczeń.
 - Gwiazdki stonowane na kartach, kolorowe tylko w wynikach (`.gwiazdki-wynik`).
 - Żadnych `confirm()`/`alert()` — tylko `okno()`.
-- Maskotka: `obrazy/maskotka-<poza>.png` (czesc, ok, brawo, mysli) — jeszcze jej nie ma; dopóki pliku brak, element znika.
-  Gdy Wojtek przyśle arkusz z ChatGPT, potnij go jak w Lingozie (`narzedzia/tnij_arkusz.py` stamtąd).
+- Ikony na ekran telefonu (`ikony/ikona-*.png`): miętowy kwadrat #C5EFDC z liniowym listkiem #1D1C22 — bez słodkich grafik.
 - Zmiany wizualne sprawdzaj renderem na 127.0.0.1 przed pushem.
 
 ## Kod
 
-- `index.html`, `styles.css`, `sw.js` (offline; pełne nagrania w osobnej pamięci `biologoza-nagrania`, której SW nie czyści).
+- `index.html`, `styles.css`, `sw.js` (szybki start: pliki aplikacji z pamięci, odświeżanie w tle; lekcje z sieci z limitem 1,5 s;
+  pełne nagrania w osobnej pamięci `biologoza-nagrania`, której SW nie czyści).
 - `zestawy/spis.json` — układ podręcznika (działy, lekcje, strony); strona główna pokazuje działy z niego, lekcje bez zestawu jako „wkrótce”.
 - `js/app.js` (ekrany: lista działami, lekcja z nagraniami i ćwiczeniami, ściąga, ustawienia; odtwarzacz pamięta miejsce),
   `js/gra.js` (przebieg: wybor, pf, wpisz, kolejnosc, pary, otwarte; poprawka po błędzie, podsumowanie, „Wyślij wynik”),

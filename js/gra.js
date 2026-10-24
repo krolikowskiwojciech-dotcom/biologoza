@@ -5,7 +5,7 @@
 // Rodzaje zadań: wybor, pf (prawda/fałsz), wpisz (luka „___” albo samo pytanie), kolejnosc, pary,
 // otwarte (pytanie z podręcznika: najpierw odpowiedz w myślach, potem odsłoń i oceń się sam).
 
-import { h, okno, odm, ik, maskotka, kolor, los, obrazLekcji, ilustracja } from './dom.js';
+import { h, okno, odm, ik, kolor, los, obrazLekcji, ilustracja, pasekGory } from './dom.js';
 import { ocen, wCzesci, opcjeWyboru, pokaz, poprawna, dobraOdpowiedz } from './sprawdz.js';
 import { graj } from './dzwieki.js';
 
@@ -73,16 +73,32 @@ export function uruchom(el, opcje) {
   function ekran({ tytul, tresc, stopka, klasaStopki = '', bezGory = false }) {
     el.className = `lekcja w-kolorze ${kolor(B()?.nr ?? 0)}`;
     el.replaceChildren(...[
-      bezGory ? null : h('div', { class: 'lekcja-gora' },
-        h('button', { class: 'zamknij', type: 'button', 'aria-label': 'Przerwij', onclick: przerwij }, ik('zamknij')),
-        h('div', { class: 'postep' }, h('div', { class: 'postep-wew', style: `width:${postep()}%` })),
-        h('span', { class: 'licznik' }, `${nrBloku + 1}/${bloki.length}`)),
+      // „Wróć” zawsze w lewym górnym rogu: w trakcie ćwiczenia z potwierdzeniem (odpowiedzi zapisują się jako przerwane),
+      // na podsumowaniu od razu do lekcji (wynik już zapisany)
+      bezGory ? h('div', { class: 'lekcja-gora' }, pasekGory({ tekst: 'Wróć', onclick: () => opcje.wyjdz() }))
+        : h('div', { class: 'lekcja-gora' },
+          pasekGory({ tekst: 'Wróć', onclick: wroc }),
+          h('div', { class: 'postep' }, h('div', { class: 'postep-wew', style: `width:${postep()}%` })),
+          h('span', { class: 'licznik' }, `${nrBloku + 1}/${bloki.length}`)),
       tytul ? h('div', { class: 'lekcja-tytul serif' }, tytul) : null,
       h('div', { class: 'cw-pole' }, tresc),
       stopka ? h('div', { class: 'stopka ' + klasaStopki }, stopka) : null].filter(Boolean));
     el.querySelector('.cw-pole').scrollTop = 0;
   }
   const stopkaEl = () => el.querySelector('.stopka') || el.appendChild(h('div', { class: 'stopka' }));
+
+  // wyjście z ćwiczenia przyciskiem „Wróć”: bez odpowiedzi nic nie przepada, inaczej pytamy
+  // (miejsce w ćwiczeniu przepada, odpowiedzi zapisują się jako przerwana próba)
+  async function wroc() {
+    const odpowiedzi = bloki.reduce((n, b) => n + b.wyniki.length, 0);
+    if (!odpowiedzi) { sprzataj(); return opcje.wyjdz(); }
+    const w = await okno({ tytul: 'Wyjść z ćwiczenia?', tresc: `Odpowiedzi do tej pory (${odpowiedzi}) zapiszą się jako przerwane ćwiczenie, a następnym razem zaczniesz od początku.`,
+      przyciski: [{ tekst: 'Ćwiczę dalej', wartosc: false, klasa: 'jasny' }, { tekst: 'Wyjdź', wartosc: true, klasa: 'czerwony' }] });
+    if (!w) return;
+    sprzataj();
+    opcje.naKoniec(zbudujProbe(true));
+    opcje.wyjdz();
+  }
 
   async function przerwij() {
     const w = await okno({ tytul: 'Przerwać ćwiczenie?', tresc: 'Wynik zapisze się jako przerwany. Możesz go i tak wysłać.',
@@ -337,8 +353,8 @@ export function uruchom(el, opcje) {
     const stopka = stopkaEl();
     stopka.className = 'stopka zle';
     stopka.replaceChildren(
-      h('div', { class: 'stopka-info z-maskotka' }, maskotka('mysli', 'maskotka-stopka'),
-        h('div', {}, h('div', { class: 'stopka-tytul' }, otwarte ? 'Przeczytaj odpowiedź jeszcze raz. To pytanie wróci.' : 'Prawie! Zobacz, jak jest naprawdę.'))),
+      h('div', { class: 'stopka-info' },
+        h('div', { class: 'stopka-tytul' }, otwarte ? 'Przeczytaj odpowiedź jeszcze raz. To pytanie wróci.' : 'Prawie! Zobacz, jak jest naprawdę.')),
       h('div', { class: 'przyciski' }, przerwijBtn, dalejBtn));
     requestAnimationFrame(() => pole.querySelector('.poprawka')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
     timer = setTimeout(() => {
@@ -371,7 +387,6 @@ export function uruchom(el, opcje) {
     const dalejF = () => { nrBloku++; poz = 0; czesc = 0; wstepBloku(); };
     ekran({
       tresc: h('div', { class: 'podsum' },
-        maskotka(g === 3 ? 'brawo' : 'ok', 'maskotka-duza'),
         h('div', { class: 'kat-etykieta' }, `Blok ${nrBloku + 1} z ${bloki.length} gotowy`),
         h('h2', { class: 'serif' }, B().blok.tytul),
         pokazGwiazdki(g, 'duze'),
@@ -384,11 +399,10 @@ export function uruchom(el, opcje) {
   }
 
   // ---------- podsumowanie ----------
-  function podsumowanie(przerwane) {
-    sprzataj();
+  function zbudujProbe(przerwane) {
     const wszystkie = bloki.flatMap((b) => b.wyniki);
     const dob = wszystkie.filter((x) => x.dobrze).length;
-    const proba = {
+    return {
       id: Date.now().toString(36) + Math.random().toString(36).slice(2, 6),
       zestaw: zestaw.id, tytul: zestaw.tytul + (opcje.tylkoBlok ? ` — ${bloki[0].blok.tytul}` : ''), d: start, czas: Math.round((Date.now() - start) / 1000),
       ile: wszystkie.length, dobrze: dob, przerwane: przerwane || undefined,
@@ -396,6 +410,13 @@ export function uruchom(el, opcje) {
       bloki: bloki.filter((b) => b.wyniki.length).map((b) => ({ id: b.blok.id, tytul: b.blok.tytul, ile: b.wyniki.length, dobrze: b.wyniki.filter((x) => x.dobrze).length })),
       bledy: wszystkie.filter((x) => !x.dobrze).map(({ tekst, a, odp }) => ({ d: tekst, a, odp })),
     };
+  }
+
+  function podsumowanie(przerwane) {
+    sprzataj();
+    const wszystkie = bloki.flatMap((b) => b.wyniki);
+    const dob = wszystkie.filter((x) => x.dobrze).length;
+    const proba = zbudujProbe(przerwane);
     if (proba.ile) opcje.naKoniec(proba);
     const g = gwiazdki(dob, proba.ile);
     if (!przerwane) graj(g === 3 ? 'bez-bledow' : 'lekcja-gotowa');
@@ -414,7 +435,6 @@ export function uruchom(el, opcje) {
     ekran({
       bezGory: true,
       tresc: h('div', { class: 'podsum' },
-        maskotka(g === 3 ? 'brawo' : g ? 'ok' : 'mysli', 'maskotka-duza'),
         h('div', { class: 'kat-etykieta' }, przerwane ? 'Przerwane' : 'Zestaw ukończony'),
         h('h2', { class: 'serif' }, zestaw.tytul),
         pokazGwiazdki(g, 'duze gwiazdki-wynik'),
@@ -450,7 +470,7 @@ export function uruchom(el, opcje) {
 export function tekstWyniku(p, profilInfo, minuty) {
   const procent = p.ile ? Math.round((p.dobrze / p.ile) * 100) : 0;
   const linie = [
-    `Biologoza · ${profilInfo?.imie || ''}`,
+    `Biologia · ${profilInfo?.imie || ''}`,
     `${p.tytul}${p.przerwane ? ' (przerwane)' : ''}${p.powtorka ? ' (powtórka pomyłek)' : ''}`,
     `Dobrze za pierwszym razem: ${p.dobrze} z ${p.ile} (${procent}%) · błędów: ${p.ile - p.dobrze}`,
     ...(p.ocena ? [`Ocena (przybliżona skala szkolna): ${p.ocena}`] : []),
@@ -467,7 +487,7 @@ async function wyslij(tekst, btn, status) {
   status.replaceChildren();
   try {
     if (navigator.share) {
-      try { await navigator.share({ title: 'Biologoza — wynik', text: tekst }); graj('wyslano'); status.textContent = 'Wysłane? Super!'; return; }
+      try { await navigator.share({ title: 'Biologia — wynik', text: tekst }); graj('wyslano'); status.textContent = 'Wysłane? Super!'; return; }
       catch (e) { if (e.name === 'AbortError') return; }
     }
     if (navigator.clipboard?.writeText) {

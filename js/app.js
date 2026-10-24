@@ -1,7 +1,8 @@
-// Ekrany Biologozy: lista lekcji (działami), lekcja (nagrania, ćwiczenia, ściąga), ćwiczenie, ustawienia.
+// Ekrany aplikacji Biologia (repo „biologoza”): lista lekcji (działami), lekcja (nagrania, ćwiczenia, ściąga), ćwiczenie, ustawienia.
 // Adresy: #/ (start), #/z/<id> (lekcja), #/z/<id>/sciaga, #/ustawienia.
+// Pod *.ogarnijmaterial.pl osobę wybiera strona główna (PIN): tu tylko sprawdzamy, kto jest zalogowany (S.kto()).
 
-import { h, okno, odm, ik, maskotka, kolor, IKONY_BIO, obrazDzialu, obrazLekcji, ilustracja } from './dom.js';
+import { h, okno, odm, ik, kolor, IKONY_BIO, obrazDzialu, obrazLekcji, ilustracja, pasekGory, znaczekOsoby } from './dom.js';
 import { uruchom } from './gra.js';
 import * as S from './store.js';
 import { graj, przygotujDzwieki } from './dzwieki.js';
@@ -37,6 +38,15 @@ const etykietaTerminu = (dni, iso) => (dni === 0 ? 'kartkówka dziś!' : dni ===
 
 function naglowek() {
   const p = profilInfo();
+  // ogarnijmaterial.pl: „Przedmioty” po lewej, ustawienia i znaczek osoby po prawej, pod spodem nazwa przedmiotu
+  if (S.OGARNIJ) {
+    return [
+      pasekGory({ tekst: 'Przedmioty', href: S.STRONA_GLOWNA },
+        h('a', { class: 'ikona-btn', href: '#/ustawienia', 'aria-label': 'Ustawienia' }, ik('zebatka')),
+        znaczekOsoby(p.imie, S.ZMIEN_OSOBE)),
+      h('div', { class: 'przedmiot-etykieta' }, h('b', { class: 'serif' }, 'Biologia'), h('small', { class: 'maly' }, `${p.imie} · klasa ${p.klasa}`)),
+    ];
+  }
   return h('header', { class: 'naglowek' },
     h('a', { class: 'avatar serif', href: '#/ustawienia', 'aria-label': 'Ustawienia' }, p.znak),
     h('div', { class: 'naglowek-txt' }, h('b', {}, p.imie), h('small', { class: 'maly' }, `biologia · klasa ${p.klasa}`)),
@@ -47,8 +57,7 @@ function naglowek() {
 function ekranWyboru() {
   app.replaceChildren(
     h('main', { class: 'ekran profile-wybor' },
-      h('div', { class: 'logo serif' }, 'Bio', h('em', {}, 'logoza')),
-      maskotka('czesc', 'maskotka-powitanie'),
+      h('div', { class: 'logo serif' }, 'Biologia'),
       h('h1', { class: 'serif' }, 'Kto dziś się ', h('em', {}, 'uczy'), '?'),
       h('div', { class: 'profile-siatka' }, indeks.profile.map((p, i) => h('button', {
         class: `profil-kafel ${kolor(i)}`, type: 'button',
@@ -131,8 +140,7 @@ function ekranListy() {
     h('main', { class: 'ekran' },
       naglowek(),
       h('div', { class: 'tytul-wiersz' },
-        h('h1', { class: 'tytul serif' }, 'Czego dziś się ', h('em', {}, 'uczymy'), '?'),
-        maskotka('czesc', 'maskotka-glowna')),
+        h('h1', { class: 'tytul serif' }, 'Czego dziś się ', h('em', {}, 'uczymy'), '?')),
       pilne.length ? [h('div', { class: 'sekcja' }, 'Przed kartkówką'), h('div', { class: 'lista-pakietow' }, pilne.map(karta))] : null,
       h('div', { class: 'dzialy' }, dzialy.map(blokDzialu)),
       inne.length ? [h('div', { class: 'sekcja' }, 'Inne zestawy'), h('div', { class: 'lista-pakietow' }, inne.map(karta))] : null));
@@ -149,8 +157,8 @@ async function ekranZestawu(id) {
   const zadan = z.bloki.reduce((n, b) => n + (b.ile || b.zadania?.length || 0), 0);
   app.replaceChildren(
     h('main', { class: 'ekran' },
+      pasekGory({ tekst: 'Wróć', href: '#/' }),
       h('section', { class: `naglowek-dzialu ${kolorZestawu(z, nr)}` },
-        h('a', { class: 'wstecz', href: '#/', 'aria-label': 'Wróć' }, ik('wstecz')),
         obrazLekcji(z.dzial, z.lekcja, z.typ) ? ilustracja(obrazLekcji(z.dzial, z.lekcja, z.typ), 'nagl-obraz') : babel(ikonaZestawu(z, nr), 'kp-emoji nagl-znak'),
         h('span', { class: 'kat-etykieta' }, z.termin && dni >= 0 ? etykietaTerminu(dni, z.termin)
           : [z.dzial ? `Dział ${z.dzial}` : 'Zestaw', z.lekcja ? ` · lekcja ${z.lekcja}` : '', z.strony ? ` · s. ${z.strony}` : ''].join('')),
@@ -186,6 +194,8 @@ function kolejnoscKart() {
 // Jeden wspólny element dla wszystkich nagrań lekcji. iPhone pozwala zacząć odtwarzanie tylko w reakcji
 // na dotknięcie, a pełne nagranie najpierw się pobiera (kilka sekund) — więc przy dotknięciu ten sam element
 // od razu gra ułamek sekundy ciszy (odblokowanie, jak w Lingozie), a po pobraniu dostaje właściwy plik.
+// Pod ogarnijmaterial.pl pełne nagranie, którego jeszcze nie ma na telefonie, gra strumieniem (S.adresStrumienia):
+// start po sekundzie, a pobieranie do pamięci telefonu idzie dalej w tle.
 const glosnik = new Audio();
 glosnik.preload = 'metadata';
 glosnik.setAttribute('playsinline', '');
@@ -241,8 +251,22 @@ function odtwarzaczNagrania(z, n) {
     ja.sluchacze = new AbortController();
     ja.url = null;
   }
-  function podepnij(src) {
+  function podepnij(src, strumien = false) {
     const opcje = { signal: ja.sluchacze.signal };
+    // adres strumienia jest krótkotrwały: gdy wygaśnie w trakcie słuchania, bierzemy nowy i gramy od tego samego miejsca
+    if (strumien) {
+      glosnik.addEventListener('error', async () => {
+        if (!moj() || ja.ponowiono) { blad(new Error('Nagranie się przerwało. Stuknij ▶, żeby spróbować jeszcze raz.')); return; }
+        ja.ponowiono = true;
+        const t = glosnik.currentTime || Number(S.LS.get(klucz, 0));
+        const nowy = await S.adresStrumienia(n.prywatne);
+        if (!nowy || !moj()) { blad(new Error('Nagranie się przerwało. Stuknij ▶, żeby spróbować jeszcze raz.')); return; }
+        glosnik.addEventListener('loadedmetadata', () => { glosnik.currentTime = t; }, { once: true, signal: ja.sluchacze.signal });
+        glosnik.src = nowy;
+        glosnik.play().catch(blad);
+      }, opcje);
+      glosnik.addEventListener('playing', () => { ja.ponowiono = false; }, opcje);
+    }
     const zapisane = Number(S.LS.get(klucz, 0));
     glosnik.addEventListener('loadedmetadata', () => { if (zapisane > 5 && zapisane < glosnik.duration - 5) glosnik.currentTime = zapisane; odswiez(); }, opcje);
     glosnik.addEventListener('timeupdate', () => { odswiez(); if (Math.round(glosnik.currentTime) % 5 === 0) S.LS.set(klucz, glosnik.currentTime); }, opcje);
@@ -257,32 +281,49 @@ function odtwarzaczNagrania(z, n) {
     stan.textContent = e?.name === 'NotAllowedError' ? 'Telefon zablokował dźwięk. Stuknij jeszcze raz.' : (e?.message || 'Nie udało się odtworzyć nagrania.');
     ustawIkone();
   };
-  btn.onclick = () => {
-    if (moj() && glosnik.src !== CISZA) { if (glosnik.paused) glosnik.play().catch(blad); else glosnik.pause(); return; }
+  const graGotowe = () => glosnik.play().catch((e) => {
+    // po dłuższym czekaniu iPhone potrafi już nie uznać tego za reakcję na dotknięcie — wtedy nagranie czeka gotowe
+    if (e?.name !== 'NotAllowedError') throw e;
+    stan.textContent = 'Nagranie gotowe — stuknij ▶, żeby słuchać.';
+    ustawIkone();
+  });
+  btn.onclick = async () => {
+    if (moj() && glosnik.src !== CISZA && !glosnik.error) { if (glosnik.paused) glosnik.play().catch(blad); else glosnik.pause(); return; }
     przejmij();
     if (!n.prywatne) { podepnij(n.plik); glosnik.play().catch(blad); return; } // bez czekania — wciąż w dotknięciu
     odblokujGlosnik(); // jeszcze w dotknięciu, zanim zacznie się pobieranie
-    stan.textContent = 'Pobieram nagranie…';
     btn.disabled = true;
-    S.nagraniePrywatne(n.prywatne, n.wersja).then((blob) => {
+    try {
+      // ogarnijmaterial.pl: nagrania jeszcze nie ma na telefonie → strumień, bez czekania na całe pobranie
+      if (S.OGARNIJ && !(await S.maNagranie(n.prywatne, n.wersja))) {
+        stan.textContent = 'Łączę z nagraniem…';
+        const adres = await S.adresStrumienia(n.prywatne);
+        if (!moj()) return;
+        if (adres) {
+          ja.ponowiono = false;
+          stan.textContent = '';
+          podepnij(adres, true);
+          await graGotowe();
+          return;
+        }
+      }
+      stan.textContent = 'Pobieram nagranie…';
+      const blob = await S.nagraniePrywatne(n.prywatne, n.wersja);
       if (!moj()) return; // w międzyczasie włączono inne nagranie
       ja.url = URL.createObjectURL(blob);
       stan.textContent = '';
       podepnij(ja.url);
-      // po długim pobieraniu iPhone potrafi już nie uznać tego za reakcję na dotknięcie — wtedy nagranie czeka gotowe
-      return glosnik.play().catch((e) => {
-        if (e?.name !== 'NotAllowedError') throw e;
-        stan.textContent = 'Nagranie gotowe — stuknij ▶, żeby słuchać.';
-        ustawIkone();
-      });
-    }).catch(blad).finally(() => { btn.disabled = false; });
+      await graGotowe();
+    } catch (e) { blad(e); } finally { btn.disabled = false; }
   };
-  // pełne nagranie: pobieranie rusza w tle od razu po wejściu w lekcję, z procentami
-  if (n.prywatne && S.token()) {
+  // pełne nagranie: pobieranie do pamięci telefonu rusza w tle od razu po wejściu w lekcję, z procentami
+  if (n.prywatne && S.maDostep()) {
     const kl = S.kluczPostepu(n.prywatne, n.wersja);
     const naPostep = (e) => {
       if (e.detail.klucz !== kl || !stan.isConnected) return;
-      if (!(moj() && glosnik.src !== CISZA)) stan.textContent = e.detail.ile < 1 ? `Pobieram nagranie… ${Math.round(e.detail.ile * 100)}%` : 'Nagranie gotowe.';
+      const { ile, mb } = e.detail;
+      if (!(moj() && glosnik.src !== CISZA)) stan.textContent = ile === 1 ? 'Nagranie gotowe.'
+        : ile != null ? `Pobieram nagranie… ${Math.round(ile * 100)}%` : `Pobieram nagranie… ${mb.toFixed(1).replace('.', ',')} MB`;
     };
     window.addEventListener('bz-postep', naPostep);
     S.maNagranie(n.prywatne, n.wersja).then((jest) => {
@@ -313,8 +354,8 @@ async function ekranSciagi(id) {
   const obraz = (o) => h('figure', { class: 'sciaga-obraz' }, h('img', { src: o.plik, alt: o.podpis || '', loading: 'lazy' }), o.podpis ? h('figcaption', {}, o.podpis) : null);
   app.replaceChildren(
     h('main', { class: 'ekran' },
+      pasekGory({ tekst: 'Wróć', href: '#/z/' + encodeURIComponent(z.id) }),
       h('section', { class: `naglowek-dzialu niski ${kolorZestawu(z, nr)}` },
-        h('a', { class: 'wstecz', href: '#/z/' + encodeURIComponent(z.id), 'aria-label': 'Wróć' }, ik('wstecz')),
         h('span', { class: 'kat-etykieta' }, 'Ściąga'),
         h('h1', { class: 'serif' }, z.tytul)),
       (obrazyPo[0] || []).map(obraz), // rysunek ściągi („po”: 0) — przed pierwszym punktem
@@ -347,18 +388,19 @@ function ekranUstawien() {
   const stan = h('p', { class: 'maly', role: 'status' });
   app.replaceChildren(
     h('main', { class: 'ekran' },
+      pasekGory({ tekst: 'Wróć', href: '#/' }),
       h('div', { class: 'profil-gora' },
-        h('a', { class: 'ikona-btn', href: '#/', 'aria-label': 'Wróć' }, ik('wstecz')),
         h('span', { class: 'profil-duzy-avatar serif' }, p.znak),
         h('h1', { class: 'serif' }, p.imie)),
       h('section', { class: 'ust' },
         h('div', { class: 'sekcja' }, 'Ten telefon'),
         h('div', { class: 'wiersz' }, h('span', {}, `Uczy się: ${p.imie}, klasa ${p.klasa}`),
-          indeks.profile.length > 1 ? h('button', { class: 'chip', type: 'button', onclick: () => { S.ustawProfil(null); location.hash = '#/'; render(); } }, 'Zmień') : null),
+          S.OGARNIJ ? h('a', { class: 'chip', href: S.ZMIEN_OSOBE }, 'Zmień osobę')
+            : indeks.profile.length > 1 ? h('button', { class: 'chip', type: 'button', onclick: () => { S.ustawProfil(null); location.hash = '#/'; render(); } }, 'Zmień') : null),
         h('div', { class: 'wiersz' }, h('span', {}, 'Dźwięki'),
           h('button', { class: 'chip' + (S.dzwiek() ? ' akt' : ''), type: 'button', 'aria-pressed': String(S.dzwiek()), onclick: () => { S.ustawDzwiek(!S.dzwiek()); graj('przelacznik'); render(); } },
             S.dzwiek() ? 'włączone' : 'wyłączone'))),
-      h('section', { class: 'ust' },
+      S.OGARNIJ ? sekcjaOgarnij(p) : h('section', { class: 'ust' },
         h('div', { class: 'sekcja' }, 'Wyniki i pełne nagrania'),
         h('p', { class: 'maly' }, 'Wyniki zapisują się w prywatnym repozytorium rodziny, a pełne nagrania do nauki z podręcznikiem stamtąd się pobierają. Wystarczy raz wkleić token GitHub na tym telefonie.'),
         pole,
@@ -376,7 +418,8 @@ function ekranUstawien() {
         stan),
       h('section', { class: 'ust' },
         h('div', { class: 'sekcja' }, 'Pełne nagrania nie grają?'),
-        h('p', { class: 'maly' }, 'Sprawdzenie krok po kroku: token, dostęp do repozytorium, plik, szybkość łącza i odtwarzanie dźwięku.'),
+        h('p', { class: 'maly' }, S.OGARNIJ ? 'Sprawdzenie krok po kroku: logowanie, dostęp do repozytorium, plik, odtwarzanie od razu, szybkość łącza i dźwięk.'
+          : 'Sprawdzenie krok po kroku: token, dostęp do repozytorium, plik, szybkość łącza i odtwarzanie dźwięku.'),
         h('button', { class: 'btn glowny', type: 'button', onclick: async (e) => {
           const przycisk = e.currentTarget, lista = przycisk.nextElementSibling;
           przycisk.disabled = true; przycisk.textContent = 'Sprawdzam… (pobieranie może potrwać do minuty)';
@@ -392,14 +435,59 @@ function ekranUstawien() {
         h('ul', { class: 'diag', 'aria-live': 'polite' }))));
 }
 
+// Ustawienia pod ogarnijmaterial.pl: bez tokenu — dane idą przez pośrednika na koncie zalogowanej osoby
+function sekcjaOgarnij(p) {
+  const stan = h('p', { class: 'maly', role: 'status' });
+  return h('section', { class: 'ust' },
+    h('div', { class: 'sekcja' }, 'Wyniki i pełne nagrania'),
+    h('p', { class: 'maly' }, `Zalogowano jako ${p.imie} na ogarnijmaterial.pl. Wyniki same zapisują się w prywatnym repozytorium rodziny, a pełne nagrania stamtąd grają — tokenu nie trzeba.`),
+    h('div', { class: 'przyciski' },
+      h('button', { class: 'btn glowny', type: 'button', onclick: async () => {
+        stan.textContent = 'Łączę…';
+        try { await S.synchronizuj(p.id); stan.textContent = 'Połączone. Wyniki są zapisane.'; } catch (e) { stan.textContent = e.message; }
+      } }, 'Synchronizuj teraz'),
+      h('a', { class: 'btn jasny', href: S.ZMIEN_OSOBE }, 'Zmień osobę')),
+    stan);
+}
+
 async function synchro() {
   const p = S.profil();
-  if (!p || !S.token()) return;
+  if (!p || !S.maDostep()) return;
   try { await S.synchronizuj(p); } catch (e) { console.warn('Synchronizacja:', e.message); }
+}
+
+// ---------- ogarnijmaterial.pl: kto jest zalogowany ----------
+// Julek → aplikacja; inna osoba albo brak sieci → spokojny komunikat; nikt niezalogowany (401) → strona główna
+let dostep = null; // true = działa jako Julek; { ekran } = komunikat zamiast aplikacji
+const odmiana = (id) => (['aniela', 'magda'].includes(id) ? 'zalogowana' : 'zalogowany');
+function ekranInnejOsoby(id) {
+  const imie = S.OSOBY[id] || id;
+  app.replaceChildren(
+    h('main', { class: 'ekran' },
+      pasekGory({ tekst: 'Przedmioty', href: S.STRONA_GLOWNA }, znaczekOsoby(imie, S.ZMIEN_OSOBE)),
+      h('section', { class: 'komunikat' },
+        ilustracja('obrazy/ilustracje/biologia.webp', 'komunikat-obraz'),
+        h('div', { class: 'kat-etykieta' }, 'Biologia · klasa 6'),
+        h('h1', { class: 'serif' }, 'To przedmiot Julka'),
+        h('p', {}, `Na tym urządzeniu jest teraz ${odmiana(id)} ${imie}. Biologia jest przygotowana tylko dla Julka — jego lekcje, nagrania i wyniki.`),
+        h('div', { class: 'przyciski kolumna' },
+          h('a', { class: 'btn glowny', href: S.STRONA_GLOWNA }, 'Wróć do przedmiotów'),
+          h('a', { class: 'btn jasny', href: S.ZMIEN_OSOBE }, 'Zmień osobę')))));
+}
+function ekranBezSieci() {
+  app.replaceChildren(
+    h('main', { class: 'ekran' },
+      pasekGory({ tekst: 'Przedmioty', href: S.STRONA_GLOWNA }),
+      h('section', { class: 'komunikat' },
+        h('h1', { class: 'serif' }, 'Brak połączenia'),
+        h('p', {}, 'Nie udało się sprawdzić, kto jest zalogowany na ogarnijmaterial.pl. Sprawdź internet i spróbuj jeszcze raz.'),
+        h('div', { class: 'przyciski kolumna' },
+          h('button', { class: 'btn glowny', type: 'button', onclick: () => { dostep = null; start(); } }, 'Spróbuj jeszcze raz')))));
 }
 
 async function render() {
   try {
+    if (S.OGARNIJ && dostep !== true) return dostep?.ekran?.();
     if (!indeks) await wczytajIndeks();
     if (!spis) spis = await fetch('zestawy/spis.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : { dzialy: [] })).catch(() => ({ dzialy: [] }));
     if (!profilInfo() && indeks.profile.length === 1) S.ustawProfil(indeks.profile[0].id);
@@ -421,7 +509,7 @@ async function render() {
 
 // ogólny dźwięk przycisku: nawigacja, karty, zwykłe przyciski; odpowiedzi i „Sprawdź” mają własne dźwięki,
 // a przyciski z data-cichy grają swój dźwięk same
-const GLOSNE = 'a[href], .cta, .pozycja.klik, .btn:not(.sprawdz), .chip, .profil-kafel';
+const GLOSNE = 'a[href], .cta, .pozycja.klik, .btn:not(.sprawdz), .chip, .profil-kafel, .pigulka-wstecz';
 document.addEventListener('click', (e) => {
   const el = e.target.closest(GLOSNE);
   if (el && !el.disabled && !el.closest('[data-cichy]') && !el.matches('.chip[aria-pressed]')) graj('przycisk');
@@ -429,7 +517,20 @@ document.addEventListener('click', (e) => {
 document.addEventListener('pointerdown', przygotujDzwieki, { once: true });
 
 window.addEventListener('hashchange', render);
-render().then(synchro);
+
+async function start() {
+  if (S.OGARNIJ) {
+    const k = await S.kto();
+    if (k.stan === 'brak') { location.replace(S.STRONA_GLOWNA); return; } // nikt nie wybrał osoby → strona główna
+    const id = k.id && S.PROFIL_KONTA[k.id];
+    if (id) { dostep = true; S.ustawProfil(id); }
+    else if (k.id) { dostep = { ekran: () => ekranInnejOsoby(k.id) }; }
+    else { dostep = { ekran: ekranBezSieci }; }
+  }
+  await render();
+  synchro();
+}
+start();
 
 if ('serviceWorker' in navigator && location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
   navigator.serviceWorker.register('sw.js').catch(() => {});
