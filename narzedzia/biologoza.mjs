@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 // Narzędzie Biologozy.
-//   node narzedzia/biologoza.mjs importuj [--bez-nagran]  — lekcje z projektu lekcje-audio (iCloud) → zestawy/, nagrania, obrazy
+//   node narzedzia/biologoza.mjs importuj [--na-sucho] [--bez-nagran] [--tez-github]
+//                                          — lekcje z projektu lekcje-audio (iCloud) → zestawy/, nagrania, obrazy;
+//                                            pełne nagrania → Cloudflare KV ogarnijmaterial.pl (wrangler, bez GitHuba)
+//        --na-sucho    pełnych nagrań nie wysyła, tylko pokazuje, które są w KV, a których brakuje / są inne
+//        --bez-nagran  w ogóle nie sprawdza pełnych nagrań
+//        --tez-github  dodatkowo stara kopia w prywatnym repo biologoza-dane (dla wersji na github.io z tokenem)
 //   node narzedzia/biologoza.mjs sprawdz [id]             — kontrola zestawów (blokuje publikację)
 //   node narzedzia/biologoza.mjs katalog                  — sprawdza wszystko i przebudowuje zestawy/indeks.json
 //   node narzedzia/biologoza.mjs wyniki [profil]          — ostatnie próby z prywatnego repo biologoza-dane (przez gh)
 //
 // Import bierze z lekcje-audio tylko to, co i tak idzie na stronę uczsiesprytniej.pl (pytania, ściąga, definicje
 // i krótkie nagranie _www — własne słowa, sprawdzone antyplagiatem). Pełne nagranie „do nauki z podręcznikiem”
-// jest blisko tekstu książki, więc trafia WYŁĄCZNIE do prywatnego repo biologoza-dane (nagrania/<id>.mp3).
+// jest blisko tekstu książki, więc trafia WYŁĄCZNIE do prywatnego magazynu: Cloudflare KV „DANE” Workera ogarnijmaterial.pl,
+// klucz plik:biologoza-dane/nagrania/<id>.mp3 (aplikacja czyta go przez https://ogarnijmaterial.pl/api/gh/…, bez tokenów).
 
 import fs from 'node:fs';
 import os from 'node:os';
@@ -167,7 +173,52 @@ function lekkie(zrodlo) {
   return cel;
 }
 
-function wyslijPrywatne(lokalny, sciezka, opis) {
+// ---------- pełne nagrania → Cloudflare KV (ogarnijmaterial.pl) ----------
+// Worker ~/Projekty/ogarnijmaterial trzyma dane przedmiotów w KV „DANE” pod kluczem plik:biologoza-dane/<ścieżka>
+// (wartość = bajty pliku, metadata { sha: SHA-1 treści, size: bajty }) i oddaje je aplikacji w kształcie API GitHuba.
+// Wysyłamy wranglerem zalogowanym na tym Macu; plik, którego sha i rozmiar w KV już się zgadzają, pomijamy.
+const OGARNIJ = path.join(os.homedir(), 'Projekty/ogarnijmaterial');
+const KV_DANE = '4ce78837c417478ba7bf3d1d8b39444b';
+const KV_REPO = REPO_DANYCH.split('/')[1];
+const KV_LIMIT = 25 * 1024 * 1024; // limit jednej wartości KV
+const shaTresci = (buf) => crypto.createHash('sha1').update(buf).digest('hex');
+function wrangler(args) {
+  if (!fs.existsSync(path.join(OGARNIJ, 'wrangler.jsonc'))) throw new Error(`Nie widzę projektu Workera: ${OGARNIJ}`);
+  try {
+    return execFileSync('npx', ['-y', 'wrangler@4', ...args], { cwd: OGARNIJ, encoding: 'utf8', maxBuffer: 64 << 20, stdio: ['ignore', 'pipe', 'pipe'] });
+  } catch (e) { throw new Error(`wrangler ${args.slice(0, 3).join(' ')} nie przeszedł (zalogowany? npx wrangler@4 whoami):\n${e.stderr || e.message}`); }
+}
+let listaKV = null;
+function nagraniaWKV({ odswiez } = {}) {
+  if (!listaKV || odswiez) {
+    const out = wrangler(['kv', 'key', 'list', '--namespace-id', KV_DANE, '--remote', '--prefix', `plik:${KV_REPO}/nagrania/`]);
+    listaKV = new Map(JSON.parse(out.slice(out.indexOf('['))).map((k) => [k.name.slice(`plik:${KV_REPO}/`.length), k.metadata || {}]));
+  }
+  return listaKV;
+}
+const wyslaneDoKV = [];
+function wyslijDoKV(lokalny, sciezka, { naSucho } = {}) {
+  const buf = fs.readFileSync(lokalny);
+  const meta = { sha: shaTresci(buf), size: buf.length };
+  if (meta.size > KV_LIMIT) throw new Error(`${sciezka}: ${(meta.size / 1048576).toFixed(1)} MiB — więcej niż limit wartości KV (25 MiB)`);
+  const stary = nagraniaWKV().get(sciezka);
+  if (stary?.sha === meta.sha && stary?.size === meta.size) return 'bez zmian';
+  if (naSucho) return `${stary ? 'inne niż w KV' : 'brak w KV'} — do wysłania (na sucho, nic nie wysłane)`;
+  wrangler(['kv', 'key', 'put', '--namespace-id', KV_DANE, '--remote', `plik:${KV_REPO}/${sciezka}`, '--path', lokalny, '--metadata', JSON.stringify(meta)]);
+  wyslaneDoKV.push([sciezka, meta]);
+  return stary ? 'zaktualizowane' : 'wysłane';
+}
+// po wysyłce: lista KV jeszcze raz — każde wysłane nagranie musi mieć w KV dokładnie tę sumę i rozmiar
+function sprawdzWyslane() {
+  if (!wyslaneDoKV.length) return;
+  const kv = nagraniaWKV({ odswiez: true });
+  const zle = wyslaneDoKV.filter(([s, m]) => kv.get(s)?.sha !== m.sha || kv.get(s)?.size !== m.size);
+  if (zle.length) throw new Error(`Po wysyłce KV nie zgadza się dla: ${zle.map(([s]) => s).join(', ')}`);
+  console.log(`\nCloudflare KV: pełne nagrania wysłane i sprawdzone — ${wyslaneDoKV.length}.`);
+}
+
+// stara droga (opcjonalnie, --tez-github): kopia w prywatnym repo biologoza-dane dla wersji na github.io z tokenem
+function wyslijDoGitHuba(lokalny, sciezka, opis) {
   const buf = fs.readFileSync(lokalny);
   let sha = null;
   try { sha = execFileSync('gh', ['api', `repos/${REPO_DANYCH}/contents/${sciezka}`, '--jq', '.sha'], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { /* jeszcze nie ma */ }
@@ -179,7 +230,7 @@ function wyslijPrywatne(lokalny, sciezka, opis) {
   return sha ? 'zaktualizowane' : 'wysłane';
 }
 
-function importuj({ bezNagran }) {
+function importuj({ bezNagran, naSucho, tezGithub }) {
   if (!fs.existsSync(LEKCJE)) throw new Error(`Nie widzę folderu lekcji: ${LEKCJE}`);
   const pliki = fs.readdirSync(LEKCJE).filter((d) => d.startsWith('Dział'))
     .flatMap((d) => { const s = path.join(LEKCJE, d, 'skrypty'); return fs.existsSync(s) ? fs.readdirSync(s).filter((f) => /_J\.json$/.test(f)).map((f) => ({ dzialDir: path.join(LEKCJE, d), plik: path.join(s, f) })) : []; });
@@ -241,8 +292,12 @@ function importuj({ bezNagran }) {
     if (fs.existsSync(pelne)) {
       const cel = `nagrania/${id}.mp3`;
       const lekkiePelne = lekkie(pelne);
-      const wynik = bezNagran ? 'pominięte (--bez-nagran)' : wyslijPrywatne(lekkiePelne, cel, `pełne nagranie ${id}`);
-      console.log(`   pełne nagranie → biologoza-dane/${cel}: ${wynik}`);
+      let wynik = 'pominięte (--bez-nagran)';
+      if (!bezNagran) {
+        wynik = `Cloudflare KV: ${wyslijDoKV(lekkiePelne, cel, { naSucho })}`;
+        if (tezGithub && !naSucho) wynik += `; GitHub biologoza-dane: ${wyslijDoGitHuba(lekkiePelne, cel, `pełne nagranie ${id}`)}`;
+      }
+      console.log(`   pełne nagranie ${cel} → ${wynik}`);
       nagrania.unshift({ tytul: 'Lekcja z podręcznikiem', opis: 'Słuchaj i patrz do książki', prywatne: cel, wersja: shaBloba(fs.readFileSync(lekkiePelne)).slice(0, 10), minuty: czasNagrania(pelne) });
     }
 
@@ -282,7 +337,8 @@ function zbudujIndeks(zestawy) {
 const [, , cmd = 'sprawdz', ...reszta] = process.argv;
 const arg = reszta.find((x) => !x.startsWith('--'));
 if (cmd === 'importuj') {
-  importuj({ bezNagran: reszta.includes('--bez-nagran') });
+  importuj({ bezNagran: reszta.includes('--bez-nagran'), naSucho: reszta.includes('--na-sucho'), tezGithub: reszta.includes('--tez-github') });
+  sprawdzWyslane();
   const { zestawy, bledy } = sprawdzWszystko();
   if (bledy.length) { console.error(`\nBŁĘDY: ${bledy.length}. Nie publikuj, dopóki nie znikną.`); process.exit(1); }
   zbudujIndeks(zestawy);
@@ -306,6 +362,6 @@ if (cmd === 'importuj') {
     }
   }
 } else {
-  console.log('Użycie: node narzedzia/biologoza.mjs importuj [--bez-nagran] | sprawdz [id] | katalog | wyniki [profil]');
+  console.log('Użycie: node narzedzia/biologoza.mjs importuj [--na-sucho] [--bez-nagran] [--tez-github] | sprawdz [id] | katalog | wyniki [profil]');
   process.exit(1);
 }

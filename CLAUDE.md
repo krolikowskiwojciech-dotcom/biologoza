@@ -18,7 +18,8 @@ plików, kluczy `bz.*` i ścieżek danych — tych nie zmieniaj.
   pod ogarnijmaterial.pl; tam po prawej ustawienia i znaczek z inicjałem → https://ogarnijmaterial.pl/#konta. Wyjście z ćwiczenia
   z odpowiedziami pyta (`okno()`) i zapisuje próbę jako przerwaną.
 - **Dane (prywatne repo `krolikowskiwojciech-dotcom/biologoza-dane`):** `profile/<id>.json` = `{ id, proby: [...] }` (wyniki)
-  oraz `nagrania/<id>.mp3` — pełne nagrania „do nauki z podręcznikiem”. Telefon pobiera je tokenem wklejonym raz w Ustawieniach.
+  oraz `nagrania/<id>.mp3` — pełne nagrania „do nauki z podręcznikiem” dla wersji na github.io (token w Ustawieniach).
+  Od 2026-10-24 import wysyła pełne nagrania do Cloudflare KV; kopia w tym repo powstaje tylko z `importuj --tez-github`.
 - **Profil:** tylko `julek` (Julek, klasa 6, „Puls życia 6”, Nowa Era). Lista w `narzedzia/biologoza.mjs` (PROFILE).
 
 ## Skąd są lekcje
@@ -31,7 +32,7 @@ tam nie pisze, tylko wczytuje gotowe pliki z `KLASA 6/Biologia/Dział */`:
 |---|---|---|
 | `skrypty/<id>.json` (pytania, ściąga, definicje) | zestaw z blokami: Pojęcia, Test wyboru, Prawda czy fałsz, Uzupełnij, Pytania z podręcznika + ściąga | `zestawy/` (publiczne) |
 | `audio/na-strone/<id>_www.mp3` | „Krótka powtórka” | `nagrania/` (publiczne — to samo jest na uczsiesprytniej.pl) |
-| `audio/do-nauki-z-podrecznikiem/<id>.mp3` | „Lekcja z podręcznikiem” | **tylko** `biologoza-dane/nagrania/` (blisko tekstu książki) |
+| `audio/do-nauki-z-podrecznikiem/<id>.mp3` | „Lekcja z podręcznikiem” | **tylko** Cloudflare KV ogarnijmaterial.pl, klucz `plik:biologoza-dane/nagrania/<id>.mp3` (blisko tekstu książki) |
 | ilustracje z `uczsiesprytniej/ilustracje/` | obrazki w ściądze | `obrazy/lekcje/` |
 
 Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie trafiają do publicznego repo.
@@ -39,8 +40,12 @@ Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie tr
 ## Prośba „wrzuć nową lekcję do Biologozy” / po nagraniu lekcji biologii Julka
 
 1. `git pull`.
-2. `node narzedzia/biologoza.mjs importuj` — wczytuje wszystkie lekcje, wysyła nowe pełne nagrania do `biologoza-dane`
-   (pomija niezmienione), sprawdza zestawy i przebudowuje `zestawy/indeks.json`. **Musi przejść bez błędów.**
+2. `node narzedzia/biologoza.mjs importuj` — wczytuje wszystkie lekcje, wysyła nowe pełne nagrania **do Cloudflare KV**
+   (namespace „DANE” Workera `~/Projekty/ogarnijmaterial`, klucz `plik:biologoza-dane/nagrania/<id>.mp3`, metadata `{sha: SHA-1, size}`)
+   przez `npx wrangler@4` zalogowany na tym Macu — **bez GitHuba i bez tokenów**; pomija pliki, których sha w KV się zgadza,
+   po wysyłce sprawdza listę KV jeszcze raz. Aplikacja na ogarnijmaterial.pl ma nagranie od razu po imporcie.
+   `--na-sucho` = tylko pokaż, czego brakuje w KV; `--tez-github` = dodatkowo stara kopia w `biologoza-dane` (wersja github.io z tokenem).
+   Potem sprawdza zestawy i przebudowuje `zestawy/indeks.json`. **Musi przejść bez błędów.**
    Zestawy z importu (`"zrodlo": "lekcje-audio"`) przy każdym imporcie generują się od nowa — błąd w pytaniu poprawiaj
    w `lekcje-audio/.../skrypty/<id>.json`, nie w `zestawy/`. Zachowują się tylko `termin`, `ikona`, `kolor`, `dodano`.
 3. Commit + `git push` — Pages publikuje w 1–2 min. Powiedz Wojtkowi, jakie lekcje doszły (pytania, nagrania).
