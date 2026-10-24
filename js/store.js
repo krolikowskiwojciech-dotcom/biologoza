@@ -103,7 +103,7 @@ export async function synchronizuj(id) {
       if (repo.status === 404 || repo.status === 403) throw new Error(BRAK_REPO);
     }
     const r = await gh(plik);
-    if (!r.ok && r.status !== 404) throw new Error(r.status === 403 ? BRAK_REPO : `GitHub: błąd ${r.status}`);
+    if (!r.ok && r.status !== 404) throw new Error(r.status === 403 ? BRAK_REPO : `${OGARNIJ ? 'Serwer' : 'GitHub'}: błąd ${r.status}`);
     const j = r.ok ? await r.json() : null;
     const zdalne = j ? JSON.parse(dec(j.content || '') || 'null') : null;
     const razem = scal(zdalne?.proby, proby(id));
@@ -113,7 +113,7 @@ export async function synchronizuj(id) {
     if (j?.sha) body.sha = j.sha;
     const w = await gh(plik, { method: 'PUT', body: JSON.stringify(body) });
     if (w.status === 409 || w.status === 422) continue;
-    if (!w.ok) throw new Error(w.status === 403 || w.status === 404 ? BRAK_ZAPISU : `GitHub: błąd ${w.status} przy zapisie`);
+    if (!w.ok) throw new Error(w.status === 403 || w.status === 404 ? BRAK_ZAPISU : `${OGARNIJ ? 'Serwer' : 'GitHub'}: błąd ${w.status} przy zapisie`);
     return { stan: 'ok' };
   }
   throw new Error('Nie udało się zapisać wyników (konflikt). Spróbuj za chwilę.');
@@ -144,9 +144,9 @@ async function pobierzNagranie(sciezka, wersja, klucz) {
     for (const r of await c.keys()) if (r.url.split('?')[0] === klucz.split('?')[0]) await c.delete(r); // starsze wersje
   } catch { /* brak Cache Storage */ }
   if (!maDostep()) throw new Error(OGARNIJ ? 'Pełne nagranie jest prywatne — potrzebne zalogowanie na ogarnijmaterial.pl.' : 'Pełne nagranie jest prywatne. Wklej token w Ustawieniach, żeby je odtworzyć.');
-  const r = await gh(sciezkaPliku(sciezka), { headers: { Accept: 'application/vnd.github.raw' } });
+  const r = await gh(sciezkaPliku(sciezka) + (OGARNIJ ? '?raw=1' : ''), { headers: { Accept: 'application/vnd.github.raw' } }); // ?raw=1: surowy plik z serwera ogarnijmaterial
   if (r.status === 404 || r.status === 403) throw new Error(OGARNIJ ? 'Nie widzę tego nagrania w prywatnym repozytorium.' : 'Nie widzę tego nagrania w prywatnym repozytorium. Sprawdź token w Ustawieniach.');
-  if (!r.ok) throw new Error(`GitHub: błąd ${r.status} przy pobieraniu nagrania`);
+  if (!r.ok) throw new Error(`${OGARNIJ ? 'Serwer' : 'GitHub'}: błąd ${r.status} przy pobieraniu nagrania`);
   const razem = Number(r.headers.get('content-length')) || 0;
   const kawalki = [];
   let mam = 0;
@@ -169,17 +169,17 @@ export async function maNagranie(sciezka, wersja) {
   try { return !!(await (await caches.open(CACHE_NAGRAN)).match(kluczNagrania(sciezka, wersja))); } catch { return false; }
 }
 
-// strumień (tylko ogarnijmaterial.pl): GitHub podaje przy pliku z prywatnego repo krótkotrwały adres
-// raw.githubusercontent.com/…?token=… — obsługuje zapytania o kawałki pliku (Range), więc <audio> zaczyna grać po
-// pierwszych sekundach zamiast czekać na całe 8 MB. Sam adres pośrednika się do <audio> nie nadaje: odtwarzacz nie
-// ustawi nagłówka Accept (raw), a pośrednik nie przekazuje Range. Gdy adresu brak — null (wtedy pobieramy w całości).
+// strumień (tylko ogarnijmaterial.pl): serwer trzyma dane w Cloudflare KV (bez GitHuba i tokenów) i podaje przy pliku
+// download_url = https://ogarnijmaterial.pl/api/gh/…/contents/<ścieżka>?raw=1 — surowe audio/mpeg z obsługą Range (206),
+// a ciasteczko sesji leci samo w <audio src> (ta sama witryna). <audio> zaczyna więc grać po pierwszych sekundach zamiast
+// czekać na całe 8 MB. Gdy adres jest inny albo go brak — null (wtedy pobieramy w całości, z postępem).
 export async function adresStrumienia(sciezka) {
   if (!OGARNIJ || !maDostep()) return null;
   try {
     const r = await gh(sciezkaPliku(sciezka));
     if (!r.ok) return null;
     const url = (await r.json()).download_url;
-    return url && /^https:\/\/raw\.githubusercontent\.com\//.test(url) && /[?&]token=/.test(url) ? url : null;
+    return typeof url === 'string' && url.startsWith(STRONA_GLOWNA) ? url : null;
   } catch { return null; }
 }
 
@@ -209,19 +209,22 @@ export async function sprawdzNagrania(sciezka, wypisz) {
     const { size: rozmiar, download_url: adres } = await meta.json();
     wypisz('ok', `Plik nagrania: jest (${(rozmiar / 1048576).toFixed(1)} MB)`);
     if (OGARNIJ) {
-      const strumien = adres && /[?&]token=/.test(adres);
+      const strumien = typeof adres === 'string' && adres.startsWith(STRONA_GLOWNA);
       if (!strumien) wypisz('uwaga', 'Odtwarzanie od razu (strumień): niedostępne — nagranie pobierze się w całości przed odtworzeniem.');
       else {
         const t0 = performance.now();
-        const st = await fetch(adres, { headers: { Range: 'bytes=0-131071' }, cache: 'no-store' }).catch(() => null);
-        const ok = st && (st.status === 206 || st.status === 200);
-        if (ok) await st.arrayBuffer();
-        wypisz(ok ? 'ok' : 'uwaga', ok ? `Odtwarzanie od razu (strumień): działa — start po ${((performance.now() - t0) / 1000).toFixed(1)} s`
-          : 'Odtwarzanie od razu (strumień): nie wyszło — nagranie pobierze się w całości przed odtworzeniem.');
+        // to samo, o co poprosi odtwarzacz: kawałek pliku (Range) z ciasteczkiem sesji
+        const st = await fetch(adres, { headers: { Range: 'bytes=0-131071' }, credentials: 'include', cache: 'no-store' }).catch(() => null);
+        const kawalek = st?.status === 206;
+        if (st?.ok) await st.arrayBuffer();
+        const s = ((performance.now() - t0) / 1000).toFixed(1);
+        wypisz(kawalek ? 'ok' : st?.ok ? 'uwaga' : 'zle', kawalek ? `Odtwarzanie od razu (strumień): działa — pierwszy kawałek po ${s} s`
+          : st?.ok ? `Odtwarzanie od razu (strumień): serwer oddaje cały plik zamiast kawałka (${st.status}) — iPhone może nie przewijać.`
+            : `Odtwarzanie od razu (strumień): nie wyszło (${st ? 'błąd ' + st.status : 'brak połączenia'}) — nagranie pobierze się w całości przed odtworzeniem.`);
       }
     }
     const t0 = performance.now();
-    const pr = await gh(sc, { headers: { Accept: 'application/vnd.github.raw' } });
+    const pr = await gh(sc + (OGARNIJ ? '?raw=1' : ''), { headers: { Accept: 'application/vnd.github.raw' } });
     if (!pr.ok) { wypisz('zle', `Pobieranie: błąd ${pr.status}.`); return; }
     const bajty = (await pr.arrayBuffer()).byteLength;
     const s = (performance.now() - t0) / 1000;

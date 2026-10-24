@@ -253,7 +253,7 @@ function odtwarzaczNagrania(z, n) {
   }
   function podepnij(src, strumien = false) {
     const opcje = { signal: ja.sluchacze.signal };
-    // adres strumienia jest krótkotrwały: gdy wygaśnie w trakcie słuchania, bierzemy nowy i gramy od tego samego miejsca
+    // gdy strumień się urwie (np. sesja albo sieć), raz bierzemy adres od nowa i gramy od tego samego miejsca
     if (strumien) {
       glosnik.addEventListener('error', async () => {
         if (!moj() || ja.ponowiono) { blad(new Error('Nagranie się przerwało. Stuknij ▶, żeby spróbować jeszcze raz.')); return; }

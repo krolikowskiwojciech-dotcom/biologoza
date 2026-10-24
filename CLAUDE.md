@@ -9,9 +9,10 @@ plików, kluczy `bz.*` i ścieżek danych — tych nie zmieniaj.
 - **Tryb ogarnijmaterial.pl** (`S.OGARNIJ` w `js/store.js`, gdy `location.hostname.endsWith('ogarnijmaterial.pl')`): przy starcie
   `GET https://ogarnijmaterial.pl/api/ja` (credentials) — `julian` → aplikacja jako Julek bez wyboru profilu; inna osoba → komunikat
   „To przedmiot Julka”; 401 → przekierowanie na https://ogarnijmaterial.pl/. Wyniki i pełne nagrania idą przez pośrednika
-  `https://ogarnijmaterial.pl/api/gh/…` (bez tokenu w telefonie; w Ustawieniach brak pola tokenu). Pełne nagranie, którego nie ma
-  jeszcze na telefonie, gra strumieniem z krótkotrwałego `download_url` (raw.githubusercontent.com?token=…, obsługuje Range) —
-  sam adres pośrednika do `<audio>` się nie nadaje (nie przekazuje Range ani Accept). W tle i tak pobiera się do pamięci.
+  `https://ogarnijmaterial.pl/api/gh/…` — serwer trzyma je w Cloudflare KV, odpowiada w kształcie API GitHuba, zero tokenów
+  (w Ustawieniach brak pola tokenu). Pełne nagranie, którego nie ma jeszcze na telefonie, gra od razu strumieniem:
+  `<audio src=download_url>`, gdzie `download_url` = `https://ogarnijmaterial.pl/api/gh/…/contents/<ścieżka>?raw=1`
+  (surowe audio/mpeg, Range/206, ciasteczko sesji leci samo). W tle i tak pobiera się do pamięci na offline.
   Render trybu na 127.0.0.1: `?test-ogarnij=julian|aniela|401` (działa tylko na 127.0.0.1/localhost, bez sieci).
 - **Nawigacja:** lewy górny róg zawsze pigułka powrotu (`pasekGory()` w `js/dom.js`): „Wróć” w aplikacji, „Przedmioty” na starcie
   pod ogarnijmaterial.pl; tam po prawej ustawienia i znaczek z inicjałem → https://ogarnijmaterial.pl/#konta. Wyjście z ćwiczenia
