@@ -37,6 +37,7 @@ const IKONY = {
   sciaga: S('<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 12h6M10 16h6"/>'),
   klodka: S('<rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V7.5a3.5 3.5 0 0 1 7 0v3"/>'),
   cofnij15: S('<path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5"/>'),
+  naprzod15: S('<path d="M20 12a8 8 0 1 1-2.4-5.7L20 8.5"/><path d="M20 4v4.5h-4.5"/>'),
   // biologia — do bąbli na kartach zestawów (pole „ikona” w zestawie)
   lisc: S('<path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14z"/><path d="M5 19 14 10"/>'),
   komorka: S('<ellipse cx="12" cy="12" rx="9" ry="7.5"/><circle cx="13.5" cy="11" r="2.6"/><path d="M6.5 14.5h1.5M8.5 8.5h.5M16 16h1"/>'),

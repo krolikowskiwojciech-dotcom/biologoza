@@ -4,7 +4,7 @@
 // - Lekcje (zestawy/*.json): najpierw z sieci, żeby nowe pytania były od razu, ale najwyżej 1,5 s czekania — potem z pamięci.
 // - Krótkie nagrania (nagrania/*.mp3) idą prosto z sieci, bo odtwarzacz prosi o kawałki pliku; pełne nagrania
 //   z prywatnego repo trzyma osobna pamięć „biologoza-nagrania” (js/store.js), której ten plik nie czyści.
-const CACHE = 'biologoza-v17';
+const CACHE = 'biologoza-v18';
 const SHELL = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/dom.js', 'js/gra.js', 'js/sprawdz.js',
   'js/store.js', 'js/dzwieki.js', 'zestawy/indeks.json', 'zestawy/spis.json', 'ikony/ikona-192.png', 'fonts/Jost.ttf', 'fonts/LibreBaskerville.ttf',
   'audio/przycisk.mp3', 'audio/wybor.mp3', 'audio/cofnij.mp3',

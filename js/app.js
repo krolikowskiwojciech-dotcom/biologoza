@@ -230,6 +230,7 @@ function zatrzymajOdtwarzacz() {
 function odtwarzaczNagrania(z, n) {
   const btn = h('button', { class: 'graj-btn', type: 'button', 'aria-label': 'Odtwórz' }, ik('graj'));
   const cofnij = h('button', { class: 'cofnij-btn', type: 'button', 'aria-label': 'Cofnij 15 sekund', disabled: true }, ik('cofnij15'));
+  const naprzod = h('button', { class: 'cofnij-btn', type: 'button', 'aria-label': 'Do przodu 15 sekund', disabled: true }, ik('naprzod15'));
   const suwak = h('input', { class: 'suwak', type: 'range', min: 0, max: 1000, value: 0, disabled: true, 'aria-label': 'Miejsce w nagraniu' });
   const czas = h('small', { class: 'nagr-czas' }, n.minuty ? `ok. ${n.minuty} min` : '');
   const stan = h('small', { class: 'nagr-stan', role: 'status' });
@@ -243,7 +244,7 @@ function odtwarzaczNagrania(z, n) {
     suwak.value = glosnik.duration ? Math.round((glosnik.currentTime / glosnik.duration) * 1000) : 0;
     czas.textContent = `${czasTxt(glosnik.currentTime)} / ${czasTxt(glosnik.duration)}`;
   };
-  ja.przestan = () => { suwak.disabled = true; cofnij.disabled = true; btn.replaceChildren(ik('graj')); };
+  ja.przestan = () => { suwak.disabled = true; cofnij.disabled = true; naprzod.disabled = true; btn.replaceChildren(ik('graj')); };
 
   function przejmij() {
     zatrzymajOdtwarzacz();
@@ -274,7 +275,7 @@ function odtwarzaczNagrania(z, n) {
     glosnik.addEventListener('pause', () => { ustawIkone(); ja.zapisz(); }, opcje);
     glosnik.addEventListener('ended', () => { S.LS.set(klucz, 0); ustawIkone(); }, opcje);
     glosnik.src = src;
-    suwak.disabled = false; cofnij.disabled = false;
+    suwak.disabled = false; cofnij.disabled = false; naprzod.disabled = false;
   }
   ja.zapisz = () => { if (moj() && glosnik.src !== CISZA && glosnik.currentTime > 1) S.LS.set(klucz, glosnik.currentTime); };
   const blad = (e) => {
@@ -334,6 +335,7 @@ function odtwarzaczNagrania(z, n) {
     });
   }
   cofnij.onclick = () => { if (moj()) glosnik.currentTime = Math.max(0, glosnik.currentTime - 15); };
+  naprzod.onclick = () => { if (moj()) glosnik.currentTime = Math.min((glosnik.duration || Infinity) - 1, glosnik.currentTime + 15); };
   suwak.oninput = () => { if (moj() && glosnik.duration) glosnik.currentTime = (suwak.value / 1000) * glosnik.duration; };
   if (n.prywatne) S.maNagranie(n.prywatne, n.wersja).then((jest) => { if (jest) stan.textContent = 'zapisane na tym urządzeniu'; });
 
@@ -341,7 +343,7 @@ function odtwarzaczNagrania(z, n) {
     h('div', { class: 'nagr-gora' }, btn,
       h('div', { class: 'poz-txt' }, h('b', {}, n.tytul, n.prywatne ? h('span', { class: 'klodka', title: 'tylko dla rodziny' }, ik('klodka')) : null),
         n.opis ? h('small', { class: 'maly' }, n.opis) : null)),
-    h('div', { class: 'nagr-dol' }, cofnij, suwak, czas),
+    h('div', { class: 'nagr-dol' }, cofnij, naprzod, suwak, czas),
     stan);
 }
 
