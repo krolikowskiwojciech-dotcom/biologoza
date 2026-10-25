@@ -6,7 +6,7 @@
 // otwarte (pytanie z podręcznika: najpierw odpowiedz w myślach, potem odsłoń i oceń się sam).
 
 import { h, okno, odm, ik, kolor, los, obrazLekcji, ilustracja, pasekGory } from './dom.js';
-import { ocen, wCzesci, opcjeWyboru, pokaz, poprawna, dobraOdpowiedz } from './sprawdz.js';
+import { ocen, wCzesci, opcjeWyboru, pokaz, poprawna, dobraOdpowiedz, normuj } from './sprawdz.js';
 import { graj } from './dzwieki.js';
 
 const BLOKADA_MS = 1200; // po błędzie przyciski chwilę śpią, żeby rozpędzony palec nie przeskoczył wyjaśnienia
@@ -214,6 +214,7 @@ export function uruchom(el, opcje) {
         })));
         kafle.replaceChildren(...pula.map((x) => h('button', { class: 'kafel-odp', type: 'button', disabled: stan.ulozone.includes(x),
           onpointerdown: wcisnij, onclick: () => { if (!zablokowane && !stan.ulozone.includes(x)) { stan.ulozone.push(x); graj('wybor'); odswiez(); } } }, x)));
+        stan.poZmianie?.();
       };
       odswiez();
       stan.odswiez = odswiez;
@@ -241,8 +242,9 @@ export function uruchom(el, opcje) {
               else { podpowiedz('Najpierw dotknij pojęcie po lewej.'); return; }
               odswiez();
             } }, p); })));
+        stan.poZmianie?.();
       };
-      stan.wybrany = lewe[0];
+      stan.wybrany = lewe[0]; stan.lewe = lewe;
       odswiez();
       stan.odswiez = odswiez;
       return { tresc: kol, stopka: h('button', { class: 'btn sprawdz szeroki', type: 'button', onpointerdown: wcisnij, onclick: () => sprawdz() }, 'Sprawdź') };
@@ -283,7 +285,7 @@ export function uruchom(el, opcje) {
   }
 
   function sprawdz(wybor) {
-    if (zablokowane) return;
+    if (zablokowane || stan.naprawa) return;
     const cz = czescTeraz();
     const odp = odpowiedzDziecka(cz, wybor);
     if (cz.kind === 'wpisz' && !odp.trim()) return podpowiedz('Najpierw wpisz odpowiedź.');
@@ -325,6 +327,15 @@ export function uruchom(el, opcje) {
     timer = setTimeout(nastepne, uwaga ? 2200 : 800);
   }
 
+  // co uczeń przepisuje po błędzie: poprawna odpowiedź; przy długiej (ponad 6 słów) wystarczy hasło, jeśli zestaw je ma
+  function celPrzepisania(cz) {
+    if (cz.kind === 'pary' || cz.kind === 'kolejnosc') return null; // tu zamiast przepisywania układa się jeszcze raz
+    const a = String(dobraOdpowiedz(cz));
+    return cz.haslo && a.split(/\s+/).length > 6 ? cz.haslo : a;
+  }
+
+  // zła odpowiedź: w karcie zadania przekreślona odpowiedź, duża poprawna, wyjaśnienie i pole do przepisania;
+  // „Dalej” odblokowuje się dopiero po przepisaniu (albo ponownym ułożeniu) poprawnej odpowiedzi
   function zle(cz, odp) {
     seria = 0;
     graj(cz.kind === 'otwarte' ? 'jeszcze-nie' : 'zle');
@@ -333,41 +344,81 @@ export function uruchom(el, opcje) {
     const kolejka = B().kolejka;
     kolejka.splice(Math.min(kolejka.length, poz + 1 + los.int(2, 4)), 0, { z, powtorka: true });
 
-    el.querySelector('.zadanie-karta').classList.add('zle');
+    const karta = el.querySelector('.zadanie-karta');
+    karta.classList.add('zle');
     info().replaceChildren();
-    const pole = el.querySelector('.cw-pole');
     const otwarte = cz.kind === 'otwarte';
-    if (!otwarte) {
-      const naPrzyciskach = cz.kind === 'wybor' || cz.kind === 'pf'; // zła i dobra odpowiedź są już zaznaczone na przyciskach
-      pole.append(h('section', { class: 'poprawka' },
-        naPrzyciskach || cz.kind === 'pary' || cz.kind === 'kolejnosc' ? null : h('p', { class: 'twoja' }, 'Twoja odpowiedź: ', h('s', {}, pokaz(cz, odp))),
-        naPrzyciskach ? null : h('div', { class: 'ramka-poprawna' },
-          h('div', { class: 'kat-etykieta' }, 'Poprawna odpowiedź'),
+    const uklada = cz.kind === 'pary' || cz.kind === 'kolejnosc';
+    const cel = celPrzepisania(cz);
+    let poBlokadzie = false, przepisane = otwarte;
+
+    const dalejBtn = h('button', { class: 'btn glowny szeroki dalej-po-bledzie', type: 'button', disabled: true, onclick: () => { if (gotowe()) nastepne(); } },
+      otwarte ? 'Przeczytaj…' : uklada ? 'Ułóż poprawnie, żeby przejść dalej' : 'Przepisz, żeby przejść dalej');
+    const gotowe = () => poBlokadzie && przepisane;
+    const odblokuj = () => {
+      if (!gotowe() || !dalejBtn.disabled) return;
+      dalejBtn.disabled = false;
+      dalejBtn.replaceChildren('Dalej', ik('dalej'));
+      if (document.activeElement?.tagName !== 'INPUT') dalejBtn.focus({ preventScroll: true });
+    };
+    const zrobione = () => { przepisane = true; info().replaceChildren(); info().className = 'info'; graj('para'); odblokuj(); };
+
+    let pole = null;
+    if (otwarte) {
+      karta.querySelector('.odp-miejsce').after(h('p', { class: 'wraca' }, ik('powtorz'), ' Przeczytaj odpowiedź jeszcze raz. To pytanie wróci w tym bloku.'));
+    } else {
+      // przy wyborze odpowiedź jest już w karcie — przyciski pod nią znikają
+      if (cz.kind === 'wybor' || cz.kind === 'pf') el.querySelector('.cw-pole > .opcje')?.remove();
+      const poprawnaTxt = String(poprawna(cz));
+      if (cel) {
+        pole = h('input', { class: 'przepisz', type: 'text', autocomplete: 'off', autocorrect: 'off', autocapitalize: 'off', spellcheck: 'false', enterkeyhint: 'done',
+          'aria-label': 'Przepisz poprawną odpowiedź',
+          oninput: () => {
+            const ok = [cel, ...(cz.kind === 'wpisz' && cel === cz.a ? cz.inne || [] : [])].some((x) => normuj(x) === normuj(pole.value));
+            if (!ok || przepisane) return;
+            pole.classList.add('ok'); pole.readOnly = true; pole.blur(); // przepisane: klawiatura chowa się, widać „Dalej”
+            zrobione();
+          } });
+      }
+      karta.querySelector('.odp-miejsce').before(h('section', { class: 'poprawka-karta' },
+        cz.kind === 'pary' ? null : h('p', { class: 'twoja' }, 'Twoja odpowiedź: ', h('s', {}, pokaz(cz, odp))),
+        h('div', { class: 'dobra-duza' + (uklada ? ' lista' : poprawnaTxt.length > 60 ? ' bardzo-dluga' : poprawnaTxt.length > 28 ? ' dluga' : '') },
+          h('span', { class: 'dobra-znak', 'aria-hidden': 'true' }, ik('ptaszek')),
           cz.kind === 'pary' ? h('ul', { class: 'lista-par' }, cz.pary.map(([l, p]) => h('li', {}, h('b', {}, l), ' — ', p)))
             : cz.kind === 'kolejnosc' ? h('ol', { class: 'lista-par' }, cz.elementy.map((x) => h('li', {}, x)))
-              : h('div', { class: 'rownanie' }, cz.kind === 'wpisz' && cz.e?.includes('___') ? zLuka(cz.e, cz.a) : poprawna(cz))),
-        cz.exp?.length ? [h('div', { class: 'sekcja' }, 'Wyjaśnienie'), h('ul', { class: 'kroki' }, cz.exp.map((l) => h('li', {}, l)))] : null,
-        cz.zrodlo ? h('p', { class: 'zrodlo' }, ik('ksiazka'), 'Zajrzyj do książki: ', cz.zrodlo) : null,
-        h('p', { class: 'wraca' }, ik('powtorz'), ' To zadanie wróci jeszcze raz w tym bloku.')));
+              : h('span', { class: 'dobra-txt' }, poprawnaTxt)),
+        cz.exp?.length || cz.zrodlo ? h('div', { class: 'wyjasnienie' },
+          cz.exp?.length ? h('ul', { class: 'kroki' }, cz.exp.map((l) => h('li', {}, l))) : null,
+          cz.zrodlo ? h('p', { class: 'zrodlo' }, ik('ksiazka'), 'Zajrzyj do książki: ', cz.zrodlo) : null) : null,
+        cel ? h('label', { class: 'przepisz-etykieta' }, cel === poprawnaTxt ? 'Przepisz poprawnie:' : ['Przepisz poprawnie (wystarczy hasło: ', h('b', {}, cel), '):'], pole)
+          : h('p', { class: 'przepisz-etykieta' }, cz.kind === 'pary' ? 'Połącz poprawnie jeszcze raz:' : 'Ułóż poprawnie jeszcze raz:'),
+        uklada ? null : h('p', { class: 'wraca' }, ik('powtorz'), ' To zadanie wróci jeszcze raz w tym bloku.')));
+      if (uklada) {
+        karta.querySelector('.odp-miejsce').after(h('p', { class: 'wraca' }, ik('powtorz'), ' To zadanie wróci jeszcze raz w tym bloku.'));
+        // plansza od nowa: uczeń układa jeszcze raz, patrząc na poprawną odpowiedź
+        if (cz.kind === 'kolejnosc') stan.ulozone = []; else { stan.pary = {}; stan.wybrany = stan.lewe?.[0] ?? null; }
+        stan.poZmianie = () => { if (!przepisane && ocen(cz, cz.kind === 'kolejnosc' ? stan.ulozone : stan.pary).ok) { zablokowane = true; oznacz(cz, odpowiedzDziecka(cz), true); zrobione(); } };
+        stan.naprawa = true;
+        zablokowane = false;
+        stan.odswiez();
+      }
     }
-    let zablokowaneDalej = true;
-    const dalejBtn = h('button', { class: 'btn czerwony', type: 'button', disabled: true, onclick: () => { if (!zablokowaneDalej) nastepne(); } }, 'Przeczytaj…');
-    const przerwijBtn = h('button', { class: 'btn kreska', type: 'button', disabled: true, onclick: przerwij }, 'Przerwij');
     const stopka = stopkaEl();
     stopka.className = 'stopka zle';
-    stopka.replaceChildren(
-      h('div', { class: 'stopka-info' },
-        h('div', { class: 'stopka-tytul' }, otwarte ? 'Przeczytaj odpowiedź jeszcze raz. To pytanie wróci.' : 'Prawie! Zobacz, jak jest naprawdę.')),
-      h('div', { class: 'przyciski' }, przerwijBtn, dalejBtn));
-    requestAnimationFrame(() => pole.querySelector('.poprawka')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
-    timer = setTimeout(() => {
-      zablokowaneDalej = false;
-      dalejBtn.disabled = false; przerwijBtn.disabled = false;
-      dalejBtn.replaceChildren('Dalej', ik('dalej'));
-      dalejBtn.focus({ preventScroll: true });
-      ustawKlawisze((e) => { if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) { e.preventDefault(); nastepne(); } });
-    }, otwarte ? 400 : BLOKADA_MS);
-    ustawKlawisze(null);
+    stopka.replaceChildren(dalejBtn);
+    requestAnimationFrame(() => {
+      if (pole) { pole.focus({ preventScroll: true }); pole.scrollIntoView({ block: 'center', behavior: 'smooth' }); }
+      else karta.querySelector('.poprawka-karta, .wzor')?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    });
+    ustawKlawisze((e) => {
+      if ((e.key === 'Enter' || e.key === ' ') && !e.repeat) {
+        if (e.key === ' ' && document.activeElement?.tagName === 'INPUT') return;
+        e.preventDefault();
+        if (gotowe()) nastepne();
+        else if (pole && poBlokadzie) podpowiedz(`Przepisz dokładnie: ${cel}`);
+      }
+    });
+    timer = setTimeout(() => { poBlokadzie = true; odblokuj(); }, otwarte ? 400 : BLOKADA_MS);
   }
 
   function nastepne() {

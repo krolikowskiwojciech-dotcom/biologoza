@@ -3,7 +3,7 @@
 
 const BEZ_OGONKOW = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' };
 export const normuj = (t) => String(t ?? '').toLowerCase().normalize('NFC')
-  .replace(/[–—‑-]+/g, '-').replace(/\s*-\s*/g, '-').replace(/[.,;:!?"„”']+$/g, '').replace(/\s+/g, ' ').trim();
+  .trim().replace(/[–—‑-]+/g, '-').replace(/\s*-\s*/g, '-').replace(/[\s.,;:!?"„”']+$/g, '').replace(/\s+/g, ' ').trim();
 const bezOgonkow = (t) => normuj(t).replace(/[ąćęłńóśźż]/g, (c) => BEZ_OGONKOW[c]);
 
 function levenshtein(a, b) {

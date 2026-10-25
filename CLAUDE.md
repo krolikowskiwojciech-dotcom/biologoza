@@ -64,7 +64,10 @@ Pełne nagranie i ekstrakcja są blisko tekstu podręcznika — **nigdy** nie tr
 
 Rogi mniejsze niż w Lingozie (Wojtek 2026-10-12): `--r: 14px`, kafle 12–18 px, kwadraciki 8–10 px — sekcja „zaokrąglenia” na końcu
 `styles.css`. Styl ołówkowo-kredkowy (ramki rysowane, bez zaokrągleń) był próbowany i odrzucony — nie wracaj do niego bez prośby.
-Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako żółta pigułka), odpowiedzi 3D z literami A/B/C pod kartą.
+Po złej odpowiedzi (Wojtek 2026-10-25, wszystkie aplikacje): odpowiedź w karcie zadania („Twoja odpowiedź” przekreślona, duża zielona
+poprawna, wyjaśnienie w jasnożółtym polu, pole „Przepisz poprawnie:”), na dole tylko szeroki „Dalej”, odblokowany dopiero po
+przepisaniu (wielkość liter, spacje i kropka obojętne, ogonki wymagane; `pary`/`kolejnosc` — ułożyć jeszcze raz; `otwarte` bez przepisywania).
+Na komputerze (≥ 900 px) kolumna 760 px i czcionki ćwiczeń ok. 1/3 większe. Ekran pytania: karta jak z talii (nagłówek, kolorowy panel z falami, luka jako żółta pigułka), odpowiedzi 3D z literami A/B/C pod kartą.
 
 **Obrazy dla 11–13 lat (Wojtek 2026-10-12, stanowczo; zasada całego projektu nauki — `~/CLAUDE.md`):** żadnych słodkich, „bajkowych” ilustracji dla przedszkolaków —
 bez maskotek, dużych oczu, rumieńców, konfetti, plasteliny w stylu dla maluchów. Ilustracje mają wyglądać dojrzale i naukowo.

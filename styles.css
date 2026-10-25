@@ -590,3 +590,70 @@ a.lek-wiersz:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--atra
 .wpis-luka.ok { background: #DDF4E6; border-bottom-color: #2F9B5A; color: #1E6B3C; }
 .wpis-luka.zle { background: #FBE1E5; border-bottom-color: #D6455D; color: #A32C40; text-decoration: line-through; }
 .wpis-luka:disabled { opacity: 1; -webkit-text-fill-color: currentColor; }
+
+/* ================= po błędzie: odpowiedź w karcie zadania, przepisanie, na dole tylko „Dalej” (Wojtek 2026-10-25, wersja C) =================
+   przekreślona odpowiedź ucznia, pod nią duża zielona poprawna z ptaszkiem, wyjaśnienie w jasnożółtym polu,
+   pole „Przepisz poprawnie:” — dopiero po przepisaniu odblokowuje się szeroki „Dalej” w stopce */
+.poprawka-karta { display: flex; flex-direction: column; gap: 12px; padding: 2px 4px 0; }
+.poprawka-karta .twoja { margin: 0; font-size: 17px; color: var(--zle); font-weight: 500; overflow-wrap: anywhere; }
+.poprawka-karta .twoja s { text-decoration-thickness: 2.5px; text-decoration-color: var(--zle); }
+.dobra-duza { display: flex; align-items: center; gap: 12px; color: var(--ok); font-size: clamp(30px, 9vw, 44px); font-weight: 600; line-height: 1.12; overflow-wrap: anywhere; }
+.dobra-duza.dluga { font-size: clamp(24px, 6.5vw, 32px); }
+.dobra-duza.bardzo-dluga { font-size: clamp(19px, 5vw, 24px); line-height: 1.3; }
+.dobra-duza.lista { align-items: flex-start; font-size: 18px; font-weight: 500; }
+.dobra-duza .lista-par { margin: 0; color: var(--ok); font-size: inherit; }
+.dobra-znak { flex: none; width: 1.15em; height: 1.15em; min-width: 34px; min-height: 34px; border-radius: 50%; background: var(--ok); color: #fff; display: grid; place-items: center; }
+.dobra-znak .ik svg { width: 62%; height: 62%; stroke-width: 2.8; }
+.wyjasnienie { background: #FFF8D6; border: 1.5px solid #E8DA8A; border-radius: 12px; padding: 12px 14px; font-size: 17px; line-height: 1.45; }
+.wyjasnienie .kroki { font-size: inherit; padding-left: 1.2em; }
+.wyjasnienie .kroki li:last-child { margin-bottom: 0; }
+.wyjasnienie .zrodlo { margin-top: 8px; }
+.przepisz-etykieta { display: flex; flex-direction: column; gap: 8px; margin: 2px 0 0; font-size: 17px; font-weight: 500; }
+.przepisz-etykieta b { font-weight: 600; }
+input.przepisz { width: 100%; padding: 10px 14px; font: 500 22px/1.25 Jost, system-ui, sans-serif; color: var(--tusz); text-align: left;
+  background: #fff; border: 2px solid var(--atrament); border-radius: 12px; box-shadow: 0 4px 0 var(--atrament); outline: none; }
+input.przepisz:focus { box-shadow: 0 4px 0 var(--atrament), 0 0 0 4px var(--tlo-karty); }
+input.przepisz.ok { border-color: var(--ok); color: var(--ok); background: var(--ok-tlo); box-shadow: 0 4px 0 var(--ok); }
+.poprawka-karta .wraca { margin: 0; }
+.stopka .btn.dalej-po-bledzie { min-height: 60px; font-size: 19px; }
+.stopka .btn.dalej-po-bledzie:disabled { background: #fff; color: var(--szary); opacity: 1; cursor: not-allowed; }
+
+/* komputer: szersza kolumna (ok. 760 px) i czcionki w ćwiczeniach o ok. 1/3 większe */
+@media (min-width: 900px) {
+  .lekcja-gora, .lekcja-tytul, .cw-pole { max-width: 760px; }
+  .stopka > * { max-width: 728px; }
+  .lekcja-tytul { font-size: 22px; }
+  .karta-naglowek b { font-size: 22px; }
+  .karta-naglowek small { font-size: 16px; }
+  .karta-nr { font-size: 16px; }
+  .karta-ikona, .karta-ilustr { width: 48px; height: 48px; }
+  .zadanie-karta { padding: 16px 18px 20px; gap: 16px; }
+  .pytanie-panel { padding: 36px 26px 40px; }
+  .pytanie-panel .pytanie { font-size: 30px; }
+  .pytanie-panel.dlugie .pytanie { font-size: 24px; }
+  .pytanie-panel .tresc { font-size: 22px; }
+  .zadanie-karta.zle .pytanie-panel .pytanie, .zadanie-karta.zle .pytanie-panel.dlugie .pytanie { font-size: 22px; }
+  .opcja { min-height: 80px; font-size: 23px; }
+  .opcje.obok .opcja { font-size: 26px; min-height: 120px; }
+  .opcje.dlugie .opcja { font-size: 22px; }
+  .litera { width: 50px; height: 50px; font-size: 23px; }
+  input.wpis { font-size: 26px; }
+  .slot, .kafel-odp, .para-el { font-size: 22px; }
+  .wzor p { font-size: 22px; } .wzor-blad { font-size: 19px !important; }
+  .zrodlo { font-size: 17px; }
+  .info { font-size: 19px; }
+  .stopka-tytul, .stopka-tytul.neutral, .stopka.zle .stopka-tytul { font-size: 25px; }
+  .uwaga-ok { font-size: 19px; }
+  .stopka .btn, .stopka .btn.sprawdz { font-size: 22px; min-height: 64px; }
+  .stopka .btn.dalej-po-bledzie { font-size: 23px; min-height: 68px; }
+  .poprawka-karta { gap: 16px; }
+  .poprawka-karta .twoja { font-size: 22px; }
+  .dobra-duza { font-size: 48px; }
+  .dobra-duza.dluga { font-size: 38px; }
+  .dobra-duza.bardzo-dluga { font-size: 28px; }
+  .dobra-duza.lista { font-size: 23px; }
+  .wyjasnienie { font-size: 19px; padding: 14px 18px; }
+  .przepisz-etykieta { font-size: 21px; }
+  input.przepisz { font-size: 26px; padding: 12px 16px; }
+  .wraca { font-size: 17px; }
+}
